@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Instructor - Control de Asistencia CDAE Villeta</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sena-green: #39A900;
+            --sena-dark-green: #2d8500;
+            --sena-blue: #00324D;
+            --cdae-primary: #1b4332; 
+            --cdae-secondary: #2d6a4f;
+            --sidebar-bg: #0f172a;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+        .text-sena {
+            color: var(--sena-green) !important;
+        }
+        .card-stat {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s;
+            background: #ffffff;
+        }
+        .card-stat:hover {
+            transform: translateY(-3px);
+        }
+        .badge-justificada { background-color: #198754 !important; color: #fff; }
+        .badge-injustificada { background-color: #dc3545 !important; color: #fff; }
+        .badge-alerta-riesgo { background-color: #ffc107 !important; color: #000; }
+
+        /* Sidebar Vertical Estándar (Escritorio) */
+        .admin-sidebar {
+            background-color: var(--sidebar-bg);
+            color: #94a3b8;
+            min-height: 100vh;
+            position: sticky;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+        }
+        .admin-sidebar .brand-box {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            color: #fff;
+            background: linear-gradient(135deg, #1b4332 0%, #0f172a 100%);
+        }
+        .admin-sidebar .nav-link {
+            color: #94a3b8;
+            padding: 0.75rem 1.25rem;
+            margin: 0.2rem 0.75rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .admin-sidebar .nav-link:hover, 
+        .admin-sidebar .nav-link.active {
+            background-color: var(--sena-green);
+            color: #fff;
+        }
+        .admin-sidebar .user-profile-section {
+            padding: 1rem 1.25rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Barra superior para Celulares con Botón Hamburguesa */
+        .mobile-header {
+            background-color: var(--sidebar-bg);
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Sección de Escáner Simulado */
+        .scanner-box {
+            background: linear-gradient(135deg, #0f172a 0%, #1b4332 100%);
+            color: white;
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .scanner-viewfinder {
+            width: 180px;
+            height: 180px;
+            border: 3px dashed var(--sena-green);
+            border-radius: 1rem;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: rgba(0,0,0,0.2);
+        }
+        .scanner-laser {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: var(--sena-green);
+            box-shadow: 0 0 12px var(--sena-green);
+            animation: scanVertical 2s infinite ease-in-out;
+        }
+        @keyframes scanVertical {
+            0% { top: 10%; opacity: 0.3; }
+            50% { top: 90%; opacity: 1; }
+            100% { top: 10%; opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid p-0">
+        
+        <!-- BARRA SUPERIOR MÓVIL -->
+        <div class="mobile-header d-lg-none">
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-person-workspace fs-4 text-sena"></i>
+                <span class="fw-bold fs-6">CDAE Villeta</span>
+            </div>
+            <button class="btn btn-outline-light border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuMovil" aria-controls="menuMovil">
+                <i class="bi bi-list fs-2"></i>
+            </button>
+        </div>
+
+        <!-- MENÚ LATERAL DESPLEGABLE (OFFCANVAS PARA MÓVIL) -->
+        <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="menuMovil" aria-labelledby="menuMovilLabel">
+            <div class="offcanvas-header border-bottom border-secondary">
+                <h5 class="offcanvas-title d-flex align-items-center gap-2" id="menuMovilLabel">
+                    <i class="bi bi-person-workspace text-sena"></i> CDAE Villeta
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-between p-0">
+                <div>
+                    <div class="p-3 mb-2 text-uppercase fw-bold text-muted" style="font-size: 0.65rem; letter-spacing: 0.5px;">Gestión Ficha 2874102</div>
+                    <ul class="nav flex-column gap-1 px-2">
+                        <li class="nav-item"><a class="nav-link active rounded py-2 px-3 text-white bg-success" href="#" data-bs-dismiss="offcanvas"><i class="bi bi-speedometer2 me-2"></i> Dashboard Curso</a></li>
+                        <li class="nav-item"><a class="nav-link rounded py-2 px-3 text-white-50" href="#seccionEscanner" data-bs-dismiss="offcanvas"><i class="bi bi-qr-code-scan me-2"></i> Escáner QR</a></li>
+                        <li class="nav-item"><a class="nav-link rounded py-2 px-3 text-white-50" href="#tablaCurso" data-bs-dismiss="offcanvas"><i class="bi bi-people-fill me-2"></i> Listado y Faltas</a></li>
+                    </ul>
+                </div>
+                <div class="p-3 bg-black bg-opacity-25 border-top border-secondary">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-person-badge-fill fs-3 text-sena"></i>
+                        <div>
+                            <h6 class="mb-0 text-white" style="font-size: 0.85rem;">Ing. Roberto Gómez</h6>
+                            <small class="text-muted" style="font-size: 0.7rem;">Instructor ADSO</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-0">
+            
+            <!-- BARRA LATERAL IZQUIERDA (Escritorio) -->
+            <div class="col-lg-2 d-none d-lg-block p-0">
+                <nav class="admin-sidebar">
+                    <div>
+                        <div class="brand-box d-flex align-items-center gap-2">
+                            <i class="bi bi-person-workspace fs-4 text-sena"></i>
+                            <div>
+                                <span class="fw-bold fs-6 d-block">CDAE Villeta</span>
+                                <small class="text-white-50" style="font-size: 0.65rem;">Panel de Instructor</small>
+                            </div>
+                        </div>
+
+                        <div class="py-3">
+                            <div class="px-3 mb-2 text-uppercase fw-bold text-muted" style="font-size: 0.65rem; letter-spacing: 0.5px;">Gestión Ficha 2874102</div>
+                            <ul class="nav flex-column gap-1">
+                                <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-speedometer2"></i> Dashboard Curso</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#seccionEscanner"><i class="bi bi-qr-code-scan"></i> Escáner QR</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#tablaCurso"><i class="bi bi-people-fill"></i> Listado y Faltas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="user-profile-section">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-person-badge-fill fs-3 text-sena"></i>
+                            <div class="overflow-hidden">
+                                <h6 class="mb-0 text-white text-truncate" style="font-size: 0.85rem;">Ing. Roberto Gómez</h6>
+                                <small class="text-muted text-truncate d-block" style="font-size: 0.7rem;">Instructor ADSO</small>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="col-lg-10 p-4 p-md-5">
+                
+                <!-- Welcome Banner -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="p-4 bg-white rounded-4 shadow-sm border-start border-5 border-success d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                            <div>
+                                <h2 class="fw-bold text-dark mb-1">Control General - Ficha 2874102 (ADSO)</h2>
+                                <p class="text-muted mb-0">Centro de Desarrollo Agroindustrial y Empresarial (CDAE) - Villeta</p>
+                            </div>
+                            <div>
+                                <a href="#seccionEscanner" class="btn btn-success rounded-pill px-3">
+                                    <i class="bi bi-camera-fill me-2"></i> Ir al Escáner QR
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETAS DE MÉTRICAS -->
+                <div class="row g-4 mb-4">
+                    <div class="col-md-4">
+                        <div class="card card-stat h-100 p-4 border-top border-4 border-danger">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <span class="text-muted text-uppercase fw-semibold" style="font-size: 0.8rem;">Faltas Sin Justificar</span>
+                                    <h2 class="fw-bold mt-2 mb-0 text-danger" id="totalSinJustificar">0</h2>
+                                </div>
+                                <div class="p-3 rounded-circle bg-danger bg-opacity-10 text-danger fs-4">
+                                    <i class="bi bi-exclamation-octagon-fill"></i>
+                                </div>
+                            </div>
+                            <p class="text-muted small mt-3 mb-0">Aprendices con inasistencias pendientes de soporte.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card card-stat h-100 p-4 border-top border-4 border-success">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <span class="text-muted text-uppercase fw-semibold" style="font-size: 0.8rem;">Faltas Justificadas</span>
+                                    <h2 class="fw-bold mt-2 mb-0 text-success" id="totalJustificadas">0</h2>
+                                </div>
+                                <div class="p-3 rounded-circle bg-success bg-opacity-10 text-success fs-4">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                </div>
+                            </div>
+                            <p class="text-muted small mt-3 mb-0">Inasistencias validadas con excusas médicas o institucionales.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card card-stat h-100 p-4 border-top border-4 border-primary">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <span class="text-muted text-uppercase fw-semibold" style="font-size: 0.8rem;">Total Aprendices Ficha</span>
+                                    <h2 class="fw-bold mt-2 mb-0 text-primary">30</h2>
+                                </div>
+                                <div class="p-3 rounded-circle bg-primary bg-opacity-10 text-primary fs-4">
+                                    <i class="bi bi-people-fill"></i>
+                                </div>
+                            </div>
+                            <p class="text-muted small mt-3 mb-0">Matriculados activos en el trimestre en Villeta.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN DE ESCÁNER QR -->
+                <div class="row mb-4" id="seccionEscanner">
+                    <div class="col-12">
+                        <div class="card scanner-box p-4 p-md-5 shadow">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 mb-4 mb-md-0">
+                                    <span class="badge bg-success mb-2 px-3 py-1 text-uppercase fw-bold" style="font-size: 0.65rem;">Módulo de Ingreso / Control</span>
+                                    <h3 class="fw-bold mb-2">Escáner de Código QR</h3>
+                                    <p class="text-white-50 mb-4">Utiliza la cámara para escanear el carné digital del aprendiz al ingresar al ambiente de formación o registrar asistencia rápida.</p>
+                                    
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <button class="btn btn-success rounded-pill px-4" onclick="simularEscaneoExitoso()">
+                                            <i class="bi bi-play-fill me-1"></i> Simular Lectura QR Correcta
+                                        </button>
+                                        <button class="btn btn-outline-light rounded-pill px-4" onclick="limpiarResultadoEscaneo()">
+                                            Limpiar Pantalla
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 text-center">
+                                    <div class="scanner-viewfinder shadow-lg mb-3">
+                                        <div class="scanner-laser"></div>
+                                        <i class="bi bi-qr-code-scan text-white-50 fs-1"></i>
+                                    </div>
+                                    <div id="resultadoEscaneoContainer" class="p-3 rounded-3 bg-dark bg-opacity-50 border border-secondary text-start mx-auto" style="max-width: 350px; display: none;">
+                                        <small class="text-success fw-bold d-block mb-1"><i class="bi bi-check-circle-fill me-1"></i> ¡Aprendiz Identificado!</small>
+                                        <p class="mb-1 text-white small fw-bold" id="infoEscaneadoNombre">Carlos Andrés Pérez</p>
+                                        <p class="mb-0 text-white-50" style="font-size: 0.75rem;" id="infoEscaneadoDetalle">T.I. 1.098.456.789 - ADSO</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTENEDOR VISTA RESPONSIVA (TARJETAS EN MÓVIL Y TABLA EN ESCRITORIO) -->
+                <div class="row" id="tablaCurso">
+                    <div class="col-12">
+                        <div class="card card-stat p-4">
+                            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                                <div>
+                                    <h4 class="fw-bold mb-1"><i class="bi bi-journal-text text-success me-2"></i>Registro de Inasistencias del Curso</h4>
+                                    <p class="text-muted mb-0 small">Visualiza las excusas presentadas, faltas sin justificar y toma decisiones de comité.</p>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <input type="text" id="buscadorAprendiz" class="form-control form-control-sm rounded-pill px-3" placeholder="Buscar aprendiz..." onkeyup="filtrarTabla()">
+                                </div>
+                            </div>
+
+                            <!-- CONTENEDOR DINÁMICO PARA LA VISTA RESPONSIVA -->
+                            <div id="contenedorVista">
+                                <!-- Se renderiza por JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL PARA VER SOPORTE DE JUSTIFICACIÓN -->
+    <div class="modal fade" id="modalSoporte" tabindex="-1" aria-labelledby="modalSoporteLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header bg-dark text-white rounded-top-4">
+                    <h5 class="modal-title fs-6 fw-bold" id="modalSoporteLabel">
+                        <i class="bi bi-file-earmark-medical text-success me-2"></i>Soporte de Inasistencia
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="mb-3">
+                        <small class="text-muted d-block fw-semibold text-uppercase" style="font-size: 0.7rem;">Fecha de Registro</small>
+                        <span class="text-dark fw-bold" id="modalFecha">---</span>
+                    </div>
+                    <div class="mb-3">
+                        <small class="text-muted d-block fw-semibold text-uppercase" style="font-size: 0.7rem;">Descripción de la Excusa</small>
+                        <p class="text-secondary mb-0 bg-light p-2 rounded-3 small" id="modalDescripcion">---</p>
+                    </div>
+                    <div>
+                        <small class="text-muted d-block fw-semibold text-uppercase mb-2" style="font-size: 0.7rem;">Documento / Evidencia</small>
+                        <div class="text-center bg-light border rounded-3 p-2">
+                            <img id="modalImagen" src="" alt="Soporte de Justificación" class="img-fluid rounded shadow-sm" style="max-height: 250px; object-fit: contain;">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light rounded-bottom-4 py-2">
+                    <button type="button" class="btn btn-secondary btn-sm rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Listado de aprendices con la estructura de excusa y soporte gráfico agregado
+        let faltasCurso = [
+            { 
+                id: 1, 
+                nombre: "Carlos Andrés Pérez", 
+                documento: "T.I. 1.098.456.789", 
+                totalFaltas: 3, 
+                fecha: "05/03/2026", 
+                competencia: "Construcción de software en BD", 
+                estado: "Sin Justificar", 
+                excusaFecha: "---", 
+                excusaDesc: "Pendiente de presentar soporte médico.", 
+                excusaArchivo: null,
+                imagenSoporte: "" 
+            },
+            { 
+                id: 2, 
+                nombre: "Ana María Rojas", 
+                documento: "C.C. 1.099.876.543", 
+                totalFaltas: 1, 
+                fecha: "15/02/2026", 
+                competencia: "Diseño Frontend", 
+                estado: "Justificada", 
+                excusaFecha: "16/02/2026", 
+                excusaDesc: "Cita médica general EPS Sanitas.", 
+                excusaArchivo: "#",
+                imagenSoporte: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" 
+            },
+            { 
+                id: 3, 
+                nombre: "Mateo Serna Gómez", 
+                documento: "T.I. 1.097.123.456", 
+                totalFaltas: 4, 
+                fecha: "18/02/2026", 
+                competencia: "Interacción idónea", 
+                estado: "Sin Justificar", 
+                excusaFecha: "---", 
+                excusaDesc: "Sin excusa reportada por el aprendiz.", 
+                excusaArchivo: null,
+                imagenSoporte: "" 
+            },
+            { 
+                id: 4, 
+                nombre: "Laura Sofia Restrepo", 
+                documento: "T.I. 1.098.333.222", 
+                totalFaltas: 1, 
+                fecha: "20/02/2026", 
+                competencia: "Construcción de software en BD", 
+                estado: "Justificada", 
+                excusaFecha: "21/02/2026", 
+                excusaDesc: "Incapacidad médica por 24 horas.", 
+                excusaArchivo: "#",
+                imagenSoporte: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" 
+            },
+            { 
+                id: 5, 
+                nombre: "Esteban Morales", 
+                documento: "C.C. 1.095.666.777", 
+                totalFaltas: 2, 
+                fecha: "25/02/2026", 
+                competencia: "Bilingüismo", 
+                estado: "Sin Justificar", 
+                excusaFecha: "---", 
+                excusaDesc: "Sin soporte entregado.", 
+                excusaArchivo: null,
+                imagenSoporte: "" 
+            }
+        ];
+
+        function renderizarTabla(items = faltasCurso) {
+            const contenedor = document.getElementById('contenedorVista');
+            contenedor.innerHTML = '';
+
+            let countJustificadas = 0;
+            let countSinJustificar = 0;
+
+            items.forEach(item => {
+                if (item.estado === "Justificada") countJustificadas++;
+                else countSinJustificar++;
+            });
+
+            document.getElementById('totalJustificadas').innerText = countJustificadas;
+            document.getElementById('totalSinJustificar').innerText = countSinJustificar;
+
+            if (items.length === 0) {
+                contenedor.innerHTML = `
+                    <div class="bg-white rounded-4 p-5 text-center text-muted border border-light shadow-sm">
+                        <i class="bi bi-folder2-open fs-1 mb-2 d-block text-secondary"></i>
+                        No se encontraron aprendices con ese criterio de búsqueda.
+                    </div>
+                `;
+                return;
+            }
+
+            // ----------------------------------------------------
+            // 1. VISTA MÓVIL: Layout de Tarjetas (Se muestra en pantallas < 992px / d-lg-none)
+            // ----------------------------------------------------
+            const vistaMobile = document.createElement('div');
+            vistaMobile.className = 'd-lg-none d-flex flex-column gap-3';
+
+            items.forEach((item, index) => {
+                let badgeAlerta = '';
+                if (item.totalFaltas === 3 || item.totalFaltas === 4) {
+                    badgeAlerta = `<span class="badge badge-alerta-riesgo px-2 py-1"><i class="bi bi-exclamation-triangle-fill me-1"></i>Alerta: ${item.totalFaltas} Faltas (Riesgo)</span>`;
+                } else if (item.totalFaltas >= 5) {
+                    badgeAlerta = `<span class="badge badge-injustificada px-2 py-1"><i class="bi bi-x-octagon-fill me-1"></i>Crítico (${item.totalFaltas} Faltas)</span>`;
+                } else {
+                    badgeAlerta = `<span class="badge bg-secondary px-2 py-1">${item.totalFaltas} Faltas</span>`;
+                }
+
+                let estadoBadge = item.estado === "Justificada"
+                    ? `<span class="text-success small fw-bold"><i class="bi bi-check-circle me-1"></i>Justificada</span>`
+                    : `<span class="text-danger small fw-bold"><i class="bi bi-clock me-1"></i>Pendiente</span>`;
+
+                let contenidoExcusa = item.excusaArchivo 
+                    ? `<small class="fw-bold text-dark d-block"><i class="bi bi-calendar-event me-1"></i>${item.excusaFecha}</small>
+                       <span class="text-muted small d-block">${item.excusaDesc}</span>
+                       <button class="btn btn-sm btn-light border text-primary mt-1 py-0 px-2" style="font-size: 0.75rem;" onclick="verSoporteModal('${item.excusaFecha}', '${item.excusaDesc}', '${item.imagenSoporte}')">
+                           <i class="bi bi-eye me-1"></i>Ver Soporte
+                       </button>`
+                    : `<small class="text-muted d-block"><i class="bi bi-dash-circle me-1"></i>Sin documento</small>
+                       <span class="text-muted small" style="font-size: 0.75rem;">${item.excusaDesc}</span>`;
+
+                let btnAccion = item.estado === "Sin Justificar"
+                    ? `<button class="btn btn-outline-success btn-sm rounded-pill px-3 w-100" onclick="cambiarEstadoFalta(${item.id}, 'Justificada')"><i class="bi bi-check2 me-1"></i> Aprobar</button>`
+                    : `<button class="btn btn-outline-secondary btn-sm rounded-pill px-3 w-100" onclick="cambiarEstadoFalta(${item.id}, 'Sin Justificar')"><i class="bi bi-arrow-counterclockwise me-1"></i> Revocar</button>`;
+
+                const tarjeta = document.createElement('div');
+                tarjeta.className = `bg-white p-3 rounded-3 border shadow-sm ${item.estado === "Sin Justificar" ? 'border-danger-subtle' : 'border-success-subtle'}`;
+                tarjeta.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2">
+                        <span class="fw-bold text-muted small">#${index + 1}</span>
+                        ${estadoBadge}
+                    </div>
+                    <div class="mb-2">
+                        <strong class="text-dark d-block">${item.nombre}</strong>
+                        <small class="text-muted">${item.documento}</small>
+                    </div>
+                    <div class="mb-2 d-flex justify-content-between align-items-center">
+                        <span class="small text-secondary">${item.competencia} (${item.fecha})</span>
+                        ${badgeAlerta}
+                    </div>
+                    <div class="bg-light p-2 rounded-2 mb-3">
+                        <small class="text-uppercase fw-bold text-muted d-block" style="font-size: 0.65rem;">Excusa / Soporte</small>
+                        ${contenidoExcusa}
+                    </div>
+                    <div>
+                        ${btnAccion}
+                    </div>
+                `;
+                vistaMobile.appendChild(tarjeta);
+            });
+
+            // ----------------------------------------------------
+            // 2. VISTA ESCRITORIO: Tabla Tradicional (Se muestra en pantallas >= 992px / d-none d-lg-block)
+            // ----------------------------------------------------
+            const wrapperTabla = document.createElement('div');
+            wrapperTabla.className = 'table-responsive d-none d-lg-block';
+            
+            let filasTabla = '';
+            items.forEach((item, index) => {
+                let badgeAlerta = '';
+                if (item.totalFaltas === 3 || item.totalFaltas === 4) {
+                    badgeAlerta = `<span class="badge badge-alerta-riesgo px-2 py-1"><i class="bi bi-exclamation-triangle-fill me-1"></i>Alerta: ${item.totalFaltas} Faltas (Riesgo)</span>`;
+                } else if (item.totalFaltas >= 5) {
+                    badgeAlerta = `<span class="badge badge-injustificada px-2 py-1"><i class="bi bi-x-octagon-fill me-1"></i>Crítico (${item.totalFaltas} Faltas)</span>`;
+                } else {
+                    badgeAlerta = `<span class="badge bg-secondary px-2 py-1">${item.totalFaltas} Faltas</span>`;
+                }
+
+                let estadoBadge = item.estado === "Justificada"
+                    ? `<span class="text-success small fw-bold"><i class="bi bi-check-circle me-1"></i>Justificada</span>`
+                    : `<span class="text-danger small fw-bold"><i class="bi bi-clock me-1"></i>Pendiente</span>`;
+
+                let contenidoExcusa = item.excusaArchivo 
+                    ? `<small class="fw-bold text-dark d-block"><i class="bi bi-calendar-event me-1"></i>${item.excusaFecha}</small>
+                       <span class="text-muted small d-block">${item.excusaDesc}</span>
+                       <button class="btn btn-sm btn-light border text-primary mt-1 py-0 px-2" style="font-size: 0.75rem;" onclick="verSoporteModal('${item.excusaFecha}', '${item.excusaDesc}', '${item.imagenSoporte}')">
+                           <i class="bi bi-eye me-1"></i>Ver Soporte
+                       </button>`
+                    : `<small class="text-muted d-block"><i class="bi bi-dash-circle me-1"></i>Sin documento</small>
+                       <span class="text-muted small" style="font-size: 0.75rem;">${item.excusaDesc}</span>`;
+
+                let btnAccion = item.estado === "Sin Justificar"
+                    ? `<button class="btn btn-outline-success btn-sm rounded-pill px-3" onclick="cambiarEstadoFalta(${item.id}, 'Justificada')"><i class="bi bi-check2 me-1"></i> Aprobar</button>`
+                    : `<button class="btn btn-outline-secondary btn-sm rounded-pill px-3" onclick="cambiarEstadoFalta(${item.id}, 'Sin Justificar')"><i class="bi bi-arrow-counterclockwise me-1"></i> Revocar</button>`;
+
+                filasTabla += `
+                    <tr>
+                        <td class="fw-bold">${index + 1}</td>
+                        <td><strong class="text-dark d-block">${item.nombre}</strong><small class="text-muted">${item.documento}</small></td>
+                        <td>${badgeAlerta}</td>
+                        <td><strong class="text-secondary small d-block">${item.competencia}</strong><small class="text-muted">${item.fecha}</small></td>
+                        <td>${estadoBadge}</td>
+                        <td>${contenidoExcusa}</td>
+                        <td class="text-center">${btnAccion}</td>
+                    </tr>
+                `;
+            });
+
+            wrapperTabla.innerHTML = `
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>#</th>
+                            <th>Aprendiz / Documento</th>
+                            <th>Faltas Acumuladas</th>
+                            <th>Competencia / Fecha</th>
+                            <th>Estado / Alerta</th>
+                            <th>Excusas / Soportes</th>
+                            <th class="text-center">Acciones Instructor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${filasTabla}
+                    </tbody>
+                </table>
+            `;
+
+            // Agregar ambas vistas al contenedor principal
+            contenedor.appendChild(vistaMobile);
+            contenedor.appendChild(wrapperTabla);
+        }
+
+        // Función para abrir la tarjeta flotante (Modal) con los datos del soporte
+        function verSoporteModal(fecha, descripcion, urlImagen) {
+            document.getElementById('modalFecha').innerText = fecha;
+            document.getElementById('modalDescripcion').innerText = descripcion;
+            document.getElementById('modalImagen').src = urlImagen || 'https://via.placeholder.com/400x300?text=Sin+Imagen+Disponible';
+
+            const modalSoporte = new bootstrap.Modal(document.getElementById('modalSoporte'));
+            modalSoporte.show();
+        }
+
+        function cambiarEstadoFalta(id, nuevoEstado) {
+            const falta = faltasCurso.find(f => f.id === id);
+            if (falta) {
+                falta.estado = nuevoEstado;
+                if (nuevoEstado === "Justificada") {
+                    falta.excusaFecha = "06/03/2026";
+                    falta.excusaDesc = "Aprobado manualmente por el instructor.";
+                    falta.excusaArchivo = "#";
+                    falta.imagenSoporte = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80";
+                } else {
+                    falta.excusaFecha = "---";
+                    falta.excusaDesc = "Pendiente de soporte";
+                    falta.excusaArchivo = null;
+                    falta.imagenSoporte = "";
+                }
+                renderizarTabla();
+            }
+        }
+
+        function simularEscaneoExitoso() {
+            const container = document.getElementById('resultadoEscaneoContainer');
+            container.style.display = 'block';
+            document.getElementById('infoEscaneadoNombre').innerText = "Carlos Andrés Pérez";
+            document.getElementById('infoEscaneadoDetalle').innerText = "T.I. 1.098.456.789 - Alerta: 3 Inasistencias registradas";
+        }
+
+        function limpiarResultadoEscaneo() {
+            document.getElementById('resultadoEscaneoContainer').style.display = 'none';
+        }
+
+        function filtrarTabla() {
+            const texto = document.getElementById('buscadorAprendiz').value.toLowerCase();
+            const filtrados = faltasCurso.filter(f => f.nombre.toLowerCase().includes(texto) || f.documento.toLowerCase().includes(texto));
+            renderizarTabla(filtrados);
+        }
+
+        window.onload = () => {
+            renderizarTabla();
+        };
+    </script>
+</body>
+</html>

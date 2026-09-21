@@ -49,8 +49,6 @@
             background-color: var(--sidebar-bg);
             color: #94a3b8;
             min-height: 100vh;
-            position: sticky;
-            top: 0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -97,7 +95,6 @@
         .qr-container img {
             display: block;
         }
-        /* Línea láser de escaneo animada */
         .qr-scanner-line {
             position: absolute;
             top: 0;
@@ -117,42 +114,62 @@
 </head>
 <body>
 
+    <!-- BARRA SUPERIOR MÓVIL CON BOTÓN HAMBURGUESA -->
+    <div class="d-lg-none bg-dark text-white px-3 py-2 d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-mortarboard-fill text-sena fs-5"></i>
+            <span class="fw-bold fs-6">CDAE Villeta</span>
+        </div>
+        <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuSidebar" aria-controls="menuSidebar">
+            <i class="bi bi-list fs-4"></i>
+        </button>
+    </div>
+
     <div class="container-fluid p-0">
         <div class="row g-0">
             
             <!-- BARRA LATERAL IZQUIERDA -->
-            <div class="col-lg-2 d-none d-lg-block p-0">
-                <nav class="admin-sidebar">
-                    <div>
-                        <div class="brand-box d-flex align-items-center gap-2">
-                            <i class="bi bi-mortarboard-fill fs-4 text-sena"></i>
-                            <div>
-                                <span class="fw-bold fs-6 d-block">CDAE Villeta</span>
-                                <small class="text-white-50" style="font-size: 0.65rem;">Control Asistencia SENA</small>
+            <div class="col-lg-2 p-0">
+                <div class="offcanvas-lg offcanvas-start admin-sidebar" tabindex="-1" id="menuSidebar" aria-labelledby="menuSidebarLabel">
+                    <div class="offcanvas-header border-bottom border-secondary d-lg-none px-4 py-3">
+                        <h5 class="offcanvas-title text-white" id="menuSidebarLabel">
+                            <i class="bi bi-mortarboard-fill text-sena me-2"></i>CDAE Villeta
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#menuSidebar" aria-label="Close"></button>
+                    </div>
+                    
+                    <div class="offcanvas-body p-0 d-flex flex-column justify-content-between h-100">
+                        <div class="w-100">
+                            <div class="brand-box d-none d-lg-flex align-items-center gap-2">
+                                <i class="bi bi-mortarboard-fill fs-4 text-sena"></i>
+                                <div>
+                                    <span class="fw-bold fs-6 d-block">CDAE Villeta</span>
+                                    <small class="text-white-50" style="font-size: 0.65rem;">Control Asistencia SENA</small>
+                                </div>
+                            </div>
+
+                            <div class="py-3">
+                                <div class="px-3 mb-2 text-uppercase fw-bold text-muted" style="font-size: 0.65rem; letter-spacing: 0.5px;">Navegación</div>
+                                <ul class="nav flex-column gap-1">
+                                    <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalReporte"><i class="bi bi-file-earmark-text"></i> Reportes</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalCarnet"><i class="bi bi-qr-code-scan"></i> Carné Digital QR</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#" onclick="agregarFaltaSimulada(); return false;"><i class="bi bi-plus-square"></i> Simular Falta</a></li>
+                                </ul>
                             </div>
                         </div>
 
-                        <div class="py-3">
-                            <div class="px-3 mb-2 text-uppercase fw-bold text-muted" style="font-size: 0.65rem; letter-spacing: 0.5px;">Navegación</div>
-                            <ul class="nav flex-column gap-1">
-                                <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalReporte"><i class="bi bi-file-earmark-text"></i> Reportes</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalCarnet"><i class="bi bi-qr-code-scan"></i> Carné Digital QR</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#" onclick="agregarFaltaSimulada(); return false;"><i class="bi bi-plus-square"></i> Simular Falta</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="user-profile-section">
-                        <div class="d-flex align-items-center gap-2">
-                            <i class="bi bi-person-circle fs-3 text-sena"></i>
-                            <div class="overflow-hidden">
-                                <h6 class="mb-0 text-white text-truncate" style="font-size: 0.85rem;">Carlos Pérez</h6>
-                                <small class="text-muted text-truncate d-block" style="font-size: 0.7rem;">Aprendiz ADSO</small>
+                        <div class="user-profile-section w-100">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="bi bi-person-circle fs-3 text-sena"></i>
+                                <div class="overflow-hidden">
+                                    <h6 class="mb-0 text-white text-truncate" style="font-size: 0.85rem;">Carlos Pérez</h6>
+                                    <small class="text-muted text-truncate d-block" style="font-size: 0.7rem;">Aprendiz ADSO</small>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </nav>
+                </div>
             </div>
 
             <!-- CONTENIDO PRINCIPAL -->
@@ -268,21 +285,8 @@
                                 </button>
                             </div>
 
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Fecha / Día</th>
-                                            <th>Competencia e Instructor</th>
-                                            <th>Resultado (RAP)</th>
-                                            <th>Estado Actual</th>
-                                            <th class="text-center">Acciones / Justificación</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tablaInasistenciasBody"></tbody>
-                                </table>
-                            </div>
+                            <!-- CONTENEDOR VISTA RESPONSIVA (TARJETAS EN MÓVIL Y TABLA EN ESCRITORIO) -->
+                            <div id="contenedorVista"></div>
                         </div>
                     </div>
                 </div>
@@ -292,7 +296,7 @@
         </div>
     </div>
 
-    <!-- MODAL CARNET DIGITAL CON ANIMACIÓN Y DESCARGA REAL -->
+    <!-- MODAL CARNET DIGITAL -->
     <div class="modal fade" id="modalCarnet" tabindex="-1" aria-labelledby="modalCarnetLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4 border-0 shadow">
@@ -301,7 +305,6 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 
-                <!-- Contenedor que se va a descargar como imagen -->
                 <div class="modal-body text-center p-4" id="tarjetaCarnetCaptura">
                     <div class="p-3 bg-white rounded-4 border shadow-sm">
                         <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
@@ -312,7 +315,6 @@
                         <h5 class="fw-bold text-dark mb-1">Carlos Andrés Pérez</h5>
                         <p class="text-muted small mb-3">T.I. 1.098.456.789<br>Ficha: 2874102 (ADSO)</p>
                         
-                        <!-- Código QR con Animación de Escaneo -->
                         <div class="mb-3 d-inline-block">
                             <div class="qr-container shadow-sm">
                                 <div class="qr-scanner-line"></div>
@@ -321,7 +323,6 @@
                             <small class="text-muted d-block mt-2" style="font-size: 0.7rem;">Código QR Institucional Activo</small>
                         </div>
 
-                        <!-- Código de Barras -->
                         <div class="p-2 bg-light rounded-3 border">
                             <img src="https://barcode.tec-it.com/barcode.ashx?data=1098456789&code=Code128&dpi=96" alt="Código de Barras" class="img-fluid" style="max-height: 45px;">
                             <small class="text-muted d-block mt-1" style="font-size: 0.65rem;">1098456789</small>
@@ -425,7 +426,6 @@
 
             const icono = document.getElementById('iconoIndicador');
             const textoAlerta = document.getElementById('textoAlerta');
-            const modalAlerta = document.getElementById('modalAlertaTexto');
 
             barra.className = "progress-bar";
             
@@ -451,10 +451,73 @@
                 textoAlerta.innerHTML = "✅ Sin inasistencias activas.";
             }
 
-            const tbody = document.getElementById('tablaInasistenciasBody');
-            tbody.innerHTML = '';
+            renderizarTabla(inasistencias);
+        }
 
-            inasistencias.forEach((item, index) => {
+        function renderizarTabla(items) {
+            const contenedor = document.getElementById('contenedorVista');
+            contenedor.innerHTML = '';
+
+            if (items.length === 0) {
+                contenedor.innerHTML = `
+                    <div class="bg-white rounded-4 p-5 text-center text-muted border border-light shadow-sm">
+                        <i class="bi bi-folder2-open fs-1 mb-2 d-block text-secondary"></i>
+                        No se encontraron elementos con ese criterio de búsqueda.
+                    </div>
+                `;
+                return;
+            }
+
+            // ----------------------------------------------------
+            // VISTA MÓVIL: Layout de Tarjetas (Se muestra en < 768px usando clases de Bootstrap d-md-none)
+            // ----------------------------------------------------
+            const vistaMobile = document.createElement('div');
+            vistaMobile.className = 'd-grid gap-3 d-md-none';
+
+            items.forEach((item, index) => {
+                let badgeEstado = '';
+                let botonAccion = '';
+
+                if (item.estado === "Justificada") {
+                    badgeEstado = `<span class="badge badge-justificada px-2 py-1"><i class="bi bi-check-circle me-1"></i>Justificada</span><br><small class="text-muted" style="font-size: 0.75rem;">${item.motivo}</small>`;
+                    botonAccion = `<button class="btn btn-outline-secondary btn-sm rounded-pill w-100" disabled><i class="bi bi-check2-all me-1"></i>Aprobada</button>`;
+                } else {
+                    let colorBadgeClass = (index + 1 >= 4) ? 'badge-rojo' : ((index + 1 >= 2) ? 'badge-amarillo' : 'badge-azul');
+                    badgeEstado = `<span class="badge ${colorBadgeClass} px-2 py-1">${index + 1}ª Falta</span>`;
+                    botonAccion = `<button class="btn btn-outline-success btn-sm rounded-pill w-100" onclick="abrirModalJustificar(${index})"><i class="bi bi-upload me-1"></i> Justificar</button>`;
+                }
+
+                const cardMobile = document.createElement('div');
+                cardMobile.className = 'p-3 bg-white rounded-3 border shadow-sm';
+                cardMobile.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="fw-bold text-dark">#${index + 1}</span>
+                        <div>${badgeEstado}</div>
+                    </div>
+                    <div class="mb-2">
+                        <span class="badge bg-light text-dark border mb-1">${item.dia} - ${item.fecha}</span>
+                        <div class="small text-muted"><i class="bi bi-clock me-1"></i>${item.hora}</div>
+                    </div>
+                    <div class="mb-2">
+                        <strong class="text-dark d-block small">${item.competencia}</strong>
+                        <small class="text-muted">Instructor: ${item.instructor}</small>
+                    </div>
+                    <div class="mb-3">
+                        <small class="text-secondary d-block"><strong>RAP:</strong> ${item.resultado}</small>
+                    </div>
+                    <div>${botonAccion}</div>
+                `;
+                vistaMobile.appendChild(cardMobile);
+            });
+
+            // ----------------------------------------------------
+            // VISTA ESCRITORIO: Tabla tradicional (Se muestra en >= 768px usando d-none d-md-block)
+            // ----------------------------------------------------
+            const vistaDesktop = document.createElement('div');
+            vistaDesktop.className = 'table-responsive d-none d-md-block';
+            
+            let tbodyHtml = '';
+            items.forEach((item, index) => {
                 let badgeEstado = '';
                 let botonAccion = '';
 
@@ -467,20 +530,39 @@
                     botonAccion = `<button class="btn btn-outline-success btn-sm rounded-pill px-3" onclick="abrirModalJustificar(${index})"><i class="bi bi-upload me-1"></i> Justificar</button>`;
                 }
 
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td class="fw-bold">${index + 1}</td>
-                    <td><span class="badge bg-light text-dark border mb-1">${item.dia} - ${item.fecha}</span><br><small class="text-muted"><i class="bi bi-clock me-1"></i>${item.hora}</small></td>
-                    <td><strong class="text-dark d-block">${item.competencia}</strong><small class="text-muted">Instructor: ${item.instructor}</small></td>
-                    <td><small class="text-secondary">${item.resultado}</small></td>
-                    <td>${badgeEstado}</td>
-                    <td class="text-center">${botonAccion}</td>
+                tbodyHtml += `
+                    <tr>
+                        <td class="fw-bold">${index + 1}</td>
+                        <td><span class="badge bg-light text-dark border mb-1">${item.dia} - ${item.fecha}</span><br><small class="text-muted"><i class="bi bi-clock me-1"></i>${item.hora}</small></td>
+                        <td><strong class="text-dark d-block">${item.competencia}</strong><small class="text-muted">Instructor: ${item.instructor}</small></td>
+                        <td><small class="text-secondary">${item.resultado}</small></td>
+                        <td>${badgeEstado}</td>
+                        <td class="text-center">${botonAccion}</td>
+                    </tr>
                 `;
-                tbody.appendChild(tr);
             });
+
+            vistaDesktop.innerHTML = `
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>#</th>
+                            <th>Fecha / Día</th>
+                            <th>Competencia e Instructor</th>
+                            <th>Resultado (RAP)</th>
+                            <th>Estado Actual</th>
+                            <th class="text-center">Acciones / Justificación</th>
+                        </tr>
+                    </thead>
+                    <tbody>${tbodyHtml}</tbody>
+                </table>
+            `;
+
+            // Adjuntar ambas vistas al contenedor dinámico
+            contenedor.appendChild(vistaMobile);
+            contenedor.appendChild(vistaDesktop);
         }
 
-        // FUNCIÓN PARA DESCARGAR EL CARNÉ COMO IMAGEN REAL (PNG)
         function descargarCarnetImagen() {
             const elemento = document.getElementById('tarjetaCarnetCaptura');
             html2canvas(elemento, { scale: 2 }).then(canvas => {
