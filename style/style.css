@@ -20,7 +20,10 @@ body {
     background: var(--bg);
 }
 
-/* Fondo */
+/* =========================
+   FONDO
+========================= */
+
 .login-page {
     min-height: 100vh;
     display: flex;
@@ -28,9 +31,18 @@ body {
     padding: 40px 20px;
     overflow: hidden;
     position: relative;
+
     background:
-        radial-gradient(circle at 10% 15%, rgba(57,169,0,.10), transparent 28%),
-        radial-gradient(circle at 90% 85%, rgba(255,204,0,.12), transparent 25%),
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(57,169,0,.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(255,204,0,.12),
+            transparent 25%
+        ),
         var(--bg);
 }
 
@@ -57,63 +69,101 @@ body {
     background: rgba(255,204,0,.08);
 }
 
-/* Tarjeta */
+/* =========================
+   TARJETA PRINCIPAL
+========================= */
+
 .login-container {
     width: 100%;
     max-width: 1050px;
-    min-height: 650px;
+    min-height: 590px;
     margin: auto;
+
     position: relative;
     z-index: 2;
+
     overflow: hidden;
     border-radius: 24px;
+
     background: var(--white);
+
     box-shadow: 0 20px 50px rgba(0,0,0,.10);
 }
 
-/* Panel SENA */
+/* =========================
+   PANEL SENA
+========================= */
+
 .login-info {
     position: relative;
+
     display: flex;
     align-items: center;
-    padding: 60px;
+
+    padding: 45px 55px;
+
     color: var(--white);
-    background: linear-gradient(145deg, var(--sena-green), var(--sena-dark));
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--sena-green),
+            var(--sena-dark)
+        );
 }
 
 .login-info::after {
     content: "";
+
     position: absolute;
+
     width: 120px;
     height: 6px;
+
     top: 0;
-    left: 60px;
+    left: 55px;
+
     border-radius: 0 0 8px 8px;
+
     background: var(--sena-yellow);
 }
 
 .info-content {
+    width: 100%;
     max-width: 470px;
 }
 
+/* =========================
+   LOGO
+========================= */
+
 .sena-logo img {
-    width: 72px;
-    margin-bottom: 35px;
+    width: 60px;
+    margin-bottom: 22px;
+
     filter: brightness(0) invert(1);
 }
 
+/* =========================
+   TITULO
+========================= */
+
 .system-label {
     display: inline-block;
-    margin-bottom: 12px;
+
+    margin-bottom: 10px;
+
     color: var(--sena-yellow);
+
     font-size: .75rem;
     font-weight: 700;
     letter-spacing: 2px;
 }
 
 .login-info h1 {
-    margin-bottom: 22px;
-    font-size: clamp(2.5rem, 4vw, 4rem);
+    margin-bottom: 16px;
+
+    font-size: clamp(2.3rem, 3.5vw, 3.5rem);
     line-height: 1.05;
 }
 
@@ -123,77 +173,113 @@ body {
 }
 
 .login-info p {
-    margin-bottom: 35px;
+    max-width: 440px;
+
+    margin-bottom: 30px;
+
     color: rgba(255,255,255,.88);
-    font-size: 1.05rem;
-    line-height: 1.7;
+
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-/* Características */
+/* =========================
+   CARACTERÍSTICAS
+========================= */
+
 .features {
     display: flex;
     flex-direction: column;
+
     gap: 18px;
 }
 
 .feature-item {
     display: flex;
     align-items: center;
+
     gap: 15px;
 }
 
 .feature-icon {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
+
     flex-shrink: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
+
+    border-radius: 11px;
+
     background: rgba(255,255,255,.14);
+
     color: var(--sena-yellow);
-    font-size: 1.25rem;
+
+    font-size: 1.15rem;
 }
 
 .feature-item h6 {
     margin: 0 0 3px;
+
     font-size: .95rem;
+    font-weight: 600;
 }
 
 .feature-item span {
+    display: block;
+
     font-size: .82rem;
+
     color: rgba(255,255,255,.72);
 }
 
-/* Formulario */
+/* =========================
+   FORMULARIO
+========================= */
+
 .login-form-container {
     display: flex;
     align-items: center;
-    padding: 60px;
+
+    padding: 45px 55px;
 }
 
 .login-form {
     width: 100%;
     max-width: 410px;
+
     margin: auto;
 }
 
+/* =========================
+   CABECERA
+========================= */
+
 .form-header {
-    margin-bottom: 35px;
+    margin-bottom: 26px;
 }
 
 .form-header h2 {
     margin-bottom: 8px;
+
     font-size: 2rem;
 }
 
 .form-header p {
     margin: 0;
+
     color: var(--muted);
 }
 
+/* =========================
+   CAMPOS
+========================= */
+
 .form-label {
     margin-bottom: 8px;
+
     font-size: .88rem;
     font-weight: 600;
 }
@@ -204,27 +290,41 @@ body {
 
 .input-group-text {
     width: 48px;
+
     justify-content: center;
+
     border-color: var(--border);
+
     background: #fafcf9;
+
     color: var(--sena-green);
 }
 
 .form-control {
     border-color: var(--border);
+
     font-size: .92rem;
+
     box-shadow: none !important;
 }
 
 .form-control:focus {
     border-color: var(--sena-green);
-    box-shadow: 0 0 0 3px rgba(57,169,0,.10) !important;
+
+    box-shadow:
+        0 0 0 3px rgba(57,169,0,.10) !important;
 }
+
+/* =========================
+   MOSTRAR CONTRASEÑA
+========================= */
 
 .password-toggle {
     border: 1px solid var(--border);
     border-left: 0;
+
     background: var(--white);
+
     color: var(--muted);
 }
 
@@ -232,66 +332,103 @@ body {
     color: var(--sena-green);
 }
 
-/* Recuperar contraseña */
+/* =========================
+   RECUPERAR CONTRASEÑA
+========================= */
+
 .forgot-password {
     color: var(--sena-green);
+
     font-size: .9rem;
     font-weight: 600;
+
     text-decoration: none;
 }
 
 .forgot-password:hover {
     color: var(--sena-dark);
+
     text-decoration: underline;
 }
 
-/* Botón */
+/* =========================
+   BOTÓN
+========================= */
+
 .btn-login {
     height: 52px;
+
     border: 0;
     border-radius: 10px;
+
     background: var(--sena-green);
+
     color: var(--white);
+
     font-size: .95rem;
     font-weight: 600;
+
     transition: .2s;
 }
 
 .btn-login i {
     margin-left: 8px;
+
     transition: .2s;
 }
 
 .btn-login:hover {
     background: var(--sena-dark);
+
     color: var(--white);
+
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(57,169,0,.20);
+
+    box-shadow:
+        0 8px 20px rgba(57,169,0,.20);
 }
 
 .btn-login:hover i {
     transform: translateX(4px);
 }
 
-/* Pie */
+/* =========================
+   PIE
+========================= */
+
 .login-footer {
-    margin-top: 30px;
+    margin-top: 24px;
+
     text-align: center;
+
     color: #929292;
+
     font-size: .78rem;
 }
 
 .login-footer i {
     margin-right: 5px;
+
     color: var(--sena-green);
 }
 
-/* Logo móvil */
+/* =========================
+   LOGO MÓVIL
+========================= */
+
 .mobile-logo {
     display: none;
 }
 
-/* Responsive */
+.mobile-logo img {
+    width: 65px;
+    height: auto;
+}
+
+/* =========================
+   TABLETS
+========================= */
+
 @media (max-width: 991px) {
 
     .login-page {
@@ -312,6 +449,10 @@ body {
     }
 }
 
+/* =========================
+   CELULARES
+========================= */
+
 @media (max-width: 767px) {
 
     .login-page {
@@ -324,24 +465,39 @@ body {
         border-radius: 18px;
     }
 
+    /* Ocultar panel informativo */
+
     .login-info {
         display: none;
     }
+
+    /* Formulario */
 
     .login-form-container {
         width: 100%;
         padding: 32px 24px;
     }
 
+    .login-form {
+        width: 100%;
+    }
+
+    /* Logo */
+
     .mobile-logo {
         display: block;
+
         margin-bottom: 20px;
+
         text-align: center;
     }
 
     .mobile-logo img {
         width: 65px;
+        height: auto;
     }
+
+    /* Cabecera */
 
     .form-header {
         margin-bottom: 25px;
@@ -355,20 +511,30 @@ body {
         font-size: .9rem;
     }
 
+    /* Campos y botón */
+
     .input-group,
     .btn-login {
         height: 50px;
     }
 
+    /* Recuperar contraseña */
+
     .forgot-password {
         font-size: .88rem;
     }
+
+    /* Pie */
 
     .login-footer {
         margin-top: 25px;
         font-size: .8rem;
     }
 }
+
+/* =========================
+   CELULARES PEQUEÑOS
+========================= */
 
 @media (max-width: 400px) {
 
