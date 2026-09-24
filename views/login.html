@@ -2,10 +2,11 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Control de Asistencia | SENA</title>
+    <title>Login | SENA Assistance</title>
 
     <!-- Bootstrap -->
     <link
@@ -21,79 +22,130 @@
 
     <!-- Estilos propios -->
     <link rel="stylesheet" href="../style/style.css">
+
 </head>
 
 <body>
 
+
     <main class="login-page">
 
-        <div class="container">
+		<div class="container d-flex justify-content-center">
+    
+    		<div class="row login-container g-0 mx-auto justify-content-center align-items-center">
 
-            <div class="row login-container align-items-stretch">
 
-                <!-- Panel informativo -->
+                <!-- PANEL INFORMATIVO -->
+
                 <div class="col-lg-6 login-info">
 
                     <div class="info-content">
 
                         <div class="sena-logo">
-                            <img src="../assets/logo/logoBlanco.svg" alt="Logo SENA">
+
+                            <img
+                                src="../assets/logo/logoBlanco.svg"
+                                alt="Logo SENA"
+                            >
+
                         </div>
+
 
                         <span class="system-label">
                             SISTEMA DE CONTROL
                         </span>
 
+
                         <h1>
-                            SENA 
+
+                            SENA
+
                             <span>Assistance</span>
+
                         </h1>
 
+
                         <p>
-                            Registra y gestiona la asistencia de los aprendices
-                            de forma rápida, segura y organizada.
+
+                            Registra y gestiona la asistencia de los
+                            aprendices de forma rápida, segura y organizada.
+
                         </p>
 
-                        <div class="features">
+
+                        <!-- Características -->
+
+                        <div class="d-flex flex-column gap-3">
+
 
                             <div class="feature-item">
+
                                 <div class="feature-icon">
+
                                     <i class="bi bi-qr-code-scan"></i>
+
                                 </div>
 
                                 <div>
-                                    <h6>Registro mediante QR</h6>
+
+                                    <h6>
+                                        Registro mediante QR
+                                    </h6>
+
                                     <span>
                                         Agiliza el proceso de ingreso de los aprendices.
                                     </span>
+
                                 </div>
+
                             </div>
 
+
                             <div class="feature-item">
+
                                 <div class="feature-icon">
+
                                     <i class="bi bi-clock-history"></i>
+
                                 </div>
 
                                 <div>
-                                    <h6>Control de horarios</h6>
+
+                                    <h6>
+                                        Control de horarios
+                                    </h6>
+
                                     <span>
                                         Registra automáticamente la hora de llegada.
                                     </span>
+
                                 </div>
+
                             </div>
 
+
                             <div class="feature-item">
+
                                 <div class="feature-icon">
+
                                     <i class="bi bi-bell"></i>
+
                                 </div>
 
                                 <div>
-                                    <h6>Alertas de asistencia</h6>
+
+                                    <h6>
+                                        Alertas de asistencia
+                                    </h6>
+
                                     <span>
                                         Facilita el seguimiento de faltas y tardanzas.
                                     </span>
+
                                 </div>
+
                             </div>
+
 
                         </div>
 
@@ -102,18 +154,31 @@
                 </div>
 
 
-                <!-- Formulario -->
+                <!-- FORMULARIO -->
+
                 <div class="col-lg-6 login-form-container">
 
                     <div class="login-form">
 
+
                         <div class="form-header">
 
+                            <!-- Logo solamente en móvil -->
+
                             <div class="mobile-logo">
-                                <img src="../assets/logo/logo.svg" alt="Logo SENA">
+
+                                <img
+                                    src="../assets/logo/logo.svg"
+                                    alt="Logo SENA"
+                                >
+
                             </div>
 
-                            <h2>Bienvenido</h2>
+
+                            <h2>
+                                Bienvenido
+                            </h2>
+
 
                             <p>
                                 Ingresa tus datos para acceder al sistema
@@ -122,95 +187,140 @@
                         </div>
 
 
-						<form>
-
-						    <div class="mb-3">
-
-						        <label for="correo" class="form-label">
-						            Correo electrónico
-						        </label>
-
-						        <div class="input-group">
-
-						            <span class="input-group-text">
-						                <i class="bi bi-envelope"></i>
-						            </span>
-
-						            <input
-						                type="email"
-						                class="form-control"
-						                id="correo"
-						                name="correo"
-						                placeholder="Ingresa tu correo electrónico"
-						                required
-						            >
-
-						        </div>
-
-						    </div>
+                        <form>
 
 
-						    <div class="mb-3">
+                            <!-- CORREO -->
 
-						        <label for="password" class="form-label">
-						            Contraseña
-						        </label>
+                            <div class="mb-4">
 
-						        <div class="input-group">
-
-						            <span class="input-group-text">
-						                <i class="bi bi-lock"></i>
-						            </span>
-
-						            <input
-						                type="password"
-						                class="form-control"
-						                id="password"
-						                name="password"
-						                placeholder="Ingresa tu contraseña"
-						                required
-						            >
-
-						            <button
-						                class="btn password-toggle"
-						                type="button"
-						                id="togglePassword"
-						            >
-						                <i class="bi bi-eye"></i>
-						            </button>
-
-						        </div>
-
-						    </div>
+                                <label
+                                    for="correo"
+                                    class="form-label"
+                                >
+                                    Correo electrónico
+                                </label>
 
 
-							<div class="text-end mb-4">
-							    <a href="#" class="forgot-password">
-							        ¿Olvidaste tu contraseña?
-							    </a>
-							</div>
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+
+                                        <i class="bi bi-envelope"></i>
+
+                                    </span>
 
 
-						    <button type="submit" class="btn btn-login w-100">
-						        Iniciar sesión
-						        <i class="bi bi-arrow-right"></i>
-						    </button>
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="correo"
+                                        name="correo"
+                                        placeholder="Ingresa tu correo electrónico"
+                                        required
+                                    >
 
-						</form>
+                                </div>
 
+                            </div>
+
+
+                            <!-- CONTRASEÑA -->
+
+                            <div class="mb-3">
+
+                                <label
+                                    for="password"
+                                    class="form-label"
+                                >
+                                    Contraseña
+                                </label>
+
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+
+                                        <i class="bi bi-lock"></i>
+
+                                    </span>
+
+
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Ingresa tu contraseña"
+                                        required
+                                    >
+
+
+                                    <button
+                                        class="btn password-toggle"
+                                        type="button"
+                                        id="togglePassword"
+                                    >
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- RECUPERAR CONTRASEÑA -->
+
+                            <div class="text-end mb-4">
+
+                                <a
+                                    href="#"
+                                    class="forgot-password"
+                                >
+                                    ¿Olvidaste tu contraseña?
+                                </a>
+
+                            </div>
+
+
+                            <!-- BOTÓN -->
+
+                            <button
+                                type="submit"
+                                class="btn btn-login w-100"
+                            >
+
+                                Iniciar sesión
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </button>
+
+
+                        </form>
+
+
+                        <!-- PIE -->
 
                         <div class="login-footer">
 
                             <span>
+
                                 <i class="bi bi-shield-check"></i>
+
                                 Acceso seguro al sistema
+
                             </span>
 
                         </div>
 
+
                     </div>
 
                 </div>
+
 
             </div>
 

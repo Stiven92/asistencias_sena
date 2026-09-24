@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENA Assistance</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body class="index-page">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white py-3 fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+                <img src="../assets/logo/logo.svg" alt="Logo SENA" width="40">
+                <span>SENA Assistance</span>
+            </a>
+
+            <!-- Contenedor derecho en responsive -->
+            <div class="d-flex align-items-center gap-2">
+                <a href="login.html" class="mobile-login-icon-btn" title="Iniciar sesión">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Mostrar menú">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#caracteristicas">Características</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#funcionalidades">Funcionalidades</a>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a href="login.html" class="btn btn-sena px-3">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Iniciar sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO -->
+        <section id="inicio" class="index-hero d-flex align-items-center" data-section="inicio">
+            <div class="container">
+                <div class="row align-items-center justify-content-between g-4">
+                    <div class="col-lg-7">
+                        <span class="section-label">
+                            SISTEMA DE CONTROL DE ASISTENCIA
+                        </span>
+                        <h1 class="my-3 hero-title">
+                            Gestiona tu <span class="text-success">asistencia</span><br>de forma inteligente.
+                        </h1>
+                        <p class="hero-text mb-4">
+                            SENA Assistance facilita el registro y seguimiento de la asistencia de los aprendices de manera rápida, segura y organizada.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#caracteristicas" class="btn btn-sena px-4 py-3">
+                                Ver características <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                            <a href="#funcionalidades" class="btn btn-outline-secondary px-4 py-3">
+                                Conocer el sistema
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contenedor de la imagen con decoración de fondo -->
+                    <div class="col-lg-4 col-md-8 mx-auto mx-lg-0">
+                        <div class="hero-image-container">
+                            <div class="hero-image-bg-shape"></div>
+                            <img src="../assets/img/img1.png" alt="Aprendiz SENA Assistance" class="img-fluid hero-person-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARACTERÍSTICAS -->
+        <section id="caracteristicas" class="bg-white py-5" data-section="caracteristicas">
+            <div class="container py-lg-4">
+                <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+                    <span class="section-label">CARACTERÍSTICAS PRINCIPALES</span>
+                    <h2 class="mt-2">Todo lo necesario para controlar la asistencia</h2>
+                    <p class="text-secondary mb-0">
+                        El sistema centraliza las principales funciones relacionadas con el registro y seguimiento de asistencia.
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="index-card-green h-100 p-4">
+                            <div class="index-icon-green mb-4"><i class="bi bi-qr-code-scan"></i></div>
+                            <h4 class="h5 text-white">Registro mediante QR</h4>
+                            <p class="mb-0 small">Permite registrar la asistencia de los aprendices mediante un sistema de código QR.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="index-card-green h-100 p-4">
+                            <div class="index-icon-green mb-4"><i class="bi bi-clock-history"></i></div>
+                            <h4 class="h5 text-white">Control de horarios</h4>
+                            <p class="mb-0 small">Registra automáticamente la hora de llegada y permite identificar posibles tardanzas.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="index-card-green h-100 p-4">
+                            <div class="index-icon-green mb-4"><i class="bi bi-bell"></i></div>
+                            <h4 class="h5 text-white">Seguimiento y alertas</h4>
+                            <p class="mb-0 small">Facilita el seguimiento de las ausencias y genera alertas cuando sea necesario.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FUNCIONALIDADES -->
+        <section id="funcionalidades" class="py-5 funcionalidades-section" data-section="funcionalidades">
+            <div class="container py-lg-4">
+                <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+                    <span class="section-label">FUNCIONALIDADES POR ROL</span>
+                    <h2 class="mt-2">Soluciones adaptadas a cada usuario</h2>
+                    <p class="text-secondary mb-0">Explora de forma organizada las herramientas dispuestas exclusivamente para cada perfil del sistema.</p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    
+                    <!-- ROL 1: APRENDIZ -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="role-column-card role-aprendiz">
+                            <div class="role-header">
+                                <div class="role-header-icon">
+                                    <i class="bi bi-person-badge"></i>
+                                </div>
+                                <div>
+                                    <span class="text-success small fw-bold">PERFIL</span>
+                                    <h3 class="h5 mb-0 text-dark fw-bold">Aprendiz</h3>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="role-card-item">
+                                    <div class="index-icon-green mb-3"><i class="bi bi-qr-code"></i></div>
+                                    <h4 class="h6 fw-bold">Escaneo de QR</h4>
+                                    <p class="mb-0 small">Registra tu asistencia diaria al ingresar al centro de formación escaneando el código QR.</p>
+                                </div>
+                                <div class="role-card-item">
+                                    <div class="index-icon-green mb-3"><i class="bi bi-clock-history"></i></div>
+                                    <h4 class="h6 fw-bold">Historial de Puntualidad</h4>
+                                    <p class="mb-0 small">Consulta de forma inmediata tus registros de entrada, salidas y estado histórico.</p>
+                                </div>
+                                <div class="role-card-item">
+                                    <div class="index-icon-green mb-3"><i class="bi bi-file-earmark-text"></i></div>
+                                    <h4 class="h6 fw-bold">Justificación de Fallas</h4>
+                                    <p class="mb-0 small">Visualiza inasistencias reportadas y mantén al día tus soportes de excusa médica.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ROL 2: INSTRUCTOR -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="role-column-card role-instructor">
+                            <div class="role-header">
+                                <div class="role-header-icon">
+                                    <i class="bi bi-easel"></i>
+                                </div>
+                                <div>
+                                    <span class="text-success small fw-bold">PERFIL</span>
+                                    <h3 class="h5 mb-0 text-dark fw-bold">Instructor</h3>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="role-card-item">
+                                    <div class="index-icon-green mb-3"><i class="bi bi-journal-check"></i></div>
+                                    <h4 class="h6 fw-bold">Control por Ficha</h4>
+                                    <p class="mb-0 small">Supervisa y audita el llamado de asistencia de los aprendices asignados en su ficha.</p>
+                                </div>
+                                <div class="role-card-item">
+                                    <div class="index-icon-green mb-3"><i class="bi bi-exclamation-triangle"></i></div>
+                                    <h4 class="h6 fw-bold">Gestión de Tardanzas</h4>
+                                    <p class="mb-0 small">Identifica de forma rápida las llegadas tarde en tiempo real y gestiona novedades.</p>
+                                </div>
+                                <div class="role-card-item">
+                                    <div class="index-icon-green mb-3"><i class="bi bi-check-circle"></i></div>
+                                    <h4 class="h6 fw-bold">Validación de Excusas</h4>
+                                    <p class="mb-0 small">Revisa, aprueba o rechaza digitalmente las justificaciones presentadas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ROL 3: ADMINISTRADOR -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="role-column-card role-administrador">
+                            <div class="role-header">
+                                <div class="role-header-icon">
+                                    <i class="bi bi-shield-lock"></i>
+                                </div>
+                                <div>
+                                    <span class="text-success small fw-bold">PERFIL</span>
+                                    <h3 class="h5 mb-0 text-dark fw-bold">Administrador</h3>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="role-card-item">
+                                    <div class="index-icon-green mb-3"><i class="bi bi-people"></i></div>
+                                    <h4 class="h6 fw-bold">Gestión de Usuarios</h4>
+                                    <p class="mb-0 small">Administra los roles, permisos, altas y bajas de cuentas para todo el personal.</p>
+                                </div>
+                                <div class="role-card-item">
+                                    <div class="index-icon-green mb-3"><i class="bi bi-bar-chart-line"></i></div>
+                                    <h4 class="h6 fw-bold">Reportes Consolidados</h4>
+                                    <p class="mb-0 small">Genera reportes estadísticos globales de asistencia por programas y periodos.</p>
+                                </div>
+                                <div class="role-card-item">
+                                    <div class="index-icon-green mb-3"><i class="bi bi-sliders"></i></div>
+                                    <h4 class="h6 fw-bold">Configuración Global</h4>
+                                    <p class="mb-0 small">Supervisa el estado del sistema, ajusta parámetros de horario y estabilidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row align-items-center justify-content-between g-4">
+                <!-- Información de marca -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="../assets/logo/logo.svg" alt="Logo SENA" width="45">
+                        <div>
+                            <h5 class="mb-1" style="color: var(--green); font-weight: 700;">SENA Assistance</h5>
+                            <small class="text-secondary">Sistema de control de asistencia.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menú del footer -->
+                <div class="col-lg-7 col-md-6">
+                    <ul class="footer-menu">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#caracteristicas">Características</a></li>
+                        <li><a href="#funcionalidades">Funcionalidades</a></li>
+                        <li><a href="login.html" style="color: var(--green); font-weight: 700;">Iniciar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4 text-muted opacity-25">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <small class="text-secondary">© 2026 SENA Assistance. Todos los derechos reservados.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 20) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        const sections = document.querySelectorAll('section[data-section]');
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.btn)');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.getAttribute('data-section');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
