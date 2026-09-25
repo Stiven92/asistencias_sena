@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador - SENA Assistance</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body class="index-page">
+
+    <!-- NAVBAR SUPERIOR -->
+    <nav class="navbar navbar-expand-lg bg-white py-3 fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="adminDashboard.html">
+                <img src="../assets/logo/logo.svg" alt="Logo SENA">
+                <span>SENA Assistance <small class="text-muted fw-normal fs-6">| Admin</small></span>
+            </a>
+
+            <!-- Contenedor derecho en responsive -->
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" class="mobile-login-icon-btn bg-danger border-0 text-white" data-bs-toggle="modal" data-bs-target="#logoutModal" title="Cerrar sesión">
+                    <i class="bi bi-box-arrow-right"></i>
+                </button>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Mostrar menú">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#dashboard"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#control-fichas"><i class="bi bi-journal-check me-1"></i> Control por Fichas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#usuarios"><i class="bi bi-people me-1"></i> Usuarios</a>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <button type="button" class="btn btn-sena px-3 bg-danger hover-danger text-white border-0" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                            <i class="bi bi-box-arrow-right me-1"></i> Salir
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-4">
+        <div class="container">
+            
+            <!-- PERFIL DEL ADMINISTRADOR ACTUAL -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="role-column-card p-4 p-md-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 admin-profile-card">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="role-header-icon mb-0 admin-profile-icon">
+                                <i class="bi bi-person-fill-gear"></i>
+                            </div>
+                            <div>
+                                <span class="section-label">ADMINISTRADOR EN SESIÓN</span>
+                                <h1 class="h4 fw-bold mt-0 mb-1 text-dark">Martha Lucía Benítez</h1>
+                                <p class="text-secondary small mb-0"><i class="bi bi-envelope me-1"></i> mlbenitez@sena.edu.co | <i class="bi bi-geo-alt me-1"></i> Centro de Gestión de Mercados, Logística y TICs</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-success d-flex align-items-center px-3 py-2 fs-6">
+                                <i class="bi bi-circle-fill text-warning me-2 admin-status-dot"></i> Sistema Operativo
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETAS DE MÉTRICAS GLOBALES -->
+            <div class="row g-4 mb-5" id="dashboard">
+                <div class="col-md-4">
+                    <div class="role-column-card p-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <span class="section-label">TOTAL USUARIOS</span>
+                                <h2 class="fw-bold mt-2 mb-0 text-dark">1,420</h2>
+                            </div>
+                            <div class="index-icon-green">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                        </div>
+                        <p class="text-secondary small mt-3 mb-0">Aprendices, instructores y administrativos activos.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="role-column-card p-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <span class="section-label text-warning-custom">FICHAS ACTIVAS</span>
+                                <h2 class="fw-bold mt-2 mb-0 text-dark">38</h2>
+                            </div>
+                            <div class="index-icon-green icon-warning-custom">
+                                <i class="bi bi-journal-bookmark-fill"></i>
+                            </div>
+                        </div>
+                        <p class="text-secondary small mt-3 mb-0">Programas técnicos y tecnólogos en curso.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="role-column-card p-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <span class="section-label">ASISTENCIA GLOBAL HOY</span>
+                                <h2 class="fw-bold mt-2 mb-0 text-success">94.2%</h2>
+                            </div>
+                            <div class="index-icon-green">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                        </div>
+                        <p class="text-secondary small mt-3 mb-0">Verificación mediante código QR y control manual.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN DE SELECTOR DE FICHA Y CONTROL DIARIO -->
+            <div class="row mb-5" id="control-fichas">
+                <div class="col-12">
+                    <div class="role-column-card p-4 p-md-5">
+                        
+                        <div class="row align-items-end g-3 mb-4 pb-4 border-bottom">
+                            <div class="col-lg-8">
+                                <span class="section-label">MONITOREO POR GRUPOS</span>
+                                <h3 class="h4 fw-bold mt-1 mb-2">Selector de Ficha y Programa</h3>
+                                <p class="text-secondary small mb-0">Selecciona el grupo de formación para auditar el estado de asistencia, instructores asignados y novedades del día.</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <label for="selectFicha" class="form-label fw-bold small">Ficha / Programa de Formación:</label>
+                                <select class="form-select form-control" id="selectFicha">
+                                    <option value="2874102" selected>Ficha 2874102 - Tecnólogo ADSO</option>
+                                    <option value="2892310">Ficha 2892310 - Tecnólogo Gestión Logística</option>
+                                    <option value="2911044">Ficha 2911044 - Técnico Contabilidad y Finanzas</option>
+                                    <option value="2845901">Ficha 2845901 - Técnico Análisis de Muestras Químicas</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- PANEL DE DETALLES DE LA FICHA SELECCIONADA -->
+                        <div class="row g-4 mb-4">
+                            <!-- Info Instructores -->
+                            <div class="col-lg-6">
+                                <div class="p-3 rounded-4 bg-light border h-100">
+                                    <h5 class="h6 fw-bold text-dark mb-3"><i class="bi bi-easel text-success me-2"></i>Asignación Docente del Día</h5>
+                                    <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
+                                        <li><strong>Instructor Titular (Técnico):</strong> Ing. Roberto Gómez</li>
+                                        <li><strong>Instructores Transversales:</strong> 
+                                            <span class="badge bg-secondary text-light me-1">Mag. Andrea Rueda (Ética)</span>
+                                            <span class="badge bg-secondary text-light">Lic. John Smith (Inglés)</span>
+                                        </li>
+                                        <li><strong>Jornada:</strong> Diurna (6:00 a.m. - 12:00 p.m.)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Estado de la Toma de Asistencia -->
+                            <div class="col-lg-6">
+                                <div class="p-3 rounded-4 bg-light border h-100 d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="h6 fw-bold text-dark mb-2"><i class="bi bi-clock-history text-warning me-2 text-warning-custom"></i>Estado del Registro Diario</h5>
+                                        <p class="small text-secondary mb-2">Control de escáner QR y llamadas a lista para la fecha actual.</p>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mt-2 pt-2 border-top">
+                                        <span class="badge bg-warning text-dark px-3 py-2 fs-6">
+                                            <i class="bi bi-hourglass-split me-1"></i> En Proceso (Toma Activa)
+                                        </span>
+                                        <button class="btn btn-sm btn-outline-success fw-bold">
+                                            <i class="bi bi-arrow-repeat me-1"></i> Forzar Cierre de Lista
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LISTA DE APRENDICES DE LA FICHA -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="h6 fw-bold text-dark mb-0"><i class="bi bi-person-lines-fill me-2"></i>Registro de Aprendices (Ficha 2874102)</h5>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1">Total: 32 Aprendices</span>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="py-3">Documento</th>
+                                        <th class="py-3">Nombre del Aprendiz</th>
+                                        <th class="py-3">Hora de Ingreso (QR)</th>
+                                        <th class="py-3">Estado Actual</th>
+                                        <th class="py-3 text-center">Acciones / Novedad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>CC 1098745210</strong></td>
+                                        <td>Carlos Andrés Pérez</td>
+                                        <td>06:15 a.m.</td>
+                                        <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Presente</span></td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Cambiar a Excusa"><i class="bi bi-file-earmark-text text-warning fs-5"></i></button>
+                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Marcar Falla"><i class="bi bi-x-circle text-danger fs-5"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>CC 1095412365</strong></td>
+                                        <td>María Alejandra Rojas</td>
+                                        <td>07:32 a.m. (Tardanza)</td>
+                                        <td><span class="badge bg-warning text-dark"><i class="bi bi-clock me-1"></i>Llegada Tarde</span></td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Cambiar a Excusa"><i class="bi bi-file-earmark-text text-warning fs-5"></i></button>
+                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Marcar Falla"><i class="bi bi-x-circle text-danger fs-5"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>CC 1002365412</strong></td>
+                                        <td>Esteban David Morales</td>
+                                        <td>--:--</td>
+                                        <td><span class="badge bg-danger"><i class="bi bi-dash-circle me-1"></i>Ausente (Sin Registrar)</span></td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Justificar Falla"><i class="bi bi-file-earmark-text text-warning fs-5"></i></button>
+                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Marcar Presente Manual"><i class="bi bi-check-circle text-success fs-5"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN DE GESTIÓN DE USUARIOS GENERAL -->
+            <div class="row mb-5" id="usuarios">
+                <div class="col-12">
+                    <div class="role-column-card p-4 p-md-5">
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                            <div>
+                                <span class="section-label">CONTROL DE CUENTAS</span>
+                                <h3 class="h4 fw-bold mt-1 mb-0">Gestión General de Usuarios</h3>
+                            </div>
+                            <div>
+                                <button class="btn btn-sena px-4 py-2">
+                                    <i class="bi bi-person-plus-fill me-1"></i> Registrar Nuevo Usuario
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="py-3">#</th>
+                                        <th class="py-3">Nombre y Correo</th>
+                                        <th class="py-3">Rol</th>
+                                        <th class="py-3">Programa / Ficha</th>
+                                        <th class="py-3">Estado</th>
+                                        <th class="py-3 text-center">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-bold">1</td>
+                                        <td>
+                                            <span class="fw-bold text-dark d-block">Ing. Roberto Gómez</span>
+                                            <small class="text-muted">rgomez@sena.edu.co</small>
+                                        </td>
+                                        <td><span class="badge bg-success">Instructor</span></td>
+                                        <td>ADSO (Ficha 2874102)</td>
+                                        <td><span class="text-success fw-bold small"><i class="bi bi-check-circle-fill me-1"></i>Activo</span></td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Editar"><i class="bi bi-pencil-square text-primary fs-5"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">2</td>
+                                        <td>
+                                            <span class="fw-bold text-dark d-block">Carlos Andrés Pérez</span>
+                                            <small class="text-muted">caperez@soy.sena.edu.co</small>
+                                        </td>
+                                        <td><span class="badge bg-primary">Aprendiz</span></td>
+                                        <td>ADSO (Ficha 2874102)</td>
+                                        <td><span class="text-success fw-bold small"><i class="bi bi-check-circle-fill me-1"></i>Activo</span></td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Editar"><i class="bi bi-pencil-square text-primary fs-5"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row align-items-center justify-content-between g-4">
+                <div class="col-lg-5 col-md-6">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="../assets/logo/logo.svg" alt="Logo SENA" class="footer-logo-img">
+                        <div>
+                            <h5 class="mb-1 footer-title">SENA Assistance</h5>
+                            <small class="text-secondary">Panel de Control de Administración.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 col-md-6">
+                    <ul class="footer-menu">
+                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#control-fichas">Control por Fichas</a></li>
+                        <li><a href="#usuarios">Usuarios</a></li>
+                        <li><a href="#" class="footer-logout-link" data-bs-toggle="modal" data-bs-target="#logoutModal">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4 text-muted opacity-25">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <small class="text-secondary">© 2026 SENA Assistance. Todos los derechos reservados.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE CONFIRMACIÓN DE CIERRE DE SESIÓN -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-body text-center p-4 p-md-5">
+                    <div class="mb-3 text-danger logout-modal-icon">
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2 text-dark" id="logoutModalLabel">¿Estás seguro que deseas salir?</h4>
+                    <p class="text-secondary small mb-4">Se cerrará tu sesión actual como administrador y tendrás que volver a ingresar tus credenciales.</p>
+                    <div class="d-flex justify-content-center gap-2">
+                        <button type="button" class="btn btn-light px-4 py-2 border fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+                        <a href="index.html" class="btn btn-danger px-4 py-2 fw-semibold">Sí, cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 20) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -790,3 +790,67 @@ body.index-page {
         font-size: 2rem;
     }
 }
+
+/* =========================
+   ESTILOS ESPECÍFICOS - ADMIN DASHBOARD
+========================= */
+
+/* Padding inicial del cuerpo paracompensar el navbar fijo */
+body.index-page {
+    padding-top: 76px;
+}
+
+/* Logo de la barra de navegación */
+.navbar-brand img {
+    width: 40px;
+}
+
+/* Tarjeta del perfil de Administrador */
+.admin-profile-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f4f7f2 100%);
+}
+
+.admin-profile-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+}
+
+.admin-status-dot {
+    font-size: 8px;
+}
+
+/* Clases auxiliares para colores personalizados */
+.text-warning-custom {
+    color: #b38f00 !important;
+}
+
+.icon-warning-custom {
+    background: rgba(255, 204, 0, 0.2);
+    color: #b38f00;
+}
+
+/* Botón flotante rojo del navbar móvil */
+.hover-danger:hover {
+    background-color: #bb2d3b !important;
+}
+
+/* Footer elementos específicos */
+.footer-logo-img {
+    width: 45px;
+}
+
+.footer-title {
+    color: var(--green);
+    font-weight: 700;
+}
+
+.footer-logout-link {
+    color: #dc3545 !important;
+    font-weight: 700;
+}
+
+/* Icono del modal de cierre de sesión */
+.logout-modal-icon {
+    font-size: 3rem;
+}
