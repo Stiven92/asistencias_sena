@@ -1,0 +1,2375 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Usuarios | SENA Assistance</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- DATATABLES -->
+    <link rel="stylesheet"
+        href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
+    <!-- ESTILOS PROPIOS -->
+    <link rel="stylesheet" href="../style/style.css">
+
+</head>
+
+<body class="index-page">
+
+
+    <!-- ========================================================= -->
+    <!-- NAVBAR -->
+    <!-- ========================================================= -->
+
+    <nav class="navbar navbar-expand-lg py-3 fixed-top navbar-custom">
+
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <a class="navbar-brand d-flex align-items-center gap-3 m-0" href="index.html">
+
+                <img src="../assets/logo/logo.svg" alt="Logo SENA" width="40">
+
+                <span>SENA Assistance</span>
+
+            </a>
+
+
+            <div class="d-flex align-items-center gap-2">
+
+                <button type="button"
+                    class="mobile-login-icon-btn btn-sena-custom-darkblue"
+                    data-bs-toggle="modal"
+                    data-bs-target="#logoutModal"
+                    title="Cerrar sesión">
+
+                    <i class="bi bi-box-arrow-right"></i>
+
+                </button>
+
+
+                <button class="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent"
+                    aria-controls="navbarContent"
+                    aria-expanded="false"
+                    aria-label="Mostrar menú">
+
+                    <i class="bi bi-list fs-4"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+
+                <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="adminDashboard.html">
+
+                            <i class="bi bi-speedometer2 me-1"></i>
+                            Dashboard
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="adminDashboard.html#control-fichas">
+
+                            <i class="bi bi-journal-check me-1"></i>
+                            Control por Fichas
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="usuarios.html">
+
+                            <i class="bi bi-people me-1"></i>
+                            Usuarios
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+
+                        <button type="button"
+                            class="btn btn-sena-custom-darkblue px-3 py-2 fw-semibold w-100"
+                            data-bs-toggle="modal"
+                            data-bs-target="#logoutModal">
+
+                            <i class="bi bi-box-arrow-right me-1"></i>
+                            Salir
+
+                        </button>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ========================================================= -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ========================================================= -->
+
+    <main class="py-4">
+
+        <div class="container">
+
+
+            <!-- ================================================= -->
+            <!-- CABECERA -->
+            <!-- ================================================= -->
+
+            <div class="row mb-4">
+
+                <div class="col-12">
+
+                    <div class="role-column-card p-4">
+
+                        <div
+                            class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+
+                            <div>
+
+                                <span class="section-label">
+                                    CONTROL DE CUENTAS
+                                </span>
+
+                                <h1 class="h5 fw-bold mt-1 mb-1 admin-text">
+                                    Gestión de Usuarios
+                                </h1>
+
+                                <p class="admin-muted small mb-0">
+                                    Administra las cuentas, roles y estados de los usuarios registrados en SENA
+                                    Assistance.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- TABS -->
+            <!-- ================================================= -->
+
+            <div class="row mb-5">
+
+                <div class="col-12">
+
+                    <div class="role-column-card p-4">
+
+
+                        <!-- TABS -->
+
+                        <div class="d-flex flex-wrap gap-2 mb-4 pb-3 border-bottom">
+
+                            <button type="button"
+                                class="btn user-tab active"
+                                data-tab="lista">
+
+                                <i class="bi bi-people-fill me-1"></i>
+                                Lista de Usuarios
+
+                            </button>
+
+
+                            <button type="button"
+                                class="btn user-tab"
+                                data-tab="registrar">
+
+                                <i class="bi bi-person-plus-fill me-1"></i>
+                                Registrar Usuario
+
+                            </button>
+
+
+                            <button type="button"
+                                class="btn user-tab"
+                                data-tab="carga">
+
+                                <i class="bi bi-file-earmark-arrow-up-fill me-1"></i>
+                                Carga Masiva
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- ================================================= -->
+                        <!-- LISTA DE USUARIOS -->
+                        <!-- ================================================= -->
+
+                        <section id="tab-lista" class="user-section">
+
+                            <div
+                                class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        USUARIOS REGISTRADOS
+                                    </span>
+
+                                    <h3 class="h5 fw-bold mt-1 mb-1">
+                                        Lista de Usuarios
+                                    </h3>
+
+                                    <p class="admin-muted small mb-0">
+                                        Consulta y administra las cuentas registradas en el sistema.
+                                    </p>
+
+                                </div>
+
+
+                                <div>
+
+                                    <button type="button"
+                                        class="btn btn-sena px-3 py-2 small"
+                                        onclick="mostrarTab('registrar')">
+
+                                        <i class="bi bi-person-plus-fill me-1"></i>
+                                        Registrar Nuevo Usuario
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ================================================= -->
+                            <!-- FILTROS -->
+                            <!-- ================================================= -->
+
+                            <div class="row g-3 mb-4">
+
+
+                                <!-- BUSCAR -->
+
+                                <div class="col-lg-8">
+
+                                    <label for="buscarUsuario"
+                                        class="form-label fw-bold small">
+
+                                        Buscar usuario
+
+                                    </label>
+
+                                    <div class="input-group user-filter-group">
+
+                                        <span class="input-group-text bg-white">
+
+                                            <i class="bi bi-search"></i>
+
+                                        </span>
+
+                                        <input type="search"
+                                            class="form-control user-filter-control"
+                                            id="buscarUsuario"
+                                            placeholder="Buscar por documento, nombre o correo">
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- FILTRO ROL -->
+
+                                <div class="col-lg-4">
+
+                                    <label for="filtroRol"
+                                        class="form-label fw-bold small">
+
+                                        Filtrar por rol
+
+                                    </label>
+
+                                    <select class="form-select user-filter-control"
+                                        id="filtroRol">
+
+                                        <option value="">
+                                            Todos los roles
+                                        </option>
+
+                                        <option value="Aprendiz">
+                                            Aprendiz
+                                        </option>
+
+                                        <option value="Instructor">
+                                            Instructor
+                                        </option>
+
+                                        <option value="Administrador">
+                                            Administrador
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ================================================= -->
+                            <!-- TABLA -->
+                            <!-- ================================================= -->
+
+                            <div class="table-responsive">
+
+                                <table id="tablaUsuarios"
+                                    class="table table-hover align-middle mb-0 small w-100">
+
+                                    <thead class="admin-table-head">
+
+                                        <tr>
+
+                                            <th class="py-2.5">
+                                                #
+                                            </th>
+
+                                            <th class="py-2.5">
+                                                Nombre y Correo
+                                            </th>
+
+                                            <th class="py-2.5">
+                                                Rol
+                                            </th>
+
+                                            <th class="py-2.5">
+                                                Programa / Ficha
+                                            </th>
+
+                                            <th class="py-2.5">
+                                                Estado
+                                            </th>
+
+                                            <th class="py-2.5 text-center">
+                                                Acciones
+                                            </th>
+
+                                        </tr>
+
+                                    </thead>
+
+
+                                    <tbody>
+
+
+                                        <!-- 1 -->
+
+                                        <tr>
+
+                                            <td class="fw-bold">
+                                                1
+                                            </td>
+
+                                            <td>
+
+                                                <span class="fw-bold admin-text d-block">
+                                                    Laura Valentina Martínez
+                                                </span>
+
+                                                <span class="admin-muted user-email-small">
+                                                    laura.martinez@sena.edu.co
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+
+                                                <span class="badge badge-status badge-status-blue">
+                                                    Aprendiz
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+                                                Tecnólogo en Análisis y Desarrollo de Software (2874102)
+                                            </td>
+
+                                            <td>
+
+                                                <span class="status-green-text fw-bold">
+
+                                                    <i class="bi bi-check-circle-fill me-1"></i>
+                                                    Activo
+
+                                                </span>
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Ver usuario">
+
+                                                    <i class="bi bi-eye status-blue-text"></i>
+
+                                                </button>
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Editar usuario">
+
+                                                    <i class="bi bi-pencil-square status-blue-text"></i>
+
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+
+
+                                        <!-- 2 -->
+
+                                        <tr>
+
+                                            <td class="fw-bold">
+                                                2
+                                            </td>
+
+                                            <td>
+
+                                                <span class="fw-bold admin-text d-block">
+                                                    Juan Sebastián Rodríguez
+                                                </span>
+
+                                                <span class="admin-muted user-email-small">
+                                                    juan.rodriguez@sena.edu.co
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+
+                                                <span class="badge badge-status badge-status-blue">
+                                                    Aprendiz
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+                                                Tecnólogo en Análisis y Desarrollo de Software (2874102)
+                                            </td>
+
+                                            <td>
+
+                                                <span class="status-green-text fw-bold">
+
+                                                    <i class="bi bi-check-circle-fill me-1"></i>
+                                                    Activo
+
+                                                </span>
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Ver usuario">
+
+                                                    <i class="bi bi-eye status-blue-text"></i>
+
+                                                </button>
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Editar usuario">
+
+                                                    <i class="bi bi-pencil-square status-blue-text"></i>
+
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+
+
+                                        <!-- 3 -->
+
+                                        <tr>
+
+                                            <td class="fw-bold">
+                                                3
+                                            </td>
+
+                                            <td>
+
+                                                <span class="fw-bold admin-text d-block">
+                                                    Daniela Sofía Hernández
+                                                </span>
+
+                                                <span class="admin-muted user-email-small">
+                                                    daniela.hernandez@sena.edu.co
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+
+                                                <span class="badge badge-status badge-status-blue">
+                                                    Aprendiz
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+                                                Tecnólogo en Gestión Logística (2892310)
+                                            </td>
+
+                                            <td>
+
+                                                <span class="status-purple-text fw-bold">
+
+                                                    <i class="bi bi-x-circle-fill me-1"></i>
+                                                    Inactivo
+
+                                                </span>
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Ver usuario">
+
+                                                    <i class="bi bi-eye status-blue-text"></i>
+
+                                                </button>
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Editar usuario">
+
+                                                    <i class="bi bi-pencil-square status-blue-text"></i>
+
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+
+
+                                        <!-- 4 -->
+
+                                        <tr>
+
+                                            <td class="fw-bold">
+                                                4
+                                            </td>
+
+                                            <td>
+
+                                                <span class="fw-bold admin-text d-block">
+                                                    Carlos Andrés Gómez
+                                                </span>
+
+                                                <span class="admin-muted user-email-small">
+                                                    carlos.gomez@sena.edu.co
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+
+                                                <span class="badge badge-status badge-status-green">
+                                                    Instructor
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+                                                Tecnólogo en Análisis y Desarrollo de Software (2874102)
+                                            </td>
+
+                                            <td>
+
+                                                <span class="status-green-text fw-bold">
+
+                                                    <i class="bi bi-check-circle-fill me-1"></i>
+                                                    Activo
+
+                                                </span>
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Ver usuario">
+
+                                                    <i class="bi bi-eye status-blue-text"></i>
+
+                                                </button>
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Editar usuario">
+
+                                                    <i class="bi bi-pencil-square status-blue-text"></i>
+
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+
+
+                                        <!-- 5 -->
+
+                                        <tr>
+
+                                            <td class="fw-bold">
+                                                5
+                                            </td>
+
+                                            <td>
+
+                                                <span class="fw-bold admin-text d-block">
+                                                    Valentina Paola Ramírez
+                                                </span>
+
+                                                <span class="admin-muted user-email-small">
+                                                    valentina.ramirez@sena.edu.co
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+
+                                                <span class="badge badge-status badge-status-blue">
+                                                    Aprendiz
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+                                                Técnico en Contabilidad (2911044)
+                                            </td>
+
+                                            <td>
+
+                                                <span class="status-green-text fw-bold">
+
+                                                    <i class="bi bi-check-circle-fill me-1"></i>
+                                                    Activo
+
+                                                </span>
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Ver usuario">
+
+                                                    <i class="bi bi-eye status-blue-text"></i>
+
+                                                </button>
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Editar usuario">
+
+                                                    <i class="bi bi-pencil-square status-blue-text"></i>
+
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+
+
+                                        <!-- 6 -->
+
+                                        <tr>
+
+                                            <td class="fw-bold">
+                                                6
+                                            </td>
+
+                                            <td>
+
+                                                <span class="fw-bold admin-text d-block">
+                                                    Sara Juliana Cárdenas
+                                                </span>
+
+                                                <span class="admin-muted user-email-small">
+                                                    sara.cardenas@sena.edu.co
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+
+                                                <span class="badge badge-status badge-status-blue">
+                                                    Aprendiz
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+                                                Tecnólogo en Análisis y Desarrollo de Software (2874102)
+                                            </td>
+
+                                            <td>
+
+                                                <span class="status-green-text fw-bold">
+
+                                                    <i class="bi bi-check-circle-fill me-1"></i>
+                                                    Activo
+
+                                                </span>
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Ver usuario">
+
+                                                    <i class="bi bi-eye status-blue-text"></i>
+
+                                                </button>
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Editar usuario">
+
+                                                    <i class="bi bi-pencil-square status-blue-text"></i>
+
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+
+
+                                        <!-- 7 -->
+
+                                        <tr>
+
+                                            <td class="fw-bold">
+                                                7
+                                            </td>
+
+                                            <td>
+
+                                                <span class="fw-bold admin-text d-block">
+                                                    Andrés Felipe Torres
+                                                </span>
+
+                                                <span class="admin-muted user-email-small">
+                                                    andres.torres@sena.edu.co
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+
+                                                <span class="badge badge-status badge-status-green">
+                                                    Instructor
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+                                                Tecnólogo en Gestión de Redes de Datos (2865210)
+                                            </td>
+
+                                            <td>
+
+                                                <span class="status-green-text fw-bold">
+
+                                                    <i class="bi bi-check-circle-fill me-1"></i>
+                                                    Activo
+
+                                                </span>
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Ver usuario">
+
+                                                    <i class="bi bi-eye status-blue-text"></i>
+
+                                                </button>
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Editar usuario">
+
+                                                    <i class="bi bi-pencil-square status-blue-text"></i>
+
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+
+
+                                        <!-- 8 -->
+
+                                        <tr>
+
+                                            <td class="fw-bold">
+                                                8
+                                            </td>
+
+                                            <td>
+
+                                                <span class="fw-bold admin-text d-block">
+                                                    Natalia Andrea López
+                                                </span>
+
+                                                <span class="admin-muted user-email-small">
+                                                    natalia.lopez@sena.edu.co
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+
+                                                <span class="badge badge-status badge-status-green">
+                                                    Instructor
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+                                                Técnico en Contabilidad (2911044)
+                                            </td>
+
+                                            <td>
+
+                                                <span class="status-purple-text fw-bold">
+
+                                                    <i class="bi bi-x-circle-fill me-1"></i>
+                                                    Inactivo
+
+                                                </span>
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Ver usuario">
+
+                                                    <i class="bi bi-eye status-blue-text"></i>
+
+                                                </button>
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Editar usuario">
+
+                                                    <i class="bi bi-pencil-square status-blue-text"></i>
+
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+
+
+                                        <!-- 9 -->
+
+                                        <tr>
+
+                                            <td class="fw-bold">
+                                                9
+                                            </td>
+
+                                            <td>
+
+                                                <span class="fw-bold admin-text d-block">
+                                                    Miguel Ángel Castillo
+                                                </span>
+
+                                                <span class="admin-muted user-email-small">
+                                                    miguel.castillo@sena.edu.co
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+
+                                                <span class="badge badge-status badge-status-green">
+                                                    Instructor
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+                                                Tecnólogo en Análisis y Desarrollo de Software (2874102)
+                                            </td>
+
+                                            <td>
+
+                                                <span class="status-green-text fw-bold">
+
+                                                    <i class="bi bi-check-circle-fill me-1"></i>
+                                                    Activo
+
+                                                </span>
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Ver usuario">
+
+                                                    <i class="bi bi-eye status-blue-text"></i>
+
+                                                </button>
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Editar usuario">
+
+                                                    <i class="bi bi-pencil-square status-blue-text"></i>
+
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+
+
+                                        <!-- 10 -->
+
+                                        <tr>
+
+                                            <td class="fw-bold">
+                                                10
+                                            </td>
+
+                                            <td>
+
+                                                <span class="fw-bold admin-text d-block">
+                                                    Carolina Marcela Pérez
+                                                </span>
+
+                                                <span class="admin-muted user-email-small">
+                                                    carolina.perez@sena.edu.co
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+
+                                                <span class="badge badge-status badge-status-yellow">
+                                                    Administrador
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+                                                Administración del sistema
+                                            </td>
+
+                                            <td>
+
+                                                <span class="status-green-text fw-bold">
+
+                                                    <i class="bi bi-check-circle-fill me-1"></i>
+                                                    Activo
+
+                                                </span>
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Ver usuario">
+
+                                                    <i class="bi bi-eye status-blue-text"></i>
+
+                                                </button>
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Editar usuario">
+
+                                                    <i class="bi bi-pencil-square status-blue-text"></i>
+
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+
+
+                                        <!-- 11 -->
+
+                                        <tr>
+
+                                            <td class="fw-bold">
+                                                11
+                                            </td>
+
+                                            <td>
+
+                                                <span class="fw-bold admin-text d-block">
+                                                    Ricardo Antonio Moreno
+                                                </span>
+
+                                                <span class="admin-muted user-email-small">
+                                                    ricardo.moreno@sena.edu.co
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+
+                                                <span class="badge badge-status badge-status-yellow">
+                                                    Administrador
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+                                                Administración del sistema
+                                            </td>
+
+                                            <td>
+
+                                                <span class="status-green-text fw-bold">
+
+                                                    <i class="bi bi-check-circle-fill me-1"></i>
+                                                    Activo
+
+                                                </span>
+
+                                            </td>
+
+                                            <td class="text-center">
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Ver usuario">
+
+                                                    <i class="bi bi-eye status-blue-text"></i>
+
+                                                </button>
+
+                                                <button
+                                                    class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                    title="Editar usuario">
+
+                                                    <i class="bi bi-pencil-square status-blue-text"></i>
+
+                                                </button>
+
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- ================================================= -->
+                        <!-- REGISTRAR USUARIO -->
+                        <!-- ================================================= -->
+
+                        <section id="tab-registrar"
+                            class="user-section d-none">
+
+                            <div class="mb-4">
+
+                                <span class="section-label">
+                                    NUEVA CUENTA
+                                </span>
+
+                                <h3 class="h5 fw-bold mt-1 mb-1">
+                                    Registrar Usuario
+                                </h3>
+
+                                <p class="admin-muted small mb-0">
+                                    Ingresa la información necesaria para crear una nueva cuenta.
+                                </p>
+
+                            </div>
+
+
+                            <form id="formRegistroUsuario">
+
+
+                                <!-- DATOS DE CUENTA -->
+
+                                <div class="border rounded-3 p-4 mb-4 admin-surface-muted">
+
+                                    <div class="mb-3">
+
+                                        <h5 class="h6 fw-bold mb-1">
+
+                                            <i class="bi bi-person-vcard me-2 status-blue-text"></i>
+                                            Datos de Cuenta
+
+                                        </h5>
+
+                                        <p class="admin-muted small mb-0">
+                                            Información utilizada para identificar y acceder al sistema.
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="row g-3">
+
+                                        <div class="col-md-6">
+
+                                            <label for="documento"
+                                                class="form-label fw-semibold small">
+                                                Documento
+                                            </label>
+
+                                            <input type="text"
+                                                class="form-control"
+                                                id="documento"
+                                                required>
+
+                                        </div>
+
+
+                                        <div class="col-md-6">
+
+                                            <label for="tipoDocumento"
+                                                class="form-label fw-semibold small">
+                                                Tipo de Documento
+                                            </label>
+
+                                            <select class="form-select"
+                                                id="tipoDocumento"
+                                                required>
+
+                                                <option value="">
+                                                    Seleccionar
+                                                </option>
+
+                                                <option>
+                                                    Cédula de Ciudadanía
+                                                </option>
+
+                                                <option>
+                                                    Tarjeta de Identidad
+                                                </option>
+
+                                                <option>
+                                                    Cédula de Extranjería
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <div class="col-md-6">
+
+                                            <label for="correo"
+                                                class="form-label fw-semibold small">
+                                                Correo Electrónico
+                                            </label>
+
+                                            <input type="email"
+                                                class="form-control"
+                                                id="correo"
+                                                required>
+
+                                        </div>
+
+
+                                        <div class="col-md-6">
+
+                                            <label for="rol"
+                                                class="form-label fw-semibold small">
+                                                Rol
+                                            </label>
+
+                                            <select class="form-select"
+                                                id="rol"
+                                                required>
+
+                                                <option value="">
+                                                    Seleccionar rol
+                                                </option>
+
+                                                <option>
+                                                    Aprendiz
+                                                </option>
+
+                                                <option>
+                                                    Instructor
+                                                </option>
+
+                                                <option>
+                                                    Administrador
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- INFORMACIÓN PERSONAL -->
+
+                                <div class="border rounded-3 p-4 mb-4 admin-surface-muted">
+
+                                    <div class="mb-3">
+
+                                        <h5 class="h6 fw-bold mb-1">
+
+                                            <i class="bi bi-person me-2 status-green-text"></i>
+                                            Información Personal
+
+                                        </h5>
+
+                                        <p class="admin-muted small mb-0">
+                                            Datos básicos del usuario.
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="row g-3">
+
+                                        <div class="col-md-6">
+
+                                            <label for="nombres"
+                                                class="form-label fw-semibold small">
+                                                Nombres
+                                            </label>
+
+                                            <input type="text"
+                                                class="form-control"
+                                                id="nombres"
+                                                required>
+
+                                        </div>
+
+
+                                        <div class="col-md-6">
+
+                                            <label for="apellidos"
+                                                class="form-label fw-semibold small">
+                                                Apellidos
+                                            </label>
+
+                                            <input type="text"
+                                                class="form-control"
+                                                id="apellidos"
+                                                required>
+
+                                        </div>
+
+
+                                        <div class="col-md-6">
+
+                                            <label for="fechaNacimiento"
+                                                class="form-label fw-semibold small">
+                                                Fecha de Nacimiento
+                                            </label>
+
+                                            <input type="date"
+                                                class="form-control"
+                                                id="fechaNacimiento">
+
+                                        </div>
+
+
+                                        <div class="col-md-6">
+
+                                            <label for="telefono"
+                                                class="form-label fw-semibold small">
+                                                Teléfono
+                                            </label>
+
+                                            <input type="tel"
+                                                class="form-control"
+                                                id="telefono">
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- INFORMACIÓN ACADÉMICA -->
+
+                                <div class="border rounded-3 p-4 mb-4 admin-surface-muted">
+
+                                    <div class="mb-3">
+
+                                        <h5 class="h6 fw-bold mb-1">
+
+                                            <i class="bi bi-mortarboard me-2 status-blue-text"></i>
+                                            Información Académica
+
+                                        </h5>
+
+                                        <p class="admin-muted small mb-0">
+                                            Información relacionada con la formación del usuario.
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="row g-3">
+
+                                        <div class="col-md-6">
+
+                                            <label for="ficha"
+                                                class="form-label fw-semibold small">
+                                                Ficha
+                                            </label>
+
+                                            <select class="form-select"
+                                                id="ficha">
+
+                                                <option value="">
+                                                    Seleccionar ficha
+                                                </option>
+
+                                                <option>
+                                                    2874102 - ADSO
+                                                </option>
+
+                                                <option>
+                                                    2892310 - Gestión Logística
+                                                </option>
+
+                                                <option>
+                                                    2911044 - Contabilidad
+                                                </option>
+
+                                                <option>
+                                                    2845901 - Análisis Químico
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <div class="col-md-6">
+
+                                            <label for="programa"
+                                                class="form-label fw-semibold small">
+                                                Programa de Formación
+                                            </label>
+
+                                            <input type="text"
+                                                class="form-control"
+                                                id="programa">
+
+                                        </div>
+
+
+                                        <div class="col-md-6">
+
+                                            <label for="jornada"
+                                                class="form-label fw-semibold small">
+                                                Jornada
+                                            </label>
+
+                                            <select class="form-select"
+                                                id="jornada">
+
+                                                <option value="">
+                                                    Seleccionar jornada
+                                                </option>
+
+                                                <option>
+                                                    Diurna
+                                                </option>
+
+                                                <option>
+                                                    Nocturna
+                                                </option>
+
+                                                <option>
+                                                    Mixta
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <div class="col-md-6">
+
+                                            <label for="ambiente"
+                                                class="form-label fw-semibold small">
+                                                Ambiente
+                                            </label>
+
+                                            <input type="text"
+                                                class="form-control"
+                                                id="ambiente"
+                                                placeholder="Ej. Ambiente 302">
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- ESTADO -->
+
+                                <div class="border rounded-3 p-4 mb-4 admin-surface-muted">
+
+                                    <div class="mb-3">
+
+                                        <h5 class="h6 fw-bold mb-1">
+
+                                            <i class="bi bi-toggle-on me-2 status-green-text"></i>
+                                            Estado del Usuario
+
+                                        </h5>
+
+                                        <p class="admin-muted small mb-0">
+                                            Define si la cuenta estará habilitada para ingresar al sistema.
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="col-md-6">
+
+                                        <label for="estado"
+                                            class="form-label fw-semibold small">
+                                            Estado
+                                        </label>
+
+                                        <select class="form-select"
+                                            id="estado"
+                                            required>
+
+                                            <option value="Activo" selected>
+                                                Activo
+                                            </option>
+
+                                            <option value="Inactivo">
+                                                Inactivo
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- BOTONES -->
+
+                                <div class="d-flex justify-content-end gap-2">
+
+                                    <button type="button"
+                                        class="btn btn-modal-cancel px-4 py-2 small fw-semibold"
+                                        onclick="mostrarTab('lista')">
+
+                                        Cancelar
+
+                                    </button>
+
+
+                                    <button type="submit"
+                                        class="btn btn-sena-custom-green px-4 py-2 small fw-semibold">
+
+                                        <i class="bi bi-person-plus-fill me-1"></i>
+                                        Registrar Usuario
+
+                                    </button>
+
+                                </div>
+
+                            </form>
+
+                        </section>
+
+
+                        <!-- ================================================= -->
+                        <!-- CARGA MASIVA -->
+                        <!-- ================================================= -->
+
+                        <section id="tab-carga"
+                            class="user-section d-none">
+
+                            <div class="mb-4">
+
+                                <span class="section-label">
+                                    IMPORTACIÓN DE USUARIOS
+                                </span>
+
+                                <h3 class="h5 fw-bold mt-1 mb-1">
+                                    Carga Masiva
+                                </h3>
+
+                                <p class="admin-muted small mb-0">
+                                    Registra varios usuarios mediante un archivo previamente diligenciado.
+                                </p>
+
+                            </div>
+
+
+                            <div class="row g-4">
+
+
+                                <!-- CARGA -->
+
+                                <div class="col-lg-7">
+
+                                    <div class="border rounded-3 p-4 h-100 admin-surface-muted">
+
+                                        <div class="mb-3">
+
+                                            <h5 class="h6 fw-bold mb-1">
+
+                                                <i class="bi bi-file-earmark-spreadsheet me-2 status-green-text"></i>
+                                                Archivo de Usuarios
+
+                                            </h5>
+
+                                            <p class="admin-muted small mb-0">
+                                                Selecciona el rol y posteriormente carga el archivo.
+                                            </p>
+
+                                        </div>
+
+
+                                        <div class="mb-3">
+
+                                            <label for="rolMasivo"
+                                                class="form-label fw-semibold small">
+
+                                                Rol de los usuarios
+
+                                            </label>
+
+                                            <select class="form-select"
+                                                id="rolMasivo">
+
+                                                <option value="">
+                                                    Seleccionar rol
+                                                </option>
+
+                                                <option>
+                                                    Aprendiz
+                                                </option>
+
+                                                <option>
+                                                    Instructor
+                                                </option>
+
+                                                <option>
+                                                    Administrador
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <input type="file"
+                                            id="archivoUsuarios"
+                                            class="d-none"
+                                            accept=".xlsx,.xls,.csv">
+
+
+                                        <label for="archivoUsuarios"
+                                            class="border rounded-3 p-4 w-100 text-center"
+                                            style="cursor:pointer;">
+
+                                            <div class="mb-2">
+
+                                                <i class="bi bi-cloud-arrow-up fs-1 status-green-text"></i>
+
+                                            </div>
+
+                                            <h6 class="fw-bold mb-1">
+                                                Selecciona o arrastra tu archivo
+                                            </h6>
+
+                                            <p class="admin-muted small mb-0">
+                                                Formatos permitidos: XLSX, XLS o CSV
+                                            </p>
+
+                                        </label>
+
+
+                                        <div id="nombreArchivo"
+                                            class="admin-muted small mt-3 d-none">
+                                        </div>
+
+
+                                        <div class="d-flex flex-wrap gap-2 mt-4">
+
+                                            <button type="button"
+                                                class="btn btn-sena-custom-darkblue px-3 py-2 small">
+
+                                                <i class="bi bi-download me-1"></i>
+                                                Descargar Plantilla
+
+                                            </button>
+
+
+                                            <button type="button"
+                                                class="btn btn-sena-custom-green px-3 py-2 small">
+
+                                                <i class="bi bi-upload me-1"></i>
+                                                Procesar Archivo
+
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- INSTRUCCIONES -->
+
+                                <div class="col-lg-5">
+
+                                    <div class="border rounded-3 p-4 h-100 admin-surface-muted">
+
+                                        <div class="mb-3">
+
+                                            <h5 class="h6 fw-bold mb-1">
+
+                                                <i class="bi bi-info-circle me-2 status-blue-text"></i>
+                                                Instrucciones
+
+                                            </h5>
+
+                                            <p class="admin-muted small mb-0">
+                                                Ten en cuenta estas recomendaciones antes de realizar la carga.
+                                            </p>
+
+                                        </div>
+
+
+                                        <div class="accordion"
+                                            id="instruccionesAccordion">
+
+
+                                            <div class="accordion-item">
+
+                                                <h2 class="accordion-header">
+
+                                                    <button class="accordion-button collapsed small fw-semibold"
+                                                        type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#instruccion1">
+
+                                                        1. Descargar la plantilla
+
+                                                    </button>
+
+                                                </h2>
+
+
+                                                <div id="instruccion1"
+                                                    class="accordion-collapse collapse"
+                                                    data-bs-parent="#instruccionesAccordion">
+
+                                                    <div class="accordion-body small admin-muted">
+
+                                                        Descarga la plantilla oficial y utiliza sus columnas sin modificar
+                                                        la estructura.
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="accordion-item">
+
+                                                <h2 class="accordion-header">
+
+                                                    <button class="accordion-button collapsed small fw-semibold"
+                                                        type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#instruccion2">
+
+                                                        2. Completar información
+
+                                                    </button>
+
+                                                </h2>
+
+
+                                                <div id="instruccion2"
+                                                    class="accordion-collapse collapse"
+                                                    data-bs-parent="#instruccionesAccordion">
+
+                                                    <div class="accordion-body small admin-muted">
+
+                                                        Completa los datos de cada usuario sin dejar vacíos los campos
+                                                        obligatorios.
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="accordion-item">
+
+                                                <h2 class="accordion-header">
+
+                                                    <button class="accordion-button collapsed small fw-semibold"
+                                                        type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#instruccion3">
+
+                                                        3. Revisar los datos
+
+                                                    </button>
+
+                                                </h2>
+
+
+                                                <div id="instruccion3"
+                                                    class="accordion-collapse collapse"
+                                                    data-bs-parent="#instruccionesAccordion">
+
+                                                    <div class="accordion-body small admin-muted">
+
+                                                        Verifica que documentos y correos no estén repetidos.
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="accordion-item">
+
+                                                <h2 class="accordion-header">
+
+                                                    <button class="accordion-button collapsed small fw-semibold"
+                                                        type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#instruccion4">
+
+                                                        4. Cargar archivo
+
+                                                    </button>
+
+                                                </h2>
+
+
+                                                <div id="instruccion4"
+                                                    class="accordion-collapse collapse"
+                                                    data-bs-parent="#instruccionesAccordion">
+
+                                                    <div class="accordion-body small admin-muted">
+
+                                                        Selecciona el archivo diligenciado para iniciar la validación.
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="accordion-item">
+
+                                                <h2 class="accordion-header">
+
+                                                    <button class="accordion-button collapsed small fw-semibold"
+                                                        type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#instruccion5">
+
+                                                        5. Validar información
+
+                                                    </button>
+
+                                                </h2>
+
+
+                                                <div id="instruccion5"
+                                                    class="accordion-collapse collapse"
+                                                    data-bs-parent="#instruccionesAccordion">
+
+                                                    <div class="accordion-body small admin-muted">
+
+                                                        El sistema verificará la información antes de registrar los
+                                                        usuarios.
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <div class="accordion-item">
+
+                                                <h2 class="accordion-header">
+
+                                                    <button class="accordion-button collapsed small fw-semibold"
+                                                        type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#instruccion6">
+
+                                                        6. Finalizar registro
+
+                                                    </button>
+
+                                                </h2>
+
+
+                                                <div id="instruccion6"
+                                                    class="accordion-collapse collapse"
+                                                    data-bs-parent="#instruccionesAccordion">
+
+                                                    <div class="accordion-body small admin-muted">
+
+                                                        Una vez validado el archivo, los usuarios podrán quedar registrados
+                                                        en el sistema.
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ========================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================= -->
+
+    <footer class="footer-custom">
+
+        <div class="container">
+
+            <div class="row align-items-center justify-content-between g-4">
+
+                <div class="col-lg-5 col-md-6">
+
+                    <div class="d-flex align-items-center gap-3">
+
+                        <img src="../assets/logo/logo.svg"
+                            alt="Logo SENA"
+                            width="40">
+
+                        <div>
+
+                            <h5 class="mb-1 footer-brand-title">
+                                SENA Assistance
+                            </h5>
+
+                            <small class="admin-muted">
+                                www.sena.edu.co
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-7 col-md-6">
+
+                    <ul class="footer-menu">
+
+                        <li>
+
+                            <a href="adminDashboard.html">
+                                Dashboard
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="adminDashboard.html#control-fichas">
+                                Control por Fichas
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="usuarios.html"
+                                class="active">
+
+                                Usuarios
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="#"
+                                class="footer-login-link status-blue-text"
+                                data-bs-toggle="modal"
+                                data-bs-target="#logoutModal">
+
+                                Cerrar sesión
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <hr class="my-4 footer-divider">
+
+
+            <div class="row">
+
+                <div class="col-12 text-center">
+
+                    <small class="admin-muted">
+
+                        © 2026 SENA Assistance. Todos los derechos reservados.
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ========================================================= -->
+    <!-- MODAL CERRAR SESIÓN -->
+    <!-- ========================================================= -->
+
+    <div class="modal fade"
+        id="logoutModal"
+        tabindex="-1"
+        aria-labelledby="logoutModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
+
+                <button type="button"
+                    class="btn-close modal-close-btn"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+                </button>
+
+
+                <div class="modal-body text-center p-4">
+
+                    <div class="mb-3 modal-icon modal-icon-blue fs-1">
+
+                        <i class="bi bi-exclamation-circle-fill"></i>
+
+                    </div>
+
+
+                    <h5 class="fw-bold mb-2 admin-text"
+                        id="logoutModalLabel">
+
+                        ¿Estás seguro que deseas salir?
+
+                    </h5>
+
+
+                    <p class="admin-muted small mb-4">
+
+                        Se cerrará tu sesión actual como administrador y tendrás
+                        que volver a ingresar tus credenciales.
+
+                    </p>
+
+
+                    <div class="d-flex justify-content-center gap-2">
+
+                        <button type="button"
+                            class="btn btn-modal-cancel px-4 py-2 small fw-semibold"
+                            data-bs-dismiss="modal">
+
+                            Cancelar
+
+                        </button>
+
+
+                        <a href="index.html"
+                            class="btn btn-sena-custom-darkblue px-4 py-2 small fw-semibold text-decoration-none">
+
+                            Sí, cerrar sesión
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- JQUERY -->
+    <!-- ========================================================= -->
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+
+    <!-- BOOTSTRAP JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- DATATABLES JS -->
+
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+
+    <!-- ========================================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================================================= -->
+
+    <script>
+
+
+        // =========================================================
+        // NAVBAR AL HACER SCROLL
+        // =========================================================
+
+        window.addEventListener('scroll', function () {
+
+            const navbar = document.querySelector('.navbar-custom');
+
+            if (window.scrollY > 20) {
+
+                navbar.classList.add('navbar-scrolled');
+
+            } else {
+
+                navbar.classList.remove('navbar-scrolled');
+
+            }
+
+        });
+
+
+        // =========================================================
+        // CAMBIO DE TABS
+        // =========================================================
+
+        function mostrarTab(tab) {
+
+            document.querySelectorAll(".user-section").forEach(section => {
+
+                section.classList.add("d-none");
+
+            });
+
+
+            document.querySelectorAll(".user-tab").forEach(button => {
+
+                button.classList.remove("active");
+
+            });
+
+
+            document.getElementById("tab-" + tab)
+                .classList.remove("d-none");
+
+
+            const boton = document.querySelector(
+                `[data-tab="${tab}"]`
+            );
+
+
+            if (boton) {
+
+                boton.classList.add("active");
+
+            }
+
+        }
+
+
+        document.querySelectorAll(".user-tab").forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                mostrarTab(this.dataset.tab);
+
+            });
+
+        });
+
+
+        // =========================================================
+        // DATATABLE
+        // =========================================================
+
+        $(document).ready(function () {
+
+            const tabla = $("#tablaUsuarios").DataTable({
+
+                language: {
+
+                    search: "Buscar:",
+
+                    lengthMenu: "Mostrar _MENU_ usuarios",
+
+                    info: "Mostrando _START_ a _END_ de _TOTAL_ usuarios",
+
+                    infoEmpty: "No hay usuarios para mostrar",
+
+                    infoFiltered: "(filtrado de _MAX_ usuarios)",
+
+                    zeroRecords: "No se encontraron usuarios",
+
+                    emptyTable: "No hay usuarios registrados",
+
+                    paginate: {
+
+                        first: "Primero",
+
+                        last: "Último",
+
+                        next: "Siguiente",
+
+                        previous: "Anterior"
+
+                    }
+
+                },
+
+
+                pageLength: 10,
+
+
+                lengthMenu: [
+
+                    [5, 10, 25, 50, -1],
+
+                    [5, 10, 25, 50, "Todos"]
+
+                ],
+
+
+                ordering: true,
+
+                searching: true,
+
+                lengthChange: false,
+
+
+                columnDefs: [
+
+                    {
+                        searchable: true,
+                        targets: [0, 1, 2, 3, 4]
+                    },
+
+                    {
+                        searchable: false,
+                        targets: [5]
+                    },
+
+                    {
+                        orderable: false,
+                        targets: [5]
+                    }
+
+                ]
+
+            });
+
+
+            // =====================================================
+            // BUSCADOR PERSONALIZADO
+            // =====================================================
+
+            $("#buscarUsuario").on("input", function () {
+
+                tabla
+                    .search(this.value)
+                    .draw();
+
+            });
+
+
+            // =====================================================
+            // FILTRO POR ROL
+            // =====================================================
+
+            $("#filtroRol").on("change", function () {
+
+                tabla
+                    .column(2)
+                    .search(this.value)
+                    .draw();
+
+            });
+
+
+            // =====================================================
+            // ARCHIVO
+            // =====================================================
+
+            $("#archivoUsuarios").on("change", function () {
+
+                const archivo = this.files[0];
+
+
+                if (archivo) {
+
+                    $("#nombreArchivo")
+                        .removeClass("d-none")
+                        .html(
+                            `<i class="bi bi-file-earmark-check me-1"></i>
+                            Archivo seleccionado: <strong>${archivo.name}</strong>`
+                        );
+
+                } else {
+
+                    $("#nombreArchivo")
+                        .addClass("d-none")
+                        .html("");
+
+                }
+
+            });
+
+
+            // =====================================================
+            // REGISTRO DE USUARIO
+            // =====================================================
+
+            $("#formRegistroUsuario").on("submit", function (event) {
+
+                event.preventDefault();
+
+                alert("Usuario registrado correctamente.");
+
+                this.reset();
+
+                mostrarTab("lista");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

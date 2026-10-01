@@ -4,380 +4,1473 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Panel de Administrador - SENA Assistance</title>
 
-    <!-- Bootstrap 5 CSS -->
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Estilos propios -->
+    <!-- DATATABLES -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
+    <!-- ESTILOS PROPIOS -->
     <link rel="stylesheet" href="../style/style.css">
 </head>
 
 <body class="index-page">
 
-    <!-- NAVBAR SUPERIOR -->
-    <nav class="navbar navbar-expand-lg bg-white py-3 fixed-top navbar-custom">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-3" href="adminDashboard.html">
-                <img src="../assets/logo/logo.svg" alt="Logo SENA">
-                <span>SENA Assistance <small class="text-muted fw-normal fs-6">| Admin</small></span>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg py-3 fixed-top navbar-custom">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <a class="navbar-brand d-flex align-items-center gap-3 m-0" href="index.html">
+                <img src="../assets/logo/logo.svg" alt="Logo SENA" width="40">
+                <span>SENA Assistance</span>
             </a>
 
-            <!-- Contenedor derecho en responsive -->
             <div class="d-flex align-items-center gap-2">
-                <button type="button" class="mobile-login-icon-btn bg-danger border-0 text-white" data-bs-toggle="modal" data-bs-target="#logoutModal" title="Cerrar sesión">
+
+                <button type="button" class="mobile-login-icon-btn btn-sena-custom-darkblue"
+                    data-bs-toggle="modal" data-bs-target="#logoutModal" title="Cerrar sesión">
                     <i class="bi bi-box-arrow-right"></i>
                 </button>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                <button class="navbar-toggler border-0 shadow-none" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarContent"
                     aria-controls="navbarContent" aria-expanded="false" aria-label="Mostrar menú">
-                    <i class="bi bi-list"></i>
+                    <i class="bi bi-list fs-4"></i>
                 </button>
+
             </div>
 
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+
+                <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
                     <li class="nav-item">
-                        <a class="nav-link active" href="#dashboard"><i class="bi bi-speedometer2 me-1"></i> Dashboard</a>
+                        <a class="nav-link active" href="#dashboard">
+                            <i class="bi bi-speedometer2 me-1"></i> Dashboard
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#control-fichas"><i class="bi bi-journal-check me-1"></i> Control por Fichas</a>
+                        <a class="nav-link" href="#control-fichas">
+                            <i class="bi bi-journal-check me-1"></i> Control por Fichas
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#usuarios"><i class="bi bi-people me-1"></i> Usuarios</a>
+                        <a class="nav-link" href="usuarios.html">
+                            <i class="bi bi-people me-1"></i> Usuarios
+                        </a>
                     </li>
+
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                        <button type="button" class="btn btn-sena px-3 bg-danger hover-danger text-white border-0" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                        <button type="button"
+                            class="btn btn-sena-custom-darkblue px-3 py-2 fw-semibold w-100"
+                            data-bs-toggle="modal" data-bs-target="#logoutModal">
                             <i class="bi bi-box-arrow-right me-1"></i> Salir
                         </button>
                     </li>
+
                 </ul>
+
             </div>
+
         </div>
     </nav>
 
+
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="py-4">
+
         <div class="container">
-            
-            <!-- PERFIL DEL ADMINISTRADOR ACTUAL -->
+
+            <!-- DASHBOARD -->
+            <div id="dashboard" data-section="dashboard" class="pt-2">
+
+                <!-- PERFIL ADMINISTRADOR -->
+                <div class="row mb-4">
+
+                    <div class="col-12">
+
+                        <div
+                            class="role-column-card p-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 admin-profile-card">
+
+                            <div class="d-flex align-items-center gap-3">
+
+                                <div class="role-header-icon mb-0 admin-profile-icon admin-icon-green rounded-3 d-flex align-items-center justify-content-center"
+                                    style="width: 50px; height: 50px; font-size: 1.3rem;">
+
+                                    <i class="bi bi-person-fill-gear"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <span class="section-label">
+                                        ADMINISTRADOR/A
+                                    </span>
+
+                                    <h1 class="h5 fw-bold mt-0 mb-1 admin-text">
+                                        Martha Lucía Benítez
+                                    </h1>
+
+                                    <p class="admin-muted small mb-0">
+                                        <i class="bi bi-envelope me-1"></i>
+                                        mlbenitez@sena.edu.co |
+                                        <i class="bi bi-geo-alt me-1"></i>
+                                        Centro de Desarrollo Agroindustrial y Empresarial
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MÉTRICAS -->
+                <div class="row g-4 mb-4">
+
+                    <!-- USUARIOS -->
+                    <div class="col-md-4">
+
+                        <div class="role-column-card p-4 h-100">
+
+                            <div class="d-flex justify-content-between align-items-start">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        TOTAL USUARIOS
+                                    </span>
+
+                                    <h2 class="fw-bold mt-2 mb-0 admin-text fs-3">
+                                        1,420
+                                    </h2>
+
+                                </div>
+
+                                <div class="index-icon-green admin-icon-green"
+                                    style="width: 45px; height: 45px;">
+
+                                    <i class="bi bi-people-fill"></i>
+
+                                </div>
+
+                            </div>
+
+                            <p class="admin-muted small mt-3 mb-0">
+                                Aprendices, instructores y administrativos activos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FICHAS -->
+                    <div class="col-md-4">
+
+                        <div class="role-column-card p-4 h-100">
+
+                            <div class="d-flex justify-content-between align-items-start">
+
+                                <div>
+
+                                    <span class="section-label status-blue-text">
+                                        FICHAS ACTIVAS
+                                    </span>
+
+                                    <h2 class="fw-bold mt-2 mb-0 admin-text fs-3">
+                                        38
+                                    </h2>
+
+                                </div>
+
+                                <div class="index-icon-green admin-icon-blue"
+                                    style="width: 45px; height: 45px;">
+
+                                    <i class="bi bi-journal-bookmark-fill status-blue-text"></i>
+
+                                </div>
+
+                            </div>
+
+                            <p class="admin-muted small mt-3 mb-0">
+                                Programas técnicos y tecnólogos en curso.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ASISTENCIA -->
+                    <div class="col-md-4">
+
+                        <div class="role-column-card p-4 h-100">
+
+                            <div class="d-flex justify-content-between align-items-start">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        ASISTENCIA GLOBAL HOY
+                                    </span>
+
+                                    <h2 class="fw-bold mt-2 mb-0 status-green-text fs-3">
+                                        94.2%
+                                    </h2>
+
+                                </div>
+
+                                <div class="index-icon-green admin-icon-green"
+                                    style="width: 45px; height: 45px;">
+
+                                    <i class="bi bi-graph-up-arrow"></i>
+
+                                </div>
+
+                            </div>
+
+                            <p class="admin-muted small mt-3 mb-0">
+                                Verificación mediante código QR y control manual.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MONITOREO GLOBAL -->
             <div class="row mb-4">
+
                 <div class="col-12">
-                    <div class="role-column-card p-4 p-md-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 admin-profile-card">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="role-header-icon mb-0 admin-profile-icon">
-                                <i class="bi bi-person-fill-gear"></i>
-                            </div>
-                            <div>
-                                <span class="section-label">ADMINISTRADOR EN SESIÓN</span>
-                                <h1 class="h4 fw-bold mt-0 mb-1 text-dark">Martha Lucía Benítez</h1>
-                                <p class="text-secondary small mb-0"><i class="bi bi-envelope me-1"></i> mlbenitez@sena.edu.co | <i class="bi bi-geo-alt me-1"></i> Centro de Gestión de Mercados, Logística y TICs</p>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center gap-2">
-                            <span class="badge bg-success d-flex align-items-center px-3 py-2 fs-6">
-                                <i class="bi bi-circle-fill text-warning me-2 admin-status-dot"></i> Sistema Operativo
+
+                    <div class="role-column-card p-4">
+
+                        <div class="mb-4 pb-3 border-bottom">
+
+                            <span class="section-label">
+                                MONITOREO GLOBAL
                             </span>
+
+                            <h3 class="h5 fw-bold mt-1 mb-0">
+                                Asistencia Actual
+                            </h3>
+
                         </div>
+
+
+                        <div class="row align-items-center g-4">
+
+                            <!-- INFORMACIÓN -->
+                            <div class="col-lg-7">
+
+                                <div
+                                    class="d-flex flex-column flex-md-row align-items-stretch gap-4 text-center text-md-start">
+
+                                    <div class="index-icon-green admin-icon-green rounded-4 d-flex align-items-center justify-content-center flex-shrink-0 asistencia-icon-container mx-auto mx-md-0"
+                                        style="font-size: 2rem;">
+
+                                        <i class="bi bi-sun-fill"></i>
+
+                                    </div>
+
+                                    <div
+                                        class="d-flex flex-column justify-content-center py-2 w-100">
+
+                                        <div
+                                            class="d-flex align-items-center flex-wrap justify-content-center justify-content-md-start gap-2 mb-2">
+
+                                            <span class="fw-bold admin-text fs-5">
+                                                Jornada Activa:
+                                            </span>
+
+                                            <span class="status-green-text fw-bold fs-5">
+                                                Diurna
+                                            </span>
+
+                                        </div>
+
+                                        <div class="mb-2">
+
+                                            <span class="status-green-text fw-bold fs-6">
+
+                                                <i class="bi bi-stopwatch me-1"></i>
+
+                                                Ingreso: 6:00 a.m. - 7:00 a.m.
+
+                                            </span>
+
+                                        </div>
+
+                                        <div
+                                            class="d-flex align-items-center flex-wrap justify-content-center justify-content-md-start gap-2 mb-2">
+
+                                            <span class="admin-muted fw-semibold fs-6">
+                                                Estado:
+                                            </span>
+
+                                            <span
+                                                class="badge badge-status badge-status-green px-3 py-2 shadow-sm fs-6">
+
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+
+                                                Toma Activa
+
+                                            </span>
+
+                                        </div>
+
+                                        <p class="admin-muted small mb-0 mt-1">
+
+                                            El sistema de escáner QR y registro manual se encuentra
+                                            habilitado para las fichas activas.
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- BOTONES -->
+                            <div class="col-lg-5 d-flex justify-content-center">
+
+                                <div class="attendance-actions-group w-100"
+                                    style="max-width: 320px;">
+
+                                    <button type="button"
+                                        class="btn btn-sena-custom-green px-3 py-2.5 fw-semibold small shadow-sm w-100"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#startAttendanceModal">
+
+                                        <i class="bi bi-play-fill me-1"></i>
+                                        Iniciar Toma de Asistencia
+
+                                    </button>
+
+                                    <button type="button"
+                                        class="btn btn-sena-custom-yellow px-3 py-2.5 fw-semibold admin-text small shadow-sm w-100"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#pauseAttendanceModal">
+
+                                        <i class="bi bi-pause-fill me-1"></i>
+                                        Pausar Asistencia
+
+                                    </button>
+
+                                    <button type="button"
+                                        class="btn btn-sena-custom-darkblue px-3 py-2.5 fw-semibold small shadow-sm w-100"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#forceCloseModal">
+
+                                        <i class="bi bi-stop-circle-fill me-1"></i>
+                                        Forzar Cierre de Asistencia
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
 
-            <!-- TARJETAS DE MÉTRICAS GLOBALES -->
-            <div class="row g-4 mb-5" id="dashboard">
-                <div class="col-md-4">
-                    <div class="role-column-card p-4">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div>
-                                <span class="section-label">TOTAL USUARIOS</span>
-                                <h2 class="fw-bold mt-2 mb-0 text-dark">1,420</h2>
-                            </div>
-                            <div class="index-icon-green">
-                                <i class="bi bi-people-fill"></i>
-                            </div>
-                        </div>
-                        <p class="text-secondary small mt-3 mb-0">Aprendices, instructores y administrativos activos.</p>
-                    </div>
-                </div>
 
-                <div class="col-md-4">
-                    <div class="role-column-card p-4">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div>
-                                <span class="section-label text-warning-custom">FICHAS ACTIVAS</span>
-                                <h2 class="fw-bold mt-2 mb-0 text-dark">38</h2>
-                            </div>
-                            <div class="index-icon-green icon-warning-custom">
-                                <i class="bi bi-journal-bookmark-fill"></i>
-                            </div>
-                        </div>
-                        <p class="text-secondary small mt-3 mb-0">Programas técnicos y tecnólogos en curso.</p>
-                    </div>
-                </div>
+            <!-- CONTROL POR FICHAS -->
+            <div class="row mb-5"
+                id="control-fichas"
+                data-section="control-fichas">
 
-                <div class="col-md-4">
-                    <div class="role-column-card p-4">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div>
-                                <span class="section-label">ASISTENCIA GLOBAL HOY</span>
-                                <h2 class="fw-bold mt-2 mb-0 text-success">94.2%</h2>
-                            </div>
-                            <div class="index-icon-green">
-                                <i class="bi bi-graph-up-arrow"></i>
-                            </div>
-                        </div>
-                        <p class="text-secondary small mt-3 mb-0">Verificación mediante código QR y control manual.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SECCIÓN DE SELECTOR DE FICHA Y CONTROL DIARIO -->
-            <div class="row mb-5" id="control-fichas">
                 <div class="col-12">
-                    <div class="role-column-card p-4 p-md-5">
-                        
-                        <div class="row align-items-end g-3 mb-4 pb-4 border-bottom">
+
+                    <div class="role-column-card p-4">
+
+                        <!-- CABECERA -->
+                        <div class="row align-items-end g-3 mb-4 pb-3 border-bottom">
+
                             <div class="col-lg-8">
-                                <span class="section-label">MONITOREO POR GRUPOS</span>
-                                <h3 class="h4 fw-bold mt-1 mb-2">Selector de Ficha y Programa</h3>
-                                <p class="text-secondary small mb-0">Selecciona el grupo de formación para auditar el estado de asistencia, instructores asignados y novedades del día.</p>
+
+                                <span class="section-label">
+                                    AUDITORÍA POR GRUPOS
+                                </span>
+
+                                <h3 class="h5 fw-bold mt-1 mb-1">
+                                    Control de Asistencia
+                                </h3>
+
+                                <p class="admin-muted small mb-0">
+                                    Selecciona el programa de formación para auditar
+                                    el detalle de aprendices.
+                                </p>
+
                             </div>
+
                             <div class="col-lg-4">
-                                <label for="selectFicha" class="form-label fw-bold small">Ficha / Programa de Formación:</label>
-                                <select class="form-select form-control" id="selectFicha">
-                                    <option value="2874102" selected>Ficha 2874102 - Tecnólogo ADSO</option>
-                                    <option value="2892310">Ficha 2892310 - Tecnólogo Gestión Logística</option>
-                                    <option value="2911044">Ficha 2911044 - Técnico Contabilidad y Finanzas</option>
-                                    <option value="2845901">Ficha 2845901 - Técnico Análisis de Muestras Químicas</option>
+
+                                <label for="selectFicha"
+                                    class="form-label fw-bold small">
+
+                                    Programa / Ficha:
+
+                                </label>
+
+                                <select class="form-select form-control form-select-sm py-2"
+                                    id="selectFicha">
+
+                                    <option value="2874102" selected>
+                                        Ficha 2874102 - Tecnólogo ADSO
+                                    </option>
+
+                                    <option value="2892310">
+                                        Ficha 2892310 - Tecnólogo Gestión Logística
+                                    </option>
+
+                                    <option value="2911044">
+                                        Ficha 2911044 - Técnico Contabilidad
+                                    </option>
+
+                                    <option value="2845901">
+                                        Ficha 2845901 - Técnico Análisis Químico
+                                    </option>
+
                                 </select>
+
                             </div>
+
                         </div>
 
-                        <!-- PANEL DE DETALLES DE LA FICHA SELECCIONADA -->
-                        <div class="row g-4 mb-4">
-                            <!-- Info Instructores -->
-                            <div class="col-lg-6">
-                                <div class="p-3 rounded-4 bg-light border h-100">
-                                    <h5 class="h6 fw-bold text-dark mb-3"><i class="bi bi-easel text-success me-2"></i>Asignación Docente del Día</h5>
-                                    <ul class="list-unstyled small mb-0 d-flex flex-column gap-2">
-                                        <li><strong>Instructor Titular (Técnico):</strong> Ing. Roberto Gómez</li>
-                                        <li><strong>Instructores Transversales:</strong> 
-                                            <span class="badge bg-secondary text-light me-1">Mag. Andrea Rueda (Ética)</span>
-                                            <span class="badge bg-secondary text-light">Lic. John Smith (Inglés)</span>
-                                        </li>
-                                        <li><strong>Jornada:</strong> Diurna (6:00 a.m. - 12:00 p.m.)</li>
-                                    </ul>
-                                </div>
-                            </div>
 
-                            <!-- Estado de la Toma de Asistencia -->
-                            <div class="col-lg-6">
-                                <div class="p-3 rounded-4 bg-light border h-100 d-flex flex-column justify-content-between">
-                                    <div>
-                                        <h5 class="h6 fw-bold text-dark mb-2"><i class="bi bi-clock-history text-warning me-2 text-warning-custom"></i>Estado del Registro Diario</h5>
-                                        <p class="small text-secondary mb-2">Control de escáner QR y llamadas a lista para la fecha actual.</p>
+                        <!-- INFORMACIÓN GENERAL -->
+                        <div class="row mb-4">
+
+                            <div class="col-lg-8">
+
+                                <div class="accordion"
+                                    id="infoGeneralAccordion">
+
+                                    <div
+                                        class="accordion-item border rounded-3 overflow-hidden admin-surface-muted">
+
+                                        <h2 class="accordion-header"
+                                            id="headingInfoGeneral">
+
+                                            <button
+                                                class="accordion-button accordion-button-custom fw-bold px-3 py-2.5 shadow-none small"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapseInfoGeneral"
+                                                aria-expanded="true"
+                                                aria-controls="collapseInfoGeneral">
+
+                                                <div class="d-flex align-items-center gap-2">
+
+                                                    <div
+                                                        class="admin-icon-green rounded-2 d-flex align-items-center justify-content-center"
+                                                        style="width: 30px; height: 30px;">
+
+                                                        <i class="bi bi-info-circle-fill"></i>
+
+                                                    </div>
+
+                                                    <span>
+                                                        Información General de la Ficha
+                                                    </span>
+
+                                                </div>
+
+                                            </button>
+
+                                        </h2>
+
+                                        <div id="collapseInfoGeneral"
+                                            class="accordion-collapse collapse show"
+                                            aria-labelledby="headingInfoGeneral"
+                                            data-bs-parent="#infoGeneralAccordion">
+
+                                            <div
+                                                class="accordion-body px-4 py-3 admin-surface small">
+
+                                                <div class="row g-3">
+
+                                                    <div class="col-md-6">
+
+                                                        <div class="mb-2">
+
+                                                            <span class="admin-muted fw-semibold">
+                                                                Programa:
+                                                            </span>
+
+                                                            <span
+                                                                class="admin-text fw-bold d-block">
+
+                                                                Tecnólogo en Análisis y
+                                                                Desarrollo de Software
+
+                                                            </span>
+
+                                                        </div>
+
+                                                        <div class="mb-2">
+
+                                                            <span class="admin-muted fw-semibold">
+                                                                Instructor Titular:
+                                                            </span>
+
+                                                            <span
+                                                                class="admin-text fw-bold d-block">
+
+                                                                <i
+                                                                    class="bi bi-person-badge me-1"></i>
+
+                                                                Carlos Alberto Mendoza
+
+                                                            </span>
+
+                                                        </div>
+
+                                                        <div>
+
+                                                            <span class="admin-muted fw-semibold">
+                                                                Aprendices:
+                                                            </span>
+
+                                                            <span
+                                                                class="admin-text fw-bold d-block">
+
+                                                                <i class="bi bi-people me-1"></i>
+                                                                32 Registrados
+
+                                                            </span>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="col-md-6">
+
+                                                        <div class="mb-2">
+
+                                                            <span class="admin-muted fw-semibold">
+                                                                Número de Ficha:
+                                                            </span>
+
+                                                            <span
+                                                                class="admin-text fw-bold d-block">
+
+                                                                <i
+                                                                    class="bi bi-journal-bookmark me-1"></i>
+                                                                2874102
+
+                                                            </span>
+
+                                                        </div>
+
+                                                        <div class="mb-2">
+
+                                                            <span class="admin-muted fw-semibold">
+                                                                Instructor Transversal:
+                                                            </span>
+
+                                                            <span
+                                                                class="admin-text fw-bold d-block">
+
+                                                                <i
+                                                                    class="bi bi-person-workspace me-1"></i>
+
+                                                                María Fernanda Torres
+
+                                                            </span>
+
+                                                        </div>
+
+                                                        <div>
+
+                                                            <span class="admin-muted fw-semibold">
+                                                                Jornada:
+                                                            </span>
+
+                                                            <span
+                                                                class="admin-text fw-bold d-block">
+
+                                                                <i
+                                                                    class="bi bi-clock me-1 status-yellow-text"></i>
+
+                                                                Diurna
+
+                                                            </span>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
                                     </div>
-                                    <div class="d-flex align-items-center justify-content-between mt-2 pt-2 border-top">
-                                        <span class="badge bg-warning text-dark px-3 py-2 fs-6">
-                                            <i class="bi bi-hourglass-split me-1"></i> En Proceso (Toma Activa)
-                                        </span>
-                                        <button class="btn btn-sm btn-outline-success fw-bold">
-                                            <i class="bi bi-arrow-repeat me-1"></i> Forzar Cierre de Lista
-                                        </button>
-                                    </div>
+
                                 </div>
+
                             </div>
+
                         </div>
 
-                        <!-- LISTA DE APRENDICES DE LA FICHA -->
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="h6 fw-bold text-dark mb-0"><i class="bi bi-person-lines-fill me-2"></i>Registro de Aprendices (Ficha 2874102)</h5>
-                            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1">Total: 32 Aprendices</span>
+
+                        <!-- LISTA APRENDICES -->
+                        <div
+                            class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-3">
+
+                            <h5 class="h6 fw-bold admin-text mb-0">
+
+                                <i class="bi bi-person-lines-fill me-2"></i>
+
+                                Registro de Aprendices (Ficha 2874102)
+
+                            </h5>
+
                         </div>
 
+
+                        <!-- BUSCAR APRENDIZ -->
+                        <div class="row mb-4">
+
+                            <div class="col-lg-7">
+
+                                <div class="input-group user-filter-group">
+
+                                    <span class="input-group-text bg-white">
+
+                                        <i class="bi bi-search"></i>
+
+                                    </span>
+
+                                    <input type="search"
+                                        class="form-control user-filter-control"
+                                        id="buscarAprendiz"
+                                        placeholder="Buscar por documento o nombre del aprendiz">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TABLA -->
                         <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0">
-                                <thead class="table-light">
+
+                            <table id="tablaAprendices"
+                                class="table table-hover align-middle mb-0 small w-100">
+
+                                <thead class="admin-table-head">
+
                                     <tr>
-                                        <th class="py-3">Documento</th>
-                                        <th class="py-3">Nombre del Aprendiz</th>
-                                        <th class="py-3">Hora de Ingreso (QR)</th>
-                                        <th class="py-3">Estado Actual</th>
-                                        <th class="py-3 text-center">Acciones / Novedad</th>
+
+                                        <th class="py-2.5">
+                                            Documento
+                                        </th>
+
+                                        <th class="py-2.5">
+                                            Nombre del Aprendiz
+                                        </th>
+
+                                        <th class="py-2.5 text-start ps-3">
+                                            Hora de Ingreso
+                                        </th>
+
+                                        <th class="py-2.5 text-center">
+                                            Estado Actual
+                                        </th>
+
+                                        <th class="py-2.5 text-center">
+                                            Acciones
+                                        </th>
+
                                     </tr>
+
                                 </thead>
+
                                 <tbody>
+
                                     <tr>
                                         <td><strong>CC 1098745210</strong></td>
-                                        <td>Carlos Andrés Pérez</td>
-                                        <td>06:15 a.m.</td>
-                                        <td><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Presente</span></td>
+                                        <td>Carlos Andrés Pérez Gómez</td>
+                                        <td class="text-start ps-3">06:15 a.m.</td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Cambiar a Excusa"><i class="bi bi-file-earmark-text text-warning fs-5"></i></button>
-                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Marcar Falla"><i class="bi bi-x-circle text-danger fs-5"></i></button>
+                                            <span class="badge badge-status badge-status-green">
+                                                <i class="bi bi-check-circle me-1"></i>
+                                                Presente
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Cambiar a Excusa">
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
+                                            </button>
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Marcar Falla">
+                                                <i class="bi bi-x-circle status-purple-text"></i>
+                                            </button>
                                         </td>
                                     </tr>
+
                                     <tr>
                                         <td><strong>CC 1095412365</strong></td>
-                                        <td>María Alejandra Rojas</td>
-                                        <td>07:32 a.m. (Tardanza)</td>
-                                        <td><span class="badge bg-warning text-dark"><i class="bi bi-clock me-1"></i>Llegada Tarde</span></td>
+                                        <td>María Alejandra Rojas Silva</td>
+                                        <td class="text-start ps-3">07:32 a.m.</td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Cambiar a Excusa"><i class="bi bi-file-earmark-text text-warning fs-5"></i></button>
-                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Marcar Falla"><i class="bi bi-x-circle text-danger fs-5"></i></button>
+                                            <span class="badge badge-status badge-status-yellow">
+                                                <i class="bi bi-clock me-1"></i>
+                                                Llegada Tarde
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Cambiar a Excusa">
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
+                                            </button>
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Marcar Falla">
+                                                <i class="bi bi-x-circle status-purple-text"></i>
+                                            </button>
                                         </td>
                                     </tr>
+
                                     <tr>
                                         <td><strong>CC 1002365412</strong></td>
-                                        <td>Esteban David Morales</td>
-                                        <td>--:--</td>
-                                        <td><span class="badge bg-danger"><i class="bi bi-dash-circle me-1"></i>Ausente (Sin Registrar)</span></td>
+                                        <td>Esteban David Morales Ruiz</td>
+                                        <td class="text-start ps-3">--:--</td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Justificar Falla"><i class="bi bi-file-earmark-text text-warning fs-5"></i></button>
-                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Marcar Presente Manual"><i class="bi bi-check-circle text-success fs-5"></i></button>
+                                            <span class="badge badge-status badge-status-purple">
+                                                <i class="bi bi-dash-circle me-1"></i>
+                                                Ausente
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Justificar Falla">
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
+                                            </button>
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Marcar Presente">
+                                                <i class="bi bi-check-circle status-green-text"></i>
+                                            </button>
                                         </td>
                                     </tr>
+
+                                    <tr>
+                                        <td><strong>CC 1018456327</strong></td>
+                                        <td>Laura Valentina Rodríguez Díaz</td>
+                                        <td class="text-start ps-3">06:08 a.m.</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-green">
+                                                <i class="bi bi-check-circle me-1"></i>
+                                                Presente
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Cambiar a Excusa">
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
+                                            </button>
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Marcar Falla">
+                                                <i class="bi bi-x-circle status-purple-text"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>CC 1032547896</strong></td>
+                                        <td>Juan Sebastián Torres Martínez</td>
+                                        <td class="text-start ps-3">06:21 a.m.</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-green">
+                                                <i class="bi bi-check-circle me-1"></i>
+                                                Presente
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Cambiar a Excusa">
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
+                                            </button>
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Marcar Falla">
+                                                <i class="bi bi-x-circle status-purple-text"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>CC 1096325478</strong></td>
+                                        <td>Daniela Sofía Martínez López</td>
+                                        <td class="text-start ps-3">06:42 a.m.</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-green">
+                                                <i class="bi bi-check-circle me-1"></i>
+                                                Presente
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Cambiar a Excusa">
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
+                                            </button>
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Marcar Falla">
+                                                <i class="bi bi-x-circle status-purple-text"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>CC 1008745632</strong></td>
+                                        <td>Andrés Felipe Gómez Herrera</td>
+                                        <td class="text-start ps-3">06:55 a.m.</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-green">
+                                                <i class="bi bi-check-circle me-1"></i>
+                                                Presente
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Cambiar a Excusa">
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
+                                            </button>
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Marcar Falla">
+                                                <i class="bi bi-x-circle status-purple-text"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>CC 1015632847</strong></td>
+                                        <td>Sara Juliana Hernández Castro</td>
+                                        <td class="text-start ps-3">07:18 a.m.</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-yellow">
+                                                <i class="bi bi-clock me-1"></i>
+                                                Llegada Tarde
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Cambiar a Excusa">
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
+                                            </button>
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Marcar Falla">
+                                                <i class="bi bi-x-circle status-purple-text"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>CC 1024789631</strong></td>
+                                        <td>Mateo Alejandro Vargas Peña</td>
+                                        <td class="text-start ps-3">06:27 a.m.</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-green">
+                                                <i class="bi bi-check-circle me-1"></i>
+                                                Presente
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Cambiar a Excusa">
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
+                                            </button>
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Marcar Falla">
+                                                <i class="bi bi-x-circle status-purple-text"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>CC 1097854126</strong></td>
+                                        <td>Valentina Isabel Moreno Ruiz</td>
+                                        <td class="text-start ps-3">06:38 a.m.</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-green">
+                                                <i class="bi bi-check-circle me-1"></i>
+                                                Presente
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Cambiar a Excusa">
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
+                                            </button>
+                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                                title="Marcar Falla">
+                                                <i class="bi bi-x-circle status-purple-text"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
                                 </tbody>
+
                             </table>
+
                         </div>
 
                     </div>
-                </div>
-            </div>
 
-            <!-- SECCIÓN DE GESTIÓN DE USUARIOS GENERAL -->
-            <div class="row mb-5" id="usuarios">
-                <div class="col-12">
-                    <div class="role-column-card p-4 p-md-5">
-                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
-                            <div>
-                                <span class="section-label">CONTROL DE CUENTAS</span>
-                                <h3 class="h4 fw-bold mt-1 mb-0">Gestión General de Usuarios</h3>
-                            </div>
-                            <div>
-                                <button class="btn btn-sena px-4 py-2">
-                                    <i class="bi bi-person-plus-fill me-1"></i> Registrar Nuevo Usuario
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th class="py-3">#</th>
-                                        <th class="py-3">Nombre y Correo</th>
-                                        <th class="py-3">Rol</th>
-                                        <th class="py-3">Programa / Ficha</th>
-                                        <th class="py-3">Estado</th>
-                                        <th class="py-3 text-center">Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="fw-bold">1</td>
-                                        <td>
-                                            <span class="fw-bold text-dark d-block">Ing. Roberto Gómez</span>
-                                            <small class="text-muted">rgomez@sena.edu.co</small>
-                                        </td>
-                                        <td><span class="badge bg-success">Instructor</span></td>
-                                        <td>ADSO (Ficha 2874102)</td>
-                                        <td><span class="text-success fw-bold small"><i class="bi bi-check-circle-fill me-1"></i>Activo</span></td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Editar"><i class="bi bi-pencil-square text-primary fs-5"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="fw-bold">2</td>
-                                        <td>
-                                            <span class="fw-bold text-dark d-block">Carlos Andrés Pérez</span>
-                                            <small class="text-muted">caperez@soy.sena.edu.co</small>
-                                        </td>
-                                        <td><span class="badge bg-primary">Aprendiz</span></td>
-                                        <td>ADSO (Ficha 2874102)</td>
-                                        <td><span class="text-success fw-bold small"><i class="bi bi-check-circle-fill me-1"></i>Activo</span></td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm btn-outline-secondary border-0" title="Editar"><i class="bi bi-pencil-square text-primary fs-5"></i></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
+
             </div>
 
         </div>
+
     </main>
+
 
     <!-- FOOTER -->
     <footer class="footer-custom">
+
         <div class="container">
+
             <div class="row align-items-center justify-content-between g-4">
+
                 <div class="col-lg-5 col-md-6">
+
                     <div class="d-flex align-items-center gap-3">
-                        <img src="../assets/logo/logo.svg" alt="Logo SENA" class="footer-logo-img">
+
+                        <img src="../assets/logo/logo.svg"
+                            alt="Logo SENA"
+                            width="40">
+
                         <div>
-                            <h5 class="mb-1 footer-title">SENA Assistance</h5>
-                            <small class="text-secondary">Panel de Control de Administración.</small>
+
+                            <h5 class="mb-1 footer-brand-title">
+                                SENA Assistance
+                            </h5>
+
+                            <small class="admin-muted">
+                                www.sena.edu.co
+                            </small>
+
                         </div>
+
                     </div>
+
                 </div>
 
                 <div class="col-lg-7 col-md-6">
+
                     <ul class="footer-menu">
-                        <li><a href="#dashboard">Dashboard</a></li>
-                        <li><a href="#control-fichas">Control por Fichas</a></li>
-                        <li><a href="#usuarios">Usuarios</a></li>
-                        <li><a href="#" class="footer-logout-link" data-bs-toggle="modal" data-bs-target="#logoutModal">Cerrar sesión</a></li>
+
+                        <li>
+                            <a href="#dashboard">
+                                Dashboard
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#control-fichas">
+                                Control por Fichas
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="usuarios.html">
+                                Usuarios
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="footer-login-link status-blue-text"
+                                data-bs-toggle="modal"
+                                data-bs-target="#logoutModal">
+                                Cerrar sesión
+                            </a>
+                        </li>
+
                     </ul>
+
                 </div>
+
             </div>
 
-            <hr class="my-4 text-muted opacity-25">
+            <hr class="my-4 footer-divider">
 
             <div class="row">
+
                 <div class="col-12 text-center">
-                    <small class="text-secondary">© 2026 SENA Assistance. Todos los derechos reservados.</small>
+
+                    <small class="admin-muted">
+                        © 2026 SENA Assistance. Todos los derechos reservados.
+                    </small>
+
                 </div>
+
             </div>
+
         </div>
+
     </footer>
 
-    <!-- MODAL DE CONFIRMACIÓN DE CIERRE DE SESIÓN -->
-    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+
+    <!-- MODAL INICIAR ASISTENCIA -->
+    <div class="modal fade"
+        id="startAttendanceModal"
+        tabindex="-1"
+        aria-labelledby="startAttendanceModalLabel"
+        aria-hidden="true">
+
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 shadow-lg rounded-4">
-                <div class="modal-body text-center p-4 p-md-5">
-                    <div class="mb-3 text-danger logout-modal-icon">
-                        <i class="bi bi-exclamation-circle-fill"></i>
+
+            <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
+
+                <button type="button"
+                    class="btn-close modal-close-btn"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+                </button>
+
+                <div class="modal-body text-center p-4">
+
+                    <div class="mb-3 modal-icon modal-icon-green fs-1">
+                        <i class="bi bi-play-circle-fill"></i>
                     </div>
-                    <h4 class="fw-bold mb-2 text-dark" id="logoutModalLabel">¿Estás seguro que deseas salir?</h4>
-                    <p class="text-secondary small mb-4">Se cerrará tu sesión actual como administrador y tendrás que volver a ingresar tus credenciales.</p>
+
+                    <h5 class="fw-bold mb-2 admin-text"
+                        id="startAttendanceModalLabel">
+                        ¿Iniciar toma de asistencia?
+                    </h5>
+
+                    <p class="admin-muted small mb-4">
+                        Esta acción habilitará de inmediato el escáner QR y
+                        el registro manual para todas las fichas activas del
+                        centro en la jornada actual.
+                    </p>
+
                     <div class="d-flex justify-content-center gap-2">
-                        <button type="button" class="btn btn-light px-4 py-2 border fw-semibold" data-bs-dismiss="modal">Cancelar</button>
-                        <a href="index.html" class="btn btn-danger px-4 py-2 fw-semibold">Sí, cerrar sesión</a>
+
+                        <button type="button"
+                            class="btn btn-modal-cancel px-4 py-2 small fw-semibold"
+                            data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+
+                        <button type="button"
+                            class="btn btn-modal-confirm-green px-4 py-2 small fw-semibold"
+                            data-bs-dismiss="modal">
+                            Sí, iniciar toma
+                        </button>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
 
-    <!-- Bootstrap JS -->
+
+    <!-- MODAL PAUSAR ASISTENCIA -->
+    <div class="modal fade"
+        id="pauseAttendanceModal"
+        tabindex="-1"
+        aria-labelledby="pauseAttendanceModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
+
+                <button type="button"
+                    class="btn-close modal-close-btn"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+                </button>
+
+                <div class="modal-body text-center p-4">
+
+                    <div class="mb-3 modal-icon modal-icon-yellow fs-1">
+                        <i class="bi bi-pause-circle-fill"></i>
+                    </div>
+
+                    <h5 class="fw-bold mb-2 admin-text"
+                        id="pauseAttendanceModalLabel">
+                        ¿Pausar la asistencia temporalmente?
+                    </h5>
+
+                    <p class="admin-muted small mb-4">
+                        Se suspenderá temporalmente el registro de entradas
+                        por código QR y marcajes manuales hasta que decidas
+                        reanudarla.
+                    </p>
+
+                    <div class="d-flex justify-content-center gap-2">
+
+                        <button type="button"
+                            class="btn btn-modal-cancel px-4 py-2 small fw-semibold"
+                            data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+
+                        <button type="button"
+                            class="btn btn-modal-confirm-yellow px-4 py-2 small fw-semibold"
+                            data-bs-dismiss="modal">
+                            Sí, pausar asistencia
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MODAL CERRAR ASISTENCIA -->
+    <div class="modal fade"
+        id="forceCloseModal"
+        tabindex="-1"
+        aria-labelledby="forceCloseModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
+
+                <button type="button"
+                    class="btn-close modal-close-btn"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+                </button>
+
+                <div class="modal-body text-center p-4">
+
+                    <div class="mb-3 modal-icon modal-icon-purple fs-1">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                    </div>
+
+                    <h5 class="fw-bold mb-2 admin-text"
+                        id="forceCloseModalLabel">
+                        ¿Forzar cierre de asistencia global?
+                    </h5>
+
+                    <p class="admin-muted small mb-4">
+                        Esta acción cerrará el registro mediante QR y
+                        llamadas a lista para la jornada diurna actual.
+                        Los aprendices sin registro pasarán a inasistencia.
+                    </p>
+
+                    <div class="d-flex justify-content-center gap-2">
+
+                        <button type="button"
+                            class="btn btn-modal-cancel px-4 py-2 small fw-semibold"
+                            data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+
+                        <button type="button"
+                            class="btn btn-modal-confirm-purple px-4 py-2 small fw-semibold"
+                            data-bs-dismiss="modal">
+                            Sí, cerrar asistencia
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MODAL CERRAR SESIÓN -->
+    <div class="modal fade"
+        id="logoutModal"
+        tabindex="-1"
+        aria-labelledby="logoutModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
+
+                <button type="button"
+                    class="btn-close modal-close-btn"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+                </button>
+
+                <div class="modal-body text-center p-4">
+
+                    <div class="mb-3 modal-icon modal-icon-blue fs-1">
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                    </div>
+
+                    <h5 class="fw-bold mb-2 admin-text"
+                        id="logoutModalLabel">
+                        ¿Estás seguro que deseas salir?
+                    </h5>
+
+                    <p class="admin-muted small mb-4">
+                        Se cerrará tu sesión actual como administrador y
+                        tendrás que volver a ingresar tus credenciales.
+                    </p>
+
+                    <div class="d-flex justify-content-center gap-2">
+
+                        <button type="button"
+                            class="btn btn-modal-cancel px-4 py-2 small fw-semibold"
+                            data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+
+                        <a href="index.html"
+                            class="btn btn-sena-custom-darkblue px-4 py-2 small fw-semibold text-decoration-none">
+                            Sí, cerrar sesión
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- DATATABLES JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+
+    <!-- JAVASCRIPT DEL DASHBOARD -->
     <script>
+
+        // NAVBAR AL HACER SCROLL
         window.addEventListener('scroll', function () {
+
             const navbar = document.querySelector('.navbar-custom');
+
             if (window.scrollY > 20) {
+
                 navbar.classList.add('navbar-scrolled');
+
             } else {
+
                 navbar.classList.remove('navbar-scrolled');
+
             }
+
         });
+
+
+        // SECCIONES
+        const sections = document.querySelectorAll('main [data-section]');
+
+        const navLinks =
+            document.querySelectorAll('.navbar-nav .nav-link:not(.btn)');
+
+
+        // OBSERVER
+        const observerOptions = {
+
+            root: null,
+
+            rootMargin: '-20% 0px -40% 0px',
+
+            threshold: 0.1
+
+        };
+
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    const sectionId =
+                        entry.target.getAttribute('data-section');
+
+
+                    navLinks.forEach(link => {
+
+                        link.classList.remove('active');
+
+
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+
+                            link.classList.add('active');
+
+                        }
+
+                    });
+
+                }
+
+            });
+
+        }, observerOptions);
+
+
+        // OBSERVAR SECCIONES
+        sections.forEach(section => {
+
+            observer.observe(section);
+
+        });
+
+
+        // ACTIVAR ENLACE AL HACER CLIC
+        navLinks.forEach(link => {
+
+            link.addEventListener('click', function () {
+
+                navLinks.forEach(l => {
+
+                    l.classList.remove('active');
+
+                });
+
+                this.classList.add('active');
+
+            });
+
+        });
+
+
+        // DATATABLES
+        $(document).ready(function () {
+
+            const tablaAprendices = $('#tablaAprendices').DataTable({
+
+                language: {
+
+                    search: "Buscar:",
+
+                    lengthMenu: "Mostrar _MENU_ aprendices",
+
+                    info: "Mostrando _START_ a _END_ de _TOTAL_ aprendices",
+
+                    infoEmpty: "No hay aprendices para mostrar",
+
+                    infoFiltered: "(filtrado de _MAX_ aprendices)",
+
+                    zeroRecords: "No se encontraron aprendices",
+
+                    emptyTable: "No hay aprendices registrados",
+
+                    paginate: {
+
+                        first: "Primero",
+
+                        last: "Último",
+
+                        next: "Siguiente",
+
+                        previous: "Anterior"
+
+                    }
+
+                },
+
+                pageLength: 10,
+
+                lengthMenu: [
+                    [5, 10, 25, 50, -1],
+                    [5, 10, 25, 50, "Todos"]
+                ],
+
+                ordering: true,
+
+                searching: true,
+
+                lengthChange: false,
+
+                columnDefs: [
+
+                    {
+                        searchable: true,
+                        targets: [0, 1]
+                    },
+
+                    {
+                        searchable: false,
+                        targets: [2, 3, 4]
+                    },
+
+                    {
+                        orderable: false,
+                        targets: [4]
+                    }
+
+                ]
+
+            });
+
+
+            // BUSCAR APRENDIZ CON LA BARRA PERSONALIZADA
+            $("#buscarAprendiz").on("input", function () {
+
+                tablaAprendices.search(this.value).draw();
+
+            });
+
+        });
+
     </script>
+
 </body>
 
 </html>
