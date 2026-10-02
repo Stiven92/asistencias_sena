@@ -73,85 +73,152 @@
 </head>
 <body class="index-page">
 
-<!-- NAVBAR SUPERIOR HOMOLOGADO -->
-<nav class="navbar navbar-expand-lg py-3 fixed-top navbar-custom border-bottom bg-white">
-    <div class="container d-flex align-items-center justify-content-between">
+    <!-- NAVBAR SUPERIOR HOMOLOGADO -->
+    <nav class="navbar navbar-expand-lg py-3 fixed-top navbar-custom border-bottom bg-white">
+        <div class="container d-flex align-items-center justify-content-between">
 
-        <!-- BRAND LOGO -->
-        <a class="navbar-brand d-flex align-items-center gap-3 m-0" href="adminDashboard.html">
-            <img src="../assets/logo/logo.svg" alt="Logo SENA" width="40">
-            <span>SENA <small class="text-muted fw-normal fs-6">| Aprendiz</small></span>
-        </a>
+            <!-- BRAND LOGO -->
+            <a class="navbar-brand d-flex align-items-center gap-3 m-0" href="adminDashboard.html">
+                <img src="../assets/logo/logo.svg" alt="Logo SENA" width="40">
+                <span>SENA <small class="text-muted fw-normal fs-6">| Aprendiz</small></span>
+            </a>
 
-        <!-- CONTENEDOR DERECHO EN RESPONSIVE (MÓVIL) -->
-        <div class="d-flex align-items-center gap-2">
+            <!-- CONTENEDOR DERECHO EN RESPONSIVE (MÓVIL) -->
+            <div class="d-flex align-items-center gap-1 d-lg-none">
+                <!-- Icono Notificaciones Móvil -->
+                <button type="button" class="btn btn-icon-nav text-dark position-relative rounded-circle p-2" 
+                        data-bs-toggle="modal" data-bs-target="#modalNotificaciones" title="Notificaciones">
+                    <i class="bi bi-bell fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                        <span class="visually-hidden">Alertas</span>
+                    </span>
+                </button>
 
-            <button type="button" class="mobile-login-icon-btn btn-sena-custom-darkblue d-lg-none"
-                data-bs-toggle="modal" data-bs-target="#logoutModal" title="Cerrar sesión">
-                <i class="bi bi-box-arrow-right"></i>
-            </button>
+                <!-- Icono Mensajes Móvil -->
+                <a href="mensajes.html" class="btn btn-icon-nav text-dark rounded-circle p-2" title="Mensajes">
+                    <i class="bi bi-chat-left-text fs-5"></i>
+                </a>
 
-            <button class="navbar-toggler border-0 shadow-none" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Mostrar menú">
-                <i class="bi bi-list fs-4 text-success"></i>
-            </button>
+                <!-- Icono Usuario Móvil -->
+                <button type="button" class="btn btn-icon-nav text-dark rounded-circle p-2" 
+                        data-bs-toggle="modal" data-bs-target="#modalPerfil" title="Perfil de Usuario">
+                    <i class="bi bi-person-circle fs-5"></i>
+                </button>
+
+                <!-- Botón Salir Móvil -->
+                <button type="button" class="mobile-login-icon-btn btn-sena-custom-darkblue rounded-circle p-2 ms-1"
+                    data-bs-toggle="modal" data-bs-target="#logoutModal" title="Cerrar sesión">
+                    <i class="bi bi-box-arrow-right"></i>
+                </button>
+
+                <!-- Toggler menú -->
+                <button class="navbar-toggler border-0 shadow-none p-1 ms-1" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Mostrar menú">
+                    <i class="bi bi-list fs-3 text-success"></i>
+                </button>
+            </div>
+
+            <!-- CONTENIDO COLAPSABLE -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+
+                <ul class="navbar-nav align-items-lg-center gap-lg-2">
+
+                    <!-- NAVEGACIÓN PRINCIPAL -->
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a class="nav-link active" href="#">
+                            <i class="bi bi-speedometer2 me-1"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalAdjuntarExcusa">
+                            <i class="bi bi-file-earmark-medical me-1"></i> Radicar Excusa
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalCarnet">
+                            <i class="bi bi-qr-code-scan me-1"></i> Carné Digital
+                        </a>
+                    </li>
+
+                    <!-- ACCIONES DE PRUEBA / SIMULACIÓN -->
+                    <li class="nav-item">
+                        <a class="nav-link text-success fw-medium" href="#" onclick="agregarFaltaSimulada(); return false;">
+                            <i class="bi bi-plus-square me-1"></i> Simular Falta
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-danger fw-medium" href="#" onclick="simularExcusaRechazada(); return false;">
+                            <i class="bi bi-x-square me-1"></i> Simular Rechazo
+                        </a>
+                    </li>
+
+                    <!-- SEPARADOR DESKTOP -->
+                    <li class="nav-item d-none d-lg-block mx-1">
+                        <div class="vr h-100 text-muted opacity-25"></div>
+                    </li>
+
+                    <!-- ICONOS DE ACCIÓN RÁPIDA (DESKTOP) -->
+
+                    <!-- 1. Notificaciones -->
+                    <li class="nav-item d-none d-lg-block">
+                        <button type="button" class="btn btn-icon-nav text-dark position-relative rounded-circle p-2" 
+                                data-bs-toggle="modal" data-bs-target="#modalNotificaciones" title="Notificaciones">
+                            <i class="bi bi-bell fs-5"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                <span class="visually-hidden">Alertas</span>
+                            </span>
+                        </button>
+                    </li>
+
+                    <!-- 2. Mensajes -->
+                    <li class="nav-item d-none d-lg-block">
+                        <a href="mensajes.html" class="btn btn-icon-nav text-dark rounded-circle p-2" title="Mensajes">
+                            <i class="bi bi-chat-left-text fs-5"></i>
+                        </a>
+                    </li>
+
+                    <!-- 3. Configuración -->
+                    <li class="nav-item d-none d-lg-block">
+                        <button type="button" class="btn btn-icon-nav text-dark rounded-circle p-2" 
+                                data-bs-toggle="modal" data-bs-target="#modalConfiguracion" title="Configuración">
+                            <i class="bi bi-gear fs-5"></i>
+                        </button>
+                    </li>
+
+                    <!-- 4. Perfil de Usuario -->
+                    <li class="nav-item d-none d-lg-block me-lg-2">
+                        <button type="button" class="btn btn-icon-nav text-dark rounded-circle p-2" 
+                                data-bs-toggle="modal" data-bs-target="#modalPerfil" title="Perfil de Usuario">
+                            <i class="bi bi-person-circle fs-5"></i>
+                        </button>
+                    </li>
+
+                    <!-- OPCIÓN CONFIGURACIÓN DENTRO DEL DESPLEGABLE MÓVIL -->
+                    <li class="nav-item d-lg-none">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalConfiguracion">
+                            <i class="bi bi-gear me-1"></i> Configuración
+                        </a>
+                    </li>
+
+                    <!-- BOTÓN SALIR DESKTOP -->
+                    <li class="nav-item ms-lg-1 mt-2 mt-lg-0">
+                        <button type="button"
+                            class="btn btn-sena-custom-darkblue px-3 py-2 fw-semibold w-100 d-inline-flex align-items-center justify-content-center gap-1 rounded-pill"
+                            data-bs-toggle="modal" data-bs-target="#logoutModal">
+                            <i class="bi bi-box-arrow-right"></i> Salir
+                        </button>
+                    </li>
+
+                </ul>
+
+            </div>
 
         </div>
-
-        <!-- CONTENIDO COLAPSABLE -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-
-            <ul class="navbar-nav align-items-lg-center gap-lg-3">
-                <br>
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">
-                        <i class="bi bi-speedometer2 me-1"></i> Dashboard
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalAdjuntarExcusa">
-                        <i class="bi bi-file-earmark-medical me-1"></i> Radicar Excusa
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalCarnet">
-                        <i class="bi bi-qr-code-scan me-1"></i> Carné Digital
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-success fw-medium" href="#" onclick="agregarFaltaSimulada(); return false;">
-                        <i class="bi bi-plus-square me-1"></i> Simular Falta
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-danger fw-medium" href="#" onclick="simularExcusaRechazada(); return false;">
-                        <i class="bi bi-x-square me-1"></i> Simular Rechazo
-                    </a>
-                </li>
-
-                
-
-                <!-- BOTÓN SALIR DESKTOP -->
-                <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                    <button type="button"
-                        class="btn btn-sena-custom-darkblue px-3 py-2 fw-semibold w-100 d-inline-flex align-items-center justify-content-center gap-1"
-                        data-bs-toggle="modal" data-bs-target="#logoutModal">
-                        <i class="bi bi-box-arrow-right"></i> Salir
-                    </button>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-</nav>
+    </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
     <div class="container py-4" style="margin-top: 60px;">
