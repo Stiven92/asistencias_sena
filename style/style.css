@@ -1527,3 +1527,172 @@ body.index-page {
     }
 
 }
+
+/* =========================
+   FICHAS DEL INSTRUCTOR
+========================= */
+
+.ficha-assignment-card {
+    border: 1px solid #d4e7d2;
+    border-radius: 16px;
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+}
+
+.ficha-assignment-card:hover {
+    border-color: rgba(57, 169, 0, 0.35);
+    box-shadow: 0 8px 20px rgba(57, 169, 0, 0.08);
+}
+
+.ficha-current-card {
+    border-color: rgba(57, 169, 0, 0.35);
+    background-color: #fbfef9;
+}
+
+.ficha-temporary-card {
+    border-color: rgba(253, 195, 0, 0.45);
+}
+
+.ficha-temporary-card:hover {
+    border-color: rgba(253, 195, 0, 0.75);
+}
+
+.ficha-assignment-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.15rem;
+}
+
+.admin-icon-yellow {
+    background-color: rgba(253, 195, 0, 0.14) !important;
+    color: #9a7600 !important;
+    border: 1px solid rgba(253, 195, 0, 0.30) !important;
+}
+
+@media (max-width: 767.98px) {
+
+    .ficha-assignment-card {
+        padding: 18px !important;
+    }
+
+    .ficha-assignment-card .text-lg-end {
+        text-align: left !important;
+    }
+}
+
+
+/* =========================
+   PÁGINA DEL ESCÁNER QR
+========================= */
+
+.qr-scanner-page {
+    min-height: calc(100vh - 76px);
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
+
+.qr-scanner-card {
+    background-color: #ffffff;
+    border: 1px solid #d4e7d2;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.qr-scanner-current {
+    border-left: 4px solid var(--green);
+    background-color: #f4f7f2;
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.qr-camera-box {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    border: 2px dashed var(--green);
+    border-radius: 16px;
+    background-color: #f4f7f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.qr-camera-corner {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    border-color: var(--green);
+}
+
+.qr-camera-corner.top-left {
+    top: 20px;
+    left: 20px;
+    border-top: 4px solid;
+    border-left: 4px solid;
+}
+
+.qr-camera-corner.top-right {
+    top: 20px;
+    right: 20px;
+    border-top: 4px solid;
+    border-right: 4px solid;
+}
+
+.qr-camera-corner.bottom-left {
+    bottom: 20px;
+    left: 20px;
+    border-bottom: 4px solid;
+    border-left: 4px solid;
+}
+
+.qr-camera-corner.bottom-right {
+    bottom: 20px;
+    right: 20px;
+    border-bottom: 4px solid;
+    border-right: 4px solid;
+}
+
+.qr-camera-line {
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    top: 50%;
+    height: 2px;
+    background-color: var(--green);
+    box-shadow: 0 0 8px rgba(57, 169, 0, 0.45);
+}
+
+.qr-camera-placeholder {
+    text-align: center;
+    color: var(--blue-dark);
+}
+
+.qr-camera-placeholder i {
+    font-size: 4.5rem;
+    color: var(--green);
+}
+
+.qr-result-card {
+    border: 1px solid #d4e7d2;
+    border-radius: 12px;
+    background-color: #fbfef9;
+    padding: 18px;
+}
+
+@media (max-width: 767.98px) {
+
+    .qr-scanner-page {
+        padding-top: 20px;
+    }
+
+    .qr-scanner-card {
+        padding: 18px;
+    }
+
+    .qr-camera-box {
+        max-width: 330px;
+    }
+}
