@@ -120,7 +120,7 @@
 
                 </div>
 
-                <!-- FORMULARIO -->
+                 <!-- FORMULARIO -->
                 <div class="col-lg-6 login-form-container">
 
                     <div class="login-form">
@@ -153,7 +153,7 @@
 
                         </div>
 
-                        <form>
+                        <form onsubmit="window.location.href='actualizarContrasena.html'; return false;">
 
                             <!-- CÓDIGO DE VERIFICACIÓN -->
                             <div class="mb-3">
@@ -178,6 +178,8 @@
                                         name="codigo"
                                         placeholder="123456"
                                         maxlength="6"
+                                        pattern="[0-9]{6}"
+                                        inputmode="numeric"
                                         required
                                     >
 
@@ -185,12 +187,21 @@
 
                             </div>
 
-                            <!-- OPCCIÓN DE REENVIAR CÓDIGO -->
+                            <!-- OPCIÓN DE REENVIAR CÓDIGO -->
                             <div class="text-center mb-4">
+
                                 <small class="text-muted">
-                                    ¿No recibiste el código? 
-                                    <a href="#" class="forgot-password fw-semibold ms-1">Reenviar código</a>
+                                    ¿No recibiste el código?
+
+                                    <a
+                                        href="#"
+                                        class="forgot-password fw-semibold ms-1"
+                                    >
+                                        Reenviar código
+                                    </a>
+
                                 </small>
+
                             </div>
 
                             <!-- BOTÓN VERIFICAR -->
@@ -204,6 +215,7 @@
 
                             <!-- VOLVER AL LOGIN -->
                             <div class="text-center">
+
                                 <a
                                     href="login.html"
                                     class="forgot-password d-inline-flex align-items-center gap-1"
@@ -211,6 +223,7 @@
                                     <i class="bi bi-arrow-left"></i>
                                     Volver al inicio de sesión
                                 </a>
+
                             </div>
 
                         </form>
