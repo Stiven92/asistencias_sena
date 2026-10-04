@@ -1,0 +1,3141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Configuración - SENA Assistance</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- BOOTSTRAP -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- BOOTSTRAP ICONS -->
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- ESTILOS PROPIOS -->
+
+    <link rel="stylesheet"
+        href="../style/style.css">
+
+</head>
+
+
+<body class="index-page">
+
+
+    <!-- ========================================================= -->
+    <!-- NAVBAR -->
+    <!-- ========================================================= -->
+
+    <nav class="navbar navbar-expand-lg py-3 fixed-top navbar-custom">
+
+        <div class="container d-flex align-items-center justify-content-between">
+
+
+            <!-- LOGO -->
+
+            <a class="navbar-brand d-flex align-items-center gap-3 m-0"
+                href="adminDashboard.html">
+
+                <img src="../assets/logo/logo.svg"
+                    alt="Logo SENA"
+                    width="40">
+
+                <span>
+                    SENA Assistance
+                </span>
+
+            </a>
+
+
+            <!-- CONTENEDOR RESPONSIVE -->
+
+            <div class="d-flex align-items-center gap-2">
+
+
+                <!-- BOTÓN MÓVIL CERRAR SESIÓN -->
+
+                <button type="button"
+                    class="mobile-login-icon-btn btn-sena-custom-darkblue"
+                    data-bs-toggle="modal"
+                    data-bs-target="#logoutModal"
+                    title="Cerrar sesión">
+
+                    <i class="bi bi-box-arrow-right"></i>
+
+                </button>
+
+
+                <!-- BOTÓN MENÚ MÓVIL -->
+
+                <button class="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent"
+                    aria-controls="navbarContent"
+                    aria-expanded="false"
+                    aria-label="Mostrar menú">
+
+                    <i class="bi bi-list fs-4"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- MENÚ -->
+
+            <div class="collapse navbar-collapse justify-content-end"
+                id="navbarContent">
+
+                <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+
+                    <!-- DASHBOARD -->
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="adminDashboard.html#dashboard">
+
+                            <i class="bi bi-speedometer2 me-1"></i>
+
+                            Dashboard
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- CONTROL POR FICHAS -->
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="adminDashboard.html#control-fichas">
+
+                            <i class="bi bi-journal-check me-1"></i>
+
+                            Control por Fichas
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- USUARIOS -->
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="usuarios.html">
+
+                            <i class="bi bi-people me-1"></i>
+
+                            Usuarios
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- CONFIGURACIÓN -->
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active"
+                            href="configuracion.html">
+
+                            <i class="bi bi-gear-fill me-1"></i>
+
+                            Configuración
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- SALIR -->
+
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+
+                        <button type="button"
+                            class="btn btn-sena-custom-darkblue px-3 py-2 fw-semibold w-100"
+                            data-bs-toggle="modal"
+                            data-bs-target="#logoutModal">
+
+                            <i class="bi bi-box-arrow-right me-1"></i>
+
+                            Salir
+
+                        </button>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ========================================================= -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ========================================================= -->
+
+    <main class="py-4">
+
+        <div class="container" style="max-width: 920px;">
+
+
+            <!-- ================================================= -->
+            <!-- ENCABEZADO -->
+            <!-- ================================================= -->
+
+            <div class="row mb-4">
+
+                <div class="col-12">
+
+                    <div class="role-column-card p-4 mb-4">
+
+                        <div class="d-flex flex-column flex-md-row
+                            align-items-md-center gap-3">
+
+
+                            <!-- ICONO -->
+
+                            <div class="admin-icon-blue
+                                rounded-3
+                                d-flex align-items-center
+                                justify-content-center
+                                flex-shrink-0"
+                                style="width: 55px; height: 55px;">
+
+                                <i class="bi bi-gear-fill fs-4"></i>
+
+                            </div>
+
+
+                            <!-- TEXTO -->
+
+                            <div>
+
+                                <span class="section-label">
+                                    ADMINISTRACIÓN DEL SISTEMA
+                                </span>
+
+                                <h1 class="h4 fw-bold mt-1 mb-1 admin-text">
+                                    Configuración del sistema
+                                </h1>
+
+                                <p class="admin-muted small mb-0">
+                                    Administra la información del centro de formación
+                                    y configura los parámetros de SENA Assistance.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- INFORMACIÓN DEL CENTRO -->
+            <!-- ================================================= -->
+
+            <div class="row mb-4">
+
+                <div class="col-12">
+
+                    <div class="role-column-card p-4">
+
+
+                        <!-- CABECERA -->
+
+                        <div class="mb-4 pb-3 border-bottom">
+
+                            <span class="section-label">
+                                INFORMACIÓN INSTITUCIONAL
+                            </span>
+
+                            <h2 class="h5 fw-bold mt-1 mb-1">
+                                Información del Centro de Formación
+                            </h2>
+
+                            <p class="admin-muted small mb-0">
+                                Consulta y actualiza los datos principales
+                                del centro de formación.
+                            </p>
+
+                        </div>
+
+
+                        <!-- FORMULARIO -->
+
+                        <div class="row g-3">
+
+
+                            <!-- NOMBRE -->
+
+                            <div class="col-md-6">
+
+                                <label for="nombreCentro"
+                                    class="form-label fw-semibold small">
+
+                                    Nombre del centro
+
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="nombreCentro"
+                                    value="Centro de Desarrollo Agroindustrial y Empresarial">
+
+                            </div>
+
+
+                            <!-- CÓDIGO -->
+
+                            <div class="col-md-6">
+
+                                <label for="codigoCentro"
+                                    class="form-label fw-semibold small">
+
+                                    Código del centro
+
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="codigoCentro"
+                                    value="9502">
+
+                            </div>
+
+
+                            <!-- REGIONAL -->
+
+                            <div class="col-md-6">
+
+                                <label for="regional"
+                                    class="form-label fw-semibold small">
+
+                                    Regional
+
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="regional"
+                                    value="Cundinamarca">
+
+                            </div>
+
+
+                            <!-- CIUDAD -->
+
+                            <div class="col-md-6">
+
+                                <label for="ciudad"
+                                    class="form-label fw-semibold small">
+
+                                    Ciudad / Municipio
+
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="ciudad"
+                                    value="Villeta">
+
+                            </div>
+
+
+                            <!-- DIRECCIÓN -->
+
+                            <div class="col-md-6">
+
+                                <label for="direccion"
+                                    class="form-label fw-semibold small">
+
+                                    Dirección
+
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="direccion"
+                                    value="Carrera 30 # 17-15">
+
+                            </div>
+
+
+                            <!-- TELÉFONO -->
+
+                            <div class="col-md-6">
+
+                                <label for="telefono"
+                                    class="form-label fw-semibold small">
+
+                                    Teléfono
+
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="telefono"
+                                    value="601 5461500">
+
+                            </div>
+
+
+                            <!-- CORREO -->
+
+                            <div class="col-md-6">
+
+                                <label for="correo"
+                                    class="form-label fw-semibold small">
+
+                                    Correo institucional
+
+                                </label>
+
+                                <input type="email"
+                                    class="form-control"
+                                    id="correo"
+                                    value="centro@sena.edu.co">
+
+                            </div>
+
+
+                            <!-- SUBDIRECTOR -->
+
+                            <div class="col-md-6">
+
+                                <label for="director"
+                                    class="form-label fw-semibold small">
+
+                                    Subdirector/a de centro
+
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="director"
+                                    value="Subdirector de Centro">
+
+                            </div>
+
+
+                            <!-- ================================================= -->
+                            <!-- SUBSEDES -->
+                            <!-- ================================================= -->
+
+                            <div class="col-12 mt-3">
+
+                                <div class="border-top pt-4">
+
+                                    <div class="d-flex flex-column flex-md-row
+                                        justify-content-between
+                                        align-items-md-center
+                                        gap-3
+                                        mb-3">
+
+                                        <div>
+
+                                            <span class="section-label">
+                                                SEDES DEL CENTRO
+                                            </span>
+
+                                            <h3 class="h6 fw-bold mt-1 mb-1">
+                                                Subsedes
+                                            </h3>
+
+                                            <p class="admin-muted small mb-0">
+                                                Administra las diferentes subsedes
+                                                asociadas al centro de formación.
+                                            </p>
+
+                                        </div>
+
+                                        <button type="button"
+                                            class="btn btn-sena-custom-green px-3 py-2 fw-semibold"
+                                            id="btnAgregarSubsede"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#nuevaSubsedeModal">
+
+                                            <i class="bi bi-plus-lg me-1"></i>
+
+                                            Agregar subsede
+
+                                        </button>
+
+                                    </div>
+
+
+                                    <!-- SUBSEDES -->
+
+                                    <div id="listaSubsedes">
+
+
+                                        <!-- SUBSEDE PACHO -->
+
+                                        <div class="admin-surface-muted rounded-3 p-3 mb-3">
+
+                                            <div class="d-flex flex-column flex-md-row
+                                                justify-content-between
+                                                align-items-md-center
+                                                gap-3">
+
+                                                <div>
+
+                                                    <span class="fw-bold admin-text">
+                                                        Subsede Pacho
+                                                    </span>
+
+                                                    <small class="admin-muted d-block">
+                                                        Municipio: Pacho
+                                                    </small>
+
+                                                    <small class="admin-muted d-block">
+                                                        Dirección: Carrera 30 # 17-15
+                                                    </small>
+
+                                                </div>
+
+                                                <div class="d-flex align-items-center gap-2">
+
+                                                    <span class="badge-status badge-status-green">
+
+                                                        <i class="bi bi-check-circle-fill me-1"></i>
+
+                                                        Activa
+
+                                                    </span>
+
+                                                    <button type="button"
+                                                        class="config-edit-btn btn-editar-subsede"
+                                                        title="Editar subsede">
+
+                                                        <i class="bi bi-pencil-square"></i>
+
+                                                    </button>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- BOTÓN -->
+
+                            <div class="col-12 text-end mt-2">
+
+                                <button type="button"
+                                    id="btnGuardarCentro"
+                                    class="btn btn-sena-custom-green px-4 py-2 fw-semibold">
+
+                                    <i class="bi bi-check-lg me-1"></i>
+
+                                    Guardar información
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- CONFIGURACIÓN DE ASISTENCIA -->
+            <!-- ================================================= -->
+
+            <div class="row mb-4">
+
+                <div class="col-12">
+
+                    <div class="role-column-card p-4">
+
+
+                        <!-- CABECERA -->
+
+                        <div class="mb-4 pb-3 border-bottom">
+
+                            <span class="section-label">
+                                CONTROL DE ASISTENCIA
+                            </span>
+
+                            <h2 class="h5 fw-bold mt-1 mb-1">
+                                Configuración de Asistencia
+                            </h2>
+
+                            <p class="admin-muted small mb-0">
+                                Define los horarios y reglas utilizadas
+                                para registrar la asistencia.
+                            </p>
+
+                        </div>
+
+
+                        <div class="row g-4">
+
+
+                            <!-- JORNADA Y HORARIO -->
+
+                            <div class="col-12">
+
+                                <div class="admin-surface-muted
+                                    rounded-3
+                                    p-3 h-100">
+
+
+                                    <div class="d-flex align-items-center gap-3 mb-4">
+
+                                        <div class="admin-icon-green
+                                            rounded-3
+                                            d-flex align-items-center
+                                            justify-content-center"
+                                            style="width: 45px; height: 45px;">
+
+                                            <i class="bi bi-sun-fill"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <h3 class="h6 fw-bold mb-0">
+                                                Jornada y horario de ingreso
+                                            </h3>
+
+                                            <small class="admin-muted">
+                                                Selecciona la jornada y configura
+                                                el horario permitido para registrar asistencia.
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="row g-3">
+
+
+                                        <!-- JORNADA -->
+
+                                        <div class="col-lg-4">
+
+                                            <label for="jornada"
+                                                class="form-label fw-semibold small">
+
+                                                Jornada
+
+                                            </label>
+
+                                            <select class="form-select"
+                                                id="jornada">
+
+                                                <option selected>
+                                                    Diurna
+                                                </option>
+
+                                                <option>
+                                                    Tarde
+                                                </option>
+
+                                                <option>
+                                                    Nocturna
+                                                </option>
+
+                                                <option>
+                                                    Mixta
+                                                </option>
+
+                                            </select>
+
+                                        </div>
+
+
+                                        <!-- INICIO -->
+
+                                        <div class="col-lg-4">
+
+                                            <label for="horaInicio"
+                                                class="form-label fw-semibold small">
+
+                                                Inicio del registro
+
+                                            </label>
+
+                                            <input type="time"
+                                                class="form-control"
+                                                id="horaInicio"
+                                                value="06:00">
+
+                                        </div>
+
+
+                                        <!-- LÍMITE -->
+
+                                        <div class="col-lg-4">
+
+                                            <label for="horaLimite"
+                                                class="form-label fw-semibold small">
+
+                                                Hora límite de ingreso
+
+                                            </label>
+
+                                            <input type="time"
+                                                class="form-control"
+                                                id="horaLimite"
+                                                value="07:00">
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- TOLERANCIA -->
+
+                            <div class="col-lg-6">
+
+                                <div class="admin-surface-muted
+                                    rounded-3
+                                    p-3 h-100">
+
+
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+
+                                        <div class="admin-icon-blue
+                                            rounded-3
+                                            d-flex align-items-center
+                                            justify-content-center"
+                                            style="width: 45px; height: 45px;">
+
+                                            <i class="bi bi-clock-history"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <h3 class="h6 fw-bold mb-0">
+                                                Tolerancia de ingreso
+                                            </h3>
+
+                                            <small class="admin-muted">
+                                                Tiempo adicional permitido
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <label for="tolerancia"
+                                        class="form-label fw-semibold small">
+
+                                        Minutos de tolerancia
+
+                                    </label>
+
+
+                                    <div class="input-group">
+
+                                        <input type="number"
+                                            class="form-control"
+                                            id="tolerancia"
+                                            value="10"
+                                            min="0">
+
+                                        <span class="input-group-text"
+                                            style="min-width: 82px; justify-content: center;">
+
+                                            minutos
+
+                                        </span>
+
+                                    </div>
+
+
+                                    <small class="admin-muted d-block mt-2">
+
+                                        Después de este tiempo el sistema
+                                        puede marcar la llegada como tardía.
+
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- INASISTENCIAS -->
+
+                            <div class="col-lg-6">
+
+                                <div class="admin-surface-muted
+                                    rounded-3
+                                    p-3 h-100">
+
+
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+
+                                        <div class="modal-icon-purple
+                                            rounded-3
+                                            d-flex align-items-center
+                                            justify-content-center"
+                                            style="width: 45px; height: 45px;">
+
+                                            <i class="bi bi-exclamation-triangle"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <h3 class="h6 fw-bold mb-0">
+                                                Control de inasistencias
+                                            </h3>
+
+                                            <small class="admin-muted">
+                                                Configuración de alertas
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <label for="faltasAlerta"
+                                        class="form-label fw-semibold small">
+
+                                        Faltas para generar alerta
+
+                                    </label>
+
+
+                                    <div class="input-group mb-3">
+
+                                        <input type="number"
+                                            class="form-control"
+                                            id="faltasAlerta"
+                                            value="5"
+                                            min="1">
+
+                                        <span class="input-group-text"
+                                            style="min-width: 68px; justify-content: center;">
+
+                                            faltas
+
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="form-check">
+
+                                        <input class="form-check-input"
+                                            type="checkbox"
+                                            id="notificarInstructor"
+                                            checked>
+
+                                        <label class="form-check-label small"
+                                            for="notificarInstructor">
+
+                                            Notificar al instructor
+
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- GUARDAR -->
+
+                            <div class="col-12 text-end">
+
+                                <button type="button"
+                                    id="btnGuardarAsistencia"
+                                    class="btn btn-sena-custom-green px-4 py-2 fw-semibold">
+
+                                    <i class="bi bi-check-lg me-1"></i>
+
+                                    Guardar configuración
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- CONFIGURACIÓN QR -->
+            <!-- ================================================= -->
+
+            <div class="row mb-4">
+
+                <div class="col-12">
+
+                    <div class="role-column-card p-4">
+
+
+                        <div class="mb-4 pb-3 border-bottom">
+
+                            <span class="section-label">
+                                REGISTRO DIGITAL
+                            </span>
+
+                            <h2 class="h5 fw-bold mt-1 mb-1">
+                                Configuración del Código QR
+                            </h2>
+
+                            <p class="admin-muted small mb-0">
+                                Configura las reglas utilizadas para el
+                                registro de asistencia mediante códigos QR.
+                            </p>
+
+                        </div>
+
+
+                        <div class="row g-4">
+
+
+                            <!-- VALIDEZ -->
+
+                            <div class="col-lg-6">
+
+                                <div class="admin-surface-muted
+                                    rounded-3
+                                    p-4 h-100">
+
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+
+                                        <div class="admin-icon-green
+                                            rounded-3
+                                            d-flex align-items-center
+                                            justify-content-center
+                                            flex-shrink-0"
+                                            style="width: 50px; height: 50px;">
+
+                                            <i class="bi bi-qr-code fs-4"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <h3 class="h6 fw-bold mb-1">
+                                                Validez del código
+                                            </h3>
+
+                                            <small class="admin-muted">
+                                                Tiempo durante el cual el código
+                                                QR permanece disponible.
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <label for="validezQR"
+                                        class="form-label fw-semibold small">
+
+                                        Tiempo de disponibilidad
+
+                                    </label>
+
+
+                                    <div class="input-group qr-validity-group">
+
+                                        <input type="number"
+                                            class="form-control"
+                                            id="validezQR"
+                                            value="60"
+                                            min="10">
+
+                                        <span class="input-group-text">
+                                            segundos
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- CONFIRMACIÓN -->
+
+                            <div class="col-lg-6">
+
+                                <div class="admin-surface-muted
+                                    rounded-3
+                                    p-4 h-100">
+
+                                    <div class="d-flex align-items-center gap-3 mb-3">
+
+                                        <div class="admin-icon-blue
+                                            rounded-3
+                                            d-flex align-items-center
+                                            justify-content-center
+                                            flex-shrink-0"
+                                            style="width: 50px; height: 50px;">
+
+                                            <i class="bi bi-check-circle fs-4"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <h3 class="h6 fw-bold mb-1">
+                                                Confirmación después del escaneo
+                                            </h3>
+
+                                            <small class="admin-muted">
+                                                Mensaje mostrado cuando el registro
+                                                se realiza correctamente.
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="d-flex align-items-center
+                                        justify-content-between
+                                        gap-3
+                                        mt-4">
+
+                                        <div>
+
+                                            <span class="fw-semibold small">
+                                                Mostrar confirmación
+                                            </span>
+
+                                            <p class="admin-muted small mb-0 mt-1">
+                                                Informa al aprendiz que su asistencia
+                                                fue registrada correctamente.
+                                            </p>
+
+                                        </div>
+
+
+                                        <div class="form-check form-switch flex-shrink-0">
+
+                                            <input class="form-check-input"
+                                                type="checkbox"
+                                                role="switch"
+                                                id="confirmacionQR"
+                                                checked>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- BOTÓN -->
+
+                            <div class="col-12 text-end">
+
+                                <button type="button"
+                                    id="btnGuardarQR"
+                                    class="btn btn-sena-custom-green px-4 py-2 fw-semibold">
+
+                                    <i class="bi bi-check-lg me-1"></i>
+
+                                    Guardar configuración QR
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- AMBIENTES DE FORMACIÓN -->
+            <!-- ================================================= -->
+
+            <div class="row mb-5">
+
+                <div class="col-12">
+
+                    <div class="role-column-card p-4">
+
+
+                        <!-- CABECERA -->
+
+                        <div class="d-flex
+                            flex-column
+                            flex-md-row
+                            justify-content-between
+                            align-items-md-center
+                            gap-3
+                            mb-4
+                            pb-3
+                            border-bottom">
+
+                            <div>
+
+                                <span class="section-label">
+                                    ESPACIOS DE FORMACIÓN
+                                </span>
+
+                                <h2 class="h5 fw-bold mt-1 mb-1">
+                                    Ambientes de Formación
+                                </h2>
+
+                                <p class="admin-muted small mb-0">
+                                    Administra los ambientes disponibles
+                                    para las fichas del centro.
+                                </p>
+
+                            </div>
+
+
+                            <button type="button"
+                                id="btnNuevoAmbiente"
+                                class="btn btn-sena-custom-green px-3 py-2 fw-semibold"
+                                data-bs-toggle="modal"
+                                data-bs-target="#nuevoAmbienteModal">
+
+                                <i class="bi bi-plus-lg me-1"></i>
+
+                                Nuevo ambiente
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- TABLA -->
+
+                        <div class="table-responsive">
+
+                            <table class="table table-hover
+                                align-middle mb-0 small">
+
+                                <thead class="table-light">
+
+                                    <tr>
+
+                                        <th class="py-3">
+                                            Ambiente
+                                        </th>
+
+                                        <th class="py-3">
+                                            Tipo
+                                        </th>
+
+                                        <th class="py-3">
+                                            Capacidad
+                                        </th>
+
+                                        <th class="py-3">
+                                            Ubicación
+                                        </th>
+
+                                        <th class="py-3 text-center">
+                                            Estado
+                                        </th>
+
+                                        <th class="py-3 text-center">
+                                            Acciones
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="tablaAmbientes">
+
+
+                                    <!-- AMBIENTE 101 -->
+
+                                    <tr>
+
+                                        <td>
+
+                                            <span class="fw-bold admin-text">
+                                                Ambiente 101
+                                            </span>
+
+                                            <small class="admin-muted d-block">
+                                                AMB-101
+                                            </small>
+
+                                        </td>
+
+                                        <td>
+                                            Aula
+                                        </td>
+
+                                        <td>
+                                            35 aprendices
+                                        </td>
+
+                                        <td>
+                                            Bloque A
+                                        </td>
+
+                                        <td class="text-center">
+
+                                            <span class="badge-status badge-status-green">
+
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+
+                                                Activo
+
+                                            </span>
+
+                                        </td>
+
+                                        <td class="text-center">
+
+                                            <button type="button"
+                                                class="config-edit-btn btn-editar-ambiente"
+                                                title="Editar ambiente">
+
+                                                <i class="bi bi-pencil-square"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+                                    <!-- AMBIENTE 203 -->
+
+                                    <tr>
+
+                                        <td>
+
+                                            <span class="fw-bold admin-text">
+                                                Ambiente 203
+                                            </span>
+
+                                            <small class="admin-muted d-block">
+                                                AMB-203
+                                            </small>
+
+                                        </td>
+
+                                        <td>
+                                            Sala de sistemas
+                                        </td>
+
+                                        <td>
+                                            30 aprendices
+                                        </td>
+
+                                        <td>
+                                            Bloque B
+                                        </td>
+
+                                        <td class="text-center">
+
+                                            <span class="badge-status badge-status-green">
+
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+
+                                                Activo
+
+                                            </span>
+
+                                        </td>
+
+                                        <td class="text-center">
+
+                                            <button type="button"
+                                                class="config-edit-btn btn-editar-ambiente"
+                                                title="Editar ambiente">
+
+                                                <i class="bi bi-pencil-square"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+                                    <!-- AMBIENTE 305 -->
+
+                                    <tr>
+
+                                        <td>
+
+                                            <span class="fw-bold admin-text">
+                                                Ambiente 305
+                                            </span>
+
+                                            <small class="admin-muted d-block">
+                                                AMB-305
+                                            </small>
+
+                                        </td>
+
+                                        <td>
+                                            Laboratorio
+                                        </td>
+
+                                        <td>
+                                            25 aprendices
+                                        </td>
+
+                                        <td>
+                                            Bloque C
+                                        </td>
+
+                                        <td class="text-center">
+
+                                            <span class="badge-status badge-status-yellow">
+
+                                                <i class="bi bi-exclamation-circle-fill me-1"></i>
+
+                                                Mantenimiento
+
+                                            </span>
+
+                                        </td>
+
+                                        <td class="text-center">
+
+                                            <button type="button"
+                                                class="config-edit-btn btn-editar-ambiente"
+                                                title="Editar ambiente">
+
+                                                <i class="bi bi-pencil-square"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ========================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================= -->
+
+    <footer class="footer-custom">
+
+        <div class="container">
+
+            <div class="row align-items-center
+                justify-content-between g-4">
+
+
+                <!-- INFORMACIÓN DE MARCA -->
+
+                <div class="col-lg-5 col-md-6">
+
+                    <div class="d-flex align-items-center gap-3">
+
+                        <img src="../assets/logo/logo.svg"
+                            alt="Logo SENA"
+                            width="40">
+
+                        <div>
+
+                            <h5 class="mb-1 footer-brand-title">
+                                SENA Assistance
+                            </h5>
+
+                            <small class="admin-muted">
+                                www.sena.edu.co
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MENÚ DEL FOOTER -->
+
+                <div class="col-lg-7 col-md-6">
+
+                    <ul class="footer-menu">
+
+                        <li>
+                            <a href="adminDashboard.html#dashboard">
+                                Dashboard
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="adminDashboard.html#control-fichas">
+                                Control por Fichas
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="usuarios.html">
+                                Usuarios
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="configuracion.html"
+                                class="active">
+                                Configuración
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="footer-login-link status-blue-text"
+                                data-bs-toggle="modal"
+                                data-bs-target="#logoutModal">
+                                Cerrar sesión
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <hr class="my-4 footer-divider">
+
+
+            <div class="row">
+
+                <div class="col-12 text-center">
+
+                    <small class="admin-muted">
+
+                        © 2026 SENA Assistance.
+                        Todos los derechos reservados.
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ========================================================= -->
+    <!-- MODAL NUEVA / EDITAR SUBSEDE -->
+    <!-- ========================================================= -->
+
+    <div class="modal fade config-form-modal"
+        id="nuevaSubsedeModal"
+        tabindex="-1"
+        aria-labelledby="nuevaSubsedeModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+
+                <!-- CABECERA -->
+
+                <div class="modal-header">
+
+                    <div class="d-flex align-items-center gap-3">
+
+                        <div class="admin-icon-blue
+                            rounded-3
+                            d-flex align-items-center
+                            justify-content-center
+                            flex-shrink-0"
+                            style="width: 45px; height: 45px;">
+
+                            <i class="bi bi-building-add"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span class="section-label">
+                                SEDES DEL CENTRO
+                            </span>
+
+                            <h5 class="fw-bold mb-0 admin-text"
+                                id="nuevaSubsedeModalLabel">
+
+                                Nueva subsede
+
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Cerrar">
+                    </button>
+
+                </div>
+
+
+                <!-- CUERPO -->
+
+                <div class="modal-body">
+
+                    <p class="admin-muted small mb-4"
+                        id="textoSubsedeModal">
+
+                        Registra la información de la nueva subsede
+                        asociada al centro de formación.
+
+                    </p>
+
+
+                    <!-- FORMULARIO EN DOS COLUMNAS -->
+
+                    <div class="row g-3">
+
+
+                        <!-- NOMBRE -->
+
+                        <div class="col-md-6">
+
+                            <label for="nombreSubsede"
+                                class="form-label fw-semibold small">
+
+                                Nombre de la subsede
+
+                            </label>
+
+                            <input type="text"
+                                class="form-control"
+                                id="nombreSubsede"
+                                placeholder="Ej. Subsede La Vega">
+
+                        </div>
+
+
+                        <!-- MUNICIPIO -->
+
+                        <div class="col-md-6">
+
+                            <label for="municipioSubsede"
+                                class="form-label fw-semibold small">
+
+                                Municipio
+
+                            </label>
+
+                            <input type="text"
+                                class="form-control"
+                                id="municipioSubsede"
+                                placeholder="Ej. La Vega">
+
+                        </div>
+
+
+                        <!-- DIRECCIÓN -->
+
+                        <div class="col-md-6">
+
+                            <label for="direccionSubsede"
+                                class="form-label fw-semibold small">
+
+                                Dirección
+
+                            </label>
+
+                            <input type="text"
+                                class="form-control"
+                                id="direccionSubsede"
+                                placeholder="Dirección de la subsede">
+
+                        </div>
+
+
+                        <!-- ESTADO -->
+
+                        <div class="col-md-6">
+
+                            <label for="estadoSubsede"
+                                class="form-label fw-semibold small">
+
+                                Estado
+
+                            </label>
+
+                            <select class="form-select"
+                                id="estadoSubsede">
+
+                                <option value="Activa" selected>
+                                    Activa
+                                </option>
+
+                                <option value="Inactiva">
+                                    Inactiva
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PIE -->
+
+                <div class="modal-footer">
+
+                    <button type="button"
+                        class="btn btn-modal-cancel px-4 py-2 fw-semibold"
+                        data-bs-dismiss="modal">
+
+                        Cancelar
+
+                    </button>
+
+                    <button type="button"
+                        class="btn btn-sena-custom-green px-4 py-2 fw-semibold"
+                        id="btnGuardarSubsede">
+
+                        <i class="bi bi-check-lg me-1"></i>
+
+                        <span id="textoBotonSubsede">
+                            Guardar subsede
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================================= -->
+    <!-- MODAL NUEVO / EDITAR AMBIENTE -->
+    <!-- ========================================================= -->
+
+    <div class="modal fade config-form-modal"
+        id="nuevoAmbienteModal"
+        tabindex="-1"
+        aria-labelledby="nuevoAmbienteModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+
+                <!-- CABECERA -->
+
+                <div class="modal-header">
+
+                    <div class="d-flex align-items-center gap-3">
+
+                        <div class="admin-icon-green
+                            rounded-3
+                            d-flex align-items-center
+                            justify-content-center
+                            flex-shrink-0"
+                            style="width: 45px; height: 45px;">
+
+                            <i class="bi bi-building-add"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span class="section-label">
+                                ESPACIOS DE FORMACIÓN
+                            </span>
+
+                            <h5 class="fw-bold mb-0 admin-text"
+                                id="nuevoAmbienteModalLabel">
+
+                                Nuevo ambiente
+
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Cerrar">
+                    </button>
+
+                </div>
+
+
+                <!-- CUERPO -->
+
+                <div class="modal-body">
+
+                    <p class="admin-muted small mb-4"
+                        id="textoAmbienteModal">
+
+                        Registra la información del nuevo ambiente
+                        de formación.
+
+                    </p>
+
+
+                    <div class="row g-3">
+
+
+                        <!-- AMBIENTE -->
+
+                        <div class="col-md-6">
+
+                            <label for="nuevoAmbiente"
+                                class="form-label fw-semibold small">
+
+                                Ambiente
+
+                            </label>
+
+                            <input type="text"
+                                class="form-control"
+                                id="nuevoAmbiente"
+                                placeholder="Ej. Ambiente 402">
+
+                        </div>
+
+
+                        <!-- CÓDIGO -->
+
+                        <div class="col-md-6">
+
+                            <label for="nuevoCodigo"
+                                class="form-label fw-semibold small">
+
+                                Código del ambiente
+
+                            </label>
+
+                            <input type="text"
+                                class="form-control"
+                                id="nuevoCodigo"
+                                placeholder="Ej. AMB-402">
+
+                        </div>
+
+
+                        <!-- TIPO -->
+
+                        <div class="col-md-6">
+
+                            <label for="nuevoTipo"
+                                class="form-label fw-semibold small">
+
+                                Tipo
+
+                            </label>
+
+                            <select class="form-select"
+                                id="nuevoTipo">
+
+                                <option value="" selected disabled>
+                                    Seleccione un tipo
+                                </option>
+
+                                <option>
+                                    Aula
+                                </option>
+
+                                <option>
+                                    Sala de sistemas
+                                </option>
+
+                                <option>
+                                    Laboratorio
+                                </option>
+
+                                <option>
+                                    Taller
+                                </option>
+
+                                <option>
+                                    Auditorio
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- CAPACIDAD -->
+
+                        <div class="col-md-6">
+
+                            <label for="nuevaCapacidad"
+                                class="form-label fw-semibold small">
+
+                                Capacidad de aprendices
+
+                            </label>
+
+                            <div class="input-group capacidad-input-group">
+
+                                <input type="number"
+                                    class="form-control"
+                                    id="nuevaCapacidad"
+                                    min="1"
+                                    placeholder="Ej. 30">
+
+                                <span class="input-group-text">
+
+                                    aprendices
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- UBICACIÓN -->
+
+                        <div class="col-md-6">
+
+                            <label for="nuevaUbicacion"
+                                class="form-label fw-semibold small">
+
+                                Ubicación
+
+                            </label>
+
+                            <input type="text"
+                                class="form-control"
+                                id="nuevaUbicacion"
+                                placeholder="Ej. Bloque D">
+
+                        </div>
+
+
+                        <!-- ESTADO -->
+
+                        <div class="col-md-6">
+
+                            <label for="nuevoEstado"
+                                class="form-label fw-semibold small">
+
+                                Estado
+
+                            </label>
+
+                            <select class="form-select"
+                                id="nuevoEstado">
+
+                                <option value="Activo" selected>
+                                    Activo
+                                </option>
+
+                                <option value="Mantenimiento">
+                                    Mantenimiento
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PIE -->
+
+                <div class="modal-footer">
+
+                    <button type="button"
+                        class="btn btn-modal-cancel px-4 py-2 fw-semibold"
+                        data-bs-dismiss="modal">
+
+                        Cancelar
+
+                    </button>
+
+                    <button type="button"
+                        class="btn btn-sena-custom-green px-4 py-2 fw-semibold"
+                        id="btnGuardarAmbiente">
+
+                        <i class="bi bi-check-lg me-1"></i>
+
+                        <span id="textoBotonAmbiente">
+                            Guardar ambiente
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================================= -->
+    <!-- MODAL CERRAR SESIÓN -->
+    <!-- ========================================================= -->
+
+    <div class="modal fade"
+        id="logoutModal"
+        tabindex="-1"
+        aria-labelledby="logoutModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content
+                admin-dashboard-modal
+                border-0
+                shadow-lg
+                rounded-4
+                p-2">
+
+
+                <button type="button"
+                    class="btn-close modal-close-btn"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+                </button>
+
+
+                <div class="modal-body text-center p-4">
+
+
+                    <div class="mb-3 modal-icon modal-icon-blue">
+
+                        <i class="bi bi-exclamation-circle-fill fs-2"></i>
+
+                    </div>
+
+
+                    <h5 class="fw-bold mb-2 admin-text"
+                        id="logoutModalLabel">
+
+                        ¿Estás seguro que deseas salir?
+
+                    </h5>
+
+
+                    <p class="admin-muted small mb-4">
+
+                        Se cerrará tu sesión actual como administrador
+                        y tendrás que volver a ingresar tus credenciales.
+
+                    </p>
+
+
+                    <div class="d-flex justify-content-center gap-2">
+
+
+                        <button type="button"
+                            class="btn btn-modal-cancel px-4 py-2 small fw-semibold"
+                            data-bs-dismiss="modal">
+
+                            Cancelar
+
+                        </button>
+
+
+                        <a href="index.html"
+                            class="btn btn-sena-custom-darkblue
+                            px-4 py-2
+                            small
+                            fw-semibold
+                            text-white
+                            text-decoration-none">
+
+                            Sí, cerrar sesión
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================================= -->
+    <!-- MODAL INFORMACIÓN ACTUALIZADA -->
+    <!-- ========================================================= -->
+
+    <div class="modal fade"
+        id="successModal"
+        tabindex="-1"
+        aria-labelledby="successModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content
+                admin-dashboard-modal
+                border-0
+                shadow-lg
+                rounded-4
+                p-2">
+
+
+                <button type="button"
+                    class="btn-close modal-close-btn"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+                </button>
+
+
+                <div class="modal-body text-center p-4">
+
+                    <div class="mb-3 modal-icon modal-icon-green">
+
+                        <i class="bi bi-check-circle-fill fs-2"></i>
+
+                    </div>
+
+
+                    <h5 class="fw-bold mb-2 admin-text"
+                        id="successModalLabel">
+
+                        Información actualizada correctamente
+
+                    </h5>
+
+
+                    <p class="admin-muted small mb-4"
+                        id="successModalText">
+
+                        Los cambios fueron guardados correctamente.
+
+                    </p>
+
+
+                    <button type="button"
+                        class="btn btn-sena-custom-green px-4 py-2 fw-semibold"
+                        data-bs-dismiss="modal">
+
+                        Aceptar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================================= -->
+    <!-- BOOTSTRAP JS -->
+    <!-- ========================================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- ========================================================= -->
+    <!-- SCRIPT -->
+    <!-- ========================================================= -->
+
+    <script>
+
+
+        /* ===================================================== */
+        /* NAVBAR */
+        /* ===================================================== */
+
+        window.addEventListener('scroll', function () {
+
+            const navbar =
+                document.querySelector('.navbar-custom');
+
+            if (window.scrollY > 20) {
+
+                navbar.classList.add('navbar-scrolled');
+
+            } else {
+
+                navbar.classList.remove('navbar-scrolled');
+
+            }
+
+        });
+
+
+
+        /* ===================================================== */
+        /* CERRAR MENÚ MÓVIL */
+        /* ===================================================== */
+
+        const navbarLinks =
+            document.querySelectorAll('.navbar-nav .nav-link');
+
+        const navbarCollapse =
+            document.getElementById('navbarContent');
+
+
+        navbarLinks.forEach(link => {
+
+            link.addEventListener('click', function () {
+
+                if (window.innerWidth < 992) {
+
+                    const collapse =
+                        bootstrap.Collapse.getInstance(navbarCollapse);
+
+                    if (collapse) {
+
+                        collapse.hide();
+
+                    }
+
+                }
+
+            });
+
+        });
+
+
+
+        /* ===================================================== */
+        /* MODAL DE CONFIRMACIÓN */
+        /* ===================================================== */
+
+        const successModal =
+            new bootstrap.Modal(
+                document.getElementById('successModal')
+            );
+
+
+        const successModalText =
+            document.getElementById('successModalText');
+
+
+        function mostrarConfirmacion(mensaje) {
+
+            successModalText.textContent = mensaje;
+
+            successModal.show();
+
+        }
+
+
+
+        /* ===================================================== */
+        /* GUARDAR INFORMACIÓN DEL CENTRO */
+        /* ===================================================== */
+
+        document
+            .getElementById('btnGuardarCentro')
+            .addEventListener('click', function () {
+
+                mostrarConfirmacion(
+                    'La información del centro de formación fue actualizada correctamente.'
+                );
+
+            });
+
+
+
+        /* ===================================================== */
+        /* GUARDAR CONFIGURACIÓN DE ASISTENCIA */
+        /* ===================================================== */
+
+        document
+            .getElementById('btnGuardarAsistencia')
+            .addEventListener('click', function () {
+
+                mostrarConfirmacion(
+                    'La configuración de asistencia fue actualizada correctamente.'
+                );
+
+            });
+
+
+
+        /* ===================================================== */
+        /* GUARDAR CONFIGURACIÓN QR */
+        /* ===================================================== */
+
+        document
+            .getElementById('btnGuardarQR')
+            .addEventListener('click', function () {
+
+                mostrarConfirmacion(
+                    'La configuración del código QR fue actualizada correctamente.'
+                );
+
+            });
+
+
+
+        /* ===================================================== */
+        /* SUBSEDES */
+        /* ===================================================== */
+
+        const nuevaSubsedeModalElement =
+            document.getElementById('nuevaSubsedeModal');
+
+
+        const nuevaSubsedeModal =
+            bootstrap.Modal.getOrCreateInstance(
+                nuevaSubsedeModalElement
+            );
+
+
+        const btnGuardarSubsede =
+            document.getElementById('btnGuardarSubsede');
+
+
+        const listaSubsedes =
+            document.getElementById('listaSubsedes');
+
+
+        const tituloSubsede =
+            document.getElementById('nuevaSubsedeModalLabel');
+
+
+        const textoSubsedeModal =
+            document.getElementById('textoSubsedeModal');
+
+
+        const textoBotonSubsede =
+            document.getElementById('textoBotonSubsede');
+
+
+        let subsedeEditando = null;
+
+
+
+        /* ===================================================== */
+        /* ABRIR FORMULARIO PARA NUEVA SUBSEDE */
+        /* ===================================================== */
+
+        document
+            .getElementById('btnAgregarSubsede')
+            .addEventListener('click', function () {
+
+                subsedeEditando = null;
+
+                tituloSubsede.textContent =
+                    'Nueva subsede';
+
+                textoSubsedeModal.textContent =
+                    'Registra la información de la nueva subsede asociada al centro de formación.';
+
+                textoBotonSubsede.textContent =
+                    'Guardar subsede';
+
+                limpiarFormularioSubsede();
+
+            });
+
+
+
+        /* ===================================================== */
+        /* EDITAR SUBSEDE */
+        /* ===================================================== */
+
+        listaSubsedes.addEventListener('click', function (event) {
+
+            const boton =
+                event.target.closest('.btn-editar-subsede');
+
+
+            if (!boton) {
+
+                return;
+
+            }
+
+
+            const tarjeta =
+                boton.closest('.admin-surface-muted');
+
+
+            const nombre =
+                tarjeta
+                    .querySelector('.fw-bold')
+                    .textContent
+                    .trim();
+
+
+            const datos =
+                tarjeta.querySelectorAll('small');
+
+
+            const municipio =
+                datos[0]
+                    .textContent
+                    .replace('Municipio:', '')
+                    .trim();
+
+
+            const direccion =
+                datos[1]
+                    .textContent
+                    .replace('Dirección:', '')
+                    .trim();
+
+
+            const estado =
+                tarjeta
+                    .querySelector('.badge-status')
+                    .textContent
+                    .trim();
+
+
+            subsedeEditando = tarjeta;
+
+
+            document.getElementById('nombreSubsede').value =
+                nombre;
+
+            document.getElementById('municipioSubsede').value =
+                municipio;
+
+            document.getElementById('direccionSubsede').value =
+                direccion;
+
+            document.getElementById('estadoSubsede').value =
+                estado;
+
+
+            tituloSubsede.textContent =
+                'Editar subsede';
+
+            textoSubsedeModal.textContent =
+                'Actualiza la información de la subsede seleccionada.';
+
+            textoBotonSubsede.textContent =
+                'Actualizar subsede';
+
+
+            nuevaSubsedeModal.show();
+
+        });
+
+
+
+        /* ===================================================== */
+        /* GUARDAR / ACTUALIZAR SUBSEDE */
+        /* ===================================================== */
+
+        btnGuardarSubsede.addEventListener('click', function () {
+
+            const nombre =
+                document.getElementById('nombreSubsede')
+                    .value
+                    .trim();
+
+
+            const municipio =
+                document.getElementById('municipioSubsede')
+                    .value
+                    .trim();
+
+
+            const direccion =
+                document.getElementById('direccionSubsede')
+                    .value
+                    .trim();
+
+
+            const estado =
+                document.getElementById('estadoSubsede')
+                    .value;
+
+
+            if (!nombre || !municipio || !direccion) {
+
+                alert(
+                    'Completa todos los campos obligatorios de la subsede.'
+                );
+
+                return;
+
+            }
+
+
+            const estadoClase =
+                estado === 'Activa'
+                    ? 'badge-status-green'
+                    : 'badge-status-yellow';
+
+
+            const iconoEstado =
+                estado === 'Activa'
+                    ? 'bi-check-circle-fill'
+                    : 'bi-exclamation-circle-fill';
+
+
+
+            /* ================================================= */
+            /* ACTUALIZAR SUBSEDE EXISTENTE */
+            /* ================================================= */
+
+            if (subsedeEditando) {
+
+                subsedeEditando.innerHTML = `
+
+                    <div class="d-flex flex-column flex-md-row
+                        justify-content-between
+                        align-items-md-center
+                        gap-3">
+
+                        <div>
+
+                            <span class="fw-bold admin-text">
+                                ${nombre}
+                            </span>
+
+                            <small class="admin-muted d-block">
+                                Municipio: ${municipio}
+                            </small>
+
+                            <small class="admin-muted d-block">
+                                Dirección: ${direccion}
+                            </small>
+
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2">
+
+                            <span class="badge-status ${estadoClase}">
+
+                                <i class="bi ${iconoEstado} me-1"></i>
+
+                                ${estado}
+
+                            </span>
+
+                            <button type="button"
+                                class="config-edit-btn btn-editar-subsede"
+                                title="Editar subsede">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+
+                nuevaSubsedeModal.hide();
+
+                limpiarFormularioSubsede();
+
+
+                mostrarConfirmacion(
+                    'La información de la subsede fue actualizada correctamente.'
+                );
+
+
+                subsedeEditando = null;
+
+
+                return;
+
+            }
+
+
+
+            /* ================================================= */
+            /* CREAR NUEVA SUBSEDE */
+            /* ================================================= */
+
+            const nuevaSubsede =
+                document.createElement('div');
+
+
+            nuevaSubsede.className =
+                'admin-surface-muted rounded-3 p-3 mb-3';
+
+
+            nuevaSubsede.innerHTML = `
+
+                <div class="d-flex flex-column flex-md-row
+                    justify-content-between
+                    align-items-md-center
+                    gap-3">
+
+                    <div>
+
+                        <span class="fw-bold admin-text">
+                            ${nombre}
+                        </span>
+
+                        <small class="admin-muted d-block">
+                            Municipio: ${municipio}
+                        </small>
+
+                        <small class="admin-muted d-block">
+                            Dirección: ${direccion}
+                        </small>
+
+                    </div>
+
+                    <div class="d-flex align-items-center gap-2">
+
+                        <span class="badge-status ${estadoClase}">
+
+                            <i class="bi ${iconoEstado} me-1"></i>
+
+                            ${estado}
+
+                        </span>
+
+                        <button type="button"
+                            class="config-edit-btn btn-editar-subsede"
+                            title="Editar subsede">
+
+                            <i class="bi bi-pencil-square"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            listaSubsedes.appendChild(nuevaSubsede);
+
+
+            limpiarFormularioSubsede();
+
+            nuevaSubsedeModal.hide();
+
+
+            mostrarConfirmacion(
+                'La nueva subsede fue registrada correctamente.'
+            );
+
+        });
+
+
+
+        /* ===================================================== */
+        /* LIMPIAR FORMULARIO SUBSEDE */
+        /* ===================================================== */
+
+        function limpiarFormularioSubsede() {
+
+            document.getElementById('nombreSubsede').value =
+                '';
+
+            document.getElementById('municipioSubsede').value =
+                '';
+
+            document.getElementById('direccionSubsede').value =
+                '';
+
+            document.getElementById('estadoSubsede').value =
+                'Activa';
+
+        }
+
+
+
+        /* ===================================================== */
+        /* NUEVOS AMBIENTES */
+        /* ===================================================== */
+
+        const nuevoAmbienteModalElement =
+            document.getElementById('nuevoAmbienteModal');
+
+
+        const nuevoAmbienteModal =
+            bootstrap.Modal.getOrCreateInstance(
+                nuevoAmbienteModalElement
+            );
+
+
+        const btnGuardarAmbiente =
+            document.getElementById('btnGuardarAmbiente');
+
+
+        const tablaAmbientes =
+            document.getElementById('tablaAmbientes');
+
+
+        const tituloAmbiente =
+            document.getElementById('nuevoAmbienteModalLabel');
+
+
+        const textoAmbienteModal =
+            document.getElementById('textoAmbienteModal');
+
+
+        const textoBotonAmbiente =
+            document.getElementById('textoBotonAmbiente');
+
+
+        let ambienteEditando = null;
+
+
+
+        /* ===================================================== */
+        /* ABRIR FORMULARIO PARA NUEVO AMBIENTE */
+        /* ===================================================== */
+
+        document
+            .getElementById('btnNuevoAmbiente')
+            .addEventListener('click', function () {
+
+                ambienteEditando = null;
+
+                tituloAmbiente.textContent =
+                    'Nuevo ambiente';
+
+                textoAmbienteModal.textContent =
+                    'Registra la información del nuevo ambiente de formación.';
+
+                textoBotonAmbiente.textContent =
+                    'Guardar ambiente';
+
+                limpiarFormularioAmbiente();
+
+            });
+
+
+
+        /* ===================================================== */
+        /* EDITAR AMBIENTE */
+        /* ===================================================== */
+
+        tablaAmbientes.addEventListener('click', function (event) {
+
+            const boton =
+                event.target.closest('.btn-editar-ambiente');
+
+
+            if (!boton) {
+
+                return;
+
+            }
+
+
+            const fila =
+                boton.closest('tr');
+
+
+            const columnas =
+                fila.querySelectorAll('td');
+
+
+            const ambiente =
+                columnas[0]
+                    .querySelector('.fw-bold')
+                    .textContent
+                    .trim();
+
+
+            const codigo =
+                columnas[0]
+                    .querySelector('small')
+                    .textContent
+                    .trim();
+
+
+            const tipo =
+                columnas[1]
+                    .textContent
+                    .trim();
+
+
+            const capacidad =
+                columnas[2]
+                    .textContent
+                    .replace('aprendices', '')
+                    .trim();
+
+
+            const ubicacion =
+                columnas[3]
+                    .textContent
+                    .trim();
+
+
+            const estado =
+                columnas[4]
+                    .querySelector('.badge-status')
+                    .textContent
+                    .trim();
+
+
+            ambienteEditando = fila;
+
+
+            document.getElementById('nuevoAmbiente').value =
+                ambiente;
+
+            document.getElementById('nuevoCodigo').value =
+                codigo;
+
+            document.getElementById('nuevoTipo').value =
+                tipo;
+
+            document.getElementById('nuevaCapacidad').value =
+                capacidad;
+
+            document.getElementById('nuevaUbicacion').value =
+                ubicacion;
+
+            document.getElementById('nuevoEstado').value =
+                estado;
+
+
+            tituloAmbiente.textContent =
+                'Editar ambiente';
+
+            textoAmbienteModal.textContent =
+                'Actualiza la información del ambiente seleccionado.';
+
+            textoBotonAmbiente.textContent =
+                'Actualizar ambiente';
+
+
+            nuevoAmbienteModal.show();
+
+        });
+
+
+
+        /* ===================================================== */
+        /* GUARDAR / ACTUALIZAR AMBIENTE */
+        /* ===================================================== */
+
+        btnGuardarAmbiente.addEventListener('click', function () {
+
+            const ambiente =
+                document.getElementById('nuevoAmbiente')
+                    .value
+                    .trim();
+
+
+            const codigo =
+                document.getElementById('nuevoCodigo')
+                    .value
+                    .trim();
+
+
+            const tipo =
+                document.getElementById('nuevoTipo')
+                    .value;
+
+
+            const capacidad =
+                document.getElementById('nuevaCapacidad')
+                    .value;
+
+
+            const ubicacion =
+                document.getElementById('nuevaUbicacion')
+                    .value
+                    .trim();
+
+
+            const estado =
+                document.getElementById('nuevoEstado')
+                    .value;
+
+
+            if (!ambiente ||
+                !codigo ||
+                !tipo ||
+                !capacidad ||
+                !ubicacion) {
+
+                alert(
+                    'Completa todos los campos del nuevo ambiente.'
+                );
+
+                return;
+
+            }
+
+
+            let badgeClase =
+                'badge-status-green';
+
+
+            let iconoEstado =
+                'bi-check-circle-fill';
+
+
+            if (estado === 'Mantenimiento') {
+
+                badgeClase =
+                    'badge-status-yellow';
+
+                iconoEstado =
+                    'bi-exclamation-circle-fill';
+
+            }
+
+
+
+            /* ================================================= */
+            /* ACTUALIZAR AMBIENTE EXISTENTE */
+            /* ================================================= */
+
+            if (ambienteEditando) {
+
+                ambienteEditando.innerHTML = `
+
+                    <td>
+
+                        <span class="fw-bold admin-text">
+                            ${ambiente}
+                        </span>
+
+                        <small class="admin-muted d-block">
+                            ${codigo}
+                        </small>
+
+                    </td>
+
+                    <td>
+                        ${tipo}
+                    </td>
+
+                    <td>
+                        ${capacidad} aprendices
+                    </td>
+
+                    <td>
+                        ${ubicacion}
+                    </td>
+
+                    <td class="text-center">
+
+                        <span class="badge-status ${badgeClase}">
+
+                            <i class="bi ${iconoEstado} me-1"></i>
+
+                            ${estado}
+
+                        </span>
+
+                    </td>
+
+                    <td class="text-center">
+
+                        <button type="button"
+                            class="config-edit-btn btn-editar-ambiente"
+                            title="Editar ambiente">
+
+                            <i class="bi bi-pencil-square"></i>
+
+                        </button>
+
+                    </td>
+
+                `;
+
+
+                nuevoAmbienteModal.hide();
+
+                limpiarFormularioAmbiente();
+
+
+                mostrarConfirmacion(
+                    'La información del ambiente fue actualizada correctamente.'
+                );
+
+
+                ambienteEditando = null;
+
+
+                return;
+
+            }
+
+
+
+            /* ================================================= */
+            /* CREAR NUEVO AMBIENTE */
+            /* ================================================= */
+
+            const nuevaFila =
+                document.createElement('tr');
+
+
+            nuevaFila.innerHTML = `
+
+                <td>
+
+                    <span class="fw-bold admin-text">
+                        ${ambiente}
+                    </span>
+
+                    <small class="admin-muted d-block">
+                        ${codigo}
+                    </small>
+
+                </td>
+
+                <td>
+                    ${tipo}
+                </td>
+
+                <td>
+                    ${capacidad} aprendices
+                </td>
+
+                <td>
+                    ${ubicacion}
+                </td>
+
+                <td class="text-center">
+
+                    <span class="badge-status ${badgeClase}">
+
+                        <i class="bi ${iconoEstado} me-1"></i>
+
+                        ${estado}
+
+                    </span>
+
+                </td>
+
+                <td class="text-center">
+
+                    <button type="button"
+                        class="config-edit-btn btn-editar-ambiente"
+                        title="Editar ambiente">
+
+                        <i class="bi bi-pencil-square"></i>
+
+                    </button>
+
+                </td>
+
+            `;
+
+
+            tablaAmbientes.appendChild(nuevaFila);
+
+
+            limpiarFormularioAmbiente();
+
+            nuevoAmbienteModal.hide();
+
+
+            mostrarConfirmacion(
+                'El nuevo ambiente fue registrado correctamente.'
+            );
+
+        });
+
+
+
+        /* ===================================================== */
+        /* LIMPIAR FORMULARIO AMBIENTE */
+        /* ===================================================== */
+
+        function limpiarFormularioAmbiente() {
+
+            document.getElementById('nuevoAmbiente').value =
+                '';
+
+            document.getElementById('nuevoCodigo').value =
+                '';
+
+            document.getElementById('nuevoTipo').value =
+                '';
+
+            document.getElementById('nuevaCapacidad').value =
+                '';
+
+            document.getElementById('nuevaUbicacion').value =
+                '';
+
+            document.getElementById('nuevoEstado').value =
+                'Activo';
+
+        }
+
+
+
+        /* ===================================================== */
+        /* LIMPIAR ESTADO DE EDICIÓN AL CERRAR MODAL */
+        /* ===================================================== */
+
+        nuevaSubsedeModalElement.addEventListener(
+            'hidden.bs.modal',
+            function () {
+
+                subsedeEditando = null;
+
+                tituloSubsede.textContent =
+                    'Nueva subsede';
+
+                textoSubsedeModal.textContent =
+                    'Registra la información de la nueva subsede asociada al centro de formación.';
+
+                textoBotonSubsede.textContent =
+                    'Guardar subsede';
+
+                limpiarFormularioSubsede();
+
+            }
+        );
+
+
+        nuevoAmbienteModalElement.addEventListener(
+            'hidden.bs.modal',
+            function () {
+
+                ambienteEditando = null;
+
+                tituloAmbiente.textContent =
+                    'Nuevo ambiente';
+
+                textoAmbienteModal.textContent =
+                    'Registra la información del nuevo ambiente de formación.';
+
+                textoBotonAmbiente.textContent =
+                    'Guardar ambiente';
+
+                limpiarFormularioAmbiente();
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>

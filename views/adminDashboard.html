@@ -31,56 +31,118 @@
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg py-3 fixed-top navbar-custom">
+
         <div class="container d-flex align-items-center justify-content-between">
 
-            <a class="navbar-brand d-flex align-items-center gap-3 m-0" href="ad">
-                <img src="../assets/logo/logo.svg" alt="Logo SENA" width="40">
+            <a class="navbar-brand d-flex align-items-center gap-3 m-0"
+                href="adminDashboard.html">
+
+                <img src="../assets/logo/logo.svg"
+                    alt="Logo SENA"
+                    width="40">
+
                 <span>SENA Assistance</span>
+
             </a>
+
 
             <div class="d-flex align-items-center gap-2">
 
-                <button type="button" class="mobile-login-icon-btn btn-sena-custom-darkblue"
-                    data-bs-toggle="modal" data-bs-target="#logoutModal" title="Cerrar sesión">
+                <button type="button"
+                    class="mobile-login-icon-btn btn-sena-custom-darkblue"
+                    data-bs-toggle="modal"
+                    data-bs-target="#logoutModal"
+                    title="Cerrar sesión">
+
                     <i class="bi bi-box-arrow-right"></i>
+
                 </button>
 
-                <button class="navbar-toggler border-0 shadow-none" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                    aria-controls="navbarContent" aria-expanded="false" aria-label="Mostrar menú">
+
+                <button class="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent"
+                    aria-controls="navbarContent"
+                    aria-expanded="false"
+                    aria-label="Mostrar menú">
+
                     <i class="bi bi-list fs-4"></i>
+
                 </button>
 
             </div>
 
-            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+
+            <div class="collapse navbar-collapse justify-content-end"
+                id="navbarContent">
 
                 <ul class="navbar-nav align-items-lg-center gap-lg-3">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="#dashboard">
-                            <i class="bi bi-speedometer2 me-1"></i> Dashboard
+
+                        <a class="nav-link active"
+                            href="#dashboard">
+
+                            <i class="bi bi-speedometer2 me-1"></i>
+                            Dashboard
+
                         </a>
+
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#control-fichas">
-                            <i class="bi bi-journal-check me-1"></i> Control por Fichas
-                        </a>
-                    </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="usuarios.html">
-                            <i class="bi bi-people me-1"></i> Usuarios
+
+                        <a class="nav-link"
+                            href="#control-fichas">
+
+                            <i class="bi bi-journal-check me-1"></i>
+                            Control por Fichas
+
                         </a>
+
                     </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="usuarios.html">
+
+                            <i class="bi bi-people me-1"></i>
+                            Usuarios
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="configuracion.html">
+
+                            <i class="bi bi-gear-fill me-1"></i>
+                            Configuración
+
+                        </a>
+
+                    </li>
+
 
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+
                         <button type="button"
                             class="btn btn-sena-custom-darkblue px-3 py-2 fw-semibold w-100"
-                            data-bs-toggle="modal" data-bs-target="#logoutModal">
-                            <i class="bi bi-box-arrow-right me-1"></i> Salir
+                            data-bs-toggle="modal"
+                            data-bs-target="#logoutModal">
+
+                            <i class="bi bi-box-arrow-right me-1"></i>
+                            Salir
+
                         </button>
+
                     </li>
 
                 </ul>
@@ -88,6 +150,7 @@
             </div>
 
         </div>
+
     </nav>
 
 
@@ -97,7 +160,9 @@
         <div class="container">
 
             <!-- DASHBOARD -->
-            <div id="dashboard" data-section="dashboard" class="pt-2">
+            <div id="dashboard"
+                data-section="dashboard"
+                class="pt-2">
 
                 <!-- PERFIL ADMINISTRADOR -->
                 <div class="row mb-4">
@@ -109,7 +174,8 @@
 
                             <div class="d-flex align-items-center gap-3">
 
-                                <div class="role-header-icon mb-0 admin-profile-icon admin-icon-green rounded-3 d-flex align-items-center justify-content-center"
+                                <div
+                                    class="role-header-icon mb-0 admin-profile-icon admin-icon-green rounded-3 d-flex align-items-center justify-content-center"
                                     style="width: 50px; height: 50px; font-size: 1.3rem;">
 
                                     <i class="bi bi-person-fill-gear"></i>
@@ -127,10 +193,13 @@
                                     </h1>
 
                                     <p class="admin-muted small mb-0">
+
                                         <i class="bi bi-envelope me-1"></i>
                                         mlbenitez@sena.edu.co |
+
                                         <i class="bi bi-geo-alt me-1"></i>
                                         Centro de Desarrollo Agroindustrial y Empresarial
+
                                     </p>
 
                                 </div>
@@ -166,6 +235,7 @@
 
                                 </div>
 
+
                                 <div class="index-icon-green admin-icon-green"
                                     style="width: 45px; height: 45px;">
 
@@ -174,6 +244,7 @@
                                 </div>
 
                             </div>
+
 
                             <p class="admin-muted small mt-3 mb-0">
                                 Aprendices, instructores y administrativos activos.
@@ -203,6 +274,7 @@
 
                                 </div>
 
+
                                 <div class="index-icon-green admin-icon-blue"
                                     style="width: 45px; height: 45px;">
 
@@ -211,6 +283,7 @@
                                 </div>
 
                             </div>
+
 
                             <p class="admin-muted small mt-3 mb-0">
                                 Programas técnicos y tecnólogos en curso.
@@ -240,6 +313,7 @@
 
                                 </div>
 
+
                                 <div class="index-icon-green admin-icon-green"
                                     style="width: 45px; height: 45px;">
 
@@ -248,6 +322,7 @@
                                 </div>
 
                             </div>
+
 
                             <p class="admin-muted small mt-3 mb-0">
                                 Verificación mediante código QR y control manual.
@@ -290,12 +365,14 @@
                                 <div
                                     class="d-flex flex-column flex-md-row align-items-stretch gap-4 text-center text-md-start">
 
-                                    <div class="index-icon-green admin-icon-green rounded-4 d-flex align-items-center justify-content-center flex-shrink-0 asistencia-icon-container mx-auto mx-md-0"
+                                    <div
+                                        class="index-icon-green admin-icon-green rounded-4 d-flex align-items-center justify-content-center flex-shrink-0 asistencia-icon-container mx-auto mx-md-0"
                                         style="font-size: 2rem;">
 
                                         <i class="bi bi-sun-fill"></i>
 
                                     </div>
+
 
                                     <div
                                         class="d-flex flex-column justify-content-center py-2 w-100">
@@ -313,6 +390,7 @@
 
                                         </div>
 
+
                                         <div class="mb-2">
 
                                             <span class="status-green-text fw-bold fs-6">
@@ -324,6 +402,7 @@
                                             </span>
 
                                         </div>
+
 
                                         <div
                                             class="d-flex align-items-center flex-wrap justify-content-center justify-content-md-start gap-2 mb-2">
@@ -342,6 +421,7 @@
                                             </span>
 
                                         </div>
+
 
                                         <p class="admin-muted small mb-0 mt-1">
 
@@ -364,7 +444,7 @@
                                     style="max-width: 320px;">
 
                                     <button type="button"
-                                        class="btn btn-sena-custom-green px-3 py-2.5 fw-semibold small shadow-sm w-100"
+                                        class="btn btn-sena-custom-green px-3 py-2.5 fw-semibold small shadow-sm w-100 mb-2"
                                         data-bs-toggle="modal"
                                         data-bs-target="#startAttendanceModal">
 
@@ -373,8 +453,9 @@
 
                                     </button>
 
+
                                     <button type="button"
-                                        class="btn btn-sena-custom-yellow px-3 py-2.5 fw-semibold admin-text small shadow-sm w-100"
+                                        class="btn btn-sena-custom-yellow px-3 py-2.5 fw-semibold admin-text small shadow-sm w-100 mb-2"
                                         data-bs-toggle="modal"
                                         data-bs-target="#pauseAttendanceModal">
 
@@ -382,6 +463,7 @@
                                         Pausar Asistencia
 
                                     </button>
+
 
                                     <button type="button"
                                         class="btn btn-sena-custom-darkblue px-3 py-2.5 fw-semibold small shadow-sm w-100"
@@ -418,7 +500,7 @@
                         <!-- CABECERA -->
                         <div class="row align-items-end g-3 mb-4 pb-3 border-bottom">
 
-                            <div class="col-lg-8">
+                            <div class="col-lg-6">
 
                                 <span class="section-label">
                                     AUDITORÍA POR GRUPOS
@@ -435,7 +517,8 @@
 
                             </div>
 
-                            <div class="col-lg-4">
+
+                            <div class="col-lg-5">
 
                                 <label for="selectFicha"
                                     class="form-label fw-bold small">
@@ -444,23 +527,24 @@
 
                                 </label>
 
+
                                 <select class="form-select form-control form-select-sm py-2"
                                     id="selectFicha">
 
                                     <option value="2874102" selected>
-                                        Ficha 2874102 - Tecnólogo ADSO
+                                        2874102 - Tecnólogo Análisis y Desarrollo de Software
                                     </option>
 
                                     <option value="2892310">
-                                        Ficha 2892310 - Tecnólogo Gestión Logística
+                                        2892310 - Tecnólogo Gestión Logística
                                     </option>
 
                                     <option value="2911044">
-                                        Ficha 2911044 - Técnico Contabilidad
+                                        2911044 - Técnico Contabilidad
                                     </option>
 
                                     <option value="2845901">
-                                        Ficha 2845901 - Técnico Análisis Químico
+                                        2845901 - Técnico Análisis Químico
                                     </option>
 
                                 </select>
@@ -502,6 +586,7 @@
 
                                                     </div>
 
+
                                                     <span>
                                                         Información General de la Ficha
                                                     </span>
@@ -511,6 +596,7 @@
                                             </button>
 
                                         </h2>
+
 
                                         <div id="collapseInfoGeneral"
                                             class="accordion-collapse collapse show"
@@ -540,6 +626,7 @@
 
                                                         </div>
 
+
                                                         <div class="mb-2">
 
                                                             <span class="admin-muted fw-semibold">
@@ -549,14 +636,14 @@
                                                             <span
                                                                 class="admin-text fw-bold d-block">
 
-                                                                <i
-                                                                    class="bi bi-person-badge me-1"></i>
+                                                                <i class="bi bi-person-badge me-1"></i>
 
                                                                 Carlos Alberto Mendoza
 
                                                             </span>
 
                                                         </div>
+
 
                                                         <div>
 
@@ -576,6 +663,7 @@
 
                                                     </div>
 
+
                                                     <div class="col-md-6">
 
                                                         <div class="mb-2">
@@ -587,13 +675,14 @@
                                                             <span
                                                                 class="admin-text fw-bold d-block">
 
-                                                                <i
-                                                                    class="bi bi-journal-bookmark me-1"></i>
+                                                                <i class="bi bi-journal-bookmark me-1"></i>
+
                                                                 2874102
 
                                                             </span>
 
                                                         </div>
+
 
                                                         <div class="mb-2">
 
@@ -604,14 +693,14 @@
                                                             <span
                                                                 class="admin-text fw-bold d-block">
 
-                                                                <i
-                                                                    class="bi bi-person-workspace me-1"></i>
+                                                                <i class="bi bi-person-workspace me-1"></i>
 
                                                                 María Fernanda Torres
 
                                                             </span>
 
                                                         </div>
+
 
                                                         <div>
 
@@ -676,6 +765,7 @@
 
                                     </span>
 
+
                                     <input type="search"
                                         class="form-control user-filter-control"
                                         id="buscarAprendiz"
@@ -722,226 +812,206 @@
 
                                 </thead>
 
+
                                 <tbody>
 
-                                    <tr>
-                                        <td><strong>CC 1098745210</strong></td>
-                                        <td>Carlos Andrés Pérez Gómez</td>
-                                        <td class="text-start ps-3">06:15 a.m.</td>
-                                        <td class="text-center">
+                                    <!-- CARLOS -->
+                                    <tr data-aprendiz="Carlos Andrés Pérez Gómez">
+
+                                        <td>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1098745210</a>
+                                        </td>
+
+                                        <td>
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Carlos Andrés Pérez Gómez</a>
+                                        </td>
+
+                                        <td class="text-start ps-3 hora-ingreso">
+                                            06:15 a.m.
+                                        </td>
+
+                                        <td class="text-center estado-aprendiz">
                                             <span class="badge badge-status badge-status-green">
-                                                <i class="bi bi-check-circle me-1"></i>
-                                                Presente
+                                                <i class="bi bi-check-circle me-1"></i> Presente
                                             </span>
                                         </td>
+
                                         <td class="text-center">
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Cambiar a Excusa">
+                                            <button type="button"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
+                                                data-aprendiz="Carlos Andrés Pérez Gómez"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
                                                 <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                            <button type="button"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
+                                                data-action="falla"
                                                 title="Marcar Falla">
                                                 <i class="bi bi-x-circle status-purple-text"></i>
                                             </button>
                                         </td>
+
                                     </tr>
 
-                                    <tr>
-                                        <td><strong>CC 1095412365</strong></td>
-                                        <td>María Alejandra Rojas Silva</td>
-                                        <td class="text-start ps-3">07:32 a.m.</td>
-                                        <td class="text-center">
+
+                                    <!-- MARÍA -->
+                                    <tr data-aprendiz="María Alejandra Rojas Silva">
+
+                                        <td>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1095412365</a>
+                                        </td>
+
+                                        <td>
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">María Alejandra Rojas Silva</a>
+                                        </td>
+
+                                        <td class="text-start ps-3 hora-ingreso">
+                                            07:32 a.m.
+                                        </td>
+
+                                        <td class="text-center estado-aprendiz">
                                             <span class="badge badge-status badge-status-yellow">
-                                                <i class="bi bi-clock me-1"></i>
-                                                Llegada Tarde
+                                                <i class="bi bi-clock me-1"></i> Llegada Tarde
                                             </span>
                                         </td>
+
                                         <td class="text-center">
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Cambiar a Excusa">
+                                            <button type="button"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
+                                                data-aprendiz="María Alejandra Rojas Silva"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
                                                 <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                            <button type="button"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
+                                                data-action="falla"
                                                 title="Marcar Falla">
                                                 <i class="bi bi-x-circle status-purple-text"></i>
                                             </button>
                                         </td>
+
                                     </tr>
 
-                                    <tr>
-                                        <td><strong>CC 1002365412</strong></td>
-                                        <td>Esteban David Morales Ruiz</td>
-                                        <td class="text-start ps-3">--:--</td>
-                                        <td class="text-center">
+
+                                    <!-- ESTEBAN -->
+                                    <tr data-aprendiz="Esteban David Morales Ruiz">
+
+                                        <td>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1002365412</a>
+                                        </td>
+
+                                        <td>
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Esteban David Morales Ruiz</a>
+                                        </td>
+
+                                        <td class="text-start ps-3 hora-ingreso">
+                                            --:--
+                                        </td>
+
+                                        <td class="text-center estado-aprendiz">
                                             <span class="badge badge-status badge-status-purple">
-                                                <i class="bi bi-dash-circle me-1"></i>
-                                                Ausente
+                                                <i class="bi bi-dash-circle me-1"></i> Ausente
                                             </span>
                                         </td>
+
                                         <td class="text-center">
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Justificar Falla">
+                                            <button type="button"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
+                                                data-aprendiz="Esteban David Morales Ruiz"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
                                                 <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                            <button type="button"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
+                                                data-action="presente"
                                                 title="Marcar Presente">
                                                 <i class="bi bi-check-circle status-green-text"></i>
                                             </button>
                                         </td>
+
                                     </tr>
 
-                                    <tr>
-                                        <td><strong>CC 1018456327</strong></td>
-                                        <td>Laura Valentina Rodríguez Díaz</td>
-                                        <td class="text-start ps-3">06:08 a.m.</td>
-                                        <td class="text-center">
+
+                                    <!-- LAURA -->
+                                    <tr data-aprendiz="Laura Valentina Rodríguez Díaz">
+
+                                        <td>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1018456327</a>
+                                        </td>
+
+                                        <td>
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Laura Valentina Rodríguez Díaz</a>
+                                        </td>
+
+                                        <td class="text-start ps-3 hora-ingreso">
+                                            06:08 a.m.
+                                        </td>
+
+                                        <td class="text-center estado-aprendiz">
                                             <span class="badge badge-status badge-status-green">
-                                                <i class="bi bi-check-circle me-1"></i>
-                                                Presente
+                                                <i class="bi bi-check-circle me-1"></i> Presente
                                             </span>
                                         </td>
+
                                         <td class="text-center">
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Cambiar a Excusa">
+                                            <button type="button"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
+                                                data-aprendiz="Laura Valentina Rodríguez Díaz"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
                                                 <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                            <button type="button"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
+                                                data-action="falla"
                                                 title="Marcar Falla">
                                                 <i class="bi bi-x-circle status-purple-text"></i>
                                             </button>
                                         </td>
+
                                     </tr>
 
-                                    <tr>
-                                        <td><strong>CC 1032547896</strong></td>
-                                        <td>Juan Sebastián Torres Martínez</td>
-                                        <td class="text-start ps-3">06:21 a.m.</td>
-                                        <td class="text-center">
+
+                                    <!-- JUAN -->
+                                    <tr data-aprendiz="Juan Sebastián Torres Martínez">
+
+                                        <td>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1032547896</a>
+                                        </td>
+
+                                        <td>
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Juan Sebastián Torres Martínez</a>
+                                        </td>
+
+                                        <td class="text-start ps-3 hora-ingreso">
+                                            06:21 a.m.
+                                        </td>
+
+                                        <td class="text-center estado-aprendiz">
                                             <span class="badge badge-status badge-status-green">
-                                                <i class="bi bi-check-circle me-1"></i>
-                                                Presente
+                                                <i class="bi bi-check-circle me-1"></i> Presente
                                             </span>
                                         </td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Cambiar a Excusa">
-                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
-                                            </button>
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Marcar Falla">
-                                                <i class="bi bi-x-circle status-purple-text"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
 
-                                    <tr>
-                                        <td><strong>CC 1096325478</strong></td>
-                                        <td>Daniela Sofía Martínez López</td>
-                                        <td class="text-start ps-3">06:42 a.m.</td>
                                         <td class="text-center">
-                                            <span class="badge badge-status badge-status-green">
-                                                <i class="bi bi-check-circle me-1"></i>
-                                                Presente
-                                            </span>
-                                        </td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Cambiar a Excusa">
+                                            <button type="button"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
+                                                data-aprendiz="Juan Sebastián Torres Martínez"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
                                                 <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
+                                            <button type="button"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
+                                                data-action="falla"
                                                 title="Marcar Falla">
                                                 <i class="bi bi-x-circle status-purple-text"></i>
                                             </button>
                                         </td>
-                                    </tr>
 
-                                    <tr>
-                                        <td><strong>CC 1008745632</strong></td>
-                                        <td>Andrés Felipe Gómez Herrera</td>
-                                        <td class="text-start ps-3">06:55 a.m.</td>
-                                        <td class="text-center">
-                                            <span class="badge badge-status badge-status-green">
-                                                <i class="bi bi-check-circle me-1"></i>
-                                                Presente
-                                            </span>
-                                        </td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Cambiar a Excusa">
-                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
-                                            </button>
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Marcar Falla">
-                                                <i class="bi bi-x-circle status-purple-text"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><strong>CC 1015632847</strong></td>
-                                        <td>Sara Juliana Hernández Castro</td>
-                                        <td class="text-start ps-3">07:18 a.m.</td>
-                                        <td class="text-center">
-                                            <span class="badge badge-status badge-status-yellow">
-                                                <i class="bi bi-clock me-1"></i>
-                                                Llegada Tarde
-                                            </span>
-                                        </td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Cambiar a Excusa">
-                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
-                                            </button>
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Marcar Falla">
-                                                <i class="bi bi-x-circle status-purple-text"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><strong>CC 1024789631</strong></td>
-                                        <td>Mateo Alejandro Vargas Peña</td>
-                                        <td class="text-start ps-3">06:27 a.m.</td>
-                                        <td class="text-center">
-                                            <span class="badge badge-status badge-status-green">
-                                                <i class="bi bi-check-circle me-1"></i>
-                                                Presente
-                                            </span>
-                                        </td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Cambiar a Excusa">
-                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
-                                            </button>
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Marcar Falla">
-                                                <i class="bi bi-x-circle status-purple-text"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><strong>CC 1097854126</strong></td>
-                                        <td>Valentina Isabel Moreno Ruiz</td>
-                                        <td class="text-start ps-3">06:38 a.m.</td>
-                                        <td class="text-center">
-                                            <span class="badge badge-status badge-status-green">
-                                                <i class="bi bi-check-circle me-1"></i>
-                                                Presente
-                                            </span>
-                                        </td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Cambiar a Excusa">
-                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
-                                            </button>
-                                            <button class="btn btn-sm table-action-btn border-0 py-1 px-1.5"
-                                                title="Marcar Falla">
-                                                <i class="bi bi-x-circle status-purple-text"></i>
-                                            </button>
-                                        </td>
                                     </tr>
 
                                 </tbody>
@@ -961,328 +1031,255 @@
     </main>
 
 
+    <!-- ========================================================= -->
     <!-- FOOTER -->
+    <!-- ========================================================= -->
     <footer class="footer-custom">
-
         <div class="container">
-
             <div class="row align-items-center justify-content-between g-4">
-
                 <div class="col-lg-5 col-md-6">
-
                     <div class="d-flex align-items-center gap-3">
-
-                        <img src="../assets/logo/logo.svg"
-                            alt="Logo SENA"
-                            width="40">
-
+                        <img src="../assets/logo/logo.svg" alt="Logo SENA" width="40">
                         <div>
-
-                            <h5 class="mb-1 footer-brand-title">
-                                SENA Assistance
-                            </h5>
-
-                            <small class="admin-muted">
-                                www.sena.edu.co
-                            </small>
-
+                            <h5 class="mb-1 footer-brand-title">SENA Assistance</h5>
+                            <small class="admin-muted">www.sena.edu.co</small>
                         </div>
-
                     </div>
-
                 </div>
-
                 <div class="col-lg-7 col-md-6">
-
                     <ul class="footer-menu">
-
-                        <li>
-                            <a href="#dashboard">
-                                Dashboard
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#control-fichas">
-                                Control por Fichas
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="usuarios.html">
-                                Usuarios
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#"
-                                class="footer-login-link status-blue-text"
-                                data-bs-toggle="modal"
-                                data-bs-target="#logoutModal">
-                                Cerrar sesión
-                            </a>
-                        </li>
-
+                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#control-fichas">Control por Fichas</a></li>
+                        <li><a href="usuarios.html">Usuarios</a></li>
+                        <li><a href="configuracion.html">Configuración</a></li>
+                        <li><a href="#" class="footer-login-link status-blue-text" data-bs-toggle="modal" data-bs-target="#logoutModal">Cerrar sesión</a></li>
                     </ul>
-
                 </div>
-
             </div>
-
             <hr class="my-4 footer-divider">
-
             <div class="row">
-
                 <div class="col-12 text-center">
-
-                    <small class="admin-muted">
-                        © 2026 SENA Assistance. Todos los derechos reservados.
-                    </small>
-
+                    <small class="admin-muted">© 2026 SENA Assistance. Todos los derechos reservados.</small>
                 </div>
-
             </div>
-
         </div>
-
     </footer>
 
 
+    <!-- ========================================================= -->
     <!-- MODAL INICIAR ASISTENCIA -->
-    <div class="modal fade"
-        id="startAttendanceModal"
-        tabindex="-1"
-        aria-labelledby="startAttendanceModalLabel"
-        aria-hidden="true">
-
+    <!-- ========================================================= -->
+    <div class="modal fade" id="startAttendanceModal" tabindex="-1" aria-labelledby="startAttendanceModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-
             <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
-
-                <button type="button"
-                    class="btn-close modal-close-btn"
-                    data-bs-dismiss="modal"
-                    aria-label="Cerrar">
-                </button>
-
+                <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 <div class="modal-body text-center p-4">
-
                     <div class="mb-3 modal-icon modal-icon-green fs-1">
                         <i class="bi bi-play-circle-fill"></i>
                     </div>
-
-                    <h5 class="fw-bold mb-2 admin-text"
-                        id="startAttendanceModalLabel">
-                        ¿Iniciar toma de asistencia?
-                    </h5>
-
-                    <p class="admin-muted small mb-4">
-                        Esta acción habilitará de inmediato el escáner QR y
-                        el registro manual para todas las fichas activas del
-                        centro en la jornada actual.
-                    </p>
-
+                    <h5 class="fw-bold mb-2 admin-text" id="startAttendanceModalLabel">¿Iniciar toma de asistencia?</h5>
+                    <p class="admin-muted small mb-4">Esta acción habilitará de inmediato el escáner QR y el registro manual para todas las fichas activas del centro en la jornada actual.</p>
                     <div class="d-flex justify-content-center gap-2">
-
-                        <button type="button"
-                            class="btn btn-modal-cancel px-4 py-2 small fw-semibold"
-                            data-bs-dismiss="modal">
-                            Cancelar
-                        </button>
-
-                        <button type="button"
-                            class="btn btn-modal-confirm-green px-4 py-2 small fw-semibold"
-                            data-bs-dismiss="modal">
-                            Sí, iniciar toma
-                        </button>
-
+                        <button type="button" class="btn btn-modal-cancel px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-modal-confirm-green px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Sí, iniciar toma</button>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
 
+    <!-- ========================================================= -->
     <!-- MODAL PAUSAR ASISTENCIA -->
-    <div class="modal fade"
-        id="pauseAttendanceModal"
-        tabindex="-1"
-        aria-labelledby="pauseAttendanceModalLabel"
-        aria-hidden="true">
-
+    <!-- ========================================================= -->
+    <div class="modal fade" id="pauseAttendanceModal" tabindex="-1" aria-labelledby="pauseAttendanceModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-
             <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
-
-                <button type="button"
-                    class="btn-close modal-close-btn"
-                    data-bs-dismiss="modal"
-                    aria-label="Cerrar">
-                </button>
-
+                <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 <div class="modal-body text-center p-4">
-
                     <div class="mb-3 modal-icon modal-icon-yellow fs-1">
                         <i class="bi bi-pause-circle-fill"></i>
                     </div>
-
-                    <h5 class="fw-bold mb-2 admin-text"
-                        id="pauseAttendanceModalLabel">
-                        ¿Pausar la asistencia temporalmente?
-                    </h5>
-
-                    <p class="admin-muted small mb-4">
-                        Se suspenderá temporalmente el registro de entradas
-                        por código QR y marcajes manuales hasta que decidas
-                        reanudarla.
-                    </p>
-
+                    <h5 class="fw-bold mb-2 admin-text" id="pauseAttendanceModalLabel">¿Pausar la asistencia temporalmente?</h5>
+                    <p class="admin-muted small mb-4">Se suspenderá temporalmente el registro de entradas por código QR y marcajes manuales hasta que decidas reanudarla.</p>
                     <div class="d-flex justify-content-center gap-2">
-
-                        <button type="button"
-                            class="btn btn-modal-cancel px-4 py-2 small fw-semibold"
-                            data-bs-dismiss="modal">
-                            Cancelar
-                        </button>
-
-                        <button type="button"
-                            class="btn btn-modal-confirm-yellow px-4 py-2 small fw-semibold"
-                            data-bs-dismiss="modal">
-                            Sí, pausar asistencia
-                        </button>
-
+                        <button type="button" class="btn btn-modal-cancel px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-modal-confirm-yellow px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Sí, pausar asistencia</button>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
 
-    <!-- MODAL CERRAR ASISTENCIA -->
-    <div class="modal fade"
-        id="forceCloseModal"
-        tabindex="-1"
-        aria-labelledby="forceCloseModalLabel"
-        aria-hidden="true">
-
+    <!-- ========================================================= -->
+    <!-- MODAL FORZAR CIERRE DE ASISTENCIA -->
+    <!-- ========================================================= -->
+    <div class="modal fade" id="forceCloseModal" tabindex="-1" aria-labelledby="forceCloseModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-
             <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
-
-                <button type="button"
-                    class="btn-close modal-close-btn"
-                    data-bs-dismiss="modal"
-                    aria-label="Cerrar">
-                </button>
-
+                <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 <div class="modal-body text-center p-4">
-
                     <div class="mb-3 modal-icon modal-icon-purple fs-1">
                         <i class="bi bi-exclamation-triangle-fill"></i>
                     </div>
-
-                    <h5 class="fw-bold mb-2 admin-text"
-                        id="forceCloseModalLabel">
-                        ¿Forzar cierre de asistencia global?
-                    </h5>
-
-                    <p class="admin-muted small mb-4">
-                        Esta acción cerrará el registro mediante QR y
-                        llamadas a lista para la jornada diurna actual.
-                        Los aprendices sin registro pasarán a inasistencia.
-                    </p>
-
+                    <h5 class="fw-bold mb-2 admin-text" id="forceCloseModalLabel">¿Forzar cierre de asistencia global?</h5>
+                    <p class="admin-muted small mb-4">Esta acción cerrará el registro mediante QR y llamadas a lista para la jornada diurna actual. Los aprendices sin registro pasarán a inasistencia.</p>
                     <div class="d-flex justify-content-center gap-2">
-
-                        <button type="button"
-                            class="btn btn-modal-cancel px-4 py-2 small fw-semibold"
-                            data-bs-dismiss="modal">
-                            Cancelar
-                        </button>
-
-                        <button type="button"
-                            class="btn btn-modal-confirm-purple px-4 py-2 small fw-semibold"
-                            data-bs-dismiss="modal">
-                            Sí, cerrar asistencia
-                        </button>
-
+                        <button type="button" class="btn btn-modal-cancel px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-modal-confirm-purple px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Sí, cerrar asistencia</button>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
 
-    <!-- MODAL CERRAR SESIÓN -->
-    <div class="modal fade"
-        id="logoutModal"
-        tabindex="-1"
-        aria-labelledby="logoutModalLabel"
-        aria-hidden="true">
-
+    <!-- ========================================================= -->
+    <!-- MODAL CONFIRMAR ASISTENCIA MANUAL -->
+    <!-- ========================================================= -->
+    <div class="modal fade" id="manualAttendanceConfirmModal" tabindex="-1" aria-labelledby="manualAttendanceConfirmModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-
             <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
-
-                <button type="button"
-                    class="btn-close modal-close-btn"
-                    data-bs-dismiss="modal"
-                    aria-label="Cerrar">
-                </button>
-
+                <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 <div class="modal-body text-center p-4">
+                    <div id="manualAttendanceConfirmIcon" class="mb-3 modal-icon modal-icon-blue fs-1">
+                        <i class="bi bi-question-circle-fill"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2 admin-text" id="manualAttendanceConfirmModalLabel">Confirmar acción</h5>
+                    <p class="admin-muted small mb-4" id="manualAttendanceConfirmText">¿Estás seguro que deseas realizar esta acción?</p>
+                    <div class="d-flex justify-content-center gap-2">
+                        <button type="button" class="btn btn-modal-cancel px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" id="confirmManualAttendance" class="btn btn-modal-confirm-green px-4 py-2 small fw-semibold">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+    <!-- ========================================================= -->
+    <!-- MODAL VER JUSTIFICACIÓN -->
+    <!-- ========================================================= -->
+    <div class="modal fade" id="justificationModal" tabindex="-1" aria-labelledby="justificationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
+                <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="modal-body p-4">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="admin-icon-yellow rounded-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; font-size: 1.3rem; flex-shrink: 0;">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <div>
+                            <span class="section-label status-yellow-text">DOCUMENTO DE JUSTIFICACIÓN</span>
+                            <h5 class="fw-bold mb-0 mt-1 admin-text" id="justificationModalLabel">Justificación de Falla</h5>
+                        </div>
+                    </div>
+
+                    <div class="admin-surface-muted rounded-3 p-3 mb-4">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <span class="admin-muted small fw-semibold">Aprendiz:</span>
+                                <div class="admin-text fw-bold" id="justificationApprenticeName">Carlos Andrés Pérez Gómez</div>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="admin-muted small fw-semibold">Fecha:</span>
+                                <div class="admin-text fw-bold" id="justificationDate">01/10/2026</div>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="admin-muted small fw-semibold">Ficha:</span>
+                                <div class="admin-text fw-bold">2874102</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="fw-bold admin-text small"><i class="bi bi-eye me-1"></i> Vista previa del documento</span>
+                            <span class="badge badge-status badge-status-green"><i class="bi bi-check-circle me-1"></i> Documento cargado</span>
+                        </div>
+                        <div style="border: 1px solid #e5e7eb; border-radius: 12px; background: #f8faf8; min-height: 390px; padding: 25px; overflow: auto;">
+                            <div style="max-width: 650px; min-height: 330px; margin: 0 auto; background: #ffffff; border: 1px solid #dfe5df; border-radius: 8px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,.05);">
+                                <div class="text-center mb-4">
+                                    <img src="../assets/logo/logo.svg" alt="Logo SENA" width="55" class="mb-2">
+                                    <h5 class="fw-bold admin-text mb-1">SENA</h5>
+                                    <div class="admin-muted small">Sistema de Control de Asistencia</div>
+                                    <hr>
+                                    <h6 class="fw-bold admin-text mt-3">JUSTIFICACIÓN DE INASISTENCIA</h6>
+                                </div>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <span class="admin-muted small">Nombre del aprendiz</span>
+                                        <div class="fw-semibold admin-text" id="previewApprenticeName">Carlos Andrés Pérez Gómez</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="admin-muted small">Documento</span>
+                                        <div class="fw-semibold admin-text">CC 1098745210</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="admin-muted small">Ficha</span>
+                                        <div class="fw-semibold admin-text">2874102</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="admin-muted small">Fecha de la inasistencia</span>
+                                        <div class="fw-semibold admin-text" id="previewDate">01/10/2026</div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <span class="admin-muted small">Motivo de la justificación</span>
+                                    <div class="admin-text mt-1" style="line-height: 1.6;">Se presenta incapacidad médica correspondiente a la jornada en la cual el aprendiz no pudo asistir a las actividades de formación.</div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end mt-4 pt-3 border-top">
+                                    <div>
+                                        <div class="admin-muted small">Documento simulado</div>
+                                        <div class="admin-muted" style="font-size: .8rem;">Justificacion_2026_10_01.pdf</div>
+                                    </div>
+                                    <div class="text-end">
+                                        <i class="bi bi-file-earmark-pdf status-purple-text" style="font-size: 2rem;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end flex-wrap gap-2 mt-4">
+                        <button type="button" class="btn btn-modal-cancel px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" id="downloadJustification" class="btn btn-sena-custom-green px-4 py-2 small fw-semibold">
+                            <i class="bi bi-download me-1"></i> Descargar justificación
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- MODAL CERRAR SESIÓN -->
+    <!-- ========================================================= -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
+                <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="modal-body text-center p-4">
                     <div class="mb-3 modal-icon modal-icon-blue fs-1">
                         <i class="bi bi-exclamation-circle-fill"></i>
                     </div>
-
-                    <h5 class="fw-bold mb-2 admin-text"
-                        id="logoutModalLabel">
-                        ¿Estás seguro que deseas salir?
-                    </h5>
-
-                    <p class="admin-muted small mb-4">
-                        Se cerrará tu sesión actual como administrador y
-                        tendrás que volver a ingresar tus credenciales.
-                    </p>
-
+                    <h5 class="fw-bold mb-2 admin-text" id="logoutModalLabel">¿Estás seguro que deseas salir?</h5>
+                    <p class="admin-muted small mb-4">Se cerrará tu sesión actual como administrador y tendrás que volver a ingresar tus credenciales.</p>
                     <div class="d-flex justify-content-center gap-2">
-
-                        <button type="button"
-                            class="btn btn-modal-cancel px-4 py-2 small fw-semibold"
-                            data-bs-dismiss="modal">
-                            Cancelar
-                        </button>
-
-                        <a href="index.html"
-                            class="btn btn-sena-custom-darkblue px-4 py-2 small fw-semibold text-decoration-none">
-                            Sí, cerrar sesión
-                        </a>
-
+                        <button type="button" class="btn btn-modal-cancel px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+                        <a href="index.html" class="btn btn-sena-custom-darkblue px-4 py-2 small fw-semibold text-decoration-none">Sí, cerrar sesión</a>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
 
+    <!-- ========================================================= -->
     <!-- JQUERY -->
+    <!-- ========================================================= -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
     <!-- BOOTSTRAP JS -->
@@ -1290,185 +1287,232 @@
 
     <!-- DATATABLES JS -->
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
 
+    <!-- ========================================================= -->
     <!-- JAVASCRIPT DEL DASHBOARD -->
+    <!-- ========================================================= -->
     <script>
-
         // NAVBAR AL HACER SCROLL
         window.addEventListener('scroll', function () {
-
             const navbar = document.querySelector('.navbar-custom');
-
             if (window.scrollY > 20) {
-
                 navbar.classList.add('navbar-scrolled');
-
             } else {
-
                 navbar.classList.remove('navbar-scrolled');
-
             }
-
         });
 
 
-        // SECCIONES
+        // SECCIONES Y OBSERVER
         const sections = document.querySelectorAll('main [data-section]');
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.btn)');
 
-        const navLinks =
-            document.querySelectorAll('.navbar-nav .nav-link:not(.btn)');
-
-
-        // OBSERVER
         const observerOptions = {
-
             root: null,
-
             rootMargin: '-20% 0px -40% 0px',
-
             threshold: 0.1
-
         };
 
-
         const observer = new IntersectionObserver((entries) => {
-
             entries.forEach(entry => {
-
                 if (entry.isIntersecting) {
-
-                    const sectionId =
-                        entry.target.getAttribute('data-section');
-
-
+                    const sectionId = entry.target.getAttribute('data-section');
                     navLinks.forEach(link => {
-
                         link.classList.remove('active');
-
-
                         if (link.getAttribute('href') === `#${sectionId}`) {
-
                             link.classList.add('active');
-
                         }
-
                     });
-
                 }
-
             });
-
         }, observerOptions);
 
-
-        // OBSERVAR SECCIONES
         sections.forEach(section => {
-
             observer.observe(section);
+        });
 
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                navLinks.forEach(l => {
+                    l.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
         });
 
 
-        // ACTIVAR ENLACE AL HACER CLIC
-        navLinks.forEach(link => {
+        // GESTIÓN DE MODALES DE LA TABLA (MARCAR PRESENTE, FALLA Y JUSTIFICACIÓN)
+        let filaSeleccionada = null;
+        let accionSeleccionada = null;
 
-            link.addEventListener('click', function () {
+        const manualAttendanceModalElement = document.getElementById('manualAttendanceConfirmModal');
+        const manualAttendanceModal = new bootstrap.Modal(manualAttendanceModalElement);
+        const confirmManualAttendance = document.getElementById('confirmManualAttendance');
+        const manualAttendanceConfirmText = document.getElementById('manualAttendanceConfirmText');
+        const manualAttendanceConfirmLabel = document.getElementById('manualAttendanceConfirmModalLabel');
+        const manualAttendanceConfirmIcon = document.getElementById('manualAttendanceConfirmIcon');
 
-                navLinks.forEach(l => {
+        const justificationModalElement = document.getElementById('justificationModal');
+        const justificationModal = new bootstrap.Modal(justificationModalElement);
+        const justificationApprenticeName = document.getElementById('justificationApprenticeName');
+        const justificationDate = document.getElementById('justificationDate');
+        const previewApprenticeName = document.getElementById('previewApprenticeName');
+        const previewDate = document.getElementById('previewDate');
+        const downloadJustification = document.getElementById('downloadJustification');
 
-                    l.classList.remove('active');
+        document.addEventListener('click', function (event) {
+            const button = event.target.closest('.view-justification-action');
+            if (!button) return;
 
-                });
+            const nombreAprendiz = button.dataset.aprendiz || button.closest('tr').querySelector('td:nth-child(2)').textContent.trim();
+            const fecha = button.dataset.fecha || '01/10/2026';
 
-                this.classList.add('active');
+            justificationApprenticeName.textContent = nombreAprendiz;
+            justificationDate.textContent = fecha;
+            previewApprenticeName.textContent = nombreAprendiz;
+            previewDate.textContent = fecha;
 
-            });
+            justificationModal.show();
+        });
 
+        downloadJustification.addEventListener('click', function () {
+            const nombreAprendiz = justificationApprenticeName.textContent;
+            const fecha = justificationDate.textContent;
+            const contenido = 'SENA ASSISTANCE\nJUSTIFICACIÓN DE INASISTENCIA\n\nAprendiz: ' + nombreAprendiz + '\nFicha: 2874102\nFecha: ' + fecha + '\n\nMotivo de la justificación:\nSe presenta incapacidad médica correspondiente a la jornada en la cual el aprendiz no pudo asistir a las actividades de formación.\n\nDocumento generado como simulación visual para SENA Assistance.';
+            
+            const archivo = new Blob([contenido], { type: 'text/plain' });
+            const url = URL.createObjectURL(archivo);
+            const enlace = document.createElement('a');
+            enlace.href = url;
+            enlace.download = 'Justificacion_' + nombreAprendiz.replace(/\s+/g, '_') + '.txt';
+            document.body.appendChild(enlace);
+            enlace.click();
+            document.body.removeChild(enlace);
+            URL.revokeObjectURL(url);
+        });
+
+        function actualizarBotonesAsistencia(fila, estadoActual) {
+            const celdaAcciones = fila.querySelector('td:nth-child(5)');
+            if (!celdaAcciones) return;
+            const nombreAprendiz = fila.querySelector('td:nth-child(2)').textContent.trim();
+
+            if (estadoActual === 'falla') {
+                celdaAcciones.innerHTML = `
+                    <button type="button" class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action" data-aprendiz="${nombreAprendiz}" data-fecha="01/10/2026" title="Ver Justificación">
+                        <i class="bi bi-file-earmark-text status-yellow-text"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action" data-action="presente" data-aprendiz="${nombreAprendiz}" title="Marcar Presente">
+                        <i class="bi bi-check-circle status-green-text"></i>
+                    </button>
+                `;
+            } else if (estadoActual === 'presente') {
+                celdaAcciones.innerHTML = `
+                    <button type="button" class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action" data-aprendiz="${nombreAprendiz}" data-fecha="01/10/2026" title="Ver Justificación">
+                        <i class="bi bi-file-earmark-text status-yellow-text"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action" data-action="falla" data-aprendiz="${nombreAprendiz}" title="Marcar Falla">
+                        <i class="bi bi-x-circle status-purple-text"></i>
+                    </button>
+                `;
+            }
+        }
+
+        document.addEventListener('click', function (event) {
+            const button = event.target.closest('.manual-attendance-action');
+            if (!button) return;
+
+            filaSeleccionada = button.closest('tr');
+            accionSeleccionada = button.dataset.action;
+            if (!filaSeleccionada) return;
+
+            const nombreAprendiz = filaSeleccionada.querySelector('td:nth-child(2)').textContent.trim();
+
+            if (accionSeleccionada === 'falla') {
+                manualAttendanceConfirmLabel.textContent = 'Confirmar falla';
+                manualAttendanceConfirmText.textContent = '¿Estás seguro que deseas marcar a ' + nombreAprendiz + ' como ausente en la jornada actual?';
+                manualAttendanceConfirmIcon.className = 'mb-3 modal-icon modal-icon-purple fs-1';
+                manualAttendanceConfirmIcon.innerHTML = '<i class="bi bi-x-circle-fill"></i>';
+                confirmManualAttendance.className = 'btn btn-modal-confirm-purple px-4 py-2 small fw-semibold';
+                confirmManualAttendance.textContent = 'Sí, marcar falla';
+            } else if (accionSeleccionada === 'presente') {
+                manualAttendanceConfirmLabel.textContent = 'Confirmar asistencia';
+                manualAttendanceConfirmText.textContent = '¿Estás seguro que deseas marcar a ' + nombreAprendiz + ' como presente en la jornada actual?';
+                manualAttendanceConfirmIcon.className = 'mb-3 modal-icon modal-icon-green fs-1';
+                manualAttendanceConfirmIcon.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
+                confirmManualAttendance.className = 'btn btn-modal-confirm-green px-4 py-2 small fw-semibold';
+                confirmManualAttendance.textContent = 'Sí, marcar presente';
+            }
+
+            manualAttendanceModal.show();
+        });
+
+        confirmManualAttendance.addEventListener('click', function () {
+            if (!filaSeleccionada || !accionSeleccionada) return;
+
+            const estado = filaSeleccionada.querySelector('.estado-aprendiz');
+            const horaIngreso = filaSeleccionada.querySelector('.hora-ingreso');
+
+            if (accionSeleccionada === 'presente') {
+                estado.innerHTML = `<span class="badge badge-status badge-status-green"><i class="bi bi-check-circle me-1"></i> Presente</span>`;
+                const ahora = new Date();
+                let horas = ahora.getHours();
+                const minutos = String(ahora.getMinutes()).padStart(2, '0');
+                const periodo = horas >= 12 ? 'p.m.' : 'a.m.';
+                horas = horas % 12 || 12;
+                horaIngreso.textContent = String(horas).padStart(2, '0') + ':' + minutos + ' ' + periodo;
+                actualizarBotonesAsistencia(filaSeleccionada, 'presente');
+            } else if (accionSeleccionada === 'falla') {
+                estado.innerHTML = `<span class="badge badge-status badge-status-purple"><i class="bi bi-dash-circle me-1"></i> Ausente</span>`;
+                horaIngreso.textContent = '--:--';
+                actualizarBotonesAsistencia(filaSeleccionada, 'falla');
+            }
+
+            manualAttendanceModal.hide();
+            filaSeleccionada = null;
+            accionSeleccionada = null;
         });
 
 
         // DATATABLES
         $(document).ready(function () {
-
             const tablaAprendices = $('#tablaAprendices').DataTable({
-
                 language: {
-
                     search: "Buscar:",
-
                     lengthMenu: "Mostrar _MENU_ aprendices",
-
                     info: "Mostrando _START_ a _END_ de _TOTAL_ aprendices",
-
                     infoEmpty: "No hay aprendices para mostrar",
-
                     infoFiltered: "(filtrado de _MAX_ aprendices)",
-
                     zeroRecords: "No se encontraron aprendices",
-
                     emptyTable: "No hay aprendices registrados",
-
                     paginate: {
-
                         first: "Primero",
-
                         last: "Último",
-
                         next: "Siguiente",
-
                         previous: "Anterior"
-
                     }
-
                 },
-
                 pageLength: 10,
-
                 lengthMenu: [
                     [5, 10, 25, 50, -1],
                     [5, 10, 25, 50, "Todos"]
                 ],
-
                 ordering: true,
-
                 searching: true,
-
                 lengthChange: false,
-
                 columnDefs: [
-
-                    {
-                        searchable: true,
-                        targets: [0, 1]
-                    },
-
-                    {
-                        searchable: false,
-                        targets: [2, 3, 4]
-                    },
-
-                    {
-                        orderable: false,
-                        targets: [4]
-                    }
-
+                    { searchable: true, targets: [0, 1] },
+                    { searchable: false, targets: [2, 3, 4] },
+                    { orderable: false, targets: [4] }
                 ]
-
             });
-
 
             // BUSCAR APRENDIZ CON LA BARRA PERSONALIZADA
             $("#buscarAprendiz").on("input", function () {
-
                 tablaAprendices.search(this.value).draw();
-
             });
-
         });
-
     </script>
 
 </body>

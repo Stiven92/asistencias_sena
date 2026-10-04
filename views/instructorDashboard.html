@@ -198,7 +198,7 @@
 
     <main class="py-4">
 
-        <div class="container">
+        <div class="container px-4 px-lg-5">
 
 
             <!-- ================================================= -->
@@ -297,13 +297,8 @@
                                 </span>
 
                                 <h3 class="h5 fw-bold mt-1 mb-1">
-                                    Asistencia de la Jornada
+                                    Asistencia Actual
                                 </h3>
-
-                                <p class="admin-muted small mb-0">
-                                    Registra la asistencia de los aprendices de tu ficha
-                                    mediante código QR o de forma manual.
-                                </p>
 
                             </div>
 
@@ -412,13 +407,14 @@
 
 
 
-                                <!-- BOTÓN SELECCIONAR FICHA -->
+                               <!-- BOTONES DE ACCESO A FICHAS, ASISTENCIA E HISTORIAL -->
 
                                 <div class="col-lg-5 d-flex justify-content-center">
 
                                     <div class="attendance-actions-group w-100"
                                         style="max-width: 320px;">
 
+                                        <!-- SELECCIONAR FICHA -->
                                         <a href="#mis-fichas"
                                             class="btn btn-sena-custom-yellow
                                             px-3 py-2.5 fw-semibold
@@ -428,6 +424,32 @@
                                             <i class="bi bi-journal-bookmark-fill me-1"></i>
 
                                             Seleccionar ficha
+
+                                        </a>
+
+                                        <!-- VER ASISTENCIA -->
+                                        <a href="#asistencia"
+                                            class="btn btn-sena-custom-green
+                                            px-3 py-2.5 fw-semibold
+                                            small shadow-sm w-100
+                                            text-decoration-none">
+
+                                            <i class="bi bi-calendar-check-fill me-1"></i>
+
+                                            Ver Asistencia Actual
+
+                                        </a>
+
+                                        <!-- VER HISTORIAL -->
+                                        <a href="#historial"
+                                            class="btn btn-sena-custom-darkblue
+                                            px-3 py-2.5 fw-semibold
+                                            small shadow-sm w-100
+                                            text-decoration-none">
+
+                                            <i class="bi bi-clock-history me-1"></i>
+
+                                            Ver Historial
 
                                         </a>
 
@@ -451,25 +473,22 @@
                 <!-- CONTROL DE FICHAS -->
                 <!-- ================================================= -->
 
-                <div class="row mb-5"
+                <div class="row mb-4"
                     id="mis-fichas"
                     data-section="mis-fichas">
 
-
                     <div class="col-12">
 
+                        <div class="role-column-card px-4 py-3">
 
-                        <div class="role-column-card p-4">
-
-
-                            <div class="mb-4 pb-3 border-bottom">
+                            <div class="mb-3 pb-2 border-bottom">
 
                                 <span class="section-label">
                                     CONTROL DE ASISTENCIA
                                 </span>
 
                                 <h3 class="h5 fw-bold mt-1 mb-1">
-                                    Registrar asistencia
+                                    Gestión de Ficha
                                 </h3>
 
                                 <p class="admin-muted small mb-0">
@@ -480,13 +499,11 @@
                             </div>
 
 
+                            <!-- FICHA TITULAR (Seleccionada por defecto) -->
 
-                            <!-- FICHA TITULAR -->
+                            <div class="mb-3">
 
-                            <div class="mb-4">
-
-
-                                <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="d-flex align-items-center gap-2 mb-2">
 
                                     <i class="bi bi-star-fill status-green-text"></i>
 
@@ -496,19 +513,13 @@
 
                                 </div>
 
+                                <div class="ficha-assignment-card ficha-current-card p-3 selected-ficha" data-ficha-id="2874102">
 
-                                <div class="ficha-assignment-card
-                                    ficha-current-card p-4">
+                                    <div class="row align-items-center g-3">
 
-
-                                    <div class="row align-items-center g-4">
-
-
-                                        <div class="col-lg-7">
-
+                                        <div class="col-lg-6">
 
                                             <div class="d-flex align-items-start gap-3">
-
 
                                                 <div class="index-icon-green
                                                     admin-icon-green
@@ -519,64 +530,52 @@
 
                                                 </div>
 
-
                                                 <div>
 
                                                     <span class="section-label status-green-text">
                                                         TITULAR
                                                     </span>
 
-
                                                     <h4 class="h5 fw-bold mt-1 mb-1 admin-text">
                                                         2874102
                                                     </h4>
 
-
-                                                    <p class="admin-muted small mb-2">
+                                                    <p class="admin-muted small mb-0">
                                                         Tecnólogo en Análisis y Desarrollo de Software
                                                     </p>
 
                                                 </div>
 
-
                                             </div>
 
-
                                         </div>
 
-
-
-                                        <div class="col-lg-5">
-
-                                            <a href="qrScanner.html"
-                                                class="btn btn-outline-success w-100
-                                                fw-semibold text-decoration-none">
-
-                                                <i class="bi bi-qr-code-scan me-1"></i>
-
-                                                Registrar asistencia
-
+                                        <div class="col-lg-6 d-flex gap-2">
+                                            <button type="button" 
+                                                class="btn btn-success w-50 fw-semibold text-decoration-none btn-seleccionar-ficha"
+                                                onclick="seleccionarFicha(this)">
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+                                                Ficha seleccionada
+                                            </button>
+                                            <a href="detalleFicha.html" 
+                                                class="btn btn-outline-secondary w-50 fw-semibold text-decoration-none d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-eye me-1"></i>
+                                                Ver Ficha
                                             </a>
-
                                         </div>
-
 
                                     </div>
 
-
                                 </div>
 
-
                             </div>
-
 
 
                             <!-- FICHAS TEMPORALES -->
 
                             <div>
 
-
-                                <div class="d-flex align-items-center gap-2 mb-3">
+                                <div class="d-flex align-items-center gap-2 mb-2">
 
                                     <i class="bi bi-calendar-event status-yellow-text"></i>
 
@@ -586,22 +585,16 @@
 
                                 </div>
 
-
-                                <div class="row g-4">
-
+                                <div class="row g-3">
 
                                     <!-- TEMPORAL 1 -->
 
                                     <div class="col-lg-6">
 
-
-                                        <div class="ficha-assignment-card
-                                            ficha-temporary-card p-4 h-100">
-
+                                        <div class="ficha-assignment-card ficha-temporary-card p-3 h-100" data-ficha-id="2911044">
 
                                             <div class="d-flex justify-content-between
-                                                align-items-start gap-3 mb-3">
-
+                                                align-items-start gap-3 mb-2">
 
                                                 <div>
 
@@ -609,11 +602,9 @@
                                                         ASIGNACIÓN TEMPORAL
                                                     </span>
 
-
                                                     <h4 class="h6 fw-bold mt-1 mb-1 admin-text">
                                                         2911044
                                                     </h4>
-
 
                                                     <p class="admin-muted small mb-0">
                                                         Técnico en Contabilidad
@@ -621,7 +612,6 @@
 
                                                 </div>
 
-
                                                 <div class="index-icon-green
                                                     admin-icon-yellow
                                                     rounded-3
@@ -631,40 +621,35 @@
 
                                                 </div>
 
-
                                             </div>
 
-
-                                            <a href="qrScanner.html"
-                                                class="btn btn-outline-success w-100
-                                                fw-semibold text-decoration-none">
-
-                                                <i class="bi bi-qr-code-scan me-1"></i>
-
-                                                Registrar asistencia
-
-                                            </a>
-
+                                            <div class="d-flex gap-2 mt-2">
+                                                <button type="button" 
+                                                    class="btn btn-outline-success w-50 fw-semibold text-decoration-none btn-seleccionar-ficha"
+                                                    onclick="seleccionarFicha(this)">
+                                                    <i class="bi bi-check2 me-1"></i>
+                                                    Seleccionar ficha
+                                                </button>
+                                                <a href="detalleFicha.html" 
+                                                    class="btn btn-outline-secondary w-50 fw-semibold text-decoration-none d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-eye me-1"></i>
+                                                    Ver Ficha
+                                                </a>
+                                            </div>
 
                                         </div>
 
-
                                     </div>
-
 
 
                                     <!-- TEMPORAL 2 -->
 
                                     <div class="col-lg-6">
 
-
-                                        <div class="ficha-assignment-card
-                                            ficha-temporary-card p-4 h-100">
-
+                                        <div class="ficha-assignment-card ficha-temporary-card p-3 h-100" data-ficha-id="2845901">
 
                                             <div class="d-flex justify-content-between
-                                                align-items-start gap-3 mb-3">
-
+                                                align-items-start gap-3 mb-2">
 
                                                 <div>
 
@@ -672,18 +657,15 @@
                                                         ASIGNACIÓN TEMPORAL
                                                     </span>
 
-
                                                     <h4 class="h6 fw-bold mt-1 mb-1 admin-text">
                                                         2845901
                                                     </h4>
-
 
                                                     <p class="admin-muted small mb-0">
                                                         Técnico en Análisis Químico
                                                     </p>
 
                                                 </div>
-
 
                                                 <div class="index-icon-green
                                                     admin-icon-yellow
@@ -694,38 +676,33 @@
 
                                                 </div>
 
-
                                             </div>
 
-
-                                            <a href="qrScanner.html"
-                                                class="btn btn-outline-success w-100
-                                                fw-semibold text-decoration-none">
-
-                                                <i class="bi bi-qr-code-scan me-1"></i>
-
-                                                Registrar asistencia
-
-                                            </a>
-
+                                            <div class="d-flex gap-2 mt-2">
+                                                <button type="button" 
+                                                    class="btn btn-outline-success w-50 fw-semibold text-decoration-none btn-seleccionar-ficha"
+                                                    onclick="seleccionarFicha(this)">
+                                                    <i class="bi bi-check2 me-1"></i>
+                                                    Seleccionar ficha
+                                                </button>
+                                                <a href="detalleFicha.html" 
+                                                    class="btn btn-outline-secondary w-50 fw-semibold text-decoration-none d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-eye me-1"></i>
+                                                    Ver Ficha
+                                                </a>
+                                            </div>
 
                                         </div>
 
-
                                     </div>
-
 
                                 </div>
 
-
                             </div>
-
 
                         </div>
 
-
                     </div>
-
 
                 </div>
 
@@ -1310,11 +1287,11 @@
                                     <tr data-aprendiz="Carlos Andrés Pérez Gómez">
 
                                         <td>
-                                            <strong>CC 1098745210</strong>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1098745210</a>
                                         </td>
 
                                         <td>
-                                            Carlos Andrés Pérez Gómez
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Carlos Andrés Pérez Gómez</a>
                                         </td>
 
                                         <td class="text-start ps-3 hora-ingreso">
@@ -1338,8 +1315,11 @@
 
                                             <button type="button"
                                                 class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5"
-                                                title="Justificar">
+                                                border-0 py-1 px-1.5
+                                                view-justification-action"
+                                                data-aprendiz="Carlos Andrés Pérez Gómez"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
 
                                                 <i class="bi bi-file-earmark-text
                                                     status-yellow-text"></i>
@@ -1373,11 +1353,11 @@
                                     <tr data-aprendiz="María Alejandra Rojas Silva">
 
                                         <td>
-                                            <strong>CC 1095412365</strong>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1095412365</a>
                                         </td>
 
                                         <td>
-                                            María Alejandra Rojas Silva
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">María Alejandra Rojas Silva</a>
                                         </td>
 
                                         <td class="text-start ps-3 hora-ingreso">
@@ -1401,8 +1381,11 @@
 
                                             <button type="button"
                                                 class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5"
-                                                title="Justificar">
+                                                border-0 py-1 px-1.5
+                                                view-justification-action"
+                                                data-aprendiz="María Alejandra Rojas Silva"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
 
                                                 <i class="bi bi-file-earmark-text
                                                     status-yellow-text"></i>
@@ -1436,11 +1419,11 @@
                                     <tr data-aprendiz="Esteban David Morales Ruiz">
 
                                         <td>
-                                            <strong>CC 1002365412</strong>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1002365412</a>
                                         </td>
 
                                         <td>
-                                            Esteban David Morales Ruiz
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Esteban David Morales Ruiz</a>
                                         </td>
 
                                         <td class="text-start ps-3 hora-ingreso">
@@ -1464,8 +1447,11 @@
 
                                             <button type="button"
                                                 class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5"
-                                                title="Justificar Falla">
+                                                border-0 py-1 px-1.5
+                                                view-justification-action"
+                                                data-aprendiz="Esteban David Morales Ruiz"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
 
                                                 <i class="bi bi-file-earmark-text
                                                     status-yellow-text"></i>
@@ -1499,11 +1485,11 @@
                                     <tr data-aprendiz="Laura Valentina Rodríguez Díaz">
 
                                         <td>
-                                            <strong>CC 1018456327</strong>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1018456327</a>
                                         </td>
 
                                         <td>
-                                            Laura Valentina Rodríguez Díaz
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Laura Valentina Rodríguez Díaz</a>
                                         </td>
 
                                         <td class="text-start ps-3 hora-ingreso">
@@ -1527,8 +1513,11 @@
 
                                             <button type="button"
                                                 class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5"
-                                                title="Justificar">
+                                                border-0 py-1 px-1.5
+                                                view-justification-action"
+                                                data-aprendiz="Laura Valentina Rodríguez Díaz"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
 
                                                 <i class="bi bi-file-earmark-text
                                                     status-yellow-text"></i>
@@ -1562,11 +1551,11 @@
                                     <tr data-aprendiz="Juan Sebastián Torres Martínez">
 
                                         <td>
-                                            <strong>CC 1032547896</strong>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1032547896</a>
                                         </td>
 
                                         <td>
-                                            Juan Sebastián Torres Martínez
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Juan Sebastián Torres Martínez</a>
                                         </td>
 
                                         <td class="text-start ps-3 hora-ingreso">
@@ -1590,8 +1579,11 @@
 
                                             <button type="button"
                                                 class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5"
-                                                title="Justificar">
+                                                border-0 py-1 px-1.5
+                                                view-justification-action"
+                                                data-aprendiz="Juan Sebastián Torres Martínez"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
 
                                                 <i class="bi bi-file-earmark-text
                                                     status-yellow-text"></i>
@@ -1625,11 +1617,11 @@
                                     <tr data-aprendiz="Daniela Sofía Martínez López">
 
                                         <td>
-                                            <strong>CC 1096325478</strong>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1096325478</a>
                                         </td>
 
                                         <td>
-                                            Daniela Sofía Martínez López
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Daniela Sofía Martínez López</a>
                                         </td>
 
                                         <td class="text-start ps-3 hora-ingreso">
@@ -1653,8 +1645,11 @@
 
                                             <button type="button"
                                                 class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5"
-                                                title="Justificar">
+                                                border-0 py-1 px-1.5
+                                                view-justification-action"
+                                                data-aprendiz="Daniela Sofía Martínez López"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
 
                                                 <i class="bi bi-file-earmark-text
                                                     status-yellow-text"></i>
@@ -1688,11 +1683,11 @@
                                     <tr data-aprendiz="Andrés Felipe Gómez Herrera">
 
                                         <td>
-                                            <strong>CC 1008745632</strong>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1008745632</a>
                                         </td>
 
                                         <td>
-                                            Andrés Felipe Gómez Herrera
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Andrés Felipe Gómez Herrera</a>
                                         </td>
 
                                         <td class="text-start ps-3 hora-ingreso">
@@ -1716,8 +1711,11 @@
 
                                             <button type="button"
                                                 class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5"
-                                                title="Justificar">
+                                                border-0 py-1 px-1.5
+                                                view-justification-action"
+                                                data-aprendiz="Andrés Felipe Gómez Herrera"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
 
                                                 <i class="bi bi-file-earmark-text
                                                     status-yellow-text"></i>
@@ -1751,11 +1749,11 @@
                                     <tr data-aprendiz="Sara Juliana Hernández Castro">
 
                                         <td>
-                                            <strong>CC 1015632847</strong>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1015632847</a>
                                         </td>
 
                                         <td>
-                                            Sara Juliana Hernández Castro
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Sara Juliana Hernández Castro</a>
                                         </td>
 
                                         <td class="text-start ps-3 hora-ingreso">
@@ -1779,8 +1777,11 @@
 
                                             <button type="button"
                                                 class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5"
-                                                title="Justificar">
+                                                border-0 py-1 px-1.5
+                                                view-justification-action"
+                                                data-aprendiz="Sara Juliana Hernández Castro"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
 
                                                 <i class="bi bi-file-earmark-text
                                                     status-yellow-text"></i>
@@ -1814,11 +1815,11 @@
                                     <tr data-aprendiz="Mateo Alejandro Vargas Peña">
 
                                         <td>
-                                            <strong>CC 1024789631</strong>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1024789631</a>
                                         </td>
 
                                         <td>
-                                            Mateo Alejandro Vargas Peña
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Mateo Alejandro Vargas Peña</a>
                                         </td>
 
                                         <td class="text-start ps-3 hora-ingreso">
@@ -1842,8 +1843,11 @@
 
                                             <button type="button"
                                                 class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5"
-                                                title="Justificar">
+                                                border-0 py-1 px-1.5
+                                                view-justification-action"
+                                                data-aprendiz="Mateo Alejandro Vargas Peña"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
 
                                                 <i class="bi bi-file-earmark-text
                                                     status-yellow-text"></i>
@@ -1877,11 +1881,11 @@
                                     <tr data-aprendiz="Valentina Isabel Moreno Ruiz">
 
                                         <td>
-                                            <strong>CC 1097854126</strong>
+                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1097854126</a>
                                         </td>
 
                                         <td>
-                                            Valentina Isabel Moreno Ruiz
+                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Valentina Isabel Moreno Ruiz</a>
                                         </td>
 
                                         <td class="text-start ps-3 hora-ingreso">
@@ -1905,8 +1909,11 @@
 
                                             <button type="button"
                                                 class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5"
-                                                title="Justificar">
+                                                border-0 py-1 px-1.5
+                                                view-justification-action"
+                                                data-aprendiz="Valentina Isabel Moreno Ruiz"
+                                                data-fecha="01/10/2026"
+                                                title="Ver Justificación">
 
                                                 <i class="bi bi-file-earmark-text
                                                     status-yellow-text"></i>
@@ -2038,7 +2045,7 @@
                                     </option>
 
                                     <option value="2874102">
-                                        2874102 - ADSO
+                                        2874102 - Análisis y Desarrollo de Software
                                     </option>
 
                                     <option value="2911044">
@@ -2482,6 +2489,403 @@
 
 
     <!-- ========================================================= -->
+    <!-- MODAL VER JUSTIFICACIÓN -->
+    <!-- ========================================================= -->
+
+    <div class="modal fade"
+        id="justificationModal"
+        tabindex="-1"
+        aria-labelledby="justificationModalLabel"
+        aria-hidden="true">
+
+
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+
+
+            <div class="modal-content admin-dashboard-modal
+                border-0 shadow-lg rounded-4 p-2">
+
+
+                <button type="button"
+                    class="btn-close modal-close-btn"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+                </button>
+
+
+                <div class="modal-body p-4">
+
+
+                    <!-- CABECERA -->
+
+                    <div class="d-flex align-items-center gap-3 mb-4">
+
+
+                        <div class="admin-icon-yellow
+                            rounded-3
+                            d-flex align-items-center
+                            justify-content-center"
+                            style="width: 48px;
+                            height: 48px;
+                            font-size: 1.3rem;
+                            flex-shrink: 0;">
+
+                            <i class="bi bi-file-earmark-text"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="section-label status-yellow-text">
+                                DOCUMENTO DE JUSTIFICACIÓN
+                            </span>
+
+
+                            <h5 class="fw-bold mb-0 mt-1 admin-text"
+                                id="justificationModalLabel">
+
+                                Justificación de Falla
+
+                            </h5>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- INFORMACIÓN DEL APRENDIZ -->
+
+                    <div class="admin-surface-muted
+                        rounded-3 p-3 mb-4">
+
+
+                        <div class="row g-3">
+
+
+                            <div class="col-md-6">
+
+
+                                <span class="admin-muted small fw-semibold">
+                                    Aprendiz:
+                                </span>
+
+
+                                <div class="admin-text fw-bold"
+                                    id="justificationApprenticeName">
+
+                                    Carlos Andrés Pérez Gómez
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="col-md-3">
+
+
+                                <span class="admin-muted small fw-semibold">
+                                    Fecha:
+                                </span>
+
+
+                                <div class="admin-text fw-bold"
+                                    id="justificationDate">
+
+                                    01/10/2026
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="col-md-3">
+
+
+                                <span class="admin-muted small fw-semibold">
+                                    Ficha:
+                                </span>
+
+
+                                <div class="admin-text fw-bold">
+
+                                    2874102
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- VISTA PREVIA SIMULADA -->
+
+                    <div class="mb-3">
+
+
+                        <div class="d-flex justify-content-between
+                            align-items-center mb-2">
+
+
+                            <span class="fw-bold admin-text small">
+
+                                <i class="bi bi-eye me-1"></i>
+
+                                Vista previa del documento
+
+                            </span>
+
+
+                            <span class="badge badge-status badge-status-green">
+
+                                <i class="bi bi-check-circle me-1"></i>
+
+                                Documento cargado
+
+                            </span>
+
+
+                        </div>
+
+
+                        <div style="
+                            border: 1px solid #e5e7eb;
+                            border-radius: 12px;
+                            background: #f8faf8;
+                            min-height: 390px;
+                            padding: 25px;
+                            overflow: auto;
+                        ">
+
+
+                            <!-- DOCUMENTO SIMULADO -->
+
+                            <div style="
+                                max-width: 650px;
+                                min-height: 330px;
+                                margin: 0 auto;
+                                background: #ffffff;
+                                border: 1px solid #dfe5df;
+                                border-radius: 8px;
+                                padding: 30px;
+                                box-shadow: 0 2px 8px rgba(0,0,0,.05);
+                            ">
+
+
+                                <div class="text-center mb-4">
+
+
+                                    <img src="../assets/logo/logo.svg"
+                                        alt="Logo SENA"
+                                        width="55"
+                                        class="mb-2">
+
+
+                                    <h5 class="fw-bold admin-text mb-1">
+                                        SENA
+                                    </h5>
+
+
+                                    <div class="admin-muted small">
+                                        Sistema de Control de Asistencia
+                                    </div>
+
+
+                                    <hr>
+
+
+                                    <h6 class="fw-bold admin-text mt-3">
+                                        JUSTIFICACIÓN DE INASISTENCIA
+                                    </h6>
+
+
+                                </div>
+
+
+                                <div class="row g-3 mb-3">
+
+
+                                    <div class="col-md-6">
+
+                                        <span class="admin-muted small">
+                                            Nombre del aprendiz
+                                        </span>
+
+                                        <div class="fw-semibold admin-text"
+                                            id="previewApprenticeName">
+
+                                            Carlos Andrés Pérez Gómez
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-6">
+
+                                        <span class="admin-muted small">
+                                            Documento
+                                        </span>
+
+                                        <div class="fw-semibold admin-text">
+                                            CC 1098745210
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-6">
+
+                                        <span class="admin-muted small">
+                                            Ficha
+                                        </span>
+
+                                        <div class="fw-semibold admin-text">
+                                            2874102
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-6">
+
+                                        <span class="admin-muted small">
+                                            Fecha de la inasistencia
+                                        </span>
+
+                                        <div class="fw-semibold admin-text"
+                                            id="previewDate">
+
+                                            01/10/2026
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="mb-4">
+
+
+                                    <span class="admin-muted small">
+                                        Motivo de la justificación
+                                    </span>
+
+
+                                    <div class="admin-text mt-1"
+                                        style="line-height: 1.6;">
+
+                                        Se presenta incapacidad médica
+                                        correspondiente a la jornada en la
+                                        cual el aprendiz no pudo asistir
+                                        a las actividades de formación.
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="d-flex justify-content-between
+                                    align-items-end mt-4 pt-3 border-top">
+
+
+                                    <div>
+
+                                        <div class="admin-muted small">
+                                            Documento simulado
+                                        </div>
+
+                                        <div class="admin-muted"
+                                            style="font-size: .8rem;">
+
+                                            Justificación_2026_10_01.pdf
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="text-end">
+
+                                        <i class="bi bi-file-earmark-pdf
+                                            status-purple-text"
+                                            style="font-size: 2rem;">
+                                        </i>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- BOTONES -->
+
+                    <div class="d-flex justify-content-end
+                        flex-wrap gap-2 mt-4">
+
+
+                        <button type="button"
+                            class="btn btn-modal-cancel
+                            px-4 py-2 small fw-semibold"
+                            data-bs-dismiss="modal">
+
+                            Cerrar
+
+                        </button>
+
+
+                        <button type="button"
+                            id="downloadJustification"
+                            class="btn btn-sena-custom-green
+                            px-4 py-2 small fw-semibold">
+
+                            <i class="bi bi-download me-1"></i>
+
+                            Descargar justificación
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ========================================================= -->
     <!-- MODAL CERRAR SESIÓN -->
     <!-- ========================================================= -->
 
@@ -2605,13 +3009,19 @@
         // CAMBIO DE FICHA ACTUAL
         // =========================================================
 
-        function seleccionarFicha(ficha) {
+        function seleccionarFicha(button) {
+            // Restablecer todas las tarjetas y botones al estado no seleccionado
+            document.querySelectorAll('.ficha-assignment-card').forEach(card => {
+                let btn = card.querySelector('.btn-seleccionar-ficha');
+                if (btn) {
+                    btn.className = "btn btn-outline-success w-50 fw-semibold text-decoration-none btn-seleccionar-ficha";
+                    btn.innerHTML = '<i class="bi bi-check2 me-1"></i> Seleccionar ficha';
+                }
+            });
 
-            alert(
-                'La ficha ' + ficha +
-                ' será seleccionada como ficha actual de trabajo.'
-            );
-
+            // Activar la tarjeta y el botón correspondiente que se presionó
+            button.className = "btn btn-success w-50 fw-semibold text-decoration-none btn-seleccionar-ficha";
+            button.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i> Ficha seleccionada';
         }
 
 
@@ -2656,6 +3066,182 @@
 
 
         // =========================================================
+        // MODAL DE JUSTIFICACIÓN
+        // =========================================================
+
+        const justificationModalElement =
+            document.getElementById('justificationModal');
+
+
+        const justificationModal =
+            new bootstrap.Modal(justificationModalElement);
+
+
+        const justificationApprenticeName =
+            document.getElementById('justificationApprenticeName');
+
+
+        const justificationDate =
+            document.getElementById('justificationDate');
+
+
+        const previewApprenticeName =
+            document.getElementById('previewApprenticeName');
+
+
+        const previewDate =
+            document.getElementById('previewDate');
+
+
+        const downloadJustification =
+            document.getElementById('downloadJustification');
+
+
+
+        // =========================================================
+        // VER JUSTIFICACIÓN
+        // =========================================================
+
+        document.addEventListener('click', function (event) {
+
+
+            const button =
+                event.target.closest('.view-justification-action');
+
+
+            if (!button) {
+
+                return;
+
+            }
+
+
+            const nombreAprendiz =
+                button.dataset.aprendiz ||
+                button.closest('tr')
+                    .querySelector('td:nth-child(2)')
+                    .textContent
+                    .trim();
+
+
+            const fecha =
+                button.dataset.fecha ||
+                '01/10/2026';
+
+
+
+            justificationApprenticeName.textContent =
+                nombreAprendiz;
+
+
+            justificationDate.textContent =
+                fecha;
+
+
+            previewApprenticeName.textContent =
+                nombreAprendiz;
+
+
+            previewDate.textContent =
+                fecha;
+
+
+
+            // -----------------------------------------------------
+            // MOSTRAR MODAL
+            // -----------------------------------------------------
+
+            justificationModal.show();
+
+
+        });
+
+
+
+        // =========================================================
+        // DESCARGAR JUSTIFICACIÓN SIMULADA
+        // =========================================================
+
+        downloadJustification.addEventListener('click', function () {
+
+
+            const nombreAprendiz =
+                justificationApprenticeName.textContent;
+
+
+            const fecha =
+                justificationDate.textContent;
+
+
+            const contenido =
+
+                'SENA ASSISTANCE\n' +
+                'JUSTIFICACIÓN DE INASISTENCIA\n\n' +
+
+                'Aprendiz: ' +
+                nombreAprendiz +
+                '\n' +
+
+                'Ficha: 2874102\n' +
+
+                'Fecha: ' +
+                fecha +
+                '\n\n' +
+
+                'Motivo de la justificación:\n' +
+
+                'Se presenta incapacidad médica correspondiente ' +
+                'a la jornada en la cual el aprendiz no pudo asistir ' +
+                'a las actividades de formación.\n\n' +
+
+                'Documento generado como simulación visual ' +
+                'para SENA Assistance.';
+
+
+
+            const archivo =
+                new Blob(
+                    [contenido],
+                    { type: 'text/plain' }
+                );
+
+
+            const url =
+                URL.createObjectURL(archivo);
+
+
+            const enlace =
+                document.createElement('a');
+
+
+            enlace.href =
+                url;
+
+
+            enlace.download =
+                'Justificacion_' +
+                nombreAprendiz
+                    .replace(/\s+/g, '_') +
+                '.txt';
+
+
+            document.body.appendChild(enlace);
+
+
+            enlace.click();
+
+
+            document.body.removeChild(enlace);
+
+
+            URL.revokeObjectURL(url);
+
+
+        });
+
+
+
+        // =========================================================
         // ACTUALIZAR BOTONES DE LA FILA
         // =========================================================
 
@@ -2691,8 +3277,11 @@
 
                     <button type="button"
                         class="btn btn-sm table-action-btn
-                        border-0 py-1 px-1.5"
-                        title="Justificar Falla">
+                        border-0 py-1 px-1.5
+                        view-justification-action"
+                        data-aprendiz="${nombreAprendiz}"
+                        data-fecha="01/10/2026"
+                        title="Ver Justificación">
 
                         <i class="bi bi-file-earmark-text
                             status-yellow-text"></i>
@@ -2731,8 +3320,11 @@
 
                     <button type="button"
                         class="btn btn-sm table-action-btn
-                        border-0 py-1 px-1.5"
-                        title="Justificar">
+                        border-0 py-1 px-1.5
+                        view-justification-action"
+                        data-aprendiz="${nombreAprendiz}"
+                        data-fecha="01/10/2026"
+                        title="Ver Justificación">
 
                         <i class="bi bi-file-earmark-text
                             status-yellow-text"></i>

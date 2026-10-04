@@ -1896,3 +1896,132 @@ body.index-page {
 
 }
 
+/* =========================
+   AJUSTE DE ANCHO EN BOTONES DE REGISTRAR ASISTENCIA
+========================= */
+
+/* Ajuste general para los botones de registrar asistencia */
+a.btn-outline-success[href="qrScanner.html"],
+.ficha-current-card .btn-registrar-asistencia,
+.ficha-assignment-card .btn-outline-success {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+}
+
+/* ===================================================== */
+/* TARJETAS FLOTANTES DE FORMULARIOS */
+/* ===================================================== */
+
+.config-form-modal .modal-dialog {
+    max-width: 760px;
+}
+
+.config-form-modal .modal-content {
+    border: 0;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(0, 48, 64, 0.18);
+}
+
+.config-form-modal .modal-header {
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+}
+
+.config-form-modal .modal-body {
+    padding: 1.5rem;
+}
+
+.config-form-modal .modal-footer {
+    border-top: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+}
+
+
+/* ===================================================== */
+/* CAPACIDAD DEL AMBIENTE */
+/* ===================================================== */
+
+.capacidad-input-group .input-group-text {
+    min-width: 105px;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+
+/* ===================================================== */
+/* VALIDEZ DEL CÓDIGO QR */
+/* ===================================================== */
+
+.qr-validity-group .input-group-text {
+    min-width: 90px;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+
+/* ===================================================== */
+/* BOTÓN EDITAR */
+/* ===================================================== */
+
+.config-edit-btn {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--blue-dark);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.config-edit-btn:hover {
+    background: #f4f7f2;
+    color: var(--green);
+    border-color: rgba(57, 169, 0, 0.25);
+}
+
+
+/* ===================================================== */
+/* EN PANTALLAS PEQUEÑAS */
+/* ===================================================== */
+
+@media (max-width: 575.98px) {
+
+    .config-form-modal .modal-dialog {
+        margin: 0.75rem;
+    }
+
+    .config-form-modal .modal-body {
+        padding: 1.25rem;
+    }
+
+    .config-form-modal .modal-footer {
+        padding: 1rem 1.25rem;
+    }
+
+    .capacidad-input-group .input-group-text {
+        min-width: 95px;
+        font-size: 0.85rem;
+    }
+
+    .qr-validity-group .input-group-text {
+        min-width: 85px;
+        font-size: 0.85rem;
+    }
+
+}
+
+/* ENLACES DE DETALLE DE APRENDICES */
+.aprendiz-detalle-link {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.aprendiz-detalle-link:hover {
+    color: var(--green);
+}
