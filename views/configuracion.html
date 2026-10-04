@@ -310,7 +310,7 @@
 
                             <!-- NOMBRE -->
 
-                            <div class="col-md-6">
+                            <div class="col-12">
 
                                 <label for="nombreCentro"
                                     class="form-label fw-semibold small">
@@ -418,25 +418,6 @@
                                     class="form-control"
                                     id="telefono"
                                     value="601 5461500">
-
-                            </div>
-
-
-                            <!-- CORREO -->
-
-                            <div class="col-md-6">
-
-                                <label for="correo"
-                                    class="form-label fw-semibold small">
-
-                                    Correo institucional
-
-                                </label>
-
-                                <input type="email"
-                                    class="form-control"
-                                    id="correo"
-                                    value="centro@sena.edu.co">
 
                             </div>
 
@@ -1130,7 +1111,7 @@
             <!-- AMBIENTES DE FORMACIÓN -->
             <!-- ================================================= -->
 
-            <div class="row mb-5">
+            <div class="row mb-4">
 
                 <div class="col-12">
 
@@ -1380,6 +1361,248 @@
                                             <button type="button"
                                                 class="config-edit-btn btn-editar-ambiente"
                                                 title="Editar ambiente">
+
+                                                <i class="bi bi-pencil-square"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- FICHAS DE FORMACIÓN -->
+            <!-- ================================================= -->
+
+            <div class="row mb-5">
+
+                <div class="col-12">
+
+                    <div class="role-column-card p-4">
+
+
+                        <!-- CABECERA -->
+
+                        <div class="d-flex
+                            flex-column
+                            flex-md-row
+                            justify-content-between
+                            align-items-md-center
+                            gap-3
+                            mb-4
+                            pb-3
+                            border-bottom">
+
+                            <div>
+
+                                <span class="section-label">
+                                    GESTIÓN DE FICHAS
+                                </span>
+
+                                <h2 class="h5 fw-bold mt-1 mb-1">
+                                    Programas de Formación
+                                </h2>
+
+                                <p class="admin-muted small mb-0">
+                                    Administra las fichas, programas,
+                                    jornadas y ambientes asignados.
+                                </p>
+
+                            </div>
+
+
+                            <button type="button"
+                                id="btnNuevaFicha"
+                                class="btn btn-sena-custom-green px-3 py-2 fw-semibold"
+                                data-bs-toggle="modal"
+                                data-bs-target="#nuevaFichaModal">
+
+                                <i class="bi bi-plus-lg me-1"></i>
+
+                                Nueva ficha
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- TABLA -->
+
+                        <div class="table-responsive">
+
+                            <table class="table table-hover
+                                align-middle mb-0 small">
+
+                                <thead class="table-light">
+
+                                    <tr>
+
+                                        <th class="py-3">
+                                            Número de ficha
+                                        </th>
+
+                                        <th class="py-3">
+                                            Programa
+                                        </th>
+
+                                        <th class="py-3">
+                                            Cantidad de aprendices
+                                        </th>
+
+                                        <th class="py-3">
+                                            Jornada
+                                        </th>
+
+                                        <th class="py-3">
+                                            Ambiente asignado
+                                        </th>
+
+                                        <th class="py-3 text-center">
+                                            Acciones
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="tablaFichas">
+
+
+                                    <!-- FICHA 2874102 -->
+
+                                    <tr>
+
+                                        <td>
+
+                                            <span class="fw-bold admin-text">
+                                                2874102
+                                            </span>
+
+                                        </td>
+
+                                        <td>
+                                            Tecnólogo en Análisis y Desarrollo de Software
+                                        </td>
+
+                                        <td>
+                                            30 aprendices
+                                        </td>
+
+                                        <td>
+                                            Diurna
+                                        </td>
+
+                                        <td>
+                                            Ambiente 101
+                                        </td>
+
+                                        <td class="text-center">
+
+                                            <button type="button"
+                                                class="config-edit-btn btn-editar-ficha"
+                                                title="Editar ficha">
+
+                                                <i class="bi bi-pencil-square"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+                                    <!-- FICHA 2911044 -->
+
+                                    <tr>
+
+                                        <td>
+
+                                            <span class="fw-bold admin-text">
+                                                2911044
+                                            </span>
+
+                                        </td>
+
+                                        <td>
+                                            Técnico en Contabilización de Operaciones Comerciales y Financieras
+                                        </td>
+
+                                        <td>
+                                            25 aprendices
+                                        </td>
+
+                                        <td>
+                                            Tarde
+                                        </td>
+
+                                        <td>
+                                            Ambiente 203
+                                        </td>
+
+                                        <td class="text-center">
+
+                                            <button type="button"
+                                                class="config-edit-btn btn-editar-ficha"
+                                                title="Editar ficha">
+
+                                                <i class="bi bi-pencil-square"></i>
+
+                                            </button>
+
+                                        </td>
+
+                                    </tr>
+
+
+                                    <!-- FICHA 2935018 -->
+
+                                    <tr>
+
+                                        <td>
+
+                                            <span class="fw-bold admin-text">
+                                                2935018
+                                            </span>
+
+                                        </td>
+
+                                        <td>
+                                            Técnico en Sistemas
+                                        </td>
+
+                                        <td>
+                                            28 aprendices
+                                        </td>
+
+                                        <td>
+                                            Nocturna
+                                        </td>
+
+                                        <td>
+                                            Ambiente 305
+                                        </td>
+
+                                        <td class="text-center">
+
+                                            <button type="button"
+                                                class="config-edit-btn btn-editar-ficha"
+                                                title="Editar ficha">
 
                                                 <i class="bi bi-pencil-square"></i>
 
@@ -1974,6 +2197,259 @@
 
                         <span id="textoBotonAmbiente">
                             Guardar ambiente
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================================= -->
+    <!-- MODAL NUEVA / EDITAR FICHA -->
+    <!-- ========================================================= -->
+
+    <div class="modal fade config-form-modal"
+        id="nuevaFichaModal"
+        tabindex="-1"
+        aria-labelledby="nuevaFichaModalLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+
+                <!-- CABECERA -->
+
+                <div class="modal-header">
+
+                    <div class="d-flex align-items-center gap-3">
+
+                        <div class="admin-icon-blue
+                            rounded-3
+                            d-flex align-items-center
+                            justify-content-center
+                            flex-shrink-0"
+                            style="width: 45px; height: 45px;">
+
+                            <i class="bi bi-journal-text"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span class="section-label">
+                                PROGRAMAS DE FORMACIÓN
+                            </span>
+
+                            <h5 class="fw-bold mb-0 admin-text"
+                                id="nuevaFichaModalLabel">
+
+                                Nueva ficha
+
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Cerrar">
+                    </button>
+
+                </div>
+
+
+                <!-- CUERPO -->
+
+                <div class="modal-body">
+
+                    <p class="admin-muted small mb-4"
+                        id="textoFichaModal">
+
+                        Registra la información de la nueva ficha
+                        de formación.
+
+                    </p>
+
+
+                    <div class="row g-3">
+
+
+                        <!-- NÚMERO DE FICHA -->
+
+                        <div class="col-md-6">
+
+                            <label for="numeroFicha"
+                                class="form-label fw-semibold small">
+
+                                Número de ficha
+
+                            </label>
+
+                            <input type="text"
+                                class="form-control"
+                                id="numeroFicha"
+                                placeholder="Ej. 2940123">
+
+                        </div>
+
+
+                        <!-- CANTIDAD DE APRENDICES -->
+
+                        <div class="col-md-6">
+
+                            <label for="cantidadAprendices"
+                                class="form-label fw-semibold small">
+
+                                Cantidad de aprendices
+
+                            </label>
+
+                            <div class="input-group capacidad-input-group">
+
+                                <input type="number"
+                                    class="form-control"
+                                    id="cantidadAprendices"
+                                    min="1"
+                                    placeholder="Ej. 30">
+
+                                <span class="input-group-text">
+                                    aprendices
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PROGRAMA -->
+
+                        <div class="col-12">
+
+                            <label for="programaFicha"
+                                class="form-label fw-semibold small">
+
+                                Programa de formación
+
+                            </label>
+
+                            <input type="text"
+                                class="form-control"
+                                id="programaFicha"
+                                placeholder="Ej. Tecnólogo en Análisis y Desarrollo de Software">
+
+                        </div>
+
+
+                        <!-- JORNADA -->
+
+                        <div class="col-md-6">
+
+                            <label for="jornadaFicha"
+                                class="form-label fw-semibold small">
+
+                                Jornada
+
+                            </label>
+
+                            <select class="form-select"
+                                id="jornadaFicha">
+
+                                <option value="" selected disabled>
+                                    Seleccione una jornada
+                                </option>
+
+                                <option value="Diurna">
+                                    Diurna
+                                </option>
+
+                                <option value="Tarde">
+                                    Tarde
+                                </option>
+
+                                <option value="Nocturna">
+                                    Nocturna
+                                </option>
+
+                                <option value="Mixta">
+                                    Mixta
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- AMBIENTE -->
+
+                        <div class="col-md-6">
+
+                            <label for="ambienteFicha"
+                                class="form-label fw-semibold small">
+
+                                Ambiente asignado
+
+                            </label>
+
+                            <select class="form-select"
+                                id="ambienteFicha">
+
+                                <option value="" selected disabled>
+                                    Seleccione un ambiente
+                                </option>
+
+                                <option value="Ambiente 101">
+                                    Ambiente 101
+                                </option>
+
+                                <option value="Ambiente 203">
+                                    Ambiente 203
+                                </option>
+
+                                <option value="Ambiente 305">
+                                    Ambiente 305
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PIE -->
+
+                <div class="modal-footer">
+
+                    <button type="button"
+                        class="btn btn-modal-cancel px-4 py-2 fw-semibold"
+                        data-bs-dismiss="modal">
+
+                        Cancelar
+
+                    </button>
+
+                    <button type="button"
+                        class="btn btn-sena-custom-green px-4 py-2 fw-semibold"
+                        id="btnGuardarFicha">
+
+                        <i class="bi bi-check-lg me-1"></i>
+
+                        <span id="textoBotonFicha">
+                            Guardar ficha
                         </span>
 
                     </button>
@@ -3088,7 +3564,367 @@
 
 
         /* ===================================================== */
-        /* LIMPIAR ESTADO DE EDICIÓN AL CERRAR MODAL */
+        /* FICHAS */
+        /* ===================================================== */
+
+        const nuevaFichaModalElement =
+            document.getElementById('nuevaFichaModal');
+
+
+        const nuevaFichaModal =
+            bootstrap.Modal.getOrCreateInstance(
+                nuevaFichaModalElement
+            );
+
+
+        const btnGuardarFicha =
+            document.getElementById('btnGuardarFicha');
+
+
+        const tablaFichas =
+            document.getElementById('tablaFichas');
+
+
+        const tituloFicha =
+            document.getElementById('nuevaFichaModalLabel');
+
+
+        const textoFichaModal =
+            document.getElementById('textoFichaModal');
+
+
+        const textoBotonFicha =
+            document.getElementById('textoBotonFicha');
+
+
+        let fichaEditando = null;
+
+
+
+        /* ===================================================== */
+        /* ABRIR FORMULARIO PARA NUEVA FICHA */
+        /* ===================================================== */
+
+        document
+            .getElementById('btnNuevaFicha')
+            .addEventListener('click', function () {
+
+                fichaEditando = null;
+
+                tituloFicha.textContent =
+                    'Nueva ficha';
+
+                textoFichaModal.textContent =
+                    'Registra la información de la nueva ficha de formación.';
+
+                textoBotonFicha.textContent =
+                    'Guardar ficha';
+
+                limpiarFormularioFicha();
+
+            });
+
+
+
+        /* ===================================================== */
+        /* EDITAR FICHA */
+        /* ===================================================== */
+
+        tablaFichas.addEventListener('click', function (event) {
+
+            const boton =
+                event.target.closest('.btn-editar-ficha');
+
+
+            if (!boton) {
+
+                return;
+
+            }
+
+
+            const fila =
+                boton.closest('tr');
+
+
+            const columnas =
+                fila.querySelectorAll('td');
+
+
+            const numero =
+                columnas[0]
+                    .textContent
+                    .trim();
+
+
+            const programa =
+                columnas[1]
+                    .textContent
+                    .trim();
+
+
+            const aprendices =
+                columnas[2]
+                    .textContent
+                    .replace('aprendices', '')
+                    .trim();
+
+
+            const jornada =
+                columnas[3]
+                    .textContent
+                    .trim();
+
+
+            const ambiente =
+                columnas[4]
+                    .textContent
+                    .trim();
+
+
+            fichaEditando = fila;
+
+
+            document.getElementById('numeroFicha').value =
+                numero;
+
+            document.getElementById('programaFicha').value =
+                programa;
+
+            document.getElementById('cantidadAprendices').value =
+                aprendices;
+
+            document.getElementById('jornadaFicha').value =
+                jornada;
+
+            document.getElementById('ambienteFicha').value =
+                ambiente;
+
+
+            tituloFicha.textContent =
+                'Editar ficha';
+
+            textoFichaModal.textContent =
+                'Actualiza la información de la ficha seleccionada.';
+
+            textoBotonFicha.textContent =
+                'Actualizar ficha';
+
+
+            nuevaFichaModal.show();
+
+        });
+
+
+
+        /* ===================================================== */
+        /* GUARDAR / ACTUALIZAR FICHA */
+        /* ===================================================== */
+
+        btnGuardarFicha.addEventListener('click', function () {
+
+            const numero =
+                document.getElementById('numeroFicha')
+                    .value
+                    .trim();
+
+
+            const programa =
+                document.getElementById('programaFicha')
+                    .value
+                    .trim();
+
+
+            const aprendices =
+                document.getElementById('cantidadAprendices')
+                    .value
+                    .trim();
+
+
+            const jornada =
+                document.getElementById('jornadaFicha')
+                    .value;
+
+
+            const ambiente =
+                document.getElementById('ambienteFicha')
+                    .value;
+
+
+            if (!numero ||
+                !programa ||
+                !aprendices ||
+                !jornada ||
+                !ambiente) {
+
+                alert(
+                    'Completa todos los campos de la ficha.'
+                );
+
+                return;
+
+            }
+
+
+
+            /* ================================================= */
+            /* ACTUALIZAR FICHA EXISTENTE */
+            /* ================================================= */
+
+            if (fichaEditando) {
+
+                fichaEditando.innerHTML = `
+
+                    <td>
+
+                        <span class="fw-bold admin-text">
+                            ${numero}
+                        </span>
+
+                    </td>
+
+                    <td>
+                        ${programa}
+                    </td>
+
+                    <td>
+                        ${aprendices} aprendices
+                    </td>
+
+                    <td>
+                        ${jornada}
+                    </td>
+
+                    <td>
+                        ${ambiente}
+                    </td>
+
+                    <td class="text-center">
+
+                        <button type="button"
+                            class="config-edit-btn btn-editar-ficha"
+                            title="Editar ficha">
+
+                            <i class="bi bi-pencil-square"></i>
+
+                        </button>
+
+                    </td>
+
+                `;
+
+
+                nuevaFichaModal.hide();
+
+                limpiarFormularioFicha();
+
+
+                mostrarConfirmacion(
+                    'La información de la ficha fue actualizada correctamente.'
+                );
+
+
+                fichaEditando = null;
+
+
+                return;
+
+            }
+
+
+
+            /* ================================================= */
+            /* CREAR NUEVA FICHA */
+            /* ================================================= */
+
+            const nuevaFila =
+                document.createElement('tr');
+
+
+            nuevaFila.innerHTML = `
+
+                <td>
+
+                    <span class="fw-bold admin-text">
+                        ${numero}
+                    </span>
+
+                </td>
+
+                <td>
+                    ${programa}
+                </td>
+
+                <td>
+                    ${aprendices} aprendices
+                </td>
+
+                <td>
+                    ${jornada}
+                </td>
+
+                <td>
+                    ${ambiente}
+                </td>
+
+                <td class="text-center">
+
+                    <button type="button"
+                        class="config-edit-btn btn-editar-ficha"
+                        title="Editar ficha">
+
+                        <i class="bi bi-pencil-square"></i>
+
+                    </button>
+
+                </td>
+
+            `;
+
+
+            tablaFichas.appendChild(nuevaFila);
+
+
+            limpiarFormularioFicha();
+
+            nuevaFichaModal.hide();
+
+
+            mostrarConfirmacion(
+                'La nueva ficha fue registrada correctamente.'
+            );
+
+        });
+
+
+
+        /* ===================================================== */
+        /* LIMPIAR FORMULARIO FICHA */
+        /* ===================================================== */
+
+        function limpiarFormularioFicha() {
+
+            document.getElementById('numeroFicha').value =
+                '';
+
+            document.getElementById('programaFicha').value =
+                '';
+
+            document.getElementById('cantidadAprendices').value =
+                '';
+
+            document.getElementById('jornadaFicha').value =
+                '';
+
+            document.getElementById('ambienteFicha').value =
+                '';
+
+        }
+
+
+
+        /* ===================================================== */
+        /* LIMPIAR ESTADO DE EDICIÓN AL CERRAR MODALES */
         /* ===================================================== */
 
         nuevaSubsedeModalElement.addEventListener(
@@ -3128,6 +3964,27 @@
                     'Guardar ambiente';
 
                 limpiarFormularioAmbiente();
+
+            }
+        );
+
+
+        nuevaFichaModalElement.addEventListener(
+            'hidden.bs.modal',
+            function () {
+
+                fichaEditando = null;
+
+                tituloFicha.textContent =
+                    'Nueva ficha';
+
+                textoFichaModal.textContent =
+                    'Registra la información de la nueva ficha de formación.';
+
+                textoBotonFicha.textContent =
+                    'Guardar ficha';
+
+                limpiarFormularioFicha();
 
             }
         );

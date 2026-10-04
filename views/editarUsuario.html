@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Detalle de Usuario - SENA Assistance</title>
+    <title>Editar Usuario - SENA Assistance</title>
 
 
     <!-- GOOGLE FONTS -->
@@ -113,7 +113,7 @@
 
 
                 <span class="section-label">
-                    DETALLE DE USUARIO
+                    EDITAR USUARIO
                 </span>
 
 
@@ -126,19 +126,19 @@
                     <div>
 
                         <h1 class="h4 fw-bold mt-1 mb-1 admin-text">
-                            Información del usuario
+                            Editar información del usuario
                         </h1>
 
 
                         <p class="admin-muted small mb-0">
-                            Consulta la información general y académica
-                            del usuario seleccionado.
+                            Modifica la información registrada del usuario
+                            seleccionado.
                         </p>
 
                     </div>
 
 
-                    <a href="instructorDashboard.html#asistencia"
+                    <a href="detalleUsuario.html"
                         class="btn btn-outline-success
                         fw-semibold
                         text-decoration-none">
@@ -178,7 +178,8 @@
 
 
                     <p class="admin-muted small mb-0">
-                        Información básica registrada en el sistema.
+                        Actualiza la información básica registrada
+                        en el sistema.
                     </p>
 
 
@@ -230,33 +231,62 @@
 
 
 
-                <!-- DATOS -->
+                <!-- DATOS EDITABLES -->
 
                 <div class="row g-4">
 
 
-                    <!-- DOCUMENTO -->
+                    <!-- NOMBRE -->
 
                     <div class="col-md-6">
 
+                        <label for="nombreUsuario"
+                            class="admin-muted fw-semibold small mb-1">
 
-                        <div>
+                            Nombre completo:
 
-                            <span class="admin-muted fw-semibold small">
-                                Tipo de documento:
-                            </span>
+                        </label>
+
+                        <input type="text"
+                            class="form-control"
+                            id="nombreUsuario"
+                            value="Esteban David Morales Ruiz">
+
+                    </div>
 
 
-                            <span class="admin-text fw-bold d-block mt-1">
 
-                                <i class="bi bi-card-text me-1"></i>
+                    <!-- TIPO DOCUMENTO -->
 
+                    <div class="col-md-6">
+
+                        <label for="tipoDocumento"
+                            class="admin-muted fw-semibold small mb-1">
+
+                            Tipo de documento:
+
+                        </label>
+
+                        <select class="form-select"
+                            id="tipoDocumento">
+
+                            <option selected>
                                 Cédula de Ciudadanía
+                            </option>
 
-                            </span>
+                            <option>
+                                Tarjeta de Identidad
+                            </option>
 
-                        </div>
+                            <option>
+                                Cédula de Extranjería
+                            </option>
 
+                            <option>
+                                Pasaporte
+                            </option>
+
+                        </select>
 
                     </div>
 
@@ -266,20 +296,17 @@
 
                     <div class="col-md-6">
 
+                        <label for="numeroDocumento"
+                            class="admin-muted fw-semibold small mb-1">
 
-                        <div>
+                            Número de documento:
 
-                            <span class="admin-muted fw-semibold small">
-                                Número de documento:
-                            </span>
+                        </label>
 
-
-                            <span class="admin-text fw-bold d-block mt-1">
-                                1002365412
-                            </span>
-
-                        </div>
-
+                        <input type="text"
+                            class="form-control"
+                            id="numeroDocumento"
+                            value="1002365412">
 
                     </div>
 
@@ -289,24 +316,17 @@
 
                     <div class="col-md-6">
 
+                        <label for="correoUsuario"
+                            class="admin-muted fw-semibold small mb-1">
 
-                        <div>
+                            Correo electrónico:
 
-                            <span class="admin-muted fw-semibold small">
-                                Correo electrónico:
-                            </span>
+                        </label>
 
-
-                            <span class="admin-text fw-bold d-block mt-1">
-
-                                <i class="bi bi-envelope me-1"></i>
-
-                                emorales@sena.edu.co
-
-                            </span>
-
-                        </div>
-
+                        <input type="email"
+                            class="form-control"
+                            id="correoUsuario"
+                            value="emorales@sena.edu.co">
 
                     </div>
 
@@ -316,24 +336,17 @@
 
                     <div class="col-md-6">
 
+                        <label for="telefonoUsuario"
+                            class="admin-muted fw-semibold small mb-1">
 
-                        <div>
+                            Teléfono:
 
-                            <span class="admin-muted fw-semibold small">
-                                Teléfono:
-                            </span>
+                        </label>
 
-
-                            <span class="admin-text fw-bold d-block mt-1">
-
-                                <i class="bi bi-telephone me-1"></i>
-
-                                310 456 7821
-
-                            </span>
-
-                        </div>
-
+                        <input type="tel"
+                            class="form-control"
+                            id="telefonoUsuario"
+                            value="310 456 7821">
 
                     </div>
 
@@ -343,28 +356,29 @@
 
                     <div class="col-md-6">
 
+                        <label for="rolUsuario"
+                            class="admin-muted fw-semibold small mb-1">
 
-                        <div>
+                            Rol:
 
-                            <span class="admin-muted fw-semibold small">
-                                Rol:
-                            </span>
+                        </label>
 
+                        <select class="form-select"
+                            id="rolUsuario">
 
-                            <span class="d-block mt-1">
+                            <option>
+                                Administrador
+                            </option>
 
-                                <span class="badge badge-status badge-status-blue">
+                            <option>
+                                Instructor
+                            </option>
 
-                                    <i class="bi bi-person me-1"></i>
+                            <option selected>
+                                Aprendiz
+                            </option>
 
-                                    Aprendiz
-
-                                </span>
-
-                            </span>
-
-                        </div>
-
+                        </select>
 
                     </div>
 
@@ -374,28 +388,29 @@
 
                     <div class="col-md-6">
 
+                        <label for="estadoUsuario"
+                            class="admin-muted fw-semibold small mb-1">
 
-                        <div>
+                            Estado:
 
-                            <span class="admin-muted fw-semibold small">
-                                Estado:
-                            </span>
+                        </label>
 
+                        <select class="form-select"
+                            id="estadoUsuario">
 
-                            <span class="d-block mt-1">
+                            <option selected>
+                                Activo
+                            </option>
 
-                                <span class="badge badge-status badge-status-green">
+                            <option>
+                                Inactivo
+                            </option>
 
-                                    <i class="bi bi-check-circle me-1"></i>
+                            <option>
+                                Suspendido
+                            </option>
 
-                                    Activo
-
-                                </span>
-
-                            </span>
-
-                        </div>
-
+                        </select>
 
                     </div>
 
@@ -428,8 +443,8 @@
 
 
                     <p class="admin-muted small mb-0">
-                        Información relacionada con la ficha y el programa
-                        de formación.
+                        Actualiza la información relacionada con la ficha
+                        y el programa de formación.
                     </p>
 
 
@@ -444,20 +459,34 @@
 
                     <div class="col-md-6">
 
+                        <label for="programaUsuario"
+                            class="admin-muted fw-semibold small mb-1">
 
-                        <span class="admin-muted fw-semibold small">
                             Programa de formación:
-                        </span>
 
+                        </label>
 
-                        <span class="admin-text fw-bold d-block mt-1">
+                        <select class="form-select"
+                            id="programaUsuario">
 
-                            <i class="bi bi-mortarboard me-1"></i>
+                            <option selected>
+                                Tecnólogo en Análisis y Desarrollo de Software
+                            </option>
 
-                            Tecnólogo en Análisis y Desarrollo de Software
+                            <option>
+                                Técnico en Sistemas
+                            </option>
 
-                        </span>
+                            <option>
+                                Técnico en Contabilización de Operaciones
+                                Comerciales y Financieras
+                            </option>
 
+                            <option>
+                                Tecnólogo en Gestión Administrativa
+                            </option>
+
+                        </select>
 
                     </div>
 
@@ -467,20 +496,29 @@
 
                     <div class="col-md-6">
 
+                        <label for="fichaUsuario"
+                            class="admin-muted fw-semibold small mb-1">
 
-                        <span class="admin-muted fw-semibold small">
                             Número de ficha:
-                        </span>
 
+                        </label>
 
-                        <span class="admin-text fw-bold d-block mt-1">
+                        <select class="form-select"
+                            id="fichaUsuario">
 
-                            <i class="bi bi-journal-bookmark me-1"></i>
+                            <option selected>
+                                2874102
+                            </option>
 
-                            2874102
+                            <option>
+                                2911044
+                            </option>
 
-                        </span>
+                            <option>
+                                2935018
+                            </option>
 
+                        </select>
 
                     </div>
 
@@ -490,20 +528,33 @@
 
                     <div class="col-md-6">
 
+                        <label for="ambienteUsuario"
+                            class="admin-muted fw-semibold small mb-1">
 
-                        <span class="admin-muted fw-semibold small">
                             Ambiente:
-                        </span>
 
+                        </label>
 
-                        <span class="admin-text fw-bold d-block mt-1">
+                        <select class="form-select"
+                            id="ambienteUsuario">
 
-                            <i class="bi bi-building me-1"></i>
+                            <option selected>
+                                Ambiente 302
+                            </option>
 
-                            Ambiente 302
+                            <option>
+                                Ambiente 101
+                            </option>
 
-                        </span>
+                            <option>
+                                Ambiente 203
+                            </option>
 
+                            <option>
+                                Ambiente 305
+                            </option>
+
+                        </select>
 
                     </div>
 
@@ -513,43 +564,53 @@
 
                     <div class="col-md-6">
 
+                        <label for="jornadaUsuario"
+                            class="admin-muted fw-semibold small mb-1">
 
-                        <span class="admin-muted fw-semibold small">
                             Jornada:
-                        </span>
 
+                        </label>
 
-                        <span class="admin-text fw-bold d-block mt-1">
+                        <select class="form-select"
+                            id="jornadaUsuario">
 
-                            <i class="bi bi-clock me-1 status-yellow-text"></i>
+                            <option selected>
+                                Diurna
+                            </option>
 
-                            Diurna
+                            <option>
+                                Tarde
+                            </option>
 
-                        </span>
+                            <option>
+                                Nocturna
+                            </option>
 
+                            <option>
+                                Mixta
+                            </option>
+
+                        </select>
 
                     </div>
 
 
 
-                    <!-- FECHA INGRESO -->
+                    <!-- FECHA REGISTRO -->
 
                     <div class="col-md-6">
 
+                        <label for="fechaRegistro"
+                            class="admin-muted fw-semibold small mb-1">
 
-                        <span class="admin-muted fw-semibold small">
                             Fecha de registro:
-                        </span>
 
+                        </label>
 
-                        <span class="admin-text fw-bold d-block mt-1">
-
-                            <i class="bi bi-calendar-event me-1"></i>
-
-                            15/01/2026
-
-                        </span>
-
+                        <input type="date"
+                            class="form-control"
+                            id="fechaRegistro"
+                            value="2026-01-15">
 
                     </div>
 
@@ -559,24 +620,33 @@
 
                     <div class="col-md-6">
 
+                        <label for="estadoMatricula"
+                            class="admin-muted fw-semibold small mb-1">
 
-                        <span class="admin-muted fw-semibold small">
                             Estado de matrícula:
-                        </span>
 
+                        </label>
 
-                        <span class="d-block mt-1">
+                        <select class="form-select"
+                            id="estadoMatricula">
 
-                            <span class="badge badge-status badge-status-green">
-
-                                <i class="bi bi-check-circle me-1"></i>
-
+                            <option selected>
                                 Matriculado
+                            </option>
 
-                            </span>
+                            <option>
+                                Cancelado
+                            </option>
 
-                        </span>
+                            <option>
+                                Retirado
+                            </option>
 
+                            <option>
+                                Aplazado
+                            </option>
+
+                        </select>
 
                     </div>
 
@@ -609,8 +679,8 @@
 
 
                     <p class="admin-muted small mb-0">
-                        Resumen de las asistencias e inasistencias
-                        registradas para el estudiante.
+                        Estos datos son informativos y no pueden modificarse
+                        desde la edición del usuario.
                     </p>
 
 
@@ -643,9 +713,9 @@
                                     align-items-center
                                     justify-content-center
                                     flex-shrink-0"
-                                    style="width: 45px;
-                                    height: 45px;
-                                    font-size: 1.15rem;">
+                                    style="width:45px;
+                                    height:45px;
+                                    font-size:1.15rem;">
 
                                     <i class="bi bi-check-circle-fill"></i>
 
@@ -661,7 +731,9 @@
 
                                     <div class="h4 fw-bold mb-0
                                         status-green-text">
+
                                         27
+
                                     </div>
 
                                 </div>
@@ -722,7 +794,9 @@
 
                                     <div class="h4 fw-bold mb-0
                                         status-purple-text">
+
                                         3
+
                                     </div>
 
                                 </div>
@@ -792,6 +866,46 @@
 
 
                 </div>
+
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- BOTONES -->
+            <!-- ================================================= -->
+
+            <div class="d-flex flex-column flex-sm-row
+                justify-content-end
+                gap-2
+                mb-4">
+
+
+                <a href="detalleUsuario.html"
+                    class="btn btn-modal-cancel
+                    px-4 py-2
+                    fw-semibold
+                    text-decoration-none">
+
+                    <i class="bi bi-x-lg me-1"></i>
+
+                    Cancelar
+
+                </a>
+
+
+                <button type="button"
+                    class="btn btn-sena-custom-green
+                    px-4 py-2
+                    fw-semibold"
+                    id="btnGuardarCambios">
+
+                    <i class="bi bi-check-lg me-1"></i>
+
+                    Guardar cambios
+
+                </button>
 
 
             </div>
@@ -901,6 +1015,86 @@
 
 
     <!-- ========================================================= -->
+    <!-- MODAL INFORMACIÓN ACTUALIZADA -->
+    <!-- ========================================================= -->
+
+    <div class="modal fade"
+        id="usuarioActualizadoModal"
+        tabindex="-1"
+        aria-labelledby="usuarioActualizadoModalLabel"
+        aria-hidden="true">
+
+
+        <div class="modal-dialog modal-dialog-centered">
+
+
+            <div class="modal-content admin-dashboard-modal
+                border-0 shadow-lg rounded-4 p-2">
+
+
+                <button type="button"
+                    class="btn-close modal-close-btn"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+                </button>
+
+
+                <div class="modal-body text-center p-4">
+
+
+                    <div class="mb-3 modal-icon modal-icon-green fs-1">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                    </div>
+
+
+                    <h5 class="fw-bold mb-2 admin-text"
+                        id="usuarioActualizadoModalLabel">
+
+                        Información actualizada
+
+                    </h5>
+
+
+                    <p class="admin-muted small mb-4">
+
+                        La información del usuario fue actualizada
+                        correctamente.
+
+                    </p>
+
+
+                    <div class="d-flex justify-content-center gap-2">
+
+
+                        <button type="button"
+                            class="btn btn-sena-custom-green
+                            px-4 py-2 small fw-semibold"
+                            data-bs-dismiss="modal">
+
+                            Aceptar
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ========================================================= -->
     <!-- MODAL CERRAR SESIÓN -->
     <!-- ========================================================= -->
 
@@ -995,6 +1189,35 @@
     <!-- ========================================================= -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+
+    <!-- ========================================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================================================= -->
+
+    <script>
+
+        const btnGuardarCambios =
+            document.getElementById('btnGuardarCambios');
+
+        const usuarioActualizadoModalElement =
+            document.getElementById('usuarioActualizadoModal');
+
+        const usuarioActualizadoModal =
+            bootstrap.Modal.getOrCreateInstance(
+                usuarioActualizadoModalElement
+            );
+
+
+        btnGuardarCambios.addEventListener('click', function () {
+
+            usuarioActualizadoModal.show();
+
+        });
+
+
     </script>
 
 

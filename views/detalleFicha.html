@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detalle de Ficha - SENA Assistance</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- BOOTSTRAP -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- BOOTSTRAP ICONS -->
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- DATATABLES -->
+
+    <link rel="stylesheet"
+        href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
+
+    <!-- ESTILOS PROPIOS -->
+
+    <link rel="stylesheet"
+        href="../style/style.css">
+
+
+</head>
+
+
+<body class="index-page">
+
+
+    <!-- ========================================================= -->
+    <!-- NAVBAR -->
+    <!-- ========================================================= -->
+
+    <nav class="navbar navbar-expand-lg py-3 fixed-top navbar-custom">
+
+
+        <div class="container d-flex align-items-center justify-content-between">
+
+
+            <a class="navbar-brand d-flex align-items-center gap-3 m-0"
+                href="instructorDashboard.html">
+
+                <img src="../assets/logo/logo.svg"
+                    alt="Logo SENA"
+                    width="40">
+
+                <span>SENA Assistance</span>
+
+            </a>
+
+
+            <div class="d-flex align-items-center gap-2">
+
+
+                <!-- BOTÓN MÓVIL CERRAR SESIÓN -->
+
+                <button type="button"
+                    class="mobile-login-icon-btn btn-sena-custom-darkblue"
+                    data-bs-toggle="modal"
+                    data-bs-target="#logoutModal"
+                    title="Cerrar sesión">
+
+                    <i class="bi bi-box-arrow-right"></i>
+
+                </button>
+
+
+                <!-- MENÚ MÓVIL -->
+
+                <button class="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent"
+                    aria-controls="navbarContent"
+                    aria-expanded="false"
+                    aria-label="Mostrar menú">
+
+                    <i class="bi bi-list fs-4"></i>
+
+                </button>
+
+
+            </div>
+
+
+            <!-- MENÚ -->
+
+            <div class="collapse navbar-collapse justify-content-end"
+                id="navbarContent">
+
+
+                <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="instructorDashboard.html#dashboard">
+
+                            <i class="bi bi-speedometer2 me-1"></i>
+                            Dashboard
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="instructorDashboard.html#mis-fichas">
+
+                            <i class="bi bi-journal-bookmark me-1"></i>
+                            Mis Fichas
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="instructorDashboard.html#asistencia">
+
+                            <i class="bi bi-qr-code-scan me-1"></i>
+                            Asistencia
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                            href="instructorDashboard.html#historial">
+
+                            <i class="bi bi-clock-history me-1"></i>
+                            Historial
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+
+                        <button type="button"
+                            class="btn btn-sena-custom-darkblue px-3 py-2 fw-semibold w-100"
+                            data-bs-toggle="modal"
+                            data-bs-target="#logoutModal">
+
+                            <i class="bi bi-box-arrow-right me-1"></i>
+                            Salir
+
+                        </button>
+
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+
+        </div>
+
+
+    </nav>
+
+
+
+    <!-- ========================================================= -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ========================================================= -->
+
+    <main class="py-4">
+
+
+        <div class="container">
+
+
+            <!-- ================================================= -->
+            <!-- ENCABEZADO -->
+            <!-- ================================================= -->
+
+            <div class="row mb-4">
+
+
+                <div class="col-12">
+
+
+                    <div class="role-column-card p-4">
+
+
+                        <div class="d-flex flex-column flex-md-row
+                            justify-content-between
+                            align-items-md-center gap-3">
+
+
+                            <div>
+
+                                <span class="section-label status-blue-text">
+                                    DETALLE DE FICHA
+                                </span>
+
+
+                                <h1 class="h4 fw-bold mt-1 mb-1 admin-text">
+
+                                    Ficha 2874102
+
+                                </h1>
+
+
+                                <p class="admin-muted small mb-0">
+
+                                    Consulta la información general y el
+                                    comportamiento de asistencia de los
+                                    aprendices de esta ficha.
+
+                                </p>
+
+                            </div>
+
+
+                            <!-- REGISTRAR ASISTENCIA -->
+
+                            <a href="registrarAsistencia.html"
+                                class="btn btn-sena-custom-green
+                                px-3 py-2 fw-semibold">
+
+                                <i class="bi bi-qr-code-scan me-1"></i>
+                                Registrar asistencia
+
+                            </a>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <!-- ================================================= -->
+            <!-- INFORMACIÓN GENERAL DE LA FICHA -->
+            <!-- ================================================= -->
+
+            <div class="row mb-4">
+
+
+                <div class="col-12">
+
+
+                    <div class="role-column-card p-4">
+
+
+                        <div class="d-flex align-items-center gap-3
+                            mb-4 pb-3 border-bottom">
+
+
+                            <div class="admin-icon-blue rounded-3
+                                d-flex align-items-center
+                                justify-content-center flex-shrink-0"
+                                style="width:45px;height:45px;">
+
+                                <i class="bi bi-journal-bookmark-fill"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span class="section-label status-blue-text">
+                                    INFORMACIÓN GENERAL
+                                </span>
+
+                                <h2 class="h5 fw-bold mt-1 mb-0 admin-text">
+                                    Datos de la ficha
+                                </h2>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- INFORMACIÓN EN 3 COLUMNAS -->
+
+                        <div class="row g-4">
+
+
+                            <!-- ================================================= -->
+                            <!-- COLUMNA 1 -->
+                            <!-- ================================================= -->
+
+                            <div class="col-md-4">
+
+
+                                <!-- NÚMERO DE FICHA -->
+
+                                <div class="mb-4">
+
+                                    <span class="admin-muted small fw-semibold">
+                                        Número de ficha
+                                    </span>
+
+                                    <div class="admin-text fw-bold mt-1">
+                                        2874102
+                                    </div>
+
+                                </div>
+
+
+                                <!-- INSTRUCTOR -->
+
+                                <div>
+
+                                    <span class="admin-muted small fw-semibold">
+                                        Instructor Titular
+                                    </span>
+
+                                    <div class="admin-text fw-bold mt-1">
+                                        Carlos Alberto Mendoza
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <!-- ================================================= -->
+                            <!-- COLUMNA 2 -->
+                            <!-- ================================================= -->
+
+                            <div class="col-md-4">
+
+
+                                <!-- PROGRAMA -->
+
+                                <div class="mb-4">
+
+                                    <span class="admin-muted small fw-semibold">
+                                        Programa de formación
+                                    </span>
+
+                                    <div class="admin-text fw-bold mt-1">
+                                        Tecnólogo en Análisis y Desarrollo de Software
+                                    </div>
+
+                                </div>
+
+
+                                <!-- JORNADA -->
+
+                                <div>
+
+                                    <span class="admin-muted small fw-semibold">
+                                        Jornada
+                                    </span>
+
+                                    <div class="admin-text fw-bold mt-1">
+                                        Diurna
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <!-- ================================================= -->
+                            <!-- COLUMNA 3 -->
+                            <!-- ================================================= -->
+
+                            <div class="col-md-4">
+
+
+                                <!-- APRENDICES -->
+
+                                <div class="mb-4">
+
+                                    <span class="admin-muted small fw-semibold">
+                                        Aprendices
+                                    </span>
+
+                                    <div class="admin-text fw-bold mt-1">
+                                        30 aprendices
+                                    </div>
+
+                                </div>
+
+
+                                <!-- HORARIO -->
+
+                                <div>
+
+                                    <span class="admin-muted small fw-semibold">
+                                        Horario de ingreso
+                                    </span>
+
+                                    <div class="admin-text fw-bold mt-1">
+                                        06:00 a. m. - 07:00 a. m.
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <!-- ================================================= -->
+                            <!-- SEGUNDA FILA - COLUMNA 2 -->
+                            <!-- ================================================= -->
+
+                            <div class="col-md-4">
+
+
+                                <!-- AMBIENTE -->
+
+                                <div>
+
+                                    <span class="admin-muted small fw-semibold">
+                                        Ambiente
+                                    </span>
+
+                                    <div class="admin-text fw-bold mt-1">
+                                        Ambiente 101
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <!-- ================================================= -->
+                            <!-- SEGUNDA FILA - COLUMNA 3 -->
+                            <!-- ================================================= -->
+
+                            <div class="col-md-4">
+
+
+                                <!-- ESPACIO RESERVADO PARA MANTENER LA ESTRUCTURA -->
+
+                                <div>
+
+                                    <span class="admin-muted small fw-semibold">
+                                        Modalidad
+                                    </span>
+
+                                    <div class="admin-text fw-bold mt-1">
+                                        Presencial
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <!-- ================================================= -->
+                            <!-- SEGUNDA FILA - COLUMNA 1 -->
+                            <!-- ================================================= -->
+
+                            <div class="col-md-4">
+
+
+                                <!-- ESTADO -->
+
+                                <div>
+
+                                    <span class="admin-muted small fw-semibold">
+                                        Estado de la ficha
+                                    </span>
+
+                                    <div class="mt-1">
+
+                                        <span class="badge badge-status badge-status-green">
+
+                                            <i class="bi bi-check-circle-fill me-1"></i>
+                                            Activa
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- TABLA DE APRENDICES -->
+            <!-- ================================================= -->
+
+            <div class="row mb-4">
+
+
+                <div class="col-12">
+
+
+                    <div class="role-column-card p-4">
+
+
+                        <div class="d-flex flex-column flex-md-row
+                            justify-content-between
+                            align-items-md-center gap-3
+                            mb-4 pb-3 border-bottom">
+
+
+                            <div>
+
+                                <span class="section-label status-blue-text">
+                                    CONTROL DE ASISTENCIA
+                                </span>
+
+                                <h2 class="h5 fw-bold mt-1 mb-1 admin-text">
+                                    Aprendices de la ficha
+                                </h2>
+
+                                <p class="admin-muted small mb-0">
+                                    Consulta el resumen de asistencia acumulada
+                                    de cada aprendiz.
+                                </p>
+
+                            </div>
+
+
+                            <span class="badge badge-status badge-status-blue">
+
+                                <i class="bi bi-journal-bookmark-fill me-1"></i>
+                                Ficha 2874102
+
+                            </span>
+
+
+                        </div>
+
+
+
+                        <!-- BÚSQUEDA -->
+
+                        <div class="row mb-4">
+
+
+                            <div class="col-lg-7">
+
+
+                                <div class="input-group user-filter-group">
+
+
+                                    <span class="input-group-text bg-white">
+
+                                        <i class="bi bi-search"></i>
+
+                                    </span>
+
+
+                                    <input type="search"
+                                        class="form-control user-filter-control"
+                                        id="buscarAprendiz"
+                                        placeholder="Buscar por documento o nombre del aprendiz">
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- TABLA -->
+
+                        <div class="table-responsive">
+
+
+                            <table id="tablaDetalleFicha"
+                                class="table table-hover align-middle mb-0 small w-100">
+
+
+                                <thead class="table-light">
+
+
+                                    <tr>
+
+
+                                        <th class="py-3">
+                                            Documento
+                                        </th>
+
+
+                                        <th class="py-3">
+                                            Nombre del aprendiz
+                                        </th>
+
+
+                                        <th class="py-3 text-center">
+                                            Asistencias
+                                        </th>
+
+
+                                        <th class="py-3 text-center">
+                                            Llegadas tarde
+                                        </th>
+
+
+                                        <th class="py-3 text-center">
+                                            Inasistencias
+                                        </th>
+
+
+                                        <th class="py-3 text-center">
+                                            Estado
+                                        </th>
+
+
+                                    </tr>
+
+
+                                </thead>
+
+
+
+                                <tbody>
+
+
+                                    <!-- ================================================= -->
+                                    <!-- APRENDIZ 1 -->
+                                    <!-- ================================================= -->
+
+                                    <tr>
+
+
+                                        <td>
+                                            <strong>CC 1098745210</strong>
+                                        </td>
+
+
+                                        <td>
+
+                                            <a href="detalleUsuario.html"
+                                                class="admin-apprentice-link">
+
+                                                Carlos Andrés Pérez Gómez
+
+                                            </a>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            24
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            3
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="fw-bold status-purple-text">
+                                                3
+                                            </span>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="badge badge-status badge-status-green">
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+                                                Al día
+                                            </span>
+
+                                        </td>
+
+
+                                    </tr>
+
+
+
+                                    <!-- ================================================= -->
+                                    <!-- APRENDIZ 2 -->
+                                    <!-- ================================================= -->
+
+                                    <tr>
+
+
+                                        <td>
+                                            <strong>CC 1095412365</strong>
+                                        </td>
+
+
+                                        <td>
+
+                                            <a href="detalleUsuario.html"
+                                                class="admin-apprentice-link">
+
+                                                María Alejandra Rojas Silva
+
+                                            </a>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            22
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            5
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="fw-bold status-purple-text">
+                                                3
+                                            </span>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="badge badge-status badge-status-green">
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+                                                Al día
+                                            </span>
+
+                                        </td>
+
+
+                                    </tr>
+
+
+
+                                    <!-- ================================================= -->
+                                    <!-- APRENDIZ 3 -->
+                                    <!-- ================================================= -->
+
+                                    <tr>
+
+
+                                        <td>
+                                            <strong>CC 1002365412</strong>
+                                        </td>
+
+
+                                        <td>
+
+                                            <a href="detalleUsuario.html"
+                                                class="admin-apprentice-link">
+
+                                                Esteban David Morales Ruiz
+
+                                            </a>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            20
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            2
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="fw-bold status-purple-text">
+                                                5
+                                            </span>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="badge badge-status badge-status-purple">
+
+                                                <i class="bi bi-exclamation-circle-fill me-1"></i>
+                                                Alerta
+
+                                            </span>
+
+                                        </td>
+
+
+                                    </tr>
+
+
+
+                                    <!-- ================================================= -->
+                                    <!-- APRENDIZ 4 -->
+                                    <!-- ================================================= -->
+
+                                    <tr>
+
+
+                                        <td>
+                                            <strong>CC 1012456789</strong>
+                                        </td>
+
+
+                                        <td>
+
+                                            <a href="detalleUsuario.html"
+                                                class="admin-apprentice-link">
+
+                                                Laura Valentina Rodríguez Díaz
+
+                                            </a>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            25
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            1
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="fw-bold status-purple-text">
+                                                1
+                                            </span>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="badge badge-status badge-status-green">
+
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+                                                Al día
+
+                                            </span>
+
+                                        </td>
+
+
+                                    </tr>
+
+
+
+                                    <!-- ================================================= -->
+                                    <!-- APRENDIZ 5 -->
+                                    <!-- ================================================= -->
+
+                                    <tr>
+
+
+                                        <td>
+                                            <strong>CC 1023456781</strong>
+                                        </td>
+
+
+                                        <td>
+
+                                            <a href="detalleUsuario.html"
+                                                class="admin-apprentice-link">
+
+                                                Juan Sebastián Torres Martínez
+
+                                            </a>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            23
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            4
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="fw-bold status-purple-text">
+                                                2
+                                            </span>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="badge badge-status badge-status-green">
+
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+                                                Al día
+
+                                            </span>
+
+                                        </td>
+
+
+                                    </tr>
+
+
+
+                                    <!-- ================================================= -->
+                                    <!-- APRENDIZ 6 -->
+                                    <!-- ================================================= -->
+
+                                    <tr>
+
+
+                                        <td>
+                                            <strong>CC 1034567892</strong>
+                                        </td>
+
+
+                                        <td>
+
+                                            <a href="detalleUsuario.html"
+                                                class="admin-apprentice-link">
+
+                                                Daniela Sofía Martínez López
+
+                                            </a>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            26
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            2
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="fw-bold status-purple-text">
+                                                2
+                                            </span>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="badge badge-status badge-status-green">
+
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+                                                Al día
+
+                                            </span>
+
+                                        </td>
+
+
+                                    </tr>
+
+
+
+                                    <!-- ================================================= -->
+                                    <!-- APRENDIZ 7 -->
+                                    <!-- ================================================= -->
+
+                                    <tr>
+
+
+                                        <td>
+                                            <strong>CC 1045678934</strong>
+                                        </td>
+
+
+                                        <td>
+
+                                            <a href="detalleUsuario.html"
+                                                class="admin-apprentice-link">
+
+                                                Andrés Felipe Gómez Herrera
+
+                                            </a>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            21
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            3
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="fw-bold status-purple-text">
+                                                4
+                                            </span>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="badge badge-status badge-status-green">
+
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+                                                Al día
+
+                                            </span>
+
+                                        </td>
+
+
+                                    </tr>
+
+
+
+                                    <!-- ================================================= -->
+                                    <!-- APRENDIZ 8 -->
+                                    <!-- ================================================= -->
+
+                                    <tr>
+
+
+                                        <td>
+                                            <strong>CC 1056789345</strong>
+                                        </td>
+
+
+                                        <td>
+
+                                            <a href="detalleUsuario.html"
+                                                class="admin-apprentice-link">
+
+                                                Sara Juliana Hernández Castro
+
+                                            </a>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            23
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            4
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="fw-bold status-purple-text">
+                                                2
+                                            </span>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="badge badge-status badge-status-green">
+
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+                                                Al día
+
+                                            </span>
+
+                                        </td>
+
+
+                                    </tr>
+
+
+
+                                    <!-- ================================================= -->
+                                    <!-- APRENDIZ 9 -->
+                                    <!-- ================================================= -->
+
+                                    <tr>
+
+
+                                        <td>
+                                            <strong>CC 1067893456</strong>
+                                        </td>
+
+
+                                        <td>
+
+                                            <a href="detalleUsuario.html"
+                                                class="admin-apprentice-link">
+
+                                                Mateo Alejandro Vargas Peña
+
+                                            </a>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            27
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            1
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="fw-bold status-purple-text">
+                                                1
+                                            </span>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="badge badge-status badge-status-green">
+
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+                                                Al día
+
+                                            </span>
+
+                                        </td>
+
+
+                                    </tr>
+
+
+
+                                    <!-- ================================================= -->
+                                    <!-- APRENDIZ 10 -->
+                                    <!-- ================================================= -->
+
+                                    <tr>
+
+
+                                        <td>
+                                            <strong>CC 1078904567</strong>
+                                        </td>
+
+
+                                        <td>
+
+                                            <a href="detalleUsuario.html"
+                                                class="admin-apprentice-link">
+
+                                                Valentina Isabel Moreno Ruiz
+
+                                            </a>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            25
+                                        </td>
+
+
+                                        <td class="text-center">
+                                            2
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="fw-bold status-purple-text">
+                                                2
+                                            </span>
+
+                                        </td>
+
+
+                                        <td class="text-center">
+
+                                            <span class="badge badge-status badge-status-green">
+
+                                                <i class="bi bi-check-circle-fill me-1"></i>
+                                                Al día
+
+                                            </span>
+
+                                        </td>
+
+
+                                    </tr>
+
+
+                                </tbody>
+
+
+                            </table>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ========================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================= -->
+
+    <footer class="footer-custom">
+
+
+        <div class="container">
+
+
+            <div class="row align-items-center
+                justify-content-between g-4">
+
+
+                <div class="col-lg-5 col-md-6">
+
+
+                    <div class="d-flex align-items-center gap-3">
+
+
+                        <img src="../assets/logo/logo.svg"
+                            alt="Logo SENA"
+                            width="40">
+
+
+                        <div>
+
+
+                            <h5 class="mb-1 footer-brand-title">
+                                SENA Assistance
+                            </h5>
+
+
+                            <small class="admin-muted">
+                                www.sena.edu.co
+                            </small>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="col-lg-7 col-md-6">
+
+
+                    <ul class="footer-menu">
+
+
+                        <li>
+
+                            <a href="instructorDashboard.html#dashboard">
+                                Dashboard
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="instructorDashboard.html#mis-fichas">
+                                Mis Fichas
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="instructorDashboard.html#asistencia">
+                                Asistencia
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="instructorDashboard.html#historial">
+                                Historial
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="#"
+                                class="footer-login-link status-blue-text"
+                                data-bs-toggle="modal"
+                                data-bs-target="#logoutModal">
+
+                                Cerrar sesión
+
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <hr class="my-4 footer-divider">
+
+
+
+            <div class="row">
+
+
+                <div class="col-12 text-center">
+
+
+                    <small class="admin-muted">
+
+                        © 2026 SENA Assistance.
+                        Todos los derechos reservados.
+
+                    </small>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- ========================================================= -->
+    <!-- MODAL CERRAR SESIÓN -->
+    <!-- ========================================================= -->
+
+    <div class="modal fade"
+        id="logoutModal"
+        tabindex="-1"
+        aria-labelledby="logoutModalLabel"
+        aria-hidden="true">
+
+
+        <div class="modal-dialog modal-dialog-centered">
+
+
+            <div class="modal-content admin-dashboard-modal
+                border-0 shadow-lg rounded-4 p-2">
+
+
+                <button type="button"
+                    class="btn-close modal-close-btn"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+
+                </button>
+
+
+                <div class="modal-body text-center p-4">
+
+
+                    <div class="mb-3 modal-icon modal-icon-blue fs-1">
+
+                        <i class="bi bi-exclamation-circle-fill"></i>
+
+                    </div>
+
+
+                    <h5 class="fw-bold mb-2 admin-text"
+                        id="logoutModalLabel">
+
+                        ¿Estás seguro que deseas salir?
+
+                    </h5>
+
+
+                    <p class="admin-muted small mb-4">
+
+                        Se cerrará tu sesión actual como instructor y
+                        tendrás que volver a ingresar tus credenciales.
+
+                    </p>
+
+
+                    <div class="d-flex justify-content-center gap-2">
+
+
+                        <button type="button"
+                            class="btn btn-modal-cancel
+                            px-4 py-2 small fw-semibold"
+                            data-bs-dismiss="modal">
+
+                            Cancelar
+
+                        </button>
+
+
+                        <a href="index.html"
+                            class="btn btn-sena-custom-darkblue
+                            px-4 py-2 small fw-semibold
+                            text-decoration-none">
+
+                            Sí, cerrar sesión
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ========================================================= -->
+    <!-- JQUERY -->
+    <!-- ========================================================= -->
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js">
+    </script>
+
+
+    <!-- BOOTSTRAP JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- DATATABLES -->
+
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js">
+    </script>
+
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js">
+    </script>
+
+
+
+    <!-- ========================================================= -->
+    <!-- FUNCIONES -->
+    <!-- ========================================================= -->
+
+    <script>
+
+        $(document).ready(function () {
+
+
+            const tablaDetalleFicha = $('#tablaDetalleFicha').DataTable({
+
+
+                language: {
+
+                    search: "Buscar:",
+
+                    lengthMenu: "Mostrar _MENU_ aprendices",
+
+                    info: "Mostrando _START_ a _END_ de _TOTAL_ aprendices",
+
+                    infoEmpty: "No hay aprendices para mostrar",
+
+                    infoFiltered: "(filtrado de _MAX_ aprendices)",
+
+                    zeroRecords: "No se encontraron aprendices",
+
+                    emptyTable: "No hay aprendices registrados",
+
+                    paginate: {
+
+                        first: "Primero",
+
+                        last: "Último",
+
+                        next: "Siguiente",
+
+                        previous: "Anterior"
+
+                    }
+
+                },
+
+
+                pageLength: 10,
+
+
+                lengthMenu: [
+
+                    [5, 10, 25, 50, -1],
+
+                    [5, 10, 25, 50, "Todos"]
+
+                ],
+
+
+                ordering: true,
+
+                searching: true,
+
+                lengthChange: false,
+
+
+                columnDefs: [
+
+                    {
+                        searchable: true,
+                        targets: [0, 1]
+                    },
+
+                    {
+                        searchable: false,
+                        targets: [2, 3, 4, 5]
+                    },
+
+                    {
+                        orderable: false,
+                        targets: [5]
+                    }
+
+                ]
+
+            });
+
+
+
+            /* ===================================================== */
+            /* BUSCADOR PERSONALIZADO */
+            /* ===================================================== */
+
+            $("#buscarAprendiz").on("input", function () {
+
+                tablaDetalleFicha
+                    .search(this.value)
+                    .draw();
+
+            });
+
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

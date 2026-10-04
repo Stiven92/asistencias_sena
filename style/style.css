@@ -2025,3 +2025,33 @@ a.btn-outline-success[href="qrScanner.html"],
 .aprendiz-detalle-link:hover {
     color: var(--green);
 }
+
+
+/* ENLACE DE USUARIO EN LA TABLA */
+
+.admin-user-link {
+    display: block;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.admin-user-link:hover {
+    color: var(--green);
+}
+
+.admin-user-link:hover .user-email-small {
+    color: var(--green) !important;
+}
+
+.admin-apprentice-link {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.admin-apprentice-link:hover {
+    color: var(--green);
+    text-decoration: underline;
+}
