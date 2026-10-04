@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Aprendiz - SENA Assistance</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- DATATABLES -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
+    <!-- ESTILOS PROPIOS -->
+    <link rel="stylesheet" href="../style/style.css">
+
+    <!-- ESTILOS ADICIONALES PARA BADGES UNIFICADOS -->
+    <style>
+        .badge-status-secondary {
+            background-color: rgba(107, 114, 128, 0.15) !important;
+            color: #4b5563 !important;
+            border: 1px solid rgba(107, 114, 128, 0.3);
+        }
+    </style>
+</head>
+
+<body class="index-page">
+
+    <!-- ========================================================= -->
+    <!-- NAVBAR (Navegación interna por secciones) -->
+    <!-- ========================================================= -->
+    <nav class="navbar navbar-expand-lg py-3 fixed-top navbar-custom">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <a class="navbar-brand d-flex align-items-center gap-3 m-0" href="aprendizDashboard.html">
+                <img src="../assets/logo/logo.svg" alt="Logo SENA" width="40">
+                <span>SENA Assistance</span>
+            </a>
+
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" class="mobile-login-icon-btn btn-sena-custom-darkblue" data-bs-toggle="modal"
+                    data-bs-target="#logoutModal" title="Cerrar sesión">
+                    <i class="bi bi-box-arrow-right"></i>
+                </button>
+
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                    aria-label="Mostrar menú">
+                    <i class="bi bi-list fs-4"></i>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <ul class="navbar-nav align-items-lg-center gap-lg-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#dashboard">
+                            <i class="bi bi-speedometer2 me-1"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#historial">
+                            <i class="bi bi-clock-history me-1"></i> Historial
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registroAprendiz.html">
+                            <i class="bi bi-qr-code-scan me-1"></i> Asistencia
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <button type="button" class="btn btn-sena-custom-darkblue px-3 py-2 fw-semibold w-100"
+                            data-bs-toggle="modal" data-bs-target="#logoutModal">
+                            <i class="bi bi-box-arrow-right me-1"></i> Salir
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ========================================================= -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ========================================================= -->
+    <main class="py-4">
+        <div class="container px-4 px-lg-5">
+
+            <!-- ================================================= -->
+            <!-- DASHBOARD / PERFIL Y JORNADA ACTIVA -->
+            <!-- ================================================= -->
+            <div id="dashboard" data-section="dashboard" class="pt-2">
+
+                <!-- PERFIL APRENDIZ -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="role-column-card p-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 admin-profile-card">
+                            
+                            <!-- Enlace que envuelve el icono y la información del usuario -->
+                            <a href="detalleUsuario.html" class="d-flex align-items-center gap-3 text-decoration-none admin-user-link">
+                                <div class="role-header-icon mb-0 admin-profile-icon admin-icon-green rounded-3 d-flex align-items-center justify-content-center"
+                                    style="width: 50px; height: 50px; font-size: 1.3rem;">
+                                    <i class="bi bi-person-badge-fill"></i>
+                                </div>
+                                <div>
+                                    <span class="section-label">APRENDIZ</span>
+                                    <h1 class="h5 fw-bold mt-0 mb-1 admin-text">Juan Esteban Jimenez Pérez</h1>
+                                    <p class="admin-muted small mb-0">
+                                        <i class="bi bi-envelope me-1"></i> juanEsteban@sena.edu.co
+                                        <span class="mx-1">|</span>
+                                        <i class="bi bi-journal-bookmark me-1"></i> Técnologo en Análisis y Desarrollo de Software
+                                    </p>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JORNADA ACTIVA Y ACCESO A REGISTRO -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="role-column-card p-4">
+                            <div class="mb-4 pb-3 border-bottom">
+                                <span class="section-label">REGISTRO DE ASISTENCIA</span>
+                                <h3 class="h5 fw-bold mt-1 mb-1">Asistencia Actual</h3>
+                            </div>
+
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-7">
+                                    <div class="d-flex flex-column flex-md-row align-items-stretch gap-4 text-center text-md-start">
+                                        <div class="index-icon-green admin-icon-green rounded-4 d-flex align-items-center justify-content-center flex-shrink-0 asistencia-icon-container mx-auto mx-md-0"
+                                            style="font-size: 2rem;">
+                                            <i class="bi bi-sun-fill"></i>
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-center py-2 w-100">
+                                            <div class="d-flex align-items-center flex-wrap justify-content-center justify-content-md-start gap-2 mb-2">
+                                                <span class="fw-bold admin-text fs-5">Jornada Activa:</span>
+                                                <span class="status-green-text fw-bold fs-5">Diurna</span>
+                                            </div>
+                                            <div class="mb-2">
+                                                <span class="status-green-text fw-bold fs-6">
+                                                    <i class="bi bi-stopwatch me-1"></i> Ingreso: 6:00 a.m. - 7:00 a.m.
+                                                </span>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-wrap justify-content-center justify-content-md-start gap-2 mb-2">
+                                                <span class="admin-muted fw-semibold fs-6">Estado:</span>
+                                                <span class="badge badge-status badge-status-green px-3 py-2 shadow-sm fs-6" id="estadoRegistroBadge">
+                                                    <i class="bi bi-check-circle-fill me-1"></i> Toma Activa
+                                                </span>
+                                            </div>
+                                            <p class="admin-muted small mb-0 mt-1">
+                                                Recuerda registrar tu asistencia dentro de la ventana horaria establecida para evitar inasistencias injustificadas.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5 d-flex justify-content-center">
+                                    <div class="attendance-actions-group w-100" style="max-width: 320px;">
+                                        <a href="registroAprendiz.html" class="btn btn-sena-custom-green px-3 py-3 fw-semibold shadow-sm w-100 text-decoration-none text-center">
+                                            <i class="bi bi-qr-code-scan me-2 fs-5"></i> Registrar mi asistencia
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MÉTRICAS Y SITUACIÓN ACTUAL (CON SIMULADOR DE FALLAS) -->
+                <div class="row g-4 mb-5">
+                    <!-- MÉTRICAS -->
+                    <div class="col-lg-5">
+                        <div class="role-column-card p-4 h-100">
+                            <span class="section-label">RESUMEN ACADÉMICO</span>
+                            <h3 class="h5 fw-bold mt-1 mb-4">Situación Actual</h3>
+
+                            <div class="text-center mb-4">
+                                <div class="display-5 fw-bold status-green-text" id="porcentajeAsistencia">
+                                    100.0%
+                                </div>
+                                <p class="admin-muted small mb-0">Porcentaje de asistencia global</p>
+                            </div>
+
+                            <div class="progress mb-3" style="height: 10px;">
+                                <div class="progress-bar bg-success" id="progressBarAsistencia" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+
+                            <div class="d-flex justify-content-between mt-3">
+                                <small class="admin-muted">Asistencias a tiempo</small>
+                                <small class="admin-muted fw-semibold" id="countAsistencias">20</small>
+                            </div>
+                            <div class="d-flex justify-content-between mt-2">
+                                <small class="admin-muted">Inasistencias (Fallas)</small>
+                                <small class="status-purple-text fw-semibold" id="countFallas">0</small>
+                            </div>
+
+                            <!-- CONTROLES PARA SIMULAR FALLAS -->
+                            <div class="mt-4 pt-3 border-top text-center">
+                                <small class="text-muted d-block mb-2 fw-semibold">Herramientas de Demostración:</small>
+                                <div class="d-flex gap-2 justify-content-center flex-wrap">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="simularFallas(0)">Reset (0)</button>
+                                    <button type="button" class="btn btn-outline-warning btn-sm" onclick="simularFallas(1)">Simular 1 Falla</button>
+                                    <button type="button" class="btn btn-outline-purple btn-sm" onclick="simularFallas(5)">Simular Límite (5)</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PANEL DE ALERTAS Y AVISOS -->
+                    <div class="col-lg-7">
+                        <div class="role-column-card p-4 h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div>
+                                        <span class="section-label status-purple-text">NOTIFICACIONES</span>
+                                        <h3 class="h5 fw-bold mt-1 mb-0">Alertas de Asistencia</h3>
+                                    </div>
+                                </div>
+
+                                <!-- Contenedor dinámico de alertas -->
+                                <div id="alertaContainer">
+                                    <div class="alert alert-success border-0 shadow-sm d-flex align-items-center gap-3 p-3 rounded-3" role="alert">
+                                        <i class="bi bi-check-circle-fill fs-3 text-success"></i>
+                                        <div>
+                                            <h6 class="fw-bold mb-1">¡Excelente rendimiento!</h6>
+                                            <p class="small mb-0 text-muted">Te encuentras al día con tus asistencias. No presentas ninguna inasistencia registrada.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Notificación en verde informando registro activo de la ficha -->
+                                <div class="alert alert-success border-0 shadow-sm d-flex align-items-center gap-3 p-3 rounded-3 mt-3" role="alert">
+                                    <i class="bi bi-calendar-check-fill fs-3 text-success"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Registro de asistencia en curso</h6>
+                                        <p class="small mb-0 text-muted">En este momento se está registrando la asistencia para tu ficha. Recuerda realizar tu marcación a tiempo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ================================================= -->
+            <!-- SECCIÓN: HISTORIAL DE ASISTENCIA -->
+            <!-- ================================================= -->
+            <div class="row mb-5" id="historial" data-section="historial">
+                <div class="col-12">
+                    <div class="role-column-card p-4">
+                        <div class="mb-4 pb-3 border-bottom">
+                            <span class="section-label">HISTORIAL</span>
+                            <h3 class="h5 fw-bold mt-1 mb-1">Historial de Asistencia</h3>
+                            <p class="admin-muted small mb-0">
+                                Consulta el registro detallado de tu asistencia, llegadas tarde o inasistencias por fecha.
+                            </p>
+                        </div>
+
+                        <!-- Filtros de búsqueda por rango de fechas -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4 col-lg-3">
+                                <label for="fechaDesde" class="form-label fw-bold small">
+                                    Desde:
+                                </label>
+                                <input type="date" class="form-control" id="fechaDesde">
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <label for="fechaHasta" class="form-label fw-bold small">
+                                    Hasta:
+                                </label>
+                                <input type="date" class="form-control" id="fechaHasta">
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0 small">
+                                <thead class="admin-table-head">
+                                    <tr>
+                                        <th class="py-2.5">Fecha</th>
+                                        <th class="py-2.5">Hora de Registro</th>
+                                        <th class="py-2.5 text-center">Estado</th>
+                                        <th class="py-2.5 text-center">Justificación</th>
+                                        <th class="py-2.5 text-center">Acción Soporte</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaHistorialAprendiz">
+                                    <tr>
+                                        <td>02/10/2026</td>
+                                        <td>06:10 a.m.</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-green">Asistencia</span>
+                                        </td>
+                                        <td class="text-center text-muted">N/A</td>
+                                        <td class="text-center text-muted">N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>01/10/2026</td>
+                                        <td>--:--</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-purple">Inasistencia</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-secondary">
+                                                Sin justificación
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-outline-success px-2.5 py-1 fw-semibold" onclick="prepararJustificacion('01/10/2026')">
+                                                <i class="bi bi-paperclip me-1"></i> Adjuntar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>30/09/2026</td>
+                                        <td>07:25 a.m.</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-yellow">Llegada Tarde</span>
+                                        </td>
+                                        <td class="text-center text-muted">N/A</td>
+                                        <td class="text-center text-muted">N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>28/09/2026</td>
+                                        <td>06:00 a.m.</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-green">Asistencia</span>
+                                        </td>
+                                        <td class="text-center text-muted">N/A</td>
+                                        <td class="text-center text-muted">N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>25/09/2026</td>
+                                        <td>--:--</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-purple">Inasistencia</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-secondary">
+                                                Fuera de plazo
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary px-2.5 py-1 fw-semibold" onclick="mostrarFueraDePlazo('25/09/2026')">
+                                                <i class="bi bi-info-circle me-1"></i> Ver detalle
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>24/09/2026</td>
+                                        <td>--:--</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-purple">Inasistencia</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-green">
+                                                Inasistencia Justificada
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary px-2.5 py-1 fw-semibold" onclick="verEditarSoporte('24/09/2026')">
+                                                <i class="bi bi-eye me-1"></i> Ver / Editar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>23/09/2026</td>
+                                        <td>06:15 a.m.</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-status badge-status-green">Asistencia</span>
+                                        </td>
+                                        <td class="text-center text-muted">N/A</td>
+                                        <td class="text-center text-muted">N/A</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ========================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================= -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row align-items-center justify-content-between g-4">
+                <div class="col-lg-5 col-md-6">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="../assets/logo/logo.svg" alt="Logo SENA" width="40">
+                        <div>
+                            <h5 class="mb-1 footer-brand-title">SENA Assistance</h5>
+                            <small class="admin-muted">www.sena.edu.co</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6">
+                    <ul class="footer-menu">
+                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#historial">Historial</a></li>
+                        <li><a href="registroAprendiz.html">Asistencia</a></li>
+                        <li>
+                            <a href="#" class="footer-login-link status-blue-text" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                                Cerrar sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <small class="admin-muted">© 2026 SENA Assistance. Todos los derechos reservados.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- MODAL: SUBIR JUSTIFICACIÓN -->
+    <!-- ========================================================= -->
+    <div class="modal fade" id="subirJustificacionModal" tabindex="-1" aria-labelledby="subirJustificacionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
+                <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="modal-body p-4">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="admin-icon-yellow rounded-3 d-flex align-items-center justify-content-center"
+                            style="width: 45px; height: 45px; font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="bi bi-file-earmark-arrow-up-fill"></i>
+                        </div>
+                        <div>
+                            <span class="section-label status-yellow-text">SOPORTE DE INASISTENCIA</span>
+                            <h5 class="fw-bold mb-0 mt-1 admin-text" id="subirJustificacionModalLabel">Subir Justificación</h5>
+                        </div>
+                    </div>
+
+                    <form id="formJustificacion" onsubmit="enviarJustificacion(event)">
+                        <div class="mb-3">
+                            <label for="fechaFallaSelect" class="form-label fw-semibold small">Fecha de la inasistencia:</label>
+                            <input type="date" class="form-control form-control-sm" id="fechaFallaSelect" required value="2026-10-01">
+                        </div>
+                        <div class="mb-3">
+                            <label for="motivoJustificacion" class="form-label fw-semibold small">Motivo / Descripción:</label>
+                            <textarea class="form-control form-control-sm" id="motivoJustificacion" rows="3" placeholder="Ej. Incapacidad médica, cita médica o calamidad doméstica..." required></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="archivoSoporte" class="form-label fw-semibold small">Documento de soporte (PDF o Imagen):</label>
+                            <input type="file" class="form-control form-control-sm" id="archivoSoporte" accept=".pdf,image/*">
+                            <div class="form-text small text-muted mt-1" id="soporteActualInfo"></div>
+                        </div>
+                        <div class="d-flex justify-content-end gap-2">
+                            <button type="button" class="btn btn-modal-cancel px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-sena-custom-green px-4 py-2 small fw-semibold">Enviar Soporte</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- MODAL: CERRAR SESIÓN -->
+    <!-- ========================================================= -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
+                <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="modal-body text-center p-4">
+                    <div class="mb-3 modal-icon modal-icon-blue fs-1">
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2 admin-text" id="logoutModalLabel">¿Estás seguro que deseas salir?</h5>
+                    <p class="admin-muted small mb-4">Se cerrará tu sesión actual como aprendiz en SENA Assistance.</p>
+                    <div class="d-flex justify-content-center gap-2">
+                        <button type="button" class="btn btn-modal-cancel px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Cancelar</button>
+                        <a href="index.html" class="btn btn-sena-custom-darkblue px-4 py-2 small fw-semibold text-decoration-none">Sí, cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- MODAL: FUERA DE PLAZO (DETALLE INASISTENCIA) -->
+    <!-- ========================================================= -->
+    <div class="modal fade" id="fueraDePlazoModal" tabindex="-1" aria-labelledby="fueraDePlazoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content admin-dashboard-modal border-0 shadow-lg rounded-4 p-2">
+                <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <div class="modal-body text-center p-4">
+                    <div class="mb-3 modal-icon modal-icon-purple fs-1">
+                        <i class="bi bi-exclamation-octagon-fill"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2 admin-text" id="fueraDePlazoModalLabel">Inasistencia fuera de plazo</h5>
+                    <p class="admin-muted small mb-4" id="fueraDePlazoTexto">El plazo reglamentario de 3 días hábiles para presentar la justificación o soporte de esta inasistencia ha expirado. Por este motivo, el sistema no permite adjuntar nuevos documentos.</p>
+                    <div class="d-flex justify-content-center gap-2">
+                        <button type="button" class="btn btn-modal-confirm-purple px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Entendido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- SCRIPTS -->
+    <!-- ========================================================= -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Sincronización automática de la barra de navegación según el desplazamiento (Scroll Spy)
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.navbar-nav .nav-link:not(.btn)').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observar únicamente las secciones principales de la página mediante el atributo data-section
+        document.querySelectorAll('[data-section]').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Función interactiva para simular fallas utilizando tonos morados corporativos
+        function simularFallas(numFallas) {
+            const countFallasEl = document.getElementById('countFallas');
+            const countAsistenciasEl = document.getElementById('countAsistencias');
+            const porcentajeEl = document.getElementById('porcentajeAsistencia');
+            const progressBarEl = document.getElementById('progressBarAsistencia');
+            const alertaContainer = document.getElementById('alertaContainer');
+
+            let totalClases = 20;
+            let asistencias = totalClases - numFallas;
+            let porcentaje = ((asistencias / totalClases) * 100).toFixed(1);
+
+            countFallasEl.textContent = numFallas;
+            countAsistenciasEl.textContent = asistencias;
+            porcentajeEl.textContent = porcentaje + '%';
+            progressBarEl.style.width = porcentaje + '%';
+
+            if (numFallas === 0) {
+                porcentajeEl.className = "display-5 fw-bold status-green-text";
+                progressBarEl.className = "progress-bar bg-success";
+                alertaContainer.innerHTML = `
+                    <div class="alert alert-success border-0 shadow-sm d-flex align-items-center gap-3 p-3 rounded-3" role="alert">
+                        <i class="bi bi-check-circle-fill fs-3 text-success"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1">¡Excelente rendimiento!</h6>
+                            <p class="small mb-0 text-muted">Te encuentras al día con tus asistencias. No presentas ninguna inasistencia registrada.</p>
+                        </div>
+                    </div>`;
+            } else if (numFallas < 5) {
+                porcentajeEl.className = "display-5 fw-bold status-yellow-text";
+                progressBarEl.className = "progress-bar bg-warning";
+                alertaContainer.innerHTML = `
+                    <div class="alert alert-warning border-0 shadow-sm d-flex align-items-center gap-3 p-3 rounded-3" role="alert">
+                        <i class="bi bi-exclamation-triangle-fill fs-3 text-warning"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1">Atención: Inasistencias registradas</h6>
+                            <p class="small mb-0 text-muted">Tienes <strong>${numFallas} inasistencia(s)</strong> acumulada(s). Recuerda presentar tus soportes a tiempo.</p>
+                        </div>
+                    </div>`;
+            } else {
+                porcentajeEl.className = "display-5 fw-bold status-purple-text";
+                progressBarEl.className = "progress-bar bg-purple";
+                alertaContainer.innerHTML = `
+                    <div class="alert alert-purple border-0 shadow-sm d-flex align-items-center gap-3 p-3 rounded-3" role="alert">
+                        <i class="bi bi-exclamation-octagon-fill fs-3 status-purple-text"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1 status-purple-text">¡Alerta de límite de fallas!</h6>
+                            <p class="small mb-0 admin-text">Has alcanzado el <strong>límite de 5 inasistencias</strong> permitidas. Tu proceso de formación se encuentra en riesgo por inasistencia.</p>
+                        </div>
+                    </div>`;
+            }
+        }
+
+        // Preparar modal para adjuntar inasistencia seleccionada
+        function prepararJustificacion(fecha) {
+            const fechaIso = fecha === '01/10/2026' ? '2026-10-01' : '2026-09-29';
+            document.getElementById('fechaFallaSelect').value = fechaIso;
+            document.getElementById('motivoJustificacion').value = '';
+            document.getElementById('soporteActualInfo').textContent = '';
+            const modal = new bootstrap.Modal(document.getElementById('subirJustificacionModal'));
+            modal.show();
+        }
+
+        // Mostrar tarjeta modal con resumen de inasistencia fuera de plazo (3 días hábiles)
+        function mostrarFueraDePlazo(fecha) {
+            document.getElementById('fueraDePlazoModalLabel').textContent = "Inasistencia del " + fecha;
+            document.getElementById('fueraDePlazoTexto').innerHTML = "El plazo reglamentario de 3 días hábiles para presentar la justificación o soporte de la inasistencia del <strong>" + fecha + "</strong> ha expirado. Por este motivo, el sistema no permite adjuntar nuevos documentos.";
+            const modal = new bootstrap.Modal(document.getElementById('fueraDePlazoModal'));
+            modal.show();
+        }
+
+        // Ver o editar soporte ya enviado
+        function verEditarSoporte(fecha) {
+            document.getElementById('fechaFallaSelect').value = '2026-09-24';
+            document.getElementById('motivoJustificacion').value = 'Cita médica general programada';
+            document.getElementById('soporteActualInfo').innerHTML = '<span class="text-success"><i class="bi bi-check-circle me-1"></i> Soporte actual cargado: <a href="#" target="_blank">incapacidad_24_09.pdf</a></span>';
+            const modal = new bootstrap.Modal(document.getElementById('subirJustificacionModal'));
+            modal.show();
+        }
+
+        // Manejo del formulario de envío de justificación
+        function enviarJustificacion(event) {
+            event.preventDefault();
+            const motivo = document.getElementById('motivoJustificacion').value;
+            const fecha = document.getElementById('fechaFallaSelect').value;
+
+            // Actualizar tabla de justificaciones del aprendiz superior
+            const tablaJustificaciones = document.getElementById('tablaJustificacionesBody');
+            tablaJustificaciones.innerHTML = `
+                <tr>
+                    <td>${fecha}</td>
+                    <td>Diurna</td>
+                    <td>${motivo}</td>
+                    <td class="text-center"><i class="bi bi-file-earmark-pdf status-purple-text fs-5"></i></td>
+                    <td class="text-center">
+                        <span class="badge badge-status badge-status-yellow">En revisión</span>
+                    </td>
+                </tr>
+            `;
+
+            const modalEl = document.getElementById('subirJustificacionModal');
+            const modalInstance = bootstrap.Modal.getInstance(modalEl);
+            modalInstance.hide();
+            document.getElementById('formJustificacion').reset();
+        }
+    </script>
+</body>
+</html>

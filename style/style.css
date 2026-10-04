@@ -1613,7 +1613,7 @@ body.index-page {
 .qr-camera-box {
     position: relative;
     width: 100%;
-    max-width: 430px;
+    max-width: 420px;
     aspect-ratio: 1 / 1;
     margin: 0 auto;
     border: 2px dashed var(--green);
@@ -1623,6 +1623,14 @@ body.index-page {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+}
+
+@media (max-width: 767.98px) {
+    .qr-camera-box {
+        max-width: 100% !important;
+        height: 420px !important;
+        aspect-ratio: auto !important;
+    }
 }
 
 .qr-camera-corner {
@@ -2058,4 +2066,233 @@ a.btn-outline-success[href="qrScanner.html"],
 .admin-apprentice-link:hover {
     color: var(--green);
     text-decoration: underline;
+}
+
+/* =========================================================
+   MÉTODOS DE REGISTRO QR
+   ========================================================= */
+
+.qr-method-selector {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+
+.qr-method-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    color: var(--text);
+    text-align: left;
+    transition: all .2s ease;
+}
+
+
+.qr-method-btn:hover {
+    border-color: rgba(57, 169, 0, .45);
+    transform: translateY(-1px);
+}
+
+
+.qr-method-btn.active {
+    border-color: var(--green);
+    background: rgba(57, 169, 0, .07);
+    box-shadow: 0 4px 12px rgba(57, 169, 0, .08);
+}
+
+
+.qr-method-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(57, 169, 0, .10);
+    color: var(--green);
+    font-size: 1.3rem;
+}
+
+
+.qr-method-btn strong {
+    display: block;
+    font-size: .95rem;
+    margin-bottom: .2rem;
+}
+
+
+.qr-method-btn span {
+    display: block;
+    color: var(--muted);
+    font-size: .8rem;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   GENERADOR QR
+   ========================================================= */
+
+.qr-generator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+
+.attendance-qr {
+    width: 320px;
+    height: 320px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 48, 64, .08);
+}
+
+.attendance-qr img,
+.attendance-qr canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+}
+
+
+.qr-refresh-info {
+    margin-top: 1.25rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+
+.qr-refresh-info i {
+    color: var(--green);
+}
+
+
+.qr-countdown {
+    margin-top: .4rem;
+    color: var(--text);
+}
+
+
+.qr-countdown strong {
+    color: var(--green-dark);
+    font-size: 1.05rem;
+}
+
+
+.qr-generator-info {
+    padding: 1rem;
+    border-radius: 10px;
+    background: #f4f7f2;
+    border: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+
+    .qr-method-selector {
+        grid-template-columns: 1fr;
+    }
+
+
+    .qr-method-btn {
+        padding: .9rem;
+    }
+
+
+    .qr-generator-container {
+        padding: 1rem 0;
+    }
+
+
+    .attendance-qr {
+        width: 270px;
+        min-height: 270px;
+    }
+
+}
+
+/* =========================================================
+   MEJORAS ADICIONALES PARA LA SECCIÓN QR
+   ========================================================= */
+
+/* Transición suave al alternar entre el escáner y el generador */
+.qr-method-content {
+    animation: fadeInSection 0.3s ease-in-out;
+}
+
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajuste del contenedor QR para evitar desbordamientos en pantallas muy estrechas */
+#attendanceQr img, 
+#attendanceQr canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* =========================================================
+   AJUSTE PARA EL STREAMING DE LA CÁMARA QR
+   ========================================================= */
+#readerCameraContainer video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 14px;
+}
+
+/* =========================================================
+   ESTILOS MORADOS INSTITUCIONALES
+   ========================================================= */
+
+.bg-purple {
+    background-color: #71277a !important;
+}
+
+.alert-purple {
+    background-color: rgba(113, 39, 122, 0.08) !important;
+    color: #71277a !important;
+    border: 1px solid rgba(113, 39, 122, 0.22) !important;
+}
+
+.btn-outline-purple {
+    color: #71277a !important;
+    border-color: #71277a !important;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-purple:hover {
+    background-color: #71277a !important;
+    color: #ffffff !important;
+    border-color: #71277a !important;
 }

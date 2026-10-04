@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Asistencia - SENA Assistance</title>
+    <title>Registro de Asistencia - Aprendiz - SENA Assistance</title>
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,17 +29,21 @@
     <!-- ========================================================= -->
     <nav class="navbar navbar-expand-lg py-3 fixed-top navbar-custom">
         <div class="container d-flex align-items-center justify-content-between">
-            <a class="navbar-brand d-flex align-items-center gap-3 m-0" href="instructorDashboard.html">
+
+            <a class="navbar-brand d-flex align-items-center gap-3 m-0" href="aprendizDashboard.html">
                 <img src="../assets/logo/logo.svg" alt="Logo SENA" width="40">
                 <span>SENA Assistance</span>
             </a>
 
             <div class="d-flex align-items-center gap-2">
-                <button type="button" class="mobile-login-icon-btn btn-sena-custom-darkblue" data-bs-toggle="modal" data-bs-target="#logoutModal" title="Cerrar sesión">
+                <button type="button" class="mobile-login-icon-btn btn-sena-custom-darkblue" data-bs-toggle="modal"
+                    data-bs-target="#logoutModal" title="Cerrar sesión">
                     <i class="bi bi-box-arrow-right"></i>
                 </button>
 
-                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Mostrar menú">
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                    aria-label="Mostrar menú">
                     <i class="bi bi-list fs-4"></i>
                 </button>
             </div>
@@ -47,32 +51,29 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
                 <ul class="navbar-nav align-items-lg-center gap-lg-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="instructorDashboard.html#dashboard">
+                        <a class="nav-link" href="aprendizDashboard.html#dashboard">
                             <i class="bi bi-speedometer2 me-1"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="instructorDashboard.html#mis-fichas">
-                            <i class="bi bi-journal-bookmark me-1"></i> Mis Fichas
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="instructorDashboard.html#asistencia">
-                            <i class="bi bi-journal-bookmark me-1"></i> Asistencia
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="instructorDashboard.html#historial">
+                        <a class="nav-link" href="aprendizDashboard.html#historial">
                             <i class="bi bi-clock-history me-1"></i> Historial
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="registroAprendiz.html">
+                            <i class="bi bi-qr-code-scan me-1"></i> Asistencia
+                        </a>
+                    </li>
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                        <button type="button" class="btn btn-sena-custom-darkblue px-3 py-2 fw-semibold w-100" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                        <button type="button" class="btn btn-sena-custom-darkblue px-3 py-2 fw-semibold w-100"
+                            data-bs-toggle="modal" data-bs-target="#logoutModal">
                             <i class="bi bi-box-arrow-right me-1"></i> Salir
                         </button>
                     </li>
                 </ul>
             </div>
+
         </div>
     </nav>
 
@@ -91,9 +92,9 @@
                                 <i class="bi bi-qr-code-scan"></i>
                             </div>
                             <div>
-                                <span class="section-label">REGISTRO DE ASISTENCIA</span>
-                                <h1 class="h5 fw-bold mt-1 mb-1 admin-text">Registrar Asistencia</h1>
-                                <p class="admin-muted small mb-0">Selecciona el método que deseas utilizar para registrar la asistencia.</p>
+                                <span class="section-label">PORTAL DEL APRENDIZ</span>
+                                <h1 class="h5 fw-bold mt-1 mb-1 admin-text">Registrar mi Asistencia</h1>
+                                <p class="admin-muted small mb-0">Genera tu código QR para que el instructor lo escanee o escanea el código de la sesión.</p>
                             </div>
                         </div>
                     </div>
@@ -102,7 +103,7 @@
                     <div class="qr-scanner-current mb-4">
                         <div class="row align-items-center g-3">
                             <div class="col-md-8">
-                                <span class="admin-muted small">Ficha actual</span>
+                                <span class="admin-muted small">Mi ficha asignada</span>
                                 <div class="fw-bold admin-text fs-5">2874102</div>
                                 <div class="admin-muted small mt-1">Tecnólogo en Análisis y Desarrollo de Software</div>
                             </div>
@@ -116,34 +117,103 @@
 
                     <!-- SELECTOR DE MÉTODO -->
                     <div class="qr-method-selector mb-4">
-                        <button type="button" class="qr-method-btn active" data-method="scanner">
-                            <div class="qr-method-icon">
-                                <i class="bi bi-camera-fill"></i>
-                            </div>
-                            <div>
-                                <strong>Escanear código QR</strong>
-                                <span>Escanea el código del aprendiz.</span>
-                            </div>
-                        </button>
-
-                        <button type="button" class="qr-method-btn" data-method="generator">
+                        <button type="button" class="qr-method-btn active" data-method="generator">
                             <div class="qr-method-icon">
                                 <i class="bi bi-qr-code"></i>
                             </div>
                             <div>
-                                <strong>Generar código QR</strong>
-                                <span>Permite que los aprendices lo escaneen.</span>
+                                <strong>Generar mi código QR</strong>
+                                <span>Muestra tu código para que el instructor lo escanee.</span>
+                            </div>
+                        </button>
+
+                        <button type="button" class="qr-method-btn" data-method="scanner">
+                            <div class="qr-method-icon">
+                                <i class="bi bi-camera-fill"></i>
+                            </div>
+                            <div>
+                                <strong>Escanear código de sesión</strong>
+                                <span>Escanea el código QR proporcionado por el instructor.</span>
                             </div>
                         </button>
                     </div>
 
-                    <!-- MODO ESCÁNER -->
-                    <section class="qr-method-content" id="scannerSection">
+                    <!-- MODO GENERADOR (Principal para el aprendiz) -->
+                    <section class="qr-method-content" id="generatorSection">
+                        <div class="qr-scanner-card mb-4">
+                            <div class="text-center mb-4">
+                                <span class="section-label">MI QR PERSONAL</span>
+                                <h2 class="h5 fw-bold mt-1 mb-1">Generar código de asistencia</h2>
+                                <p class="admin-muted small mb-3">Haz clic en el botón para generar tu código QR único para la toma de asistencia.</p>
+                                <button type="button" id="btnGenerateQr" class="btn btn-sena-custom-green px-4 py-2 fw-semibold">
+                                    <i class="bi bi-qr-code me-1"></i> Generar Mi Código QR
+                                </button>
+                            </div>
+
+                            <div class="qr-generator-container">
+                                <div id="attendanceQr" class="attendance-qr mb-3">
+                                    <div class="text-muted small text-center p-3">
+                                        <i class="bi bi-qr-code fs-1 d-block mb-2 text-secondary opacity-50"></i>
+                                        Tu código QR personal aparecerá aquí al hacer clic en el botón.
+                                    </div>
+                                </div>
+
+                                <div id="qrInfoContainer" class="qr-refresh-info d-none">
+                                    <div class="d-flex align-items-center justify-content-center gap-2">
+                                        <i class="bi bi-arrow-repeat"></i>
+                                        <span>Tu código se actualizará por seguridad</span>
+                                    </div>
+                                    <div class="qr-countdown">
+                                        Nuevo código en <strong id="qrCountdown">30</strong> segundos
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ÚLTIMO REGISTRO -->
+                        <div class="qr-scanner-card mb-4">
+                            <div class="mb-3">
+                                <span class="section-label">MI REGISTRO</span>
+                                <h2 class="h6 fw-bold mt-1 mb-0">Confirmación de Asistencia</h2>
+                            </div>
+                            <div class="qr-result-card">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="index-icon-green admin-icon-green rounded-circle" style="width: 48px; height: 48px;">
+                                        <i class="bi bi-check-lg"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold admin-text">Juan Esteban Jimenez Pérez</div>
+                                        <div class="admin-muted small">Documento: 1098745210</div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row g-3 small">
+                                    <div class="col-md-4">
+                                        <span class="admin-muted d-block">Ficha</span>
+                                        <strong class="admin-text">2874102</strong>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="admin-muted d-block">Hora</span>
+                                        <strong class="admin-text">06:15 a.m.</strong>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="admin-muted d-block">Estado</span>
+                                        <strong class="status-green-text">
+                                            <i class="bi bi-check-circle-fill me-1"></i> Presente
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- MODO ESCÁNER (Alternativo para el aprendiz) -->
+                    <section class="qr-method-content d-none" id="scannerSection">
                         <div class="qr-scanner-card mb-4">
                             <div class="text-center mb-4">
                                 <span class="section-label">LECTOR QR</span>
-                                <h2 class="h5 fw-bold mt-1 mb-1">Escanea el código del aprendiz</h2>
-                                <p class="admin-muted small mb-0">Ubica el código QR dentro del área de lectura.</p>
+                                <h2 class="h5 fw-bold mt-1 mb-1">Escanea el código de la sesión</h2>
+                                <p class="admin-muted small mb-0">Ubica el código QR del instructor dentro del área de lectura.</p>
                             </div>
 
                             <!-- CONTENEDOR DE LA CÁMARA -->
@@ -156,7 +226,7 @@
                                 <div class="qr-camera-placeholder" id="cameraPlaceholder">
                                     <i class="bi bi-camera-video"></i>
                                     <div class="fw-semibold mt-2">Cámara lista</div>
-                                    <small class="admin-muted">Esperando código QR...</small>
+                                    <small class="admin-muted">Esperando código QR del instructor...</small>
                                 </div>
                                 <div class="qr-camera-line"></div>
                             </div>
@@ -184,8 +254,8 @@
                                         <i class="bi bi-check-lg"></i>
                                     </div>
                                     <div>
-                                        <div class="fw-bold admin-text" id="resultName">Carlos Andrés Pérez Gómez</div>
-                                        <div class="admin-muted small" id="resultDoc">Documento: 1098745210</div>
+                                        <div class="fw-bold admin-text" id="resultName">Sesión de Análisis y Desarrollo de Software</div>
+                                        <div class="admin-muted small" id="resultDoc">Instructor: Carlos Gómez</div>
                                     </div>
                                 </div>
                                 <hr>
@@ -201,76 +271,7 @@
                                     <div class="col-md-4">
                                         <span class="admin-muted d-block">Estado</span>
                                         <strong class="status-green-text">
-                                            <i class="bi bi-check-circle-fill me-1"></i> Presente
-                                        </strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- MODO GENERADOR -->
-                    <section class="qr-method-content d-none" id="generatorSection">
-                        <div class="qr-scanner-card mb-4">
-                            <div class="text-center mb-4">
-                                <span class="section-label">QR DE ASISTENCIA</span>
-                                <h2 class="h5 fw-bold mt-1 mb-1">Generar código de asistencia</h2>
-                                <p class="admin-muted small mb-3">Haz clic en el botón para generar el código que los aprendices escanearán.</p>
-                                <button type="button" id="btnGenerateQr" class="btn btn-sena-custom-green px-4 py-2 fw-semibold">
-                                    <i class="bi bi-qr-code me-1"></i> Generar Código QR
-                                </button>
-                            </div>
-
-                            <div class="qr-generator-container">
-                                <div id="attendanceQr" class="attendance-qr mb-3">
-                                    <div class="text-muted small text-center p-3">
-                                        <i class="bi bi-qr-code fs-1 d-block mb-2 text-secondary opacity-50"></i>
-                                        El código QR aparecerá aquí al hacer clic en el botón.
-                                    </div>
-                                </div>
-
-                                <div id="qrInfoContainer" class="qr-refresh-info d-none">
-                                    <div class="d-flex align-items-center justify-content-center gap-2">
-                                        <i class="bi bi-arrow-repeat"></i>
-                                        <span>El código se actualizará automáticamente</span>
-                                    </div>
-                                    <div class="qr-countdown">
-                                        Nuevo código en <strong id="qrCountdown">30</strong> segundos
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ÚLTIMO REGISTRO -->
-                        <div class="qr-scanner-card mb-4">
-                            <div class="mb-3">
-                                <span class="section-label">ÚLTIMO REGISTRO</span>
-                                <h2 class="h6 fw-bold mt-1 mb-0">Resultado del registro</h2>
-                            </div>
-                            <div class="qr-result-card">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="index-icon-green admin-icon-green rounded-circle" style="width: 48px; height: 48px;">
-                                        <i class="bi bi-check-lg"></i>
-                                    </div>
-                                    <div>
-                                        <div class="fw-bold admin-text">Carlos Andrés Pérez Gómez</div>
-                                        <div class="admin-muted small">Documento: 1098745210</div>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row g-3 small">
-                                    <div class="col-md-4">
-                                        <span class="admin-muted d-block">Ficha</span>
-                                        <strong class="admin-text">2874102</strong>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <span class="admin-muted d-block">Hora</span>
-                                        <strong class="admin-text">06:15 a.m.</strong>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <span class="admin-muted d-block">Estado</span>
-                                        <strong class="status-green-text">
-                                            <i class="bi bi-check-circle-fill me-1"></i> Presente
+                                            <i class="bi bi-check-circle-fill me-1"></i> Registrado
                                         </strong>
                                     </div>
                                 </div>
@@ -283,10 +284,8 @@
                         <div class="d-flex gap-2">
                             <i class="bi bi-info-circle-fill status-green-text mt-1"></i>
                             <p class="admin-muted small mb-0">
-                                <strong class="admin-text">Importante:</strong>
-                                el sistema solo permitirá registrar aprendices que pertenezcan
-                                a la ficha actual <strong class="admin-text">2874102</strong>.
-                                Si el código pertenece a otra ficha, el registro será rechazado.
+                                <strong class="admin-text">Recomendación:</strong>
+                                mantén tu código QR personal visible o asegúrate de escanear la sesión correcta correspondiente a la ficha <strong class="admin-text">2874102</strong> para validar tu asistencia exitosamente.
                             </p>
                         </div>
                     </div>
@@ -313,10 +312,9 @@
                 </div>
                 <div class="col-lg-7 col-md-6">
                     <ul class="footer-menu">
-                        <li><a href="instructorDashboard.html#dashboard">Dashboard</a></li>
-                        <li><a href="instructorDashboard.html#mis-fichas">Mis Fichas</a></li>
-                        <li><a href="instructorDashboard.html#asistencia">Asistencia</a></li>
-                        <li><a href="instructorDashboard.html#historial">Historial</a></li>
+                        <li><a href="aprendizDashboard.html#dashboard">Dashboard</a></li>
+                        <li><a href="aprendizDashboard.html#historial">Historial</a></li>
+                        <li><a href="registroAprendiz.html">Asistencia</a></li>
                         <li>
                             <a href="#" class="footer-login-link status-blue-text" data-bs-toggle="modal" data-bs-target="#logoutModal">
                                 Cerrar sesión
@@ -346,7 +344,7 @@
                         <i class="bi bi-exclamation-circle-fill"></i>
                     </div>
                     <h5 class="fw-bold mb-2 admin-text" id="logoutModalLabel">¿Estás seguro que deseas salir?</h5>
-                    <p class="admin-muted small mb-4">Se cerrará tu sesión actual como instructor y tendrás que volver a ingresar tus credenciales.</p>
+                    <p class="admin-muted small mb-4">Se cerrará tu sesión actual como aprendiz y tendrás que volver a ingresar tus credenciales.</p>
                     <div class="d-flex justify-content-center gap-2">
                         <button type="button" class="btn btn-modal-cancel px-4 py-2 small fw-semibold" data-bs-dismiss="modal">Cancelar</button>
                         <a href="index.html" class="btn btn-sena-custom-darkblue px-4 py-2 small fw-semibold text-decoration-none">Sí, cerrar sesión</a>
@@ -392,9 +390,8 @@
         let html5QrCode = null;
         let cameraActive = false;
 
-        // Variables para control de tiempo de espera (cooldown) y evitar spam
         let lastScanTime = 0;
-        const COOLDOWN_TIME = 3500; // Tiempo de espera en milisegundos (3.5 segundos)
+        const COOLDOWN_TIME = 3500;
 
         const btnActivateCamera = document.getElementById("btnActivateCamera");
         const cameraPlaceholder = document.getElementById("cameraPlaceholder");
@@ -413,16 +410,14 @@
                 html5QrCode = new Html5Qrcode("readerCameraContainer");
             }
 
-            // Ocultar placeholder visual mientras corre el video
             if (cameraPlaceholder) {
                 cameraPlaceholder.style.display = "none";
             }
 
             html5QrCode.start(
-                { facingMode: "environment" }, // Usa la cámara trasera por defecto en móviles
+                { facingMode: "environment" },
                 {
                     fps: 10,
-                    // Se configura dinámicamente para ocupar el 85% del contenedor de la cámara
                     qrbox: (viewfinderWidth, viewfinderHeight) => {
                         let minSize = Math.min(viewfinderWidth, viewfinderHeight);
                         return {
@@ -434,25 +429,16 @@
                 (decodedText, decodedResult) => {
                     const currentTime = Date.now();
 
-                    // Validar si ha pasado el tiempo de espera (cooldown) para evitar spam
                     if (currentTime - lastScanTime < COOLDOWN_TIME) {
-                        console.log("Escaneo omitido: cooldown activo para evitar spam.");
                         return;
                     }
-
-                    // Actualizar la marca de tiempo del último escaneo exitoso
                     lastScanTime = currentTime;
-
-                    // Éxito al leer un código QR real
-                    console.log(`QR detectado: ${decodedText}`);
                     
                     const horaActual = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-                    // Actualizar la interfaz con el resultado detectado
-                    document.getElementById("resultName").textContent = "Aprendiz Detectado (" + decodedText + ")";
+                    document.getElementById("resultName").textContent = "Sesión Escaneada (" + decodedText + ")";
                     document.getElementById("resultTime").textContent = horaActual;
 
-                    // Mostrar el mensaje de confirmación debajo del escáner en lugar de un alert
                     scanStatusMessage.className = "mt-3 p-3 rounded-3 text-start small shadow-sm";
                     scanStatusMessage.style.backgroundColor = "#eef6ed";
                     scanStatusMessage.style.borderColor = "#39A900";
@@ -460,17 +446,15 @@
                         <div class="d-flex align-items-start gap-2">
                             <i class="bi bi-check-circle-fill text-success fs-5 mt-1"></i>
                             <div>
-                                <strong class="admin-text d-block mb-1">¡Asistencia registrada correctamente!</strong>
-                                <span class="admin-muted">Código escaneado:</span> <code class="text-dark fw-bold">${decodedText}</code>
+                                <strong class="admin-text d-block mb-1">¡Asistencia validada con éxito!</strong>
+                                <span class="admin-muted">Código de sesión:</span> <code class="text-dark fw-bold">${decodedText}</code>
                                 <div class="text-muted mt-1" style="font-size: 0.78rem;">Hora: ${horaActual}</div>
                             </div>
                         </div>
                     `;
                     scanStatusMessage.classList.remove("d-none");
                 },
-                (errorMessage) => {
-                    // Errores de escaneo continuo
-                }
+                (errorMessage) => {}
             ).then(() => {
                 cameraActive = true;
                 btnActivateCamera.innerHTML = '<i class="bi bi-camera-fill me-1"></i> Detener cámara';
@@ -495,7 +479,6 @@
                     if (cameraPlaceholder) {
                         cameraPlaceholder.style.display = "flex";
                     }
-                    // Ocultar mensaje al detener la cámara
                     scanStatusMessage.classList.add("d-none");
                 }).catch(err => {
                     console.error("Error al detener la cámara", err);
@@ -503,21 +486,21 @@
             }
         }
 
-        // --- LÓGICA DE GENERACIÓN DE QR ---
+        // --- LÓGICA DE GENERACIÓN DE QR PERSONAL ---
         let qrTimer;
         let countdown = 30;
         const btnGenerateQr = document.getElementById("btnGenerateQr");
 
         btnGenerateQr.addEventListener("click", function () {
             document.getElementById("qrInfoContainer").classList.remove("d-none");
-            btnGenerateQr.innerHTML = '<i class="bi bi-arrow-repeat me-1"></i> Regenerar Código QR';
+            btnGenerateQr.innerHTML = '<i class="bi bi-arrow-repeat me-1"></i> Regenerar Mi Código QR';
             generateAttendanceQr();
         });
 
         function generateAttendanceQr() {
             const qrContainer = document.getElementById("attendanceQr");
             qrContainer.innerHTML = "";
-            const token = "SENA-2874102-" + Date.now();
+            const token = "APRENDIZ-2874102-1098745210-" + Date.now();
 
             new QRCode(qrContainer, {
                 text: token,
