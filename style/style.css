@@ -2296,3 +2296,22 @@ a.btn-outline-success[href="qrScanner.html"],
     color: #ffffff !important;
     border-color: #71277a !important;
 }
+
+/* =========================================================
+   TONOS DIFERENCIADOS PARA LAS 9 TARJETAS DE FUNCIONALIDADES
+   ========================================================= */
+
+#funcionalidades .role-column-card .role-card-item:nth-child(1) {
+    background-color: #f4f9f3 !important;
+    border-color: #cce4cc !important;
+}
+
+#funcionalidades .role-column-card .role-card-item:nth-child(2) {
+    background-color: #ebf5ec !important;
+    border-color: #b9deb8 !important;
+}
+
+#funcionalidades .role-column-card .role-card-item:nth-child(3) {
+    background-color: #e2f1e3 !important;
+    border-color: #a8d6a7 !important;
+}
