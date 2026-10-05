@@ -2,10 +2,8 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Login | SENA Assistance</title>
 
     <!-- Bootstrap -->
@@ -20,132 +18,96 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     >
 
+    <!-- Animate.css -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
     <!-- Estilos propios -->
     <link rel="stylesheet" href="../style/style.css">
-
 </head>
 
 <body>
-
 
     <main class="login-page">
 
         <div class="container d-flex justify-content-center">
     
-            <div class="row login-container g-0 mx-auto justify-content-center align-items-center">
-
+            <!-- Animación de entrada general para todo el contenedor de la tarjeta con un toque lento -->
+            <div class="row login-container g-0 mx-auto justify-content-center align-items-center animate__animated animate__fadeIn animate__slow">
 
                 <!-- PANEL INFORMATIVO -->
-
                 <div class="col-lg-6 login-info">
 
-                    <div class="info-content">
+                    <!-- Animación lateral suave para el panel izquierdo -->
+                    <div class="info-content animate__animated animate__fadeInLeft animate__slower">
 
                         <div class="sena-logo">
-
                             <img
                                 src="../assets/logo/logoBlanco.svg"
                                 alt="Logo SENA"
                             >
-
                         </div>
-
 
                         <span class="system-label">
                             SISTEMA DE CONTROL
                         </span>
 
-
                         <h1>
-
                             SENA
-
                             <span>Assistance</span>
-
                         </h1>
 
-
                         <p>
-
                             Registra y gestiona la asistencia de los
                             aprendices de forma rápida, segura y organizada.
-
                         </p>
 
-
                         <!-- Características -->
-
                         <div class="d-flex flex-column gap-3">
 
-
                             <div class="feature-item">
-
                                 <div class="feature-icon">
-
                                     <i class="bi bi-qr-code-scan"></i>
-
                                 </div>
-
                                 <div>
-
                                     <h6>
                                         Registro mediante QR
                                     </h6>
-
                                     <span>
                                         Agiliza el proceso de ingreso de los aprendices.
                                     </span>
-
                                 </div>
-
                             </div>
 
-
                             <div class="feature-item">
-
                                 <div class="feature-icon">
-
                                     <i class="bi bi-clock-history"></i>
-
                                 </div>
-
                                 <div>
-
                                     <h6>
                                         Control de horarios
                                     </h6>
-
                                     <span>
                                         Registra automáticamente la hora de llegada.
                                     </span>
-
                                 </div>
-
                             </div>
 
-
                             <div class="feature-item">
-
                                 <div class="feature-icon">
-
                                     <i class="bi bi-bell"></i>
-
                                 </div>
-
                                 <div>
-
                                     <h6>
                                         Alertas de asistencia
                                     </h6>
-
                                     <span>
                                         Facilita el seguimiento de faltas y tardanzas.
                                     </span>
-
                                 </div>
-
                             </div>
-
 
                         </div>
 
@@ -153,46 +115,34 @@
 
                 </div>
 
-
                 <!-- FORMULARIO -->
-
                 <div class="col-lg-6 login-form-container">
 
-                    <div class="login-form">
+                    <!-- Animación lateral derecha y sutil para la tarjeta del formulario -->
+                    <div class="login-form animate__animated animate__fadeInRight animate__slower">
 
                         <div class="form-header">
-
                             <!-- Logo solamente en móvil -->
-
                             <div class="mobile-logo">
-
                                 <img
                                     src="../assets/logo/logo.svg"
                                     alt="Logo SENA"
                                 >
-
                             </div>
-
 
                             <h2>
                                 Bienvenido
                             </h2>
 
-
                             <p>
                                 Ingresa tus datos para acceder al sistema
                             </p>
-
                         </div>
-
 
                         <form onsubmit="window.location.href='actualizarContrasena.html'; return false;">
 
-
                             <!-- CORREO -->
-
                             <div class="mb-4">
-
                                 <label
                                     for="correo"
                                     class="form-label"
@@ -200,15 +150,10 @@
                                     Correo electrónico
                                 </label>
 
-
                                 <div class="input-group">
-
                                     <span class="input-group-text">
-
                                         <i class="bi bi-envelope"></i>
-
                                     </span>
-
 
                                     <input
                                         type="email"
@@ -218,16 +163,11 @@
                                         placeholder="Ingresa tu correo electrónico"
                                         required
                                     >
-
                                 </div>
-
                             </div>
 
-
                             <!-- CONTRASEÑA -->
-
                             <div class="mb-3">
-
                                 <label
                                     for="password"
                                     class="form-label"
@@ -235,15 +175,10 @@
                                     Contraseña
                                 </label>
 
-
                                 <div class="input-group">
-
                                     <span class="input-group-text">
-
                                         <i class="bi bi-lock"></i>
-
                                     </span>
-
 
                                     <input
                                         type="password"
@@ -254,44 +189,32 @@
                                         required
                                     >
 
-
                                     <button
                                         class="btn password-toggle"
                                         type="button"
                                         id="togglePassword"
                                     >
-
                                         <i class="bi bi-eye"></i>
-
                                     </button>
-
                                 </div>
-
                             </div>
 
-
                             <!-- RECORDAR CONTRASEÑA & ¿OLVIDASTE TU CONTRASEÑA? -->
-
                             <div class="d-flex justify-content-between align-items-center mb-4">
-
                                 <div class="form-check">
-
                                     <input
                                         class="form-check-input"
                                         type="checkbox"
                                         value=""
                                         id="rememberMe"
                                     >
-
                                     <label
                                         class="form-check-label"
                                         for="rememberMe"
                                     >
                                         Recordarme
                                     </label>
-
                                 </div>
-
 
                                 <a
                                     href="recuperar.html"
@@ -299,46 +222,30 @@
                                 >
                                     ¿Olvidaste tu contraseña?
                                 </a>
-
                             </div>
 
-
                             <!-- BOTÓN -->
-
                             <button
                                 type="submit"
                                 class="btn btn-login w-100"
                             >
-
                                 Iniciar sesión
-
                                 <i class="bi bi-arrow-right"></i>
-
                             </button>
-
 
                         </form>
 
-
                         <!-- PIE -->
-
                         <div class="login-footer">
-
                             <span>
-
                                 <i class="bi bi-shield-check"></i>
-
                                 Acceso seguro al sistema
-
                             </span>
-
                         </div>
-
 
                     </div>
 
                 </div>
-
 
             </div>
 
@@ -346,14 +253,11 @@
 
     </main>
 
-
     <script>
-
         const togglePassword = document.getElementById("togglePassword");
         const password = document.getElementById("password");
 
         togglePassword.addEventListener("click", function () {
-
             const type = password.type === "password"
                 ? "text"
                 : "password";
@@ -362,9 +266,7 @@
 
             this.querySelector("i").classList.toggle("bi-eye");
             this.querySelector("i").classList.toggle("bi-eye-slash");
-
         });
-
     </script>
 
 </body>
