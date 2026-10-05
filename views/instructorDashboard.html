@@ -752,47 +752,30 @@
 
 
 
-                    <!-- ALERTAS -->
+                            <!-- ALERTAS -->
+                            <div class="col-lg-7">
+                                <div class="role-column-card p-4 h-100">
+                                    
+                                    <!-- Contenedor con clases de Bootstrap para diseño responsivo -->
+                                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-3">
+                                        
+                                        <div>
+                                            <span class="section-label status-purple-text">
+                                                ALERTAS
+                                            </span>
+                                            <h3 class="h5 fw-bold mt-1 mb-0">
+                                                Inasistencias
+                                            </h3>
+                                        </div>
 
-                    <div class="col-lg-7">
+                                        <a href="inasistencias.html"
+                                            class="btn btn-modal-confirm-purple fw-semibold text-decoration-none">
+                                            <i class="bi bi-exclamation-circle me-1"></i>
+                                            Ver inasistencias
+                                        </a>
 
-
-                        <div class="role-column-card p-4 h-100">
-
-
-                            <div class="d-flex justify-content-between
-                                align-items-center mb-3">
-
-
-                                <div>
-
-                                    <span class="section-label status-purple-text">
-                                        ALERTAS
-                                    </span>
-
-
-                                    <h3 class="h5 fw-bold mt-1 mb-0">
-                                        Inasistencias
-                                    </h3>
-
-                                </div>
-
-
-                                <a href="inasistencias.html"
-                                    class="btn btn-modal-confirm-purple
-                                    fw-semibold text-decoration-none">
-
-                                    <i class="bi bi-exclamation-circle me-1"></i>
-
-                                    Ver inasistencias
-
-                                </a>
-
-
-                            </div>
-
-
-                            <div class="list-group list-group-flush">
+                                    </div>
+                                    <div class="list-group list-group-flush">
 
 
                                 <div class="list-group-item px-0
@@ -879,10 +862,9 @@
 
                             </div>
 
-
+                                </div>
+                            </div>
                         </div>
-
-
                     </div>
 
 
@@ -1215,720 +1197,353 @@
 
 
                         <!-- TABLA -->
-
                         <div class="table-responsive">
-
-
-                            <table id="tablaAprendices"
-                                class="table table-hover align-middle mb-0 small w-100">
-
-
+                            <table id="tablaAprendices" class="table table-hover align-middle mb-0 small w-100">
                                 <thead class="admin-table-head">
-
-
                                     <tr>
-
-
                                         <th class="py-2.5">
                                             Documento
                                         </th>
-
-
                                         <th class="py-2.5">
                                             Nombre del Aprendiz
                                         </th>
-
-
                                         <th class="py-2.5 text-start ps-3">
                                             Hora de Ingreso
                                         </th>
-
-
                                         <th class="py-2.5 text-center">
                                             Estado Actual
                                         </th>
-
-
                                         <th class="py-2.5 text-center">
                                             Acciones
                                         </th>
-
-
                                     </tr>
-
-
                                 </thead>
-
-
-
                                 <tbody>
-
-
                                     <!-- ================================================= -->
                                     <!-- APRENDIZ 1 -->
                                     <!-- ================================================= -->
-
                                     <tr data-aprendiz="Carlos Andrés Pérez Gómez">
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1098745210</a>
                                         </td>
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none admin-text">Carlos Andrés Pérez Gómez</a>
                                         </td>
-
                                         <td class="text-start ps-3 hora-ingreso">
                                             06:15 a.m.
                                         </td>
-
                                         <td class="text-center estado-aprendiz">
-
                                             <span class="badge badge-status badge-status-green">
-
                                                 <i class="bi bi-check-circle me-1"></i>
-
                                                 Presente
-
                                             </span>
-
                                         </td>
-
                                         <td class="text-center">
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                view-justification-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
                                                 data-aprendiz="Carlos Andrés Pérez Gómez"
                                                 data-fecha="01/10/2026"
                                                 title="Ver Justificación">
-
-                                                <i class="bi bi-file-earmark-text
-                                                    status-yellow-text"></i>
-
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                manual-attendance-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
                                                 data-action="falla"
                                                 title="Marcar Falla">
-
-                                                <i class="bi bi-x-circle
-                                                    status-purple-text"></i>
-
+                                                <i class="bi bi-x-circle status-purple-text"></i>
                                             </button>
-
-
                                         </td>
-
                                     </tr>
-
-
 
                                     <!-- ================================================= -->
                                     <!-- APRENDIZ 2 -->
                                     <!-- ================================================= -->
-
                                     <tr data-aprendiz="María Alejandra Rojas Silva">
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1095412365</a>
                                         </td>
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none admin-text">María Alejandra Rojas Silva</a>
                                         </td>
-
                                         <td class="text-start ps-3 hora-ingreso">
                                             07:32 a.m.
                                         </td>
-
                                         <td class="text-center estado-aprendiz">
-
                                             <span class="badge badge-status badge-status-yellow">
-
                                                 <i class="bi bi-clock me-1"></i>
-
                                                 Llegada Tarde
-
                                             </span>
-
                                         </td>
-
                                         <td class="text-center">
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                view-justification-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
                                                 data-aprendiz="María Alejandra Rojas Silva"
                                                 data-fecha="01/10/2026"
                                                 title="Ver Justificación">
-
-                                                <i class="bi bi-file-earmark-text
-                                                    status-yellow-text"></i>
-
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                manual-attendance-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
                                                 data-action="falla"
                                                 title="Marcar Falla">
-
-                                                <i class="bi bi-x-circle
-                                                    status-purple-text"></i>
-
+                                                <i class="bi bi-x-circle status-purple-text"></i>
                                             </button>
-
-
                                         </td>
-
                                     </tr>
-
-
 
                                     <!-- ================================================= -->
                                     <!-- APRENDIZ 3 -->
                                     <!-- ================================================= -->
-
                                     <tr data-aprendiz="Esteban David Morales Ruiz">
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1002365412</a>
                                         </td>
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none admin-text">Esteban David Morales Ruiz</a>
                                         </td>
-
                                         <td class="text-start ps-3 hora-ingreso">
                                             --:--
                                         </td>
-
                                         <td class="text-center estado-aprendiz">
-
                                             <span class="badge badge-status badge-status-purple">
-
                                                 <i class="bi bi-dash-circle me-1"></i>
-
                                                 Ausente
-
                                             </span>
-
                                         </td>
-
                                         <td class="text-center">
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                view-justification-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
                                                 data-aprendiz="Esteban David Morales Ruiz"
                                                 data-fecha="01/10/2026"
                                                 title="Ver Justificación">
-
-                                                <i class="bi bi-file-earmark-text
-                                                    status-yellow-text"></i>
-
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                manual-attendance-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
                                                 data-action="presente"
                                                 title="Marcar Presente">
-
-                                                <i class="bi bi-check-circle
-                                                    status-green-text"></i>
-
+                                                <i class="bi bi-check-circle status-green-text"></i>
                                             </button>
-
-
                                         </td>
-
                                     </tr>
-
-
 
                                     <!-- ================================================= -->
                                     <!-- APRENDIZ 4 -->
                                     <!-- ================================================= -->
-
                                     <tr data-aprendiz="Laura Valentina Rodríguez Díaz">
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1018456327</a>
                                         </td>
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none admin-text">Laura Valentina Rodríguez Díaz</a>
                                         </td>
-
                                         <td class="text-start ps-3 hora-ingreso">
                                             06:08 a.m.
                                         </td>
-
                                         <td class="text-center estado-aprendiz">
-
                                             <span class="badge badge-status badge-status-green">
-
                                                 <i class="bi bi-check-circle me-1"></i>
-
                                                 Presente
-
                                             </span>
-
                                         </td>
-
                                         <td class="text-center">
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                view-justification-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
                                                 data-aprendiz="Laura Valentina Rodríguez Díaz"
                                                 data-fecha="01/10/2026"
                                                 title="Ver Justificación">
-
-                                                <i class="bi bi-file-earmark-text
-                                                    status-yellow-text"></i>
-
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                manual-attendance-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
                                                 data-action="falla"
                                                 title="Marcar Falla">
-
-                                                <i class="bi bi-x-circle
-                                                    status-purple-text"></i>
-
+                                                <i class="bi bi-x-circle status-purple-text"></i>
                                             </button>
-
-
                                         </td>
-
                                     </tr>
-
-
 
                                     <!-- ================================================= -->
                                     <!-- APRENDIZ 5 -->
                                     <!-- ================================================= -->
-
                                     <tr data-aprendiz="Juan Sebastián Torres Martínez">
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1032547896</a>
                                         </td>
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none admin-text">Juan Sebastián Torres Martínez</a>
                                         </td>
-
                                         <td class="text-start ps-3 hora-ingreso">
                                             06:21 a.m.
                                         </td>
-
                                         <td class="text-center estado-aprendiz">
-
                                             <span class="badge badge-status badge-status-green">
-
                                                 <i class="bi bi-check-circle me-1"></i>
-
                                                 Presente
-
                                             </span>
-
                                         </td>
-
                                         <td class="text-center">
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                view-justification-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
                                                 data-aprendiz="Juan Sebastián Torres Martínez"
                                                 data-fecha="01/10/2026"
                                                 title="Ver Justificación">
-
-                                                <i class="bi bi-file-earmark-text
-                                                    status-yellow-text"></i>
-
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                manual-attendance-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
                                                 data-action="falla"
                                                 title="Marcar Falla">
-
-                                                <i class="bi bi-x-circle
-                                                    status-purple-text"></i>
-
+                                                <i class="bi bi-x-circle status-purple-text"></i>
                                             </button>
-
-
                                         </td>
-
                                     </tr>
-
-
 
                                     <!-- ================================================= -->
                                     <!-- APRENDIZ 6 -->
                                     <!-- ================================================= -->
-
                                     <tr data-aprendiz="Daniela Sofía Martínez López">
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1096325478</a>
                                         </td>
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none admin-text">Daniela Sofía Martínez López</a>
                                         </td>
-
                                         <td class="text-start ps-3 hora-ingreso">
                                             06:42 a.m.
                                         </td>
-
                                         <td class="text-center estado-aprendiz">
-
                                             <span class="badge badge-status badge-status-green">
-
                                                 <i class="bi bi-check-circle me-1"></i>
-
                                                 Presente
-
                                             </span>
-
                                         </td>
-
                                         <td class="text-center">
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                view-justification-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
                                                 data-aprendiz="Daniela Sofía Martínez López"
                                                 data-fecha="01/10/2026"
                                                 title="Ver Justificación">
-
-                                                <i class="bi bi-file-earmark-text
-                                                    status-yellow-text"></i>
-
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                manual-attendance-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
                                                 data-action="falla"
                                                 title="Marcar Falla">
-
-                                                <i class="bi bi-x-circle
-                                                    status-purple-text"></i>
-
+                                                <i class="bi bi-x-circle status-purple-text"></i>
                                             </button>
-
-
                                         </td>
-
                                     </tr>
-
-
 
                                     <!-- ================================================= -->
                                     <!-- APRENDIZ 7 -->
                                     <!-- ================================================= -->
-
                                     <tr data-aprendiz="Andrés Felipe Gómez Herrera">
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1008745632</a>
                                         </td>
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none admin-text">Andrés Felipe Gómez Herrera</a>
                                         </td>
-
                                         <td class="text-start ps-3 hora-ingreso">
                                             06:55 a.m.
                                         </td>
-
                                         <td class="text-center estado-aprendiz">
-
                                             <span class="badge badge-status badge-status-green">
-
                                                 <i class="bi bi-check-circle me-1"></i>
-
                                                 Presente
-
                                             </span>
-
                                         </td>
-
                                         <td class="text-center">
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                view-justification-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
                                                 data-aprendiz="Andrés Felipe Gómez Herrera"
                                                 data-fecha="01/10/2026"
                                                 title="Ver Justificación">
-
-                                                <i class="bi bi-file-earmark-text
-                                                    status-yellow-text"></i>
-
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                manual-attendance-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
                                                 data-action="falla"
                                                 title="Marcar Falla">
-
-                                                <i class="bi bi-x-circle
-                                                    status-purple-text"></i>
-
+                                                <i class="bi bi-x-circle status-purple-text"></i>
                                             </button>
-
-
                                         </td>
-
                                     </tr>
-
-
 
                                     <!-- ================================================= -->
                                     <!-- APRENDIZ 8 -->
                                     <!-- ================================================= -->
-
                                     <tr data-aprendiz="Sara Juliana Hernández Castro">
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1015632847</a>
                                         </td>
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none admin-text">Sara Juliana Hernández Castro</a>
                                         </td>
-
                                         <td class="text-start ps-3 hora-ingreso">
                                             07:18 a.m.
                                         </td>
-
                                         <td class="text-center estado-aprendiz">
-
                                             <span class="badge badge-status badge-status-yellow">
-
                                                 <i class="bi bi-clock me-1"></i>
-
                                                 Llegada Tarde
-
                                             </span>
-
                                         </td>
-
                                         <td class="text-center">
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                view-justification-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
                                                 data-aprendiz="Sara Juliana Hernández Castro"
                                                 data-fecha="01/10/2026"
                                                 title="Ver Justificación">
-
-                                                <i class="bi bi-file-earmark-text
-                                                    status-yellow-text"></i>
-
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                manual-attendance-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
                                                 data-action="falla"
                                                 title="Marcar Falla">
-
-                                                <i class="bi bi-x-circle
-                                                    status-purple-text"></i>
-
+                                                <i class="bi bi-x-circle status-purple-text"></i>
                                             </button>
-
-
                                         </td>
-
                                     </tr>
-
-
 
                                     <!-- ================================================= -->
                                     <!-- APRENDIZ 9 -->
                                     <!-- ================================================= -->
-
                                     <tr data-aprendiz="Mateo Alejandro Vargas Peña">
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1024789631</a>
                                         </td>
-
                                         <td>
                                             <a href="detalleUsuario.html" class="text-decoration-none admin-text">Mateo Alejandro Vargas Peña</a>
                                         </td>
-
                                         <td class="text-start ps-3 hora-ingreso">
                                             06:27 a.m.
                                         </td>
-
                                         <td class="text-center estado-aprendiz">
-
                                             <span class="badge badge-status badge-status-green">
-
                                                 <i class="bi bi-check-circle me-1"></i>
-
                                                 Presente
-
                                             </span>
-
                                         </td>
-
                                         <td class="text-center">
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                view-justification-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 view-justification-action"
                                                 data-aprendiz="Mateo Alejandro Vargas Peña"
                                                 data-fecha="01/10/2026"
                                                 title="Ver Justificación">
-
-                                                <i class="bi bi-file-earmark-text
-                                                    status-yellow-text"></i>
-
+                                                <i class="bi bi-file-earmark-text status-yellow-text"></i>
                                             </button>
-
-
                                             <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                manual-attendance-action"
+                                                class="btn btn-sm table-action-btn border-0 py-1 px-1.5 manual-attendance-action"
                                                 data-action="falla"
                                                 title="Marcar Falla">
-
-                                                <i class="bi bi-x-circle
-                                                    status-purple-text"></i>
-
+                                                <i class="bi bi-x-circle status-purple-text"></i>
                                             </button>
-
-
                                         </td>
-
                                     </tr>
-
-
-
-                                    <!-- ================================================= -->
-                                    <!-- APRENDIZ 10 -->
-                                    <!-- ================================================= -->
-
-                                    <tr data-aprendiz="Valentina Isabel Moreno Ruiz">
-
-                                        <td>
-                                            <a href="detalleUsuario.html" class="text-decoration-none fw-bold admin-text">CC 1097854126</a>
-                                        </td>
-
-                                        <td>
-                                            <a href="detalleUsuario.html" class="text-decoration-none admin-text">Valentina Isabel Moreno Ruiz</a>
-                                        </td>
-
-                                        <td class="text-start ps-3 hora-ingreso">
-                                            06:38 a.m.
-                                        </td>
-
-                                        <td class="text-center estado-aprendiz">
-
-                                            <span class="badge badge-status badge-status-green">
-
-                                                <i class="bi bi-check-circle me-1"></i>
-
-                                                Presente
-
-                                            </span>
-
-                                        </td>
-
-                                        <td class="text-center">
-
-
-                                            <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                view-justification-action"
-                                                data-aprendiz="Valentina Isabel Moreno Ruiz"
-                                                data-fecha="01/10/2026"
-                                                title="Ver Justificación">
-
-                                                <i class="bi bi-file-earmark-text
-                                                    status-yellow-text"></i>
-
-                                            </button>
-
-
-                                            <button type="button"
-                                                class="btn btn-sm table-action-btn
-                                                border-0 py-1 px-1.5
-                                                manual-attendance-action"
-                                                data-action="falla"
-                                                title="Marcar Falla">
-
-                                                <i class="bi bi-x-circle
-                                                    status-purple-text"></i>
-
-                                            </button>
-
-
-                                        </td>
-
-                                    </tr>
-
-
                                 </tbody>
-
-
                             </table>
-
-
                         </div>
 
 
@@ -2045,188 +1660,120 @@
 
 
                         <div class="table-responsive">
-
-
-                            <table class="table table-hover
-                                align-middle mb-0 small">
-
-
+                            <table id="tablaHistorial" class="table table-hover align-middle mb-0 small">
                                 <thead class="admin-table-head">
-
-
                                     <tr>
-
                                         <th class="py-2.5">
                                             Fecha
                                         </th>
-
                                         <th class="py-2.5">
                                             Ficha
                                         </th>
-
                                         <th class="py-2.5">
                                             Jornada
                                         </th>
-
                                         <th class="py-2.5 text-center">
                                             Presentes
                                         </th>
-
                                         <th class="py-2.5 text-center">
                                             Ausentes
                                         </th>
-
                                         <th class="py-2.5 text-center">
                                             Estado
                                         </th>
-
                                     </tr>
-
-
                                 </thead>
-
-
                                 <tbody>
-
-
                                     <tr>
-
                                         <td>
                                             <a href="historial.html" class="text-decoration-none admin-text">01/10/2026</a>
                                         </td>
-
                                         <td>
                                             2874102
                                         </td>
-
                                         <td>
                                             Diurna
                                         </td>
-
                                         <td class="text-center">
                                             27
                                         </td>
-
                                         <td class="text-center">
                                             5
                                         </td>
-
                                         <td class="text-center">
-
                                             <span class="badge badge-status badge-status-green">
                                                 Cerrada
                                             </span>
-
                                         </td>
-
                                     </tr>
-
-
                                     <tr>
-
                                         <td>
                                             <a href="historial.html" class="text-decoration-none admin-text">30/09/2026</a>
                                         </td>
-
                                         <td>
                                             2874102
                                         </td>
-
                                         <td>
                                             Diurna
                                         </td>
-
                                         <td class="text-center">
                                             29
                                         </td>
-
                                         <td class="text-center">
                                             3
                                         </td>
-
                                         <td class="text-center">
-
                                             <span class="badge badge-status badge-status-green">
                                                 Cerrada
                                             </span>
-
                                         </td>
-
                                     </tr>
-
-
                                     <tr>
-
                                         <td>
                                             <a href="historial.html" class="text-decoration-none admin-text">29/09/2026</a>
                                         </td>
-
                                         <td>
                                             2911044
                                         </td>
-
                                         <td>
                                             Nocturna
                                         </td>
-
                                         <td class="text-center">
                                             24
                                         </td>
-
                                         <td class="text-center">
                                             4
                                         </td>
-
                                         <td class="text-center">
-
                                             <span class="badge badge-status badge-status-green">
                                                 Cerrada
                                             </span>
-
                                         </td>
-
                                     </tr>
-
-
                                     <tr>
-
                                         <td>
                                             <a href="historial.html" class="text-decoration-none admin-text">28/09/2026</a>
                                         </td>
-
                                         <td>
                                             2874102
                                         </td>
-
                                         <td>
                                             Diurna
                                         </td>
-
                                         <td class="text-center">
                                             31
                                         </td>
-
                                         <td class="text-center">
                                             1
                                         </td>
-
                                         <td class="text-center">
-
                                             <span class="badge badge-status badge-status-green">
                                                 Cerrada
                                             </span>
-
                                         </td>
-
                                     </tr>
-
-
                                 </tbody>
-
-
                             </table>
-
-
                         </div>
 
 
@@ -3999,6 +3546,116 @@
             );
 
 
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabla = document.getElementById("tablaAprendices");
+            if (!tabla) return;
+
+            // 1. Crear el contenedor para las tarjetas móviles (oculto en desktop)
+            const contenedorMovil = document.createElement("div");
+            contenedorMovil.className = "d-block d-md-none mb-3";
+            contenedorMovil.id = "cardsAprendicesMovil";
+            tabla.parentNode.parentNode.insertBefore(contenedorMovil, tabla.parentNode);
+
+            // Opcional: Agregar clase responsive a la tabla original para que se oculte en móviles
+            tabla.parentNode.classList.add("d-none", "d-md-block");
+
+            // 2. Extraer datos de la tabla y generar las tarjetas
+            const filas = tabla.querySelectorAll("tbody tr");
+            
+            filas.forEach((fila, index) => {
+                const nombre = fila.getAttribute("data-aprendiz");
+                const docLink = fila.cells[0].innerHTML;
+                const nombreLink = fila.cells[1].innerHTML;
+                const hora = fila.cells[2].innerHTML.trim();
+                const estadoHTML = fila.cells[3].innerHTML;
+                const accionesHTML = fila.cells[4].innerHTML;
+
+                const card = document.createElement("div");
+                card.className = "card shadow-sm mb-3 border-0";
+                card.innerHTML = `
+                    <div class="card-body p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <span class="d-block small text-muted">${docLink}</span>
+                                <h6 class="mb-0 fw-bold mt-1">${nombreLink}</h6>
+                            </div>
+                            <div>${estadoHTML}</div>
+                        </div>
+                        <hr class="my-2 text-muted opacity-25">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="small text-muted d-block">Ingreso:</span>
+                                <span class="fw-semibold text-secondary">${hora}</span>
+                            </div>
+                            <div class="d-flex gap-1">
+                                ${accionesHTML}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                contenedorMovil.appendChild(card);
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabla = document.getElementById("tablaHistorial");
+            if (!tabla) return;
+
+            // 1. Crear el contenedor para las tarjetas móviles
+            const contenedorMovil = document.createElement("div");
+            contenedorMovil.className = "d-block d-md-none mb-3";
+            contenedorMovil.id = "cardsHistorialMovil";
+            tabla.parentNode.parentNode.insertBefore(contenedorMovil, tabla.parentNode);
+
+            // Ocultar la tabla original en pantallas pequeñas
+            tabla.parentNode.classList.add("d-none", "d-md-block");
+
+            // 2. Extraer datos y generar las tarjetas adaptadas a este formato
+            const filas = tabla.querySelectorAll("tbody tr");
+            
+            filas.forEach((fila) => {
+                const fechaLink = fila.cells[0].innerHTML;
+                const ficha = fila.cells[1].innerText.trim();
+                const jornada = fila.cells[2].innerText.trim();
+                const presentes = fila.cells[3].innerText.trim();
+                const ausentes = fila.cells[4].innerText.trim();
+                const estadoHTML = fila.cells[5].innerHTML;
+
+                const card = document.createElement("div");
+                card.className = "card shadow-sm mb-3 border-0";
+                card.innerHTML = `
+                    <div class="card-body p-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div>
+                                <span class="small text-muted d-block">Fecha:</span>
+                                <h6 class="mb-0 fw-bold">${fechaLink}</h6>
+                            </div>
+                            <div>${estadoHTML}</div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-2 bg-light p-2 rounded">
+                            <div>
+                                <span class="small text-muted d-block">Ficha:</span>
+                                <span class="fw-semibold">${ficha}</span>
+                            </div>
+                            <div class="text-end">
+                                <span class="small text-muted d-block">Jornada:</span>
+                                <span class="fw-semibold">${jornada}</span>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-around text-center pt-1">
+                            <div>
+                                <span class="small text-success d-block fw-bold">Presentes</span>
+                                <span class="badge bg-success bg-opacity-10 text-success px-2 py-1">${presentes}</span>
+                            </div>
+                            <div>
+                                <span class="small text-danger d-block fw-bold">Ausentes</span>
+                                <span class="badge bg-danger bg-opacity-10 text-danger px-2 py-1">${ausentes}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                contenedorMovil.appendChild(card);
+            });
         });
 
 
