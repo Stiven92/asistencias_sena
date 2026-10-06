@@ -140,7 +140,7 @@
 
                             <i class="bi bi-journal-check me-1"></i>
 
-                            Control por Fichas
+                            Control por fichas
 
                         </a>
 
@@ -436,7 +436,7 @@
                                 <input type="text"
                                     class="form-control"
                                     id="director"
-                                    value="Subdirector de Centro">
+                                    value="Subdirector de centro">
 
                             </div>
 
@@ -595,7 +595,7 @@
                             </span>
 
                             <h2 class="h5 fw-bold mt-1 mb-1">
-                                Configuración de Asistencia
+                                Configuración de asistencia
                             </h2>
 
                             <p class="admin-muted small mb-0">
@@ -664,7 +664,7 @@
                                                 id="jornada">
 
                                                 <option selected>
-                                                    Diurna
+                                                    Mañana
                                                 </option>
 
                                                 <option>
@@ -930,7 +930,7 @@
                             </span>
 
                             <h2 class="h5 fw-bold mt-1 mb-1">
-                                Configuración del Código QR
+                                Configuración del código QR
                             </h2>
 
                             <p class="admin-muted small mb-0">
@@ -1137,7 +1137,7 @@
                                 </span>
 
                                 <h2 class="h5 fw-bold mt-1 mb-1">
-                                    Ambientes de Formación
+                                    Ambientes de formación
                                 </h2>
 
                                 <p class="admin-muted small mb-0">
@@ -1415,7 +1415,7 @@
                                 </span>
 
                                 <h2 class="h5 fw-bold mt-1 mb-1">
-                                    Programas de Formación
+                                    Programas de formación
                                 </h2>
 
                                 <p class="admin-muted small mb-0">
@@ -1505,7 +1505,7 @@
                                         </td>
 
                                         <td>
-                                            Diurna
+                                            Mañana
                                         </td>
 
                                         <td>
@@ -1685,7 +1685,7 @@
 
                         <li>
                             <a href="adminDashboard.html#control-fichas">
-                                Control por Fichas
+                                Control por fichas
                             </a>
                         </li>
 
@@ -2370,8 +2370,8 @@
                                     Seleccione una jornada
                                 </option>
 
-                                <option value="Diurna">
-                                    Diurna
+                                <option value="Mañana">
+                                    Mañana
                                 </option>
 
                                 <option value="Tarde">
@@ -3967,32 +3967,7 @@
 
             }
         );
-
-
-        nuevaFichaModalElement.addEventListener(
-            'hidden.bs.modal',
-            function () {
-
-                fichaEditando = null;
-
-                tituloFicha.textContent =
-                    'Nueva ficha';
-
-                textoFichaModal.textContent =
-                    'Registra la información de la nueva ficha de formación.';
-
-                textoBotonFicha.textContent =
-                    'Guardar ficha';
-
-                limpiarFormularioFicha();
-
-            }
-        );
-
-
     </script>
-
-
 </body>
 
 </html>
